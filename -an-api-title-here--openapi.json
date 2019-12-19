@@ -1,0 +1,4067 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "< An API v",
+        "title": "< An API title here >",
+        "description": "",
+        "termsOfService": "http:\/\/exmple.com\/license\/"
+    },
+    "servers": [
+        "http:\/\/graph.facebook.com\/"
+    ],
+    "paths": {
+        "\/search": {
+            "get": {
+                "summary": "",
+                "description": "Search over all public objects in the social graph",
+                "operationId": "Search",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "The search string"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "Supports these types of objects: All public posts (post), people (user), pages (page), events\n                            (event), groups (group), check-ins (checkin)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{album}": {
+            "get": {
+                "summary": "",
+                "description": "A photo album",
+                "operationId": "Getalbum",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{album}\/comments": {
+            "get": {
+                "summary": "",
+                "description": "The comments made on this album",
+                "operationId": "Getalbumcomments",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a comment on the album",
+                "operationId": "Postalbumcomments",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{album}\/likes": {
+            "delete": {
+                "summary": "",
+                "description": "Unlikes the album",
+                "operationId": "Deletealbumlikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "The likes made on this album",
+                "operationId": "Getalbumlikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Likes the album",
+                "operationId": "Postalbumlikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{album}\/photos": {
+            "get": {
+                "summary": "",
+                "description": "The photos contained in this album",
+                "operationId": "Getalbumphotos",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Adds a photo to the album",
+                "operationId": "Postalbumphotos",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{album}\/picture": {
+            "get": {
+                "summary": "",
+                "description": "The album's cover photo; the first picture uploaded to an album becomes the cover photo for the album.",
+                "operationId": "Getalbumpicture",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "Supports these types of objects: All public posts (post), people (user), pages (page), events\n                            (event), groups (group), check-ins (checkin)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{application}": {
+            "get": {
+                "summary": "",
+                "description": "An application's profile",
+                "operationId": "Getapplication",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{application}\/accounts": {
+            "get": {
+                "summary": "",
+                "description": "Test User accounts associated with the application.",
+                "operationId": "Getapplicationaccounts",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{application}\/accounts\/test-users": {
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Creates a test account for the application",
+                "operationId": "Postapplicationaccounts",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "installed",
+                        "in": "query",
+                        "description": "Install app for the test user upon creation"
+                    },
+                    {
+                        "name": "permissions",
+                        "in": "query",
+                        "description": "List of extended permissions app granted for the new test user if installed is true"
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "A name for the test user. The specified name will also be used in the email address assigned to the test user."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{application}\/achievements": {
+            "delete": {
+                "summary": "",
+                "description": "Unregisters an achievement for the application",
+                "operationId": "Deleteapplicationachievements",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "achievement",
+                        "in": "query",
+                        "description": "Unique URL to the achievement."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Registers an achievement for the application",
+                "operationId": "Postapplicationachievements",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "achievement",
+                        "in": "query",
+                        "description": "Unique URL to the achievement."
+                    },
+                    {
+                        "name": "display_order",
+                        "in": "query",
+                        "description": "Order of this achievement as it shows up in the achievement stories UI (low to high). For example a display order of 100 will be displayed in the UI before 200. We use this value to surface achievements according to the order the developer has specified. Please make sure this value is unique and increments in the correct order for your achievements."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{application}\/albums": {
+            "get": {
+                "summary": "",
+                "description": "The photo albums this application has created.",
+                "operationId": "Getapplicationalbums",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{application}\/feed": {
+            "get": {
+                "summary": "",
+                "description": "The application's wall.",
+                "operationId": "Getapplicationfeed",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a status message on the application's profile page",
+                "operationId": "Postapplicationfeedstatus",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{application}\/insights": {
+            "get": {
+                "summary": "",
+                "description": "Usage metrics for this application",
+                "operationId": "Getapplicationinsights",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{application}\/links": {
+            "get": {
+                "summary": "",
+                "description": "The application's posted links.",
+                "operationId": "Getapplicationlinks",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a link on the application's profile page",
+                "operationId": "Postapplicationlinks",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "link",
+                        "in": "query",
+                        "description": "Link URL"
+                    },
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{application}\/picture": {
+            "get": {
+                "summary": "",
+                "description": "The application's logo",
+                "operationId": "Getapplicationpicture",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "Supports these types of objects: All public posts (post), people (user), pages (page), events\n                            (event), groups (group), check-ins (checkin)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{application}\/posts": {
+            "get": {
+                "summary": "",
+                "description": "The application's own posts.",
+                "operationId": "Getapplicationposts",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{application}\/reviews": {
+            "get": {
+                "summary": "",
+                "description": "Reviews of this application",
+                "operationId": "Getapplicationreviews",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{application}\/scores": {
+            "delete": {
+                "summary": "",
+                "description": "Deletes all the scores for the application.",
+                "operationId": "Deleteapplicationscores",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "Scores for the user and their friends.",
+                "operationId": "Getapplicationscores",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{application}\/staticresources": {
+            "get": {
+                "summary": "",
+                "description": "Usage stats about the canvas application's static resources, such as javascript and CSS, and which ones are being flushed to browsers early.",
+                "operationId": "Getapplicationstaticresources",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{application}\/statuses": {
+            "get": {
+                "summary": "",
+                "description": "The application's status updates",
+                "operationId": "Getapplicationstatuses",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a status message on the application's profile page",
+                "operationId": "Postapplicationstatuses",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{application}\/subscriptions": {
+            "delete": {
+                "summary": "",
+                "description": "Deletes a real-time notification subscription for this application.",
+                "operationId": "Deleteapplicationsubscriptions",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "object",
+                        "in": "query",
+                        "description": "Object to monitor - `user`, `permissions`, or `page`. If no object is specified all subscriptions are deleted."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "All of the subscriptions this application has for real-time notifications.",
+                "operationId": "Getapplicationsubscriptions",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Adds a real-time notification subscription for this application.",
+                "operationId": "Postapplicationsubscriptions",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "object",
+                        "in": "query",
+                        "description": "Object to monitor - `user`, `permissions`, or `page`. If no object is specified all subscriptions are deleted."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "List of properties for the `object` to monitor."
+                    },
+                    {
+                        "name": "callback_url",
+                        "in": "query",
+                        "description": "A callback URL to which Facebook will post subscription updates."
+                    },
+                    {
+                        "name": "verify_token",
+                        "in": "query",
+                        "description": "Token sent in the verification request."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{application}\/tagged": {
+            "get": {
+                "summary": "",
+                "description": "The photos, videos, and posts in which this application has been tagged.",
+                "operationId": "Getapplicationtagged",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{application}\/translations": {
+            "delete": {
+                "summary": "",
+                "description": "Deletes a translation string for this application.",
+                "operationId": "Deleteapplicationtranslations",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "native_hashes",
+                        "in": "query",
+                        "description": "An array of native hashes. The native hash is a unique identifier of the native string and a description and is generated by the Translations application."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "The translated strings for this application.",
+                "operationId": "Getapplicationtranslations",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Uploads translated strings for this application.",
+                "operationId": "Postapplicationtranslations",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "native_strings",
+                        "in": "query",
+                        "description": "A JSON-encoded array of strings to translate. Each element of the string array is an object, with text storing the actual string, description storing the description of the text."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{checkin}": {
+            "get": {
+                "summary": "",
+                "description": "Represents a single visit by a user to a location",
+                "operationId": "Getcheckin",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{checkin}\/comments": {
+            "get": {
+                "summary": "",
+                "description": "All of the comments on this checkin.",
+                "operationId": "Getcheckincomments",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a comment to this checkin.",
+                "operationId": "Postcheckincomments",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{checkin}\/likes": {
+            "delete": {
+                "summary": "",
+                "description": "Unlikes this checkin.",
+                "operationId": "Deletecheckinlikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "Users who like this checkin.",
+                "operationId": "Getcheckinlikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Likes this checkin.",
+                "operationId": "Postcheckinlikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{comment}": {
+            "delete": {
+                "summary": "",
+                "description": "Deletes a comment",
+                "operationId": "Deletecomment",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "Returns a comment",
+                "operationId": "Getcomment",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{comment}\/likes": {
+            "delete": {
+                "summary": "",
+                "description": "Unlikes the comment",
+                "operationId": "Deletecommentlikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "All the likes on this comment",
+                "operationId": "Getcommentlikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Likes the comment",
+                "operationId": "Postcommentlikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{event}": {
+            "get": {
+                "summary": "",
+                "description": "Specifies information about an event, including the location, event name, and which invitees plan to attend.",
+                "operationId": "Getevent",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{event}\/attending": {
+            "get": {
+                "summary": "",
+                "description": "All of the users who are attending this event",
+                "operationId": "Geteventattending",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "RSVPs the user as 'attending' for the event",
+                "operationId": "Posteventattending",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{event}\/declined": {
+            "get": {
+                "summary": "",
+                "description": "All of the users who declined their invitation to this event",
+                "operationId": "Geteventdeclined",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "RSVPs the user as 'declined' for the event",
+                "operationId": "Posteventdeclined",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{event}\/feed": {
+            "get": {
+                "summary": "",
+                "description": "This event's wall",
+                "operationId": "Geteventfeed",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a status message on this event's wall",
+                "operationId": "Posteventfeedstatus",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{event}\/invited": {
+            "get": {
+                "summary": "",
+                "description": "All of the users who have been invited to this event",
+                "operationId": "Geteventinvited",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{event}\/maybe": {
+            "get": {
+                "summary": "",
+                "description": "All of the users who have been responded \"Maybe\" to their invitation to this event",
+                "operationId": "Geteventmaybe",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "RSVPs the user as a 'maybe' for the event",
+                "operationId": "Posteventmaybe",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{event}\/noreply": {
+            "get": {
+                "summary": "",
+                "description": "All of the users who have been not yet responded to their invitation to this event",
+                "operationId": "Geteventnoreply",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{event}\/picture": {
+            "get": {
+                "summary": "",
+                "description": "The event's profile picture",
+                "operationId": "Geteventpicture",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "Supports these types of objects: All public posts (post), people (user), pages (page), events\n                            (event), groups (group), check-ins (checkin)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{friendlist}": {
+            "delete": {
+                "summary": "",
+                "description": "Deletes the FriendList.",
+                "operationId": "Deletefriendlist",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "A Facebook friend list. This object represents the list itself and not the members of the list.",
+                "operationId": "Getfriendlist",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{friendlist}\/members": {
+            "get": {
+                "summary": "",
+                "description": "All of the users who are members of this list.",
+                "operationId": "Getfriendlistmembers",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{friendlist}\/members\/{user}": {
+            "delete": {
+                "summary": "",
+                "description": "Removes a user from the friend list",
+                "operationId": "Deletefriendlistmembersuser",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Adds a user to the friend list",
+                "operationId": "Postfriendlistmembersuser",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{group}": {
+            "get": {
+                "summary": "",
+                "description": "A Facebook group",
+                "operationId": "Getgroup",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{group}\/docs": {
+            "get": {
+                "summary": "",
+                "description": "The docs in this group",
+                "operationId": "Getgroupdocs",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{group}\/feed": {
+            "get": {
+                "summary": "",
+                "description": "This group's wall",
+                "operationId": "Getgroupfeed",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a status message on this group's wall",
+                "operationId": "Postgroupfeedstatus",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{group}\/members": {
+            "get": {
+                "summary": "",
+                "description": "All of the users who are members of this group",
+                "operationId": "Getgroupmembers",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{group}\/picture": {
+            "get": {
+                "summary": "",
+                "description": "The profile picture of this group",
+                "operationId": "Getgrouppicture",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "Supports these types of objects: All public posts (post), people (user), pages (page), events\n                            (event), groups (group), check-ins (checkin)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{link}": {
+            "get": {
+                "summary": "",
+                "description": "A link shared on a user's wall",
+                "operationId": "Getlink",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{link}\/comments": {
+            "get": {
+                "summary": "",
+                "description": "All of the comments on this link.",
+                "operationId": "Getlinkcomments",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a comment to this link.",
+                "operationId": "Postlinkcomments",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{link}\/likes": {
+            "delete": {
+                "summary": "",
+                "description": "Unlikes this link.",
+                "operationId": "Deletelinklikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "Users who like this link.",
+                "operationId": "Getlinklikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Likes this link.",
+                "operationId": "Postlinklikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{note}": {
+            "get": {
+                "summary": "",
+                "description": "A Facebook note",
+                "operationId": "Getnote",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{note}\/comments": {
+            "get": {
+                "summary": "",
+                "description": "All of the comments on this note.",
+                "operationId": "Getnotecomments",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a comment to this note.",
+                "operationId": "Postnotecomments",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{note}\/likes": {
+            "delete": {
+                "summary": "",
+                "description": "Unlikes this note.",
+                "operationId": "Deletenotelikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "Users who like this note.",
+                "operationId": "Getnotelikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Likes this note.",
+                "operationId": "Postnotelikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{notification}": {
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Marks the notification as read",
+                "operationId": "Postnotification",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "unread",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{page}": {
+            "get": {
+                "summary": "",
+                "description": "Returns a Page",
+                "operationId": "Getpage",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{page}\/admins": {
+            "get": {
+                "summary": "",
+                "description": "A list of the Page's admins.",
+                "operationId": "Getpageadmins",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{page}\/albums": {
+            "get": {
+                "summary": "",
+                "description": "The photo albums this Page has uploaded",
+                "operationId": "Getpagealbums",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{page}\/blocked": {
+            "delete": {
+                "summary": "",
+                "description": "Unblocks a user (or users) for the page",
+                "operationId": "Deletepageblocked",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "uids",
+                        "in": "query",
+                        "description": "Comma-separated list of the user IDs you wish to unblock"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "A list of the users blocked from the page.",
+                "operationId": "Getpageblocked",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Blocks a user (or users) from posting content to the page",
+                "operationId": "Postpageblocked",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "uids",
+                        "in": "query",
+                        "description": "Comma-separated list of the user IDs you wish to unblock"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{page}\/blocked\/{user}": {
+            "get": {
+                "summary": "",
+                "description": "Checks if a user is blocked from the page",
+                "operationId": "Getpageblockeduser",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{page}\/checkins": {
+            "get": {
+                "summary": "",
+                "description": "Checkins made to this Place Page by the current user, and friends of the current user",
+                "operationId": "Getpagecheckins",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{page}\/events": {
+            "get": {
+                "summary": "",
+                "description": "The events the Page is attending",
+                "operationId": "Getpageevents",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Creates an event for the page",
+                "operationId": "Postpageevents",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "A name for the test user. The specified name will also be used in the email address assigned to the test user."
+                    },
+                    {
+                        "name": "start_time",
+                        "in": "query",
+                        "description": "Event start time"
+                    },
+                    {
+                        "name": "end_time",
+                        "in": "query",
+                        "description": "Event end time"
+                    },
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    },
+                    {
+                        "name": "location",
+                        "in": "query",
+                        "description": "Event location"
+                    },
+                    {
+                        "name": "privacy_type",
+                        "in": "query",
+                        "description": "Event privacy setting"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{page}\/feed": {
+            "get": {
+                "summary": "",
+                "description": "This page's wall",
+                "operationId": "Getpagefeed",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a status message on this page's wall",
+                "operationId": "Postpagefeedstatus",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{page}\/groups": {
+            "get": {
+                "summary": "",
+                "description": "The groups this page is a member of",
+                "operationId": "Getpagegroups",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{page}\/links": {
+            "get": {
+                "summary": "",
+                "description": "The page's posted links",
+                "operationId": "Getpagelinks",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a link on the page",
+                "operationId": "Postpagelinks",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "link",
+                        "in": "query",
+                        "description": "Link URL"
+                    },
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{page}\/notes": {
+            "get": {
+                "summary": "",
+                "description": "The notes contained on this page",
+                "operationId": "Getpagenotes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Creates a note on the page",
+                "operationId": "Postpagenotes",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "subject",
+                        "in": "query",
+                        "description": "The subject of the Note"
+                    },
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{page}\/photos": {
+            "get": {
+                "summary": "",
+                "description": "The photos contained on this page",
+                "operationId": "Getpagephotos",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Adds a photo to the page",
+                "operationId": "Postpagephotos",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{page}\/picture": {
+            "get": {
+                "summary": "",
+                "description": "The page's profile picture",
+                "operationId": "Getpagepicture",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "Supports these types of objects: All public posts (post), people (user), pages (page), events\n                            (event), groups (group), check-ins (checkin)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{page}\/posts": {
+            "get": {
+                "summary": "",
+                "description": "The page's own posts",
+                "operationId": "Getpageposts",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{page}\/settings": {
+            "get": {
+                "summary": "",
+                "description": "The page's post permission settings",
+                "operationId": "Getpagesettings",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "The page's post permission settings",
+                "operationId": "Postpagesettings",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "setting",
+                        "in": "query",
+                        "description": "Which single setting to update: USERS_CAN_POST, USERS_CAN_POST_PHOTOS, USERS_CAN_TAG_PHOTOS, USERS_CAN_POST_VIDEOS"
+                    },
+                    {
+                        "name": "value",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{page}\/statuses": {
+            "get": {
+                "summary": "",
+                "description": "The page's status updates",
+                "operationId": "Getpagestatuses",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a status message on the page",
+                "operationId": "Postpagestatuses",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{page}\/tabs": {
+            "get": {
+                "summary": "",
+                "description": "The page's profile tabs",
+                "operationId": "Getpagetabs",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Installs a profile tab at the end of the current list of installed tabs for the page",
+                "operationId": "Postpagetabs",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "app_id",
+                        "in": "query",
+                        "description": "ID of the application for which to install the tab"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{page}\/tabs\/{tab}": {
+            "delete": {
+                "summary": "",
+                "description": "Deletes an installed profile tab (where is_permanent is not true) for a page",
+                "operationId": "Deletepagetabs",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Updates an installed profile tab for a page",
+                "operationId": "Postpagetabstab",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "position",
+                        "in": "query",
+                        "description": "Order in which the tab will appear on the profile. Must be after permanent tabs and less than the number of installed tabs. Index starts at 0"
+                    },
+                    {
+                        "name": "custom_name",
+                        "in": "query",
+                        "description": "Name to be used for the tab. If this is set to an empty string, the tab will use the application\u2019s default tab name."
+                    },
+                    {
+                        "name": "is_non_connection_landing_tab",
+                        "in": "query",
+                        "description": "Set this tab as the default landing tab for users who have not liked and are not admins of the Page. If provided, value must be true."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{page}\/tagged": {
+            "get": {
+                "summary": "",
+                "description": "The photos, videos, and posts in which this page has been tagged",
+                "operationId": "Getpagetagged",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{page}\/videos": {
+            "get": {
+                "summary": "",
+                "description": "The videos contained on this page",
+                "operationId": "Getpagevideos",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Publishes a video to the page",
+                "operationId": "Postpagevideos",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Video title"
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Video description"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{photo}": {
+            "get": {
+                "summary": "",
+                "description": "An individual photo",
+                "operationId": "Getphoto",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{photo}\/comments": {
+            "get": {
+                "summary": "",
+                "description": "All of the comments on this photo.",
+                "operationId": "Getphotocomments",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a comment to this photo.",
+                "operationId": "Postphotocomments",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{photo}\/likes": {
+            "delete": {
+                "summary": "",
+                "description": "Unlikes this photo.",
+                "operationId": "Deletephotolikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "Users who like this photo.",
+                "operationId": "Getphotolikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Likes this photo.",
+                "operationId": "Postphotolikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{photo}\/picture": {
+            "get": {
+                "summary": "",
+                "description": "The album-sized view of the photo",
+                "operationId": "Getphotopicture",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{photo}\/tags": {
+            "get": {
+                "summary": "",
+                "description": "Tags for this photo.",
+                "operationId": "Getphototags",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Creates a tag on this photo.",
+                "operationId": "Postphototags",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "description": "USER_ID of the User to tag; can also be provided in URL path"
+                    },
+                    {
+                        "name": "x",
+                        "in": "query",
+                        "description": "x coordinate of tag, as a percentage offset from the left edge of the picture"
+                    },
+                    {
+                        "name": "y",
+                        "in": "query",
+                        "description": "y coordinate of tag, as a percentage offset from the top edge of the picture"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{photo}\/tags\/{user}": {
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Updates the position of a tag on this photo for the user.",
+                "operationId": "Postphototagsuser",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "x",
+                        "in": "query",
+                        "description": "x coordinate of tag, as a percentage offset from the left edge of the picture"
+                    },
+                    {
+                        "name": "y",
+                        "in": "query",
+                        "description": "y coordinate of tag, as a percentage offset from the top edge of the picture"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{post}": {
+            "get": {
+                "summary": "",
+                "description": "A Facebook post",
+                "operationId": "Getpost",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{post}\/comments": {
+            "get": {
+                "summary": "",
+                "description": "All of the comments on this post.",
+                "operationId": "Getpostcomments",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a comment to this post.",
+                "operationId": "Postpostcomments",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{post}\/likes": {
+            "delete": {
+                "summary": "",
+                "description": "Unlikes this post.",
+                "operationId": "Deletepostlikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "Users who like this post.",
+                "operationId": "Getpostlikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Likes this post.",
+                "operationId": "Postpostlikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{status}": {
+            "get": {
+                "summary": "",
+                "description": "A Facebook status",
+                "operationId": "Getstatus",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{status}\/comments": {
+            "get": {
+                "summary": "",
+                "description": "All of the comments on this status.",
+                "operationId": "Getstatuscomments",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a comment to this status.",
+                "operationId": "Poststatuscomments",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{status}\/likes": {
+            "delete": {
+                "summary": "",
+                "description": "Unlikes this status.",
+                "operationId": "Deletestatuslikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "Users who like this status.",
+                "operationId": "Getstatuslikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Likes this status.",
+                "operationId": "Poststatuslikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{user}": {
+            "get": {
+                "summary": "",
+                "description": "A user profile.",
+                "operationId": "Getuser",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "List of properties for the `object` to monitor."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/accounts": {
+            "get": {
+                "summary": "",
+                "description": "The Facebook apps and pages owned by the current user",
+                "operationId": "Getuseraccounts",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/achievements": {
+            "delete": {
+                "summary": "",
+                "description": "Deletes an achievement for the user",
+                "operationId": "Deleteuserachievements",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "achievement",
+                        "in": "query",
+                        "description": "Unique URL to the achievement."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts an achievement for the user",
+                "operationId": "Postuserachievements",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "achievement",
+                        "in": "query",
+                        "description": "Unique URL to the achievement."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{user}\/activities": {
+            "get": {
+                "summary": "",
+                "description": "The activities listed on the user's profile",
+                "operationId": "Getuseractivities",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/albums": {
+            "get": {
+                "summary": "",
+                "description": "The photo albums this user has created",
+                "operationId": "Getuseralbums",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Creates an album for the user",
+                "operationId": "Postuseralbums",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "A name for the test user. The specified name will also be used in the email address assigned to the test user."
+                    },
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    },
+                    {
+                        "name": "privacy",
+                        "in": "query",
+                        "description": "Privacy settings for the Album. Format: A JSON-encoded object that defines the privacy setting for the album, for example: {\"value\":\"SELF\"}. Only the user can specify the privacy settings for the post."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{user}\/apprequests": {
+            "get": {
+                "summary": "",
+                "description": "The user's outstanding requests from an app.",
+                "operationId": "Getuserapprequests",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/books": {
+            "get": {
+                "summary": "",
+                "description": "The books listed on the user's profile.",
+                "operationId": "Getuserbooks",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/checkins": {
+            "get": {
+                "summary": "",
+                "description": "The places that the user has checked-into",
+                "operationId": "Getusercheckins",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Checks the user into a place",
+                "operationId": "Postusercheckins",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "place",
+                        "in": "query",
+                        "description": "Checkin Place ID; for example 110506962309835 for Facebook HQ"
+                    },
+                    {
+                        "name": "coordinates",
+                        "in": "query",
+                        "description": "The user's location, as a string containing latitude and longitude: {\"latitude\":\"...\", \"longitude\": \"...\"}"
+                    },
+                    {
+                        "name": "tags",
+                        "in": "query",
+                        "description": "Comma-separated list of tagged friends' user IDs"
+                    },
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    },
+                    {
+                        "name": "link",
+                        "in": "query",
+                        "description": "Link URL"
+                    },
+                    {
+                        "name": "picture",
+                        "in": "query",
+                        "description": "Checkin picture"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{user}\/events": {
+            "get": {
+                "summary": "",
+                "description": "The events this user is attending.",
+                "operationId": "Getuserevents",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Creates an event for the user",
+                "operationId": "Postuserevents",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "A name for the test user. The specified name will also be used in the email address assigned to the test user."
+                    },
+                    {
+                        "name": "start_time",
+                        "in": "query",
+                        "description": "Event start time"
+                    },
+                    {
+                        "name": "end_time",
+                        "in": "query",
+                        "description": "Event end time"
+                    },
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    },
+                    {
+                        "name": "location",
+                        "in": "query",
+                        "description": "Event location"
+                    },
+                    {
+                        "name": "privacy_type",
+                        "in": "query",
+                        "description": "Event privacy setting"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{user}\/feed": {
+            "get": {
+                "summary": "",
+                "description": "This user's wall",
+                "operationId": "Getuserfeed",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a status message on this user's wall",
+                "operationId": "Postuserfeedstatus",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{user}\/friendlists": {
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Creates a FriendList for the user",
+                "operationId": "Postuserfriendlists",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "A name for the test user. The specified name will also be used in the email address assigned to the test user."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{user}\/friends": {
+            "get": {
+                "summary": "",
+                "description": "The user's friends",
+                "operationId": "Getuserfriends",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/friends\/{friend}": {
+            "get": {
+                "summary": "",
+                "description": "Checks if the given user is a friend of the current user",
+                "operationId": "Getuserfriendsfriend",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/games": {
+            "get": {
+                "summary": "",
+                "description": "Games the user has added to the Arts and Entertainment section of their profile.",
+                "operationId": "Getusergames",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/groups": {
+            "get": {
+                "summary": "",
+                "description": "The Groups that the user belongs to.",
+                "operationId": "Getusergroups",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/home": {
+            "get": {
+                "summary": "",
+                "description": "The user's news feed",
+                "operationId": "Getusersearch",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/inbox": {
+            "get": {
+                "summary": "",
+                "description": "The threads in this user's inbox.",
+                "operationId": "Getuserinbox",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/interests": {
+            "get": {
+                "summary": "",
+                "description": "The interests listed on the user's profile",
+                "operationId": "Getuserinterests",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/likes": {
+            "get": {
+                "summary": "",
+                "description": "All the pages this user has liked.",
+                "operationId": "Getuserlikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/likes\/{page}": {
+            "get": {
+                "summary": "",
+                "description": "Checks if the user likes the given page.",
+                "operationId": "Getuserlikespage",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/links": {
+            "get": {
+                "summary": "",
+                "description": "The user's posted links.",
+                "operationId": "Getuserlinks",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a link on the user's profile page",
+                "operationId": "Postuserlinks",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "link",
+                        "in": "query",
+                        "description": "Link URL"
+                    },
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{user}\/movies": {
+            "get": {
+                "summary": "",
+                "description": "The movies listed on the user's profile",
+                "operationId": "Getusermovies",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/music": {
+            "get": {
+                "summary": "",
+                "description": "The music listed on the user's profile",
+                "operationId": "Getusermusic",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/notes": {
+            "get": {
+                "summary": "",
+                "description": "The user's notes",
+                "operationId": "Getusernotes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Creates a note on behalf of the user",
+                "operationId": "Postusernotes",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "subject",
+                        "in": "query",
+                        "description": "The subject of the Note"
+                    },
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{user}\/notifications": {
+            "get": {
+                "summary": "",
+                "description": "The user's notifications",
+                "operationId": "Getusernotifications",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "include_read",
+                        "in": "query",
+                        "description": "Enables you to see notifications that the user has already read in addition to the ones which are unread"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/outbox": {
+            "get": {
+                "summary": "",
+                "description": "The messages in this user's outbox.",
+                "operationId": "Getuseroutbox",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/payments": {
+            "get": {
+                "summary": "",
+                "description": "The transactions the user placed with an application.",
+                "operationId": "Getuserpayments",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/permissions": {
+            "delete": {
+                "summary": "",
+                "description": "De-authorizes an application or revokes a specific extended permissions on behalf of a user",
+                "operationId": "Deleteuserpermissions",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "permission",
+                        "in": "query",
+                        "description": "The permission you wish to revoke. If you don't specify a permission then this will de-authorize the application completely."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "The permissions that user has granted the application.",
+                "operationId": "Getuserpermissions",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/photos": {
+            "get": {
+                "summary": "",
+                "description": "The photos the user is tagged in",
+                "operationId": "Getuserphotos",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a photo to the user's Wall",
+                "operationId": "Postuserphotos",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{user}\/picture": {
+            "get": {
+                "summary": "",
+                "description": "The user's profile picture",
+                "operationId": "Getuserpicture",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "Supports these types of objects: All public posts (post), people (user), pages (page), events\n                            (event), groups (group), check-ins (checkin)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/pokes": {
+            "get": {
+                "summary": "",
+                "description": "The user's pokes",
+                "operationId": "Getuserpokes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/posts": {
+            "get": {
+                "summary": "",
+                "description": "The user's posts",
+                "operationId": "Getuserposts",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Creates a post on behalf of the user",
+                "operationId": "Postuserposts",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    },
+                    {
+                        "name": "link",
+                        "in": "query",
+                        "description": "Link URL"
+                    },
+                    {
+                        "name": "picture",
+                        "in": "query",
+                        "description": "Checkin picture"
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "A name for the test user. The specified name will also be used in the email address assigned to the test user."
+                    },
+                    {
+                        "name": "caption",
+                        "in": "query",
+                        "description": "Post caption"
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Video description"
+                    },
+                    {
+                        "name": "actions",
+                        "in": "query",
+                        "description": "Post actions"
+                    },
+                    {
+                        "name": "privacy",
+                        "in": "query",
+                        "description": "Privacy settings for the Album. Format: A JSON-encoded object that defines the privacy setting for the album, for example: {\"value\":\"SELF\"}. Only the user can specify the privacy settings for the post."
+                    },
+                    {
+                        "name": "object_attachment",
+                        "in": "query",
+                        "description": "Facebook ID for an existing picture in the User's photo albums to use as the thumbnail image. The User must be the owner of the photo, and the photo cannot be part of a message attachment."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{user}\/scores": {
+            "get": {
+                "summary": "",
+                "description": "The scores for the user",
+                "operationId": "Getuserscores",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a score for the user",
+                "operationId": "Postuserscores",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "score",
+                        "in": "query",
+                        "description": "Numeric score with value < 0."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{user}\/statuses": {
+            "get": {
+                "summary": "",
+                "description": "The user's status updates",
+                "operationId": "Getuserstatuses",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a status message on the user",
+                "operationId": "Postuserstatuses",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{user}\/tagged": {
+            "get": {
+                "summary": "",
+                "description": "Posts the user is tagged in",
+                "operationId": "Getusertagged",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/television": {
+            "get": {
+                "summary": "",
+                "description": "The television listed on the user's profile",
+                "operationId": "Getusertelevision",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/updates": {
+            "get": {
+                "summary": "",
+                "description": "The updates in this user's inbox.",
+                "operationId": "Getuserupdates",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{user}\/videos": {
+            "get": {
+                "summary": "",
+                "description": "The videos this user has been tagged in",
+                "operationId": "Getuservideos",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Publishes a video on behalf of the user",
+                "operationId": "Postuservideos",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Video title"
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Video description"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{video}": {
+            "get": {
+                "summary": "",
+                "description": "An individual video",
+                "operationId": "Getvideo",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/{video}\/comments": {
+            "get": {
+                "summary": "",
+                "description": "All of the comments on this video.",
+                "operationId": "Getvideocomments",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Posts a comment to this video.",
+                "operationId": "Postvideocomments",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Comment text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{video}\/likes": {
+            "delete": {
+                "summary": "",
+                "description": "Unlikes this video.",
+                "operationId": "Deletevideolikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "Users who like this video.",
+                "operationId": "Getvideolikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "",
+                "description": "Likes this video.",
+                "operationId": "Postvideolikes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            }
+        },
+        "\/{video}\/picture": {
+            "get": {
+                "summary": "",
+                "description": "The image which represents the content of the video",
+                "operationId": "Getvideopicture",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response"
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        }
+    },
+    "components": {
+        "schemas": []
+    }
+}
