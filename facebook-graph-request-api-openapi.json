@@ -1,0 +1,16 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "",
+        "title": "Facebook Graph (Request) API",
+        "description": "API for managing Facebook Requests",
+        "termsOfService": "https:\/\/www.facebook.com\/policies\/"
+    },
+    "servers": [
+        "httpsgraph.facebook.com\/"
+    ],
+    "paths": [],
+    "components": {
+        "schemas": []
+    }
+}
