@@ -1,0 +1,16 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "",
+        "title": "Facebook Graph (Milestone) API",
+        "description": "API for managing Facebook Milestones",
+        "termsOfService": "https:\/\/www.facebook.com\/policies\/"
+    },
+    "servers": [
+        "httpsgraph.facebook.com\/"
+    ],
+    "paths": [],
+    "components": {
+        "schemas": []
+    }
+}
