@@ -1,0 +1,16 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "",
+        "title": "Facebook Graph (Status) API",
+        "description": "API for managing Facebook Statuss",
+        "termsOfService": "https:\/\/www.facebook.com\/policies\/"
+    },
+    "servers": [
+        "httpsgraph.facebook.com\/"
+    ],
+    "paths": [],
+    "components": {
+        "schemas": []
+    }
+}
