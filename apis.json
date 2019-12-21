@@ -17,8 +17,8 @@
         "streams",
         "webhook implementations"
     ],
-    "created": "2019-12-19",
-    "modified": "2019-12-19",
+    "created": "2019-12-21",
+    "modified": "2019-12-21",
     "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/apis.json",
     "specificationVersion": "0.14",
     "apis": [
@@ -36,7 +36,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-achievement-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-achievement-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-achievement-api-postman-collection.json"
                 }
             ]
         },
@@ -54,7 +58,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-album-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-album-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-album-api-postman-collection.json"
                 }
             ]
         },
@@ -72,7 +80,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-app-link-host-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-app-link-host-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-app-link-host-api-postman-collection.json"
                 }
             ]
         },
@@ -90,7 +102,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-app-request-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-app-request-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-app-request-api-postman-collection.json"
                 }
             ]
         },
@@ -108,7 +124,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-application-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-application-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-application-api-postman-collection.json"
                 }
             ]
         },
@@ -126,7 +146,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-application-context-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-application-context-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-application-context-api-postman-collection.json"
                 }
             ]
         },
@@ -144,7 +168,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-comment-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-comment-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-comment-api-postman-collection.json"
                 }
             ]
         },
@@ -162,7 +190,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-conversation-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-conversation-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-conversation-api-postman-collection.json"
                 }
             ]
         },
@@ -180,7 +212,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-debug-token-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-debug-token-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-debug-token-api-postman-collection.json"
                 }
             ]
         },
@@ -198,7 +234,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-domain-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-domain-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-domain-api-postman-collection.json"
                 }
             ]
         },
@@ -216,7 +256,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-event-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-event-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-event-api-postman-collection.json"
                 }
             ]
         },
@@ -234,7 +278,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-friend-list-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-friend-list-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-friend-list-api-postman-collection.json"
                 }
             ]
         },
@@ -252,7 +300,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-group-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-group-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-group-api-postman-collection.json"
                 }
             ]
         },
@@ -270,7 +322,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-group-doc-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-group-doc-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-group-doc-api-postman-collection.json"
                 }
             ]
         },
@@ -288,7 +344,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-life-event-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-life-event-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-life-event-api-postman-collection.json"
                 }
             ]
         },
@@ -306,7 +366,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-link-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-link-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-link-api-postman-collection.json"
                 }
             ]
         },
@@ -324,7 +388,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-mailing-address-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-mailing-address-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-mailing-address-api-postman-collection.json"
                 }
             ]
         },
@@ -342,7 +410,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-message-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-message-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-message-api-postman-collection.json"
                 }
             ]
         },
@@ -360,7 +432,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-milestone-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-milestone-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-milestone-api-postman-collection.json"
                 }
             ]
         },
@@ -378,7 +454,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-notification-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-notification-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-notification-api-postman-collection.json"
                 }
             ]
         },
@@ -396,7 +476,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-object-insights-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-object-insights-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-object-insights-api-postman-collection.json"
                 }
             ]
         },
@@ -414,7 +498,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-offer-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-offer-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-offer-api-postman-collection.json"
                 }
             ]
         },
@@ -432,7 +520,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-open-graph-action-type-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-open-graph-action-type-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-open-graph-action-type-api-postman-collection.json"
                 }
             ]
         },
@@ -450,7 +542,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-open-graph-context-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-open-graph-context-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-open-graph-context-api-postman-collection.json"
                 }
             ]
         },
@@ -468,7 +564,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-open-graph-object-type-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-open-graph-object-type-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-open-graph-object-type-api-postman-collection.json"
                 }
             ]
         },
@@ -486,7 +586,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-page-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-page-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-page-api-postman-collection.json"
                 }
             ]
         },
@@ -504,7 +608,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-page-call-to-action-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-page-call-to-action-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-page-call-to-action-api-postman-collection.json"
                 }
             ]
         },
@@ -522,7 +630,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-payment-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-payment-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-payment-api-postman-collection.json"
                 }
             ]
         },
@@ -540,7 +652,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-photo-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-photo-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-photo-api-postman-collection.json"
                 }
             ]
         },
@@ -558,7 +674,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-place-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-place-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-place-api-postman-collection.json"
                 }
             ]
         },
@@ -572,11 +692,15 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-place-tag-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-place-tag-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-place-tag-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-place-tag-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-place-tag-api-postman-collection.json"
                 }
             ]
         },
@@ -590,11 +714,15 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-post-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-post-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-post-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-post-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-post-api-postman-collection.json"
                 }
             ]
         },
@@ -608,11 +736,15 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-profile-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-profile-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-profile-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-profile-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-profile-api-postman-collection.json"
                 }
             ]
         },
@@ -626,11 +758,15 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-promotion-info-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-promotion-info-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-promotion-info-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-promotion-info-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-promotion-info-api-postman-collection.json"
                 }
             ]
         },
@@ -644,11 +780,15 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-request-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-request-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-request-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-request-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-request-api-postman-collection.json"
                 }
             ]
         },
@@ -662,11 +802,15 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-status-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-status-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-status-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-status-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-status-api-postman-collection.json"
                 }
             ]
         },
@@ -680,11 +824,15 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-test-user-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-test-user-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-test-user-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-test-user-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-test-user-api-postman-collection.json"
                 }
             ]
         },
@@ -698,11 +846,15 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-thread-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-thread-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-thread-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-thread-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-thread-api-postman-collection.json"
                 }
             ]
         },
@@ -716,11 +868,15 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-url-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-url-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-url-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-url-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-url-api-postman-collection.json"
                 }
             ]
         },
@@ -734,11 +890,15 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-user-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-user-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-user-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-user-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-user-api-postman-collection.json"
                 }
             ]
         },
@@ -752,11 +912,15 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-user-context-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-user-context-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-user-context-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-user-context-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-user-context-api-postman-collection.json"
                 }
             ]
         },
@@ -770,11 +934,15 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-video-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-video-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-video-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-video-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-video-api-postman-collection.json"
                 }
             ]
         },
@@ -788,11 +956,15 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-video-broadcast-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-video-broadcast-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-video-broadcast-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-video-broadcast-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-video-broadcast-api-postman-collection.json"
                 }
             ]
         },
@@ -806,11 +978,15 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-graph-video-list-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-video-list-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook-graph-video-list-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-video-list-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-graph-video-list-api-postman-collection.json"
                 }
             ]
         },
@@ -824,11 +1000,15 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/facebook-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/facebook.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/facebook-postman-collection.json"
                 }
             ]
         },
@@ -842,17 +1022,25 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/-an-api-title-here--openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/-an-api-title-here-.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/-an-api-title-here-.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/-an-api-title-here--openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/facebook\/master\/-an-api-title-here--postman-collection.json"
                 }
             ]
         }
     ],
     "include": [],
     "x-common": [
+        {
+            "type": "APIs.json",
+            "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/apis.json"
+        },
         {
             "type": "Android SDK",
             "url": "https:\/\/developers.facebook.com\/docs\/android\/share"
