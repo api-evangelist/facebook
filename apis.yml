@@ -1,134 +1,72 @@
+aid: facebook
 name: Facebook
-description: Social networking platform and technology company providing APIs for developers to integrate with Facebook's ecosystem
-image: https://www.facebook.com/images/fb_icon_325x325.png
+description: >-
+  Facebook is Meta's social networking platform providing APIs for developers
+  to integrate with Facebook's ecosystem. The Facebook Graph API is the primary
+  way to read and write data to the Facebook social graph, enabling access to
+  posts, users, pages, and other social data.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Social Media
+  - Advertising
+  - Authentication
+  - Messaging
 url: https://developers.facebook.com
 created: '2024-01-15'
-modified: '2024-01-15'
+modified: '2026-03-16'
+position: Consumer
+access: 3rd-Party
+specificationVersion: '0.19'
 apis:
-- name: Facebook Graph API
-  description: The primary way to read and write data to the Facebook social graph
-  image: https://developers.facebook.com/images/graph-api.png
-  humanURL: https://developers.facebook.com/docs/graph-api
-  baseURL: https://graph.facebook.com
-  version: v18.0
-  tags:
-  - Social
-  - Graph
-  - Posts
-  - Users
-  - Pages
-  properties:
-  - type: Documentation
-    url: https://developers.facebook.com/docs/graph-api/overview
-  - type: Authentication
-    url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: Explorer
-    url: https://developers.facebook.com/tools/explorer
-  contact:
-  - type: Support
-    url: https://developers.facebook.com/support
-  - type: Community
-    url: https://developers.facebook.com/community
-- name: Facebook Marketing API
-  description: Programmatically manage Facebook ad campaigns, Custom Audiences, and reports
-  humanURL: https://developers.facebook.com/docs/marketing-apis
-  baseURL: https://graph.facebook.com
-  version: v18.0
-  tags:
-  - Advertising
-  - Marketing
-  - Analytics
-  - Campaigns
-  properties:
-  - type: Documentation
-    url: https://developers.facebook.com/docs/marketing-api
-  - type: Getting Started
-    url: https://developers.facebook.com/docs/marketing-api/get-started
-  - type: Reference
-    url: https://developers.facebook.com/docs/marketing-api/reference
-- name: Facebook Login API
-  description: Enable users to sign in to apps and websites with their Facebook credentials
-  humanURL: https://developers.facebook.com/docs/facebook-login
-  baseURL: https://www.facebook.com/v18.0/dialog/oauth
-  version: v18.0
-  tags:
-  - Authentication
-  - OAuth
-  - Login
-  - Identity
-  properties:
-  - type: Documentation
-    url: https://developers.facebook.com/docs/facebook-login/overview
-  - type: Best Practices
-    url: https://developers.facebook.com/docs/facebook-login/best-practices
-- name: Instagram Graph API
-  description: Access Instagram Business and Creator Account data
-  humanURL: https://developers.facebook.com/docs/instagram-api
-  baseURL: https://graph.instagram.com
-  version: v18.0
-  tags:
-  - Instagram
-  - Media
-  - Social
-  - Business
-  properties:
-  - type: Documentation
-    url: https://developers.facebook.com/docs/instagram-api/overview
-  - type: Getting Started
-    url: https://developers.facebook.com/docs/instagram-api/getting-started
-- name: WhatsApp Business API
-  description: Enable businesses to communicate with customers on WhatsApp
-  humanURL: https://developers.facebook.com/docs/whatsapp
-  baseURL: https://graph.facebook.com
-  version: v18.0
-  tags:
-  - WhatsApp
-  - Messaging
-  - Business
-  - Communication
-  properties:
-  - type: Documentation
-    url: https://developers.facebook.com/docs/whatsapp/overview
-  - type: Cloud API
-    url: https://developers.facebook.com/docs/whatsapp/cloud-api
-- name: Messenger Platform API
-  description: Build chat bots and integrate messaging experiences
-  humanURL: https://developers.facebook.com/docs/messenger-platform
-  baseURL: https://graph.facebook.com
-  version: v18.0
-  tags:
-  - Messenger
-  - Chatbot
-  - Messaging
-  properties:
-  - type: Documentation
-    url: https://developers.facebook.com/docs/messenger-platform/overview
-  - type: Webhooks
-    url: https://developers.facebook.com/docs/messenger-platform/webhooks
+  - aid: facebook:facebook-graph-api
+    name: Facebook Graph API
+    description: >-
+      The primary way to read and write data to the Facebook social graph,
+      providing access to user profiles, posts, pages, and social interactions.
+    humanURL: https://developers.facebook.com/docs/graph-api
+    baseURL: https://graph.facebook.com
+    tags:
+      - Social
+      - Graph
+      - Posts
+      - Users
+    properties:
+      - type: Documentation
+        url: https://developers.facebook.com/docs/graph-api/overview
+      - type: Authentication
+        url: https://developers.facebook.com/docs/facebook-login/access-tokens
+  - aid: facebook:facebook-marketing-api
+    name: Facebook Marketing API
+    description: >-
+      Programmatically manage Facebook ad campaigns, Custom Audiences, and
+      advertising reports.
+    humanURL: https://developers.facebook.com/docs/marketing-apis
+    baseURL: https://graph.facebook.com
+    tags:
+      - Advertising
+      - Marketing
+      - Campaigns
+    properties:
+      - type: Documentation
+        url: https://developers.facebook.com/docs/marketing-api
 common:
-- type: Portal
-  url: https://developers.facebook.com
-- type: Getting Started
-  url: https://developers.facebook.com/docs/development/create-an-app
-- type: App Dashboard
-  url: https://developers.facebook.com/apps
-- type: Changelog
-  url: https://developers.facebook.com/docs/graph-api/changelog
-- type: Status
-  url: https://developers.facebook.com/status
-- type: Terms of Service
-  url: https://developers.facebook.com/terms
-- type: Privacy Policy
-  url: https://developers.facebook.com/policy
-- type: Rate Limits
-  url: https://developers.facebook.com/docs/graph-api/overview/rate-limiting
+  - type: Portal
+    url: https://developers.facebook.com
+  - type: GettingStarted
+    url: https://developers.facebook.com/docs/development/create-an-app
+  - type: ChangeLog
+    url: https://developers.facebook.com/docs/graph-api/changelog
+  - type: Status
+    url: https://developers.facebook.com/status
+  - type: TermsOfService
+    url: https://developers.facebook.com/terms
+  - type: PrivacyPolicy
+    url: https://developers.facebook.com/policy
+  - type: RateLimits
+    url: https://developers.facebook.com/docs/graph-api/overview/rate-limiting
+  - type: GitHubOrganization
+    url: https://github.com/facebook
 maintainers:
-- name: Meta Platforms, Inc.
-  email: developer_support@fb.com
-  url: https://www.meta.com
-tags:
-- Social Media
-- Advertising
-- Authentication
-- Messaging
-- Business
+  - FN: Kin Lane
+    email: kin@apievangelist.com
