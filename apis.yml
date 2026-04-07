@@ -8,10 +8,10 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Social Media
   - Advertising
   - Authentication
   - Messaging
+  - Social Media
 url: https://developers.facebook.com
 created: '2024-01-15'
 modified: '2026-03-16'
@@ -27,9 +27,9 @@ apis:
     humanURL: https://developers.facebook.com/docs/graph-api
     baseURL: https://graph.facebook.com
     tags:
-      - Social
       - Graph
       - Posts
+      - Social
       - Users
     properties:
       - type: Documentation
@@ -45,8 +45,8 @@ apis:
     baseURL: https://graph.facebook.com
     tags:
       - Advertising
-      - Marketing
       - Campaigns
+      - Marketing
     properties:
       - type: Documentation
         url: https://developers.facebook.com/docs/marketing-api
