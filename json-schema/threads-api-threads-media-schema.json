@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/facebook/refs/heads/main/json-schema/threads-api-threads-media-schema.json",
+  "title": "ThreadsMedia",
+  "description": "A Threads post.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "description": "Media ID." },
+    "media_type": { "type": "string", "description": "Media type.", "enum": ["TEXT_POST", "IMAGE", "VIDEO", "CAROUSEL_ALBUM"] },
+    "text": { "type": "string", "description": "Post text content." },
+    "permalink": { "type": "string", "format": "uri", "description": "Permanent URL." },
+    "timestamp": { "type": "string", "format": "date-time", "description": "Publishing timestamp." },
+    "username": { "type": "string", "description": "Author username." },
+    "is_quote_post": { "type": "boolean", "description": "Whether this is a quote post." }
+  }
+}

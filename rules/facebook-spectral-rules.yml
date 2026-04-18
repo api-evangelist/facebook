@@ -1,0 +1,269 @@
+rules:
+  # INFO / METADATA
+  info-title-required:
+    description: Info title must be present.
+    given: $.info
+    severity: error
+    then:
+      field: title
+      function: truthy
+
+  info-title-prefix:
+    description: Info title should start with Facebook.
+    given: $.info.title
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "^Facebook "
+
+  info-description-required:
+    description: Info description must be present.
+    given: $.info
+    severity: error
+    then:
+      field: description
+      function: truthy
+
+  info-version-required:
+    description: Info version must be present.
+    given: $.info
+    severity: error
+    then:
+      field: version
+      function: truthy
+
+  info-contact-required:
+    description: Contact information should be provided.
+    given: $.info
+    severity: warn
+    then:
+      field: contact
+      function: truthy
+
+  # OPENAPI VERSION
+  openapi-version:
+    description: OpenAPI version should be 3.0.x.
+    given: $
+    severity: warn
+    then:
+      field: openapi
+      function: pattern
+      functionOptions:
+        match: "^3\\.0\\."
+
+  # SERVERS
+  servers-defined:
+    description: Servers array must be defined.
+    given: $
+    severity: error
+    then:
+      field: servers
+      function: truthy
+
+  servers-https:
+    description: Server URLs should use HTTPS.
+    given: $.servers[*].url
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "^https://"
+
+  # PATHS - NAMING CONVENTIONS
+  paths-no-trailing-slash:
+    description: Paths should not have trailing slashes.
+    given: $.paths
+    severity: error
+    then:
+      field: "@key"
+      function: pattern
+      functionOptions:
+        notMatch: "/$"
+
+  # OPERATIONS
+  operation-operationid-required:
+    description: Every operation must have an operationId.
+    given: "$.paths[*][get,post,put,patch,delete]"
+    severity: error
+    then:
+      field: operationId
+      function: truthy
+
+  operation-summary-required:
+    description: Every operation must have a summary.
+    given: "$.paths[*][get,post,put,patch,delete]"
+    severity: error
+    then:
+      field: summary
+      function: truthy
+
+  operation-summary-prefix:
+    description: Operation summaries should start with Facebook.
+    given: "$.paths[*][get,post,put,patch,delete].summary"
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "^Facebook "
+
+  operation-description-required:
+    description: Every operation must have a description.
+    given: "$.paths[*][get,post,put,patch,delete]"
+    severity: warn
+    then:
+      field: description
+      function: truthy
+
+  operation-tags-required:
+    description: Every operation must have tags.
+    given: "$.paths[*][get,post,put,patch,delete]"
+    severity: warn
+    then:
+      field: tags
+      function: truthy
+
+  operation-operationid-camelcase:
+    description: OperationId should be camelCase.
+    given: "$.paths[*][get,post,put,patch,delete].operationId"
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-zA-Z0-9]*$"
+
+  # PARAMETERS
+  parameter-description-required:
+    description: Every parameter must have a description.
+    given: "$.paths[*][get,post,put,patch,delete].parameters[*]"
+    severity: warn
+    then:
+      field: description
+      function: truthy
+
+  parameter-snake-case:
+    description: Parameter names should use snake_case or kebab-case.
+    given: "$.paths[*][get,post,put,patch,delete].parameters[*].name"
+    severity: info
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-z0-9_\\-]*$"
+
+  # RESPONSES
+  response-success-required:
+    description: Operations must have a success response (2xx).
+    given: "$.paths[*][get,post,put,patch,delete].responses"
+    severity: error
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          anyOf:
+            - required: ["200"]
+            - required: ["201"]
+            - required: ["204"]
+
+  response-description-required:
+    description: Every response must have a description.
+    given: "$.paths[*][get,post,put,patch,delete].responses[*]"
+    severity: warn
+    then:
+      field: description
+      function: truthy
+
+  # SCHEMAS - PROPERTY NAMING
+  schema-properties-snake-case:
+    description: Schema property names should use snake_case.
+    given: "$.components.schemas[*].properties"
+    severity: info
+    then:
+      field: "@key"
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-z0-9_]*$"
+
+  schema-description-required:
+    description: Top-level schemas should have descriptions.
+    given: "$.components.schemas[*]"
+    severity: warn
+    then:
+      field: description
+      function: truthy
+
+  schema-type-required:
+    description: Schemas must have a type defined.
+    given: "$.components.schemas[*]"
+    severity: error
+    then:
+      field: type
+      function: truthy
+
+  # SECURITY
+  security-defined:
+    description: Global security must be defined.
+    given: $
+    severity: error
+    then:
+      field: security
+      function: truthy
+
+  security-schemes-defined:
+    description: Security schemes must be defined in components.
+    given: $.components
+    severity: error
+    then:
+      field: securitySchemes
+      function: truthy
+
+  security-bearer-scheme:
+    description: Bearer authentication should be used.
+    given: "$.components.securitySchemes[*]"
+    severity: info
+    then:
+      field: scheme
+      function: pattern
+      functionOptions:
+        match: "^bearer$"
+
+  # HTTP METHOD CONVENTIONS
+  get-no-request-body:
+    description: GET operations should not have a request body.
+    given: "$.paths[*].get"
+    severity: error
+    then:
+      field: requestBody
+      function: falsy
+
+  delete-no-request-body:
+    description: DELETE operations should not have a request body.
+    given: "$.paths[*].delete"
+    severity: warn
+    then:
+      field: requestBody
+      function: falsy
+
+  # GENERAL QUALITY
+  no-empty-descriptions:
+    description: Descriptions must not be empty strings.
+    given: "$..description"
+    severity: error
+    then:
+      function: truthy
+
+  examples-encouraged:
+    description: Schema properties should include example values.
+    given: "$.components.schemas[*].properties[*]"
+    severity: info
+    then:
+      field: example
+      function: truthy
+
+  # PAGINATION
+  pagination-cursor-pattern:
+    description: Pagination should use cursor-based pagination with before/after.
+    given: "$.components.schemas.Paging"
+    severity: info
+    then:
+      field: properties
+      function: truthy

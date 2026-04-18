@@ -1,0 +1,23 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "fb": "https://developers.facebook.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "InstagramUser": "fb:InstagramUser",
+    "InstagramMedia": "fb:InstagramMedia",
+    "InstagramComment": "fb:InstagramComment",
+    "username": { "@id": "fb:username", "@type": "xsd:string" },
+    "name": { "@id": "schema:name", "@type": "xsd:string" },
+    "biography": { "@id": "fb:biography", "@type": "xsd:string" },
+    "followersCount": { "@id": "fb:followers_count", "@type": "xsd:integer" },
+    "mediaCount": { "@id": "fb:media_count", "@type": "xsd:integer" },
+    "caption": { "@id": "fb:caption", "@type": "xsd:string" },
+    "mediaType": { "@id": "fb:media_type", "@type": "xsd:string" },
+    "mediaUrl": { "@id": "fb:media_url", "@type": "@id" },
+    "permalink": { "@id": "fb:permalink", "@type": "@id" },
+    "likeCount": { "@id": "fb:like_count", "@type": "xsd:integer" },
+    "commentsCount": { "@id": "fb:comments_count", "@type": "xsd:integer" }
+  }
+}

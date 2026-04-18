@@ -1,0 +1,149 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: Facebook Social Media Management
+  description: >-
+    Workflow capability for managing content across Facebook, Instagram, and
+    Threads. Combines Graph API for Facebook posts, Instagram API for visual
+    content, and Threads API for text-based publishing. Used by social media
+    managers and content creators.
+  tags:
+    - Facebook
+    - Social Media
+    - Content Management
+    - Publishing
+  created: "2026-04-18"
+  modified: "2026-04-18"
+
+binds:
+  - namespace: env
+    keys:
+      FACEBOOK_ACCESS_TOKEN: FACEBOOK_ACCESS_TOKEN
+      INSTAGRAM_ACCESS_TOKEN: INSTAGRAM_ACCESS_TOKEN
+      THREADS_ACCESS_TOKEN: THREADS_ACCESS_TOKEN
+
+capability:
+  consumes:
+    - import: graph-api
+      location: ./shared/graph-api.yaml
+    - import: instagram-api
+      location: ./shared/instagram-api.yaml
+    - import: threads-api
+      location: ./shared/threads-api.yaml
+
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: social-media-api
+      description: "Unified REST API for social media management across Meta platforms."
+      resources:
+        - path: /v1/posts
+          name: posts
+          description: "Facebook post management."
+          operations:
+            - method: GET
+              name: list-posts
+              description: "Get posts from a user's feed."
+              call: "graph-api.get-user-feed"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: create-post
+              description: "Create a new Facebook post."
+              call: "graph-api.create-post"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/instagram-media
+          name: instagram-media
+          description: "Instagram content management."
+          operations:
+            - method: GET
+              name: list-instagram-media
+              description: "List Instagram media."
+              call: "instagram-api.list-media"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: publish-instagram-media
+              description: "Publish Instagram media."
+              call: "instagram-api.publish-media"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/threads
+          name: threads
+          description: "Threads content management."
+          operations:
+            - method: POST
+              name: create-threads-post
+              description: "Create a Threads post."
+              call: "threads-api.create-media"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9080
+      namespace: social-media-mcp
+      transport: http
+      description: "MCP server for AI-assisted social media management."
+      tools:
+        - name: get-facebook-feed
+          description: "Get posts from a Facebook user's feed."
+          hints:
+            readOnly: true
+          call: "graph-api.get-user-feed"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-facebook-post
+          description: "Create a new Facebook post."
+          hints:
+            readOnly: false
+          call: "graph-api.create-post"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-instagram-media
+          description: "List Instagram media for an account."
+          hints:
+            readOnly: true
+          call: "instagram-api.list-media"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-instagram-media
+          description: "Create and publish Instagram content."
+          hints:
+            readOnly: false
+          call: "instagram-api.create-media"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-instagram-insights
+          description: "Get Instagram performance insights."
+          hints:
+            readOnly: true
+          call: "instagram-api.get-insights"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-threads-post
+          description: "Create a new Threads post."
+          hints:
+            readOnly: false
+          call: "threads-api.create-media"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-threads-insights
+          description: "Get Threads performance insights."
+          hints:
+            readOnly: true
+          call: "threads-api.get-insights"
+          outputParameters:
+            - type: object
+              mapping: "$."

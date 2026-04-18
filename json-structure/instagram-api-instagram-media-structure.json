@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/facebook/refs/heads/main/json-structure/instagram-api-instagram-media-structure.json",
+  "name": "InstagramMedia",
+  "description": "An Instagram media object.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "description": "Media ID." },
+    "caption": { "type": "string", "description": "Media caption." },
+    "media_type": { "type": "string", "description": "Media type.", "enum": ["IMAGE", "VIDEO", "CAROUSEL_ALBUM"] },
+    "media_url": { "type": "uri", "description": "URL to the media." },
+    "permalink": { "type": "uri", "description": "Permanent URL." },
+    "timestamp": { "type": "datetime", "description": "Publishing timestamp." },
+    "like_count": { "type": "int32", "description": "Number of likes." },
+    "comments_count": { "type": "int32", "description": "Number of comments." }
+  }
+}

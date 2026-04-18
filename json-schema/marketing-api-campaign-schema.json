@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/facebook/refs/heads/main/json-schema/marketing-api-campaign-schema.json",
+  "title": "Campaign",
+  "description": "An advertising campaign.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "description": "Campaign ID." },
+    "name": { "type": "string", "description": "Campaign name." },
+    "objective": { "type": "string", "description": "Campaign objective." },
+    "status": { "type": "string", "description": "Campaign status.", "enum": ["ACTIVE", "PAUSED", "DELETED", "ARCHIVED"] },
+    "daily_budget": { "type": "string", "description": "Daily budget in cents." },
+    "lifetime_budget": { "type": "string", "description": "Lifetime budget in cents." },
+    "created_time": { "type": "string", "format": "date-time", "description": "Campaign creation time." },
+    "updated_time": { "type": "string", "format": "date-time", "description": "Campaign last update time." }
+  }
+}

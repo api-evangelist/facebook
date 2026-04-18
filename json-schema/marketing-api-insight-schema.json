@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/facebook/refs/heads/main/json-schema/marketing-api-insight-schema.json",
+  "title": "Insight",
+  "description": "Advertising performance insight.",
+  "type": "object",
+  "properties": {
+    "impressions": { "type": "string", "description": "Number of impressions." },
+    "clicks": { "type": "string", "description": "Number of clicks." },
+    "spend": { "type": "string", "description": "Amount spent." },
+    "cpc": { "type": "string", "description": "Cost per click." },
+    "cpm": { "type": "string", "description": "Cost per thousand impressions." },
+    "ctr": { "type": "string", "description": "Click-through rate." },
+    "reach": { "type": "string", "description": "Number of unique users reached." },
+    "date_start": { "type": "string", "format": "date", "description": "Start date of the insight period." },
+    "date_stop": { "type": "string", "format": "date", "description": "End date of the insight period." }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/facebook/refs/heads/main/json-structure/graph-api-user-structure.json",
+  "name": "User",
+  "description": "A Facebook user profile.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "description": "The user ID." },
+    "name": { "type": "string", "description": "The user's full name." },
+    "email": { "type": "string", "description": "The user's email address." },
+    "first_name": { "type": "string", "description": "First name." },
+    "last_name": { "type": "string", "description": "Last name." }
+  }
+}

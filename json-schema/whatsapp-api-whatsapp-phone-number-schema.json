@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/facebook/refs/heads/main/json-schema/whatsapp-api-whatsapp-phone-number-schema.json",
+  "title": "WhatsAppPhoneNumber",
+  "description": "A WhatsApp Business phone number.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "description": "Phone number ID." },
+    "display_phone_number": { "type": "string", "description": "Display phone number." },
+    "verified_name": { "type": "string", "description": "Verified business name." },
+    "quality_rating": { "type": "string", "description": "Quality rating.", "enum": ["GREEN", "YELLOW", "RED"] },
+    "status": { "type": "string", "description": "Phone number status." }
+  }
+}

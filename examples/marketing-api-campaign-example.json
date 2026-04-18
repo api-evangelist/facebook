@@ -1,0 +1,9 @@
+{
+  "id": "400001234567890",
+  "name": "Spring Sale 2026",
+  "objective": "OUTCOME_SALES",
+  "status": "ACTIVE",
+  "daily_budget": "5000",
+  "created_time": "2026-04-01T00:00:00+0000",
+  "updated_time": "2026-04-18T12:00:00+0000"
+}

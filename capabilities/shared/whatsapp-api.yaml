@@ -1,0 +1,84 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: Facebook WhatsApp Business API
+  description: >-
+    Shared capability for WhatsApp Business API providing messaging, template
+    management, and phone number administration.
+  tags:
+    - Facebook
+    - WhatsApp
+    - Business Messaging
+  created: "2026-04-18"
+  modified: "2026-04-18"
+
+binds:
+  - namespace: env
+    keys:
+      WHATSAPP_ACCESS_TOKEN: WHATSAPP_ACCESS_TOKEN
+
+capability:
+  consumes:
+    - type: http
+      namespace: whatsapp-api
+      baseUri: https://graph.facebook.com/v21.0
+      description: "WhatsApp Business API v21.0."
+      authentication:
+        type: bearer
+        token: "{{WHATSAPP_ACCESS_TOKEN}}"
+      resources:
+        - name: messages
+          path: /
+          description: "Message sending."
+          operations:
+            - name: send-message
+              method: POST
+              description: "Send a WhatsApp message."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: templates
+          path: /
+          description: "Template management."
+          operations:
+            - name: list-templates
+              method: GET
+              description: "List message templates."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: create-template
+              method: POST
+              description: "Create a message template."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: mcp
+      port: 9104
+      namespace: whatsapp-api-mcp
+      transport: http
+      tools:
+        - name: send-whatsapp-message
+          description: "Send a WhatsApp message."
+          hints:
+            readOnly: false
+          call: "whatsapp-api.send-message"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-message-templates
+          description: "List WhatsApp message templates."
+          hints:
+            readOnly: true
+          call: "whatsapp-api.list-templates"
+          outputParameters:
+            - type: object
+              mapping: "$."

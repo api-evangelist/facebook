@@ -1,0 +1,112 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: Facebook Marketing API
+  description: >-
+    Shared capability for Facebook Marketing API providing campaign management,
+    ad set configuration, audience targeting, and performance insights.
+  tags:
+    - Facebook
+    - Marketing
+    - Advertising
+  created: "2026-04-18"
+  modified: "2026-04-18"
+
+binds:
+  - namespace: env
+    keys:
+      FACEBOOK_MARKETING_TOKEN: FACEBOOK_MARKETING_TOKEN
+
+capability:
+  consumes:
+    - type: http
+      namespace: marketing-api
+      baseUri: https://graph.facebook.com/v21.0
+      description: "Facebook Marketing API v21.0."
+      authentication:
+        type: bearer
+        token: "{{FACEBOOK_MARKETING_TOKEN}}"
+      resources:
+        - name: campaigns
+          path: /
+          description: "Campaign management."
+          operations:
+            - name: list-campaigns
+              method: GET
+              description: "List campaigns for an ad account."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: create-campaign
+              method: POST
+              description: "Create a new campaign."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: insights
+          path: /
+          description: "Performance insights."
+          operations:
+            - name: get-account-insights
+              method: GET
+              description: "Get advertising insights for an ad account."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: audiences
+          path: /
+          description: "Audience management."
+          operations:
+            - name: list-custom-audiences
+              method: GET
+              description: "List custom audiences."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: create-custom-audience
+              method: POST
+              description: "Create a custom audience."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: mcp
+      port: 9101
+      namespace: marketing-api-mcp
+      transport: http
+      tools:
+        - name: list-campaigns
+          description: "List advertising campaigns."
+          hints:
+            readOnly: true
+          call: "marketing-api.list-campaigns"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-campaign
+          description: "Create a new advertising campaign."
+          hints:
+            readOnly: false
+          call: "marketing-api.create-campaign"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-account-insights
+          description: "Get advertising performance insights."
+          hints:
+            readOnly: true
+          call: "marketing-api.get-account-insights"
+          outputParameters:
+            - type: object
+              mapping: "$."

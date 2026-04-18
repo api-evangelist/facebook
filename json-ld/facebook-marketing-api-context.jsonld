@@ -1,0 +1,29 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "fb": "https://developers.facebook.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "AdAccount": "fb:AdAccount",
+    "Campaign": "fb:Campaign",
+    "AdSet": "fb:AdSet",
+    "Ad": "fb:Ad",
+    "Insight": "fb:Insight",
+    "CustomAudience": "fb:CustomAudience",
+    "name": { "@id": "schema:name", "@type": "xsd:string" },
+    "description": { "@id": "schema:description", "@type": "xsd:string" },
+    "currency": { "@id": "fb:currency", "@type": "xsd:string" },
+    "balance": { "@id": "fb:balance", "@type": "xsd:string" },
+    "objective": { "@id": "fb:objective", "@type": "xsd:string" },
+    "status": { "@id": "fb:status", "@type": "xsd:string" },
+    "dailyBudget": { "@id": "fb:daily_budget", "@type": "xsd:string" },
+    "impressions": { "@id": "fb:impressions", "@type": "xsd:string" },
+    "clicks": { "@id": "fb:clicks", "@type": "xsd:string" },
+    "spend": { "@id": "fb:spend", "@type": "xsd:string" },
+    "cpc": { "@id": "fb:cpc", "@type": "xsd:string" },
+    "ctr": { "@id": "fb:ctr", "@type": "xsd:string" },
+    "reach": { "@id": "fb:reach", "@type": "xsd:string" },
+    "approximateCount": { "@id": "fb:approximate_count", "@type": "xsd:integer" }
+  }
+}

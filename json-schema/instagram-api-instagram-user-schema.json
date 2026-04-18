@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/facebook/refs/heads/main/json-schema/instagram-api-instagram-user-schema.json",
+  "title": "InstagramUser",
+  "description": "An Instagram Business or Creator account.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "description": "Instagram user ID." },
+    "username": { "type": "string", "description": "Instagram username." },
+    "name": { "type": "string", "description": "Display name." },
+    "biography": { "type": "string", "description": "Account biography." },
+    "followers_count": { "type": "integer", "description": "Number of followers." },
+    "follows_count": { "type": "integer", "description": "Number of accounts followed." },
+    "media_count": { "type": "integer", "description": "Number of media posts." },
+    "profile_picture_url": { "type": "string", "format": "uri", "description": "Profile picture URL." },
+    "website": { "type": "string", "format": "uri", "description": "Website URL." }
+  }
+}

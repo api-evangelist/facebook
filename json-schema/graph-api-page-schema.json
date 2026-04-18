@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/facebook/refs/heads/main/json-schema/graph-api-page-schema.json",
+  "title": "Page",
+  "description": "A Facebook Page.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "description": "The page ID." },
+    "name": { "type": "string", "description": "The page name." },
+    "category": { "type": "string", "description": "Page category." },
+    "fan_count": { "type": "integer", "description": "Number of page fans." },
+    "about": { "type": "string", "description": "Page description." },
+    "website": { "type": "string", "format": "uri", "description": "Page website URL." },
+    "link": { "type": "string", "format": "uri", "description": "URL to the Facebook Page." }
+  }
+}

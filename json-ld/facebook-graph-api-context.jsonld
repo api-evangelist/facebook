@@ -1,0 +1,28 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "fb": "https://developers.facebook.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "User": "fb:User",
+    "Post": "fb:Post",
+    "Page": "fb:Page",
+    "Photo": "fb:Photo",
+    "Comment": "fb:Comment",
+    "name": { "@id": "schema:name", "@type": "xsd:string" },
+    "email": { "@id": "schema:email", "@type": "xsd:string" },
+    "description": { "@id": "schema:description", "@type": "xsd:string" },
+    "message": { "@id": "fb:message", "@type": "xsd:string" },
+    "createdTime": { "@id": "schema:dateCreated", "@type": "xsd:dateTime" },
+    "updatedTime": { "@id": "schema:dateModified", "@type": "xsd:dateTime" },
+    "link": { "@id": "fb:link", "@type": "@id" },
+    "permalinkUrl": { "@id": "fb:permalink_url", "@type": "@id" },
+    "category": { "@id": "fb:category", "@type": "xsd:string" },
+    "fanCount": { "@id": "fb:fan_count", "@type": "xsd:integer" },
+    "website": { "@id": "schema:url", "@type": "@id" },
+    "likeCount": { "@id": "fb:like_count", "@type": "xsd:integer" },
+    "width": { "@id": "fb:width", "@type": "xsd:integer" },
+    "height": { "@id": "fb:height", "@type": "xsd:integer" }
+  }
+}

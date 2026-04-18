@@ -1,0 +1,348 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: Facebook
+  description: >-
+    Unified taxonomy mapping Facebook's operational API dimension and capability
+    workflow dimension across Graph API, Marketing API, Instagram API, Messenger
+    Platform, Threads API, and WhatsApp Business API.
+  created: "2026-04-18"
+  modified: "2026-04-18"
+
+operational:
+  apis:
+    - name: Graph API
+      namespace: graph-api
+      version: "21.0"
+      baseUrl: https://graph.facebook.com/v21.0
+      status: active
+    - name: Marketing API
+      namespace: marketing-api
+      version: "21.0"
+      baseUrl: https://graph.facebook.com/v21.0
+      status: active
+    - name: Instagram API
+      namespace: instagram-api
+      version: "21.0"
+      baseUrl: https://graph.facebook.com/v21.0
+      status: active
+    - name: Messenger Platform API
+      namespace: messenger-api
+      version: "21.0"
+      baseUrl: https://graph.facebook.com/v21.0
+      status: active
+    - name: Threads API
+      namespace: threads-api
+      version: "1.0"
+      baseUrl: https://graph.threads.net/v1.0
+      status: active
+    - name: WhatsApp Business API
+      namespace: whatsapp-api
+      version: "21.0"
+      baseUrl: https://graph.facebook.com/v21.0
+      status: active
+
+  resources:
+    - name: Users
+      api: graph-api
+      actions: [get]
+      description: Facebook user profiles.
+    - name: Posts
+      api: graph-api
+      actions: [list, create, get, delete]
+      description: Facebook feed posts.
+    - name: Comments
+      api: graph-api
+      actions: [list, create]
+      description: Comments on posts and media.
+    - name: Pages
+      api: graph-api
+      actions: [get]
+      description: Facebook pages.
+    - name: Photos
+      api: graph-api
+      actions: [list, get]
+      description: User and page photos.
+    - name: Campaigns
+      api: marketing-api
+      actions: [list, create, get]
+      description: Advertising campaigns.
+    - name: Ad Sets
+      api: marketing-api
+      actions: [list, create]
+      description: Ad sets within campaigns.
+    - name: Ads
+      api: marketing-api
+      actions: [list]
+      description: Individual advertisements.
+    - name: Insights
+      api: marketing-api
+      actions: [get]
+      description: Advertising performance metrics.
+    - name: Custom Audiences
+      api: marketing-api
+      actions: [list, create]
+      description: Audience segments for ad targeting.
+    - name: Instagram Media
+      api: instagram-api
+      actions: [list, create, publish]
+      description: Instagram photos, videos, and carousels.
+    - name: Instagram Comments
+      api: instagram-api
+      actions: [list]
+      description: Comments on Instagram media.
+    - name: Instagram Insights
+      api: instagram-api
+      actions: [get]
+      description: Instagram account performance metrics.
+    - name: Messages
+      api: messenger-api
+      actions: [send]
+      description: Messenger messages.
+    - name: Conversations
+      api: messenger-api
+      actions: [list, get]
+      description: Messenger conversations.
+    - name: Threads Posts
+      api: threads-api
+      actions: [create, publish, get]
+      description: Threads text and media posts.
+    - name: Threads Replies
+      api: threads-api
+      actions: [list]
+      description: Replies to Threads posts.
+    - name: WhatsApp Messages
+      api: whatsapp-api
+      actions: [send]
+      description: WhatsApp business messages.
+    - name: Message Templates
+      api: whatsapp-api
+      actions: [list, create]
+      description: WhatsApp message templates.
+
+  actions:
+    - name: list
+      method: GET
+      pattern: read
+      description: Retrieve a collection of resources.
+    - name: create
+      method: POST
+      pattern: write
+      description: Create a new resource.
+    - name: get
+      method: GET
+      pattern: read
+      description: Retrieve a single resource by ID.
+    - name: delete
+      method: DELETE
+      pattern: destructive
+      description: Remove a resource.
+    - name: send
+      method: POST
+      pattern: write
+      description: Send a message.
+    - name: publish
+      method: POST
+      pattern: write
+      description: Publish a media container.
+
+  schemas:
+    core:
+      - name: User
+        properties: [id, name, email, first_name, last_name]
+      - name: Post
+        properties: [id, message, created_time, type, link]
+      - name: Page
+        properties: [id, name, category, fan_count]
+    marketing:
+      - name: Campaign
+        properties: [id, name, objective, status, daily_budget]
+      - name: Insight
+        properties: [impressions, clicks, spend, cpc, ctr, reach]
+      - name: CustomAudience
+        properties: [id, name, approximate_count, subtype]
+    instagram:
+      - name: InstagramUser
+        properties: [id, username, name, followers_count, media_count]
+      - name: InstagramMedia
+        properties: [id, caption, media_type, media_url, like_count]
+    messaging:
+      - name: Message
+        properties: [id, message, created_time]
+      - name: WhatsAppPhoneNumber
+        properties: [id, display_phone_number, verified_name, quality_rating]
+    threads:
+      - name: ThreadsMedia
+        properties: [id, media_type, text, permalink, timestamp]
+
+  parameters:
+    pagination:
+      - name: limit
+        type: integer
+        description: Maximum results to return.
+      - name: after
+        type: string
+        description: Cursor for next page.
+      - name: before
+        type: string
+        description: Cursor for previous page.
+    identifiers:
+      - name: user-id
+        type: string
+        description: User identifier.
+      - name: page-id
+        type: string
+        description: Page identifier.
+      - name: ad-account-id
+        type: string
+        description: Ad account identifier.
+    filters:
+      - name: fields
+        type: string
+        description: Comma-separated fields to return.
+      - name: date_preset
+        type: string
+        description: Date range for insights.
+
+  enums:
+    campaign-statuses:
+      - ACTIVE
+      - PAUSED
+      - DELETED
+      - ARCHIVED
+    media-types:
+      - IMAGE
+      - VIDEO
+      - CAROUSEL_ALBUM
+    messaging-types:
+      - RESPONSE
+      - UPDATE
+      - MESSAGE_TAG
+    template-categories:
+      - MARKETING
+      - UTILITY
+      - AUTHENTICATION
+
+  authentication:
+    schemes:
+      - type: bearer
+        apis: [graph-api, marketing-api, instagram-api, messenger-api, threads-api, whatsapp-api]
+        description: OAuth 2.0 access tokens with scoped permissions.
+    flows:
+      - name: Facebook Login
+        type: authorization_code
+        description: User-facing OAuth 2.0 authorization code flow.
+      - name: System User Token
+        type: client_credentials
+        description: Server-to-server authentication for business integrations.
+
+capability:
+  workflows:
+    - name: Social Media Management
+      file: capabilities/social-media-management.yaml
+      description: Manage content across Facebook, Instagram, and Threads.
+      apis: [graph-api, instagram-api, threads-api]
+      toolCount: 7
+      personas: [Social Media Manager, Content Creator]
+      domains: [Content Publishing, Analytics]
+    - name: Advertising and Marketing
+      file: capabilities/advertising-and-marketing.yaml
+      description: Manage advertising campaigns and performance.
+      apis: [marketing-api, graph-api, instagram-api]
+      toolCount: 5
+      personas: [Marketing Manager, Ad Operations]
+      domains: [Advertising, Analytics]
+    - name: Messaging and Communication
+      file: capabilities/messaging-and-communication.yaml
+      description: Customer messaging across Messenger and WhatsApp.
+      apis: [messenger-api, whatsapp-api]
+      toolCount: 5
+      personas: [Customer Support, Conversational Commerce]
+      domains: [Messaging, Customer Communication]
+
+  personas:
+    - id: social-media-manager
+      name: Social Media Manager
+      description: Manages content and engagement across Meta platforms.
+      workflows: [Social Media Management]
+    - id: content-creator
+      name: Content Creator
+      description: Creates and publishes visual and text content.
+      workflows: [Social Media Management]
+    - id: marketing-manager
+      name: Marketing Manager
+      description: Plans and executes advertising campaigns.
+      workflows: [Advertising and Marketing]
+    - id: ad-operations
+      name: Ad Operations
+      description: Manages day-to-day ad campaign optimization.
+      workflows: [Advertising and Marketing]
+    - id: customer-support
+      name: Customer Support
+      description: Handles customer inquiries via messaging channels.
+      workflows: [Messaging and Communication]
+
+  domains:
+    - name: Content Publishing
+      description: Publishing and managing content across platforms.
+      resources: [Posts, Instagram Media, Threads Posts]
+    - name: Advertising
+      description: Campaign management and audience targeting.
+      resources: [Campaigns, Ad Sets, Ads, Custom Audiences]
+    - name: Analytics
+      description: Performance tracking and insights.
+      resources: [Insights, Instagram Insights]
+    - name: Messaging
+      description: Direct messaging and customer communication.
+      resources: [Messages, Conversations, WhatsApp Messages]
+
+  namespaces:
+    consumed:
+      - graph-api
+      - marketing-api
+      - instagram-api
+      - messenger-api
+      - threads-api
+      - whatsapp-api
+    rest:
+      - social-media-api
+      - advertising-api
+      - messaging-api
+    mcp:
+      - social-media-mcp
+      - advertising-mcp
+      - messaging-mcp
+
+  binds:
+    - FACEBOOK_ACCESS_TOKEN
+    - FACEBOOK_MARKETING_TOKEN
+    - INSTAGRAM_ACCESS_TOKEN
+    - MESSENGER_PAGE_TOKEN
+    - THREADS_ACCESS_TOKEN
+    - WHATSAPP_ACCESS_TOKEN
+
+crossReference:
+  - resource: Posts
+    operations: [getUserFeed, createPost, deletePost]
+    workflows: [Social Media Management]
+    personas: [Social Media Manager, Content Creator]
+  - resource: Instagram Media
+    operations: [listInstagramMedia, createInstagramMedia, publishInstagramMedia]
+    workflows: [Social Media Management]
+    personas: [Social Media Manager, Content Creator]
+  - resource: Campaigns
+    operations: [listCampaigns, createCampaign, getCampaign]
+    workflows: [Advertising and Marketing]
+    personas: [Marketing Manager, Ad Operations]
+  - resource: Insights
+    operations: [getAccountInsights]
+    workflows: [Advertising and Marketing]
+    personas: [Marketing Manager, Ad Operations]
+  - resource: Messages
+    operations: [sendMessage]
+    workflows: [Messaging and Communication]
+    personas: [Customer Support]
+  - resource: WhatsApp Messages
+    operations: [sendWhatsAppMessage]
+    workflows: [Messaging and Communication]
+    personas: [Customer Support]

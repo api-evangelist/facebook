@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/facebook/refs/heads/main/json-schema/graph-api-post-schema.json",
+  "title": "Post",
+  "description": "A Facebook post.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "description": "The post ID." },
+    "message": { "type": "string", "description": "Post message text." },
+    "created_time": { "type": "string", "format": "date-time", "description": "Time the post was created." },
+    "updated_time": { "type": "string", "format": "date-time", "description": "Time the post was last updated." },
+    "type": { "type": "string", "description": "Post type.", "enum": ["link", "status", "photo", "video", "offer"] },
+    "link": { "type": "string", "format": "uri", "description": "URL attached to the post." },
+    "permalink_url": { "type": "string", "format": "uri", "description": "Permanent URL to the post." }
+  }
+}

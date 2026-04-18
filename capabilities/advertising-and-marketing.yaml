@@ -1,0 +1,126 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: Facebook Advertising and Marketing
+  description: >-
+    Workflow capability for managing advertising campaigns across Facebook and
+    Instagram. Combines Marketing API for campaign management with Graph API for
+    content insights and Instagram API for visual ad performance. Used by
+    marketing managers and ad operations teams.
+  tags:
+    - Facebook
+    - Advertising
+    - Marketing
+    - Campaigns
+  created: "2026-04-18"
+  modified: "2026-04-18"
+
+binds:
+  - namespace: env
+    keys:
+      FACEBOOK_MARKETING_TOKEN: FACEBOOK_MARKETING_TOKEN
+      FACEBOOK_ACCESS_TOKEN: FACEBOOK_ACCESS_TOKEN
+      INSTAGRAM_ACCESS_TOKEN: INSTAGRAM_ACCESS_TOKEN
+
+capability:
+  consumes:
+    - import: marketing-api
+      location: ./shared/marketing-api.yaml
+    - import: graph-api
+      location: ./shared/graph-api.yaml
+    - import: instagram-api
+      location: ./shared/instagram-api.yaml
+
+  exposes:
+    - type: rest
+      port: 8081
+      namespace: advertising-api
+      description: "Unified REST API for Facebook advertising and marketing."
+      resources:
+        - path: /v1/campaigns
+          name: campaigns
+          description: "Campaign management."
+          operations:
+            - method: GET
+              name: list-campaigns
+              description: "List advertising campaigns."
+              call: "marketing-api.list-campaigns"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: create-campaign
+              description: "Create a campaign."
+              call: "marketing-api.create-campaign"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/insights
+          name: insights
+          description: "Performance insights."
+          operations:
+            - method: GET
+              name: get-insights
+              description: "Get advertising insights."
+              call: "marketing-api.get-account-insights"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/audiences
+          name: audiences
+          description: "Audience management."
+          operations:
+            - method: GET
+              name: list-audiences
+              description: "List custom audiences."
+              call: "marketing-api.list-custom-audiences"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9081
+      namespace: advertising-mcp
+      transport: http
+      description: "MCP server for AI-assisted advertising management."
+      tools:
+        - name: list-campaigns
+          description: "List all advertising campaigns."
+          hints:
+            readOnly: true
+          call: "marketing-api.list-campaigns"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-campaign
+          description: "Create a new advertising campaign."
+          hints:
+            readOnly: false
+          call: "marketing-api.create-campaign"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-ad-insights
+          description: "Get advertising performance insights."
+          hints:
+            readOnly: true
+          call: "marketing-api.get-account-insights"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-custom-audiences
+          description: "List custom audiences for targeting."
+          hints:
+            readOnly: true
+          call: "marketing-api.list-custom-audiences"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-custom-audience
+          description: "Create a new custom audience."
+          hints:
+            readOnly: false
+          call: "marketing-api.create-custom-audience"
+          outputParameters:
+            - type: object
+              mapping: "$."

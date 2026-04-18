@@ -1,0 +1,100 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: Facebook Instagram API
+  description: >-
+    Shared capability for Instagram API providing content management, publishing,
+    comments, and insights for Business and Creator accounts.
+  tags:
+    - Facebook
+    - Instagram
+    - Social Media
+  created: "2026-04-18"
+  modified: "2026-04-18"
+
+binds:
+  - namespace: env
+    keys:
+      INSTAGRAM_ACCESS_TOKEN: INSTAGRAM_ACCESS_TOKEN
+
+capability:
+  consumes:
+    - type: http
+      namespace: instagram-api
+      baseUri: https://graph.facebook.com/v21.0
+      description: "Instagram API via Graph API v21.0."
+      authentication:
+        type: bearer
+        token: "{{INSTAGRAM_ACCESS_TOKEN}}"
+      resources:
+        - name: media
+          path: /
+          description: "Media management."
+          operations:
+            - name: list-media
+              method: GET
+              description: "List Instagram media."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: create-media
+              method: POST
+              description: "Create an Instagram media container."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: publish-media
+              method: POST
+              description: "Publish a media container."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: insights
+          path: /
+          description: "Account insights."
+          operations:
+            - name: get-insights
+              method: GET
+              description: "Get Instagram account insights."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: mcp
+      port: 9102
+      namespace: instagram-api-mcp
+      transport: http
+      tools:
+        - name: list-instagram-media
+          description: "List Instagram media for an account."
+          hints:
+            readOnly: true
+          call: "instagram-api.list-media"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-instagram-media
+          description: "Create an Instagram media container for publishing."
+          hints:
+            readOnly: false
+          call: "instagram-api.create-media"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-instagram-insights
+          description: "Get Instagram account performance insights."
+          hints:
+            readOnly: true
+          call: "instagram-api.get-insights"
+          outputParameters:
+            - type: object
+              mapping: "$."

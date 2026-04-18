@@ -1,0 +1,152 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: Facebook Graph API
+  description: >-
+    Shared capability for Facebook Graph API providing access to users, posts,
+    pages, photos, and comments on the Facebook social graph.
+  tags:
+    - Facebook
+    - Graph API
+    - Social Media
+  created: "2026-04-18"
+  modified: "2026-04-18"
+
+binds:
+  - namespace: env
+    keys:
+      FACEBOOK_ACCESS_TOKEN: FACEBOOK_ACCESS_TOKEN
+
+capability:
+  consumes:
+    - type: http
+      namespace: graph-api
+      baseUri: https://graph.facebook.com/v21.0
+      description: "Facebook Graph API v21.0."
+      authentication:
+        type: bearer
+        token: "{{FACEBOOK_ACCESS_TOKEN}}"
+      resources:
+        - name: users
+          path: /
+          description: "User profile operations."
+          operations:
+            - name: get-current-user
+              method: GET
+              description: "Get the current authenticated user."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: get-user
+              method: GET
+              description: "Get a user by ID."
+              inputParameters:
+                - name: user_id
+                  in: path
+                  type: string
+                  required: true
+                  description: "User ID."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: posts
+          path: /
+          description: "Post operations."
+          operations:
+            - name: get-user-feed
+              method: GET
+              description: "Get posts from a user's feed."
+              inputParameters:
+                - name: user_id
+                  in: path
+                  type: string
+                  required: true
+                  description: "User ID."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: create-post
+              method: POST
+              description: "Create a new post."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: delete-post
+              method: DELETE
+              description: "Delete a post."
+              inputParameters:
+                - name: post_id
+                  in: path
+                  type: string
+                  required: true
+                  description: "Post ID."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: comments
+          path: /
+          description: "Comment operations."
+          operations:
+            - name: get-post-comments
+              method: GET
+              description: "Get comments on a post."
+              inputParameters:
+                - name: post_id
+                  in: path
+                  type: string
+                  required: true
+                  description: "Post ID."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: create-comment
+              method: POST
+              description: "Create a comment on a post."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: mcp
+      port: 9100
+      namespace: graph-api-mcp
+      transport: http
+      tools:
+        - name: get-current-user
+          description: "Get the authenticated Facebook user profile."
+          hints:
+            readOnly: true
+          call: "graph-api.get-current-user"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-user-feed
+          description: "Get posts from a user's feed."
+          hints:
+            readOnly: true
+          call: "graph-api.get-user-feed"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-post
+          description: "Create a new Facebook post."
+          hints:
+            readOnly: false
+          call: "graph-api.create-post"
+          outputParameters:
+            - type: object
+              mapping: "$."
