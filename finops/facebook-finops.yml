@@ -8,10 +8,11 @@ alignedWith:
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 provider: Facebook
 providerId: facebook
-publisherName: Facebook
-serviceCategory: API
+publisherName: Meta Platforms, Inc.
+serviceCategory: Advertising / Social Media
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
   - Advertising
   - Content Publishing
@@ -21,20 +22,29 @@ tags:
   - FinOps
   - Cost Management
   - FOCUS
-description: FinOps framework definition for the Facebook API surface. Provides a FOCUS-aligned mapping
-  for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
+description: 'FOCUS-aligned FinOps for Facebook (Meta) APIs: the Graph and Marketing APIs are free at
+  the API layer; spend is downstream — ad campaign budgets billed by Meta Ads, and per-conversation pricing
+  for WhatsApp Business. API-level FinOps focuses on quota burn (rate-limit headers) rather than direct
+  API charges.'
+sources:
+  - https://developers.facebook.com/docs/graph-api/overview/rate-limiting
+  - https://www.facebook.com/business/ads/pricing
+  - https://developers.facebook.com/docs/whatsapp/pricing
 principles:
   - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
+    description: Read X-App-Usage, X-Business-Use-Case-Usage, X-Ad-Account-Usage, and X-Page-Usage on every
+      response and feed those percentages into a dashboard so quota burn is observable per app and per
+      ad account.
   - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
+    description: Tag each Graph/Marketing call with the consuming app, ad account, page, and team; Meta
+      Ads spend is naturally allocated by ad account and campaign in Ads Manager.
   - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
+    description: Batch Graph API calls (use ?fields=, batch endpoint, or webhook subscriptions) to keep
+      total_cputime low; reduce User Errors to preserve the Standard-tier Ads Insights ceiling; route
+      WhatsApp messages through the customer-service window when possible (free service conversations).
   - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
+    description: Per-app owners own the App Review tier; per-ad-account owners own campaign spend; per-WhatsApp-business-account
+      owners own conversation spend. Reconcile Meta Ads invoices and WhatsApp conversation reports monthly.
 domains:
   - name: Understand Usage and Cost
     capabilities:
@@ -54,7 +64,6 @@ domains:
       - Architecting for Cloud
       - Rate Optimization
       - Workload Optimization
-      - Cloud Sustainability
       - Licensing and SaaS
   - name: Manage the FinOps Practice
     capabilities:
@@ -62,55 +71,62 @@ domains:
       - FinOps Education and Enablement
       - Invoicing and Chargeback
       - Onboarding Workloads
-      - Intersecting Disciplines
 billingModel:
-  pricingCategory: Usage-Based
+  pricingCategory: Free API + Downstream Ad Spend + Per-Conversation Messaging
   billingFrequency: Monthly
-  billingCurrency: USD
+  billingCurrency: USD (settlement varies by country)
   chargeCategories:
     - Usage
     - Purchase
     - Tax
-    - Credit
     - Adjustment
+    - Credit
   chargeFrequency: Recurring
 focusColumns:
-  ServiceName: Facebook
-  ServiceCategory: Developer Tools / API
-  ProviderName: Facebook
-  PublisherName: Facebook
-  InvoiceIssuerName: Facebook
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  ServiceName: Facebook (Meta) APIs
+  ServiceCategory: Advertising / Social Media
+  ProviderName: Meta
+  PublisherName: Meta Platforms, Inc.
+  InvoiceIssuerName: Meta Platforms, Inc.
+  PricingCategory: Free API + Usage (downstream)
+  PricingUnit: varies (impression, conversation, ad-spend USD)
   BillingCurrency: USD
   ChargeCategory: Usage
 meters:
-  - name: api_requests
-    description: Count of billable API requests
-    unit: request
+  - name: graph_api_calls
+    description: Count of Graph/Marketing API calls; not directly billed but counts against rate-limit
+      formulas.
+    unit: call
     aggregation: sum
     dimensions:
-      - api
+      - app
+      - business_id
+      - ad_account
       - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
+  - name: ad_spend
+    description: Ad campaign spend billed via Meta Ads.
+    unit: USD
     aggregation: sum
     dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
+      - ad_account
+      - campaign
+      - placement
+      - country
+  - name: whatsapp_conversations
+    description: 24-hour WhatsApp Business conversations, billed by category and country.
+    unit: conversation
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
+      - waba_id
+      - category
+      - country
+  - name: app_usage_pct
+    description: X-App-Usage percentage (call_count / total_cputime / total_time) — operational meter
+      for throttling proximity.
+    unit: percent
+    aggregation: max
+    dimensions:
+      - app
 apis:
   - name: Facebook Graph API
     baseURL: https://graph.facebook.com
@@ -170,12 +186,12 @@ apis:
     serviceName: WhatsApp Business API
     serviceCategory: API
 unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+  - name: Cost per 1K Impressions (CPM)
+    metric: ad_spend / (impressions / 1000)
+    target: campaign-dependent
+  - name: Cost per WhatsApp Conversation
+    metric: whatsapp_spend / whatsapp_conversations
+    target: see WhatsApp Business pricing by country
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

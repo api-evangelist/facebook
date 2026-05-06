@@ -4,7 +4,8 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Facebook
 providerId: facebook
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
   - Advertising
   - Content Publishing
@@ -12,103 +13,93 @@ tags:
   - Social Media
   - Social Networking
   - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the Facebook API surface. Captures per-tier quotas,
-  burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to be replaced
-  with published provider limits.
+description: Facebook (Meta) enforces rate limits at multiple layers — Platform (App + User), Business
+  Use Case (BUC), Pages, Messenger, and Instagram. Platform limits are formula-based and scale with active
+  daily users or active ads. BUC limits depend on the App Review access tier (Development, Standard, Advanced).
+  Limits are documented in the Graph API rate-limiting reference.
+sources:
+  - https://developers.facebook.com/docs/graph-api/overview/rate-limiting
+  - https://developers.facebook.com/docs/marketing-api/overview/authorization
 headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
+  appUsage: X-App-Usage
+  businessUseCaseUsage: X-Business-Use-Case-Usage
+  adAccountUsage: X-Ad-Account-Usage
+  pageUsage: X-Page-Usage
 responseCodes:
+  appLimitReached: 4
+  userLimitReached: 17
+  pagesLimitReached: 32
+  customRateLimit: 613
   throttled: 429
-  quotaExceeded: 429
-  serviceUnavailable: 503
 limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - Facebook Graph API
-      - Facebook Marketing API
-      - Instagram API
-      - Messenger Platform API
-      - Threads API
-      - WhatsApp Business API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - Facebook Graph API
-      - Facebook Marketing API
-      - Instagram API
-      - Messenger Platform API
-      - Threads API
-      - WhatsApp Business API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Facebook Graph API
-      - Facebook Marketing API
-      - Instagram API
-      - Messenger Platform API
-      - Threads API
-      - WhatsApp Business API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Facebook Graph API
-      - Facebook Marketing API
-      - Instagram API
-      - Messenger Platform API
-      - Threads API
-      - WhatsApp Business API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Facebook Graph API
-      - Facebook Marketing API
-      - Instagram API
-      - Messenger Platform API
-      - Threads API
-      - WhatsApp Business API
+  - name: App-level (Platform)
+    scope: app
+    metric: calls_per_hour
+    limit: 'Calls within one hour = 200 * Number of Users'
+    notes: Number of Users is a count of unique daily-active users for the app; throttling triggers when
+      X-App-Usage call_count, total_cputime, or total_time hits 100%.
+  - name: User-level (Platform)
+    scope: user
+    metric: calls_per_hour
+    limit: 'undisclosed (privacy)'
+    notes: Counted across all apps a user interacts with; specific numeric ceiling not published by Meta.
+  - name: Ads Insights — Standard Access (BUC)
+    scope: business
+    metric: calls_per_hour
+    limit: 'Calls within one hour = 600 + 400 * Number of Active ads - 0.001 * User Errors'
+  - name: Ads Insights — Advanced Access (BUC)
+    scope: business
+    metric: calls_per_hour
+    limit: 'Calls within one hour = 190000 + 400 * Number of Active ads'
+  - name: Ads Management — Standard Access (BUC)
+    scope: business
+    metric: calls_per_hour
+    limit: 'Calls within one hour = 300 + 40 * Number of Active ads'
+  - name: Ads Management — Advanced Access (BUC)
+    scope: business
+    metric: calls_per_hour
+    limit: 'Calls within one hour = 100000 + 40 * Number of Active ads'
+  - name: Custom Audience — Standard Access (BUC)
+    scope: business
+    metric: calls_per_hour
+    limit: 'Calls within one hour = 5000 + 40 * Number of Active Custom Audiences (capped at 700,000)'
+  - name: Custom Audience — Advanced Access (BUC)
+    scope: business
+    metric: calls_per_hour
+    limit: 'Calls within one hour = 190000 + 40 * Number of Active Custom Audiences'
+  - name: Pages API
+    scope: page
+    metric: calls_per_24h
+    limit: 'Calls within 24 hours = 4800 * Number of Engaged Users'
+  - name: Messenger Platform
+    scope: page
+    metric: calls_per_24h
+    limit: 'Calls within 24 hours = 200 * Number of Engaged Users'
+  - name: Instagram Platform
+    scope: account
+    metric: calls_per_24h
+    limit: 'Calls within 24 hours = 4800 * Number of Impressions'
+  - name: Lead Ads (LeadGen)
+    scope: business
+    metric: calls_per_24h
+    limit: 'Calls within 24 hours = 4800 * Leads Generated'
 policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+  - name: Tiered access via App Review
+    description: Apps default to Development Access. To access Standard or Advanced rate ceilings, submit
+      the corresponding feature for App Review and complete Business Verification.
+  - name: Header-based observability
+    description: Inspect X-App-Usage, X-Business-Use-Case-Usage, X-Ad-Account-Usage, and X-Page-Usage on
+      every response. When call_count, total_cputime, or total_time reaches 100, requests are throttled
+      until the value drops.
+  - name: Backoff on throttle
+    description: When throttled, parse estimated_time_to_regain_access from X-Business-Use-Case-Usage and
+      sleep at least that many minutes. Use exponential backoff with jitter for transient errors.
+  - name: Error-code dispatch
+    description: 'Code 4 = app limit; code 17 = user limit; code 32 = page-level; code 613 = custom limit;
+      80001-80014 = BUC-specific. Treat each class with its own backoff window.'
+  - name: Reduce User Errors
+    description: The Standard-tier Ads Insights formula subtracts 0.001 * User Errors per hour, so consistently
+      malformed requests permanently lower the ceiling.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
