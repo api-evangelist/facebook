@@ -1,0 +1,128 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Facebook Graph API — Comments
+  description: 'Facebook Graph API — Comments. 2 operations. Lead operation: Facebook Get Post Comments. Self-contained Naftiko
+    capability covering one Facebook business surface.'
+  tags:
+  - Facebook
+  - Comments
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FACEBOOK_API_KEY: FACEBOOK_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: graph-comments
+    baseUri: https://graph.facebook.com/v21.0
+    description: Facebook Graph API — Comments business capability. Self-contained, no shared references.
+    resources:
+    - name: post-id-comments
+      path: /{post-id}/comments
+      operations:
+      - name: getpostcomments
+        method: GET
+        description: Facebook Get Post Comments
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: post-id
+          in: path
+          type: string
+          description: The post ID.
+          required: true
+        - name: limit
+          in: query
+          type: integer
+          description: Maximum number of comments to return.
+      - name: createcomment
+        method: POST
+        description: Facebook Create Comment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: post-id
+          in: path
+          type: string
+          description: The post ID.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.FACEBOOK_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: graph-comments-rest
+    port: 8080
+    description: REST adapter for Facebook Graph API — Comments. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/{post-id}/comments
+      name: post-id-comments
+      description: REST surface for post-id-comments.
+      operations:
+      - method: GET
+        name: getpostcomments
+        description: Facebook Get Post Comments
+        call: graph-comments.getpostcomments
+        with:
+          post-id: rest.post-id
+          limit: rest.limit
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createcomment
+        description: Facebook Create Comment
+        call: graph-comments.createcomment
+        with:
+          post-id: rest.post-id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: graph-comments-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Facebook Graph API — Comments. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: facebook-get-post-comments
+      description: Facebook Get Post Comments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: graph-comments.getpostcomments
+      with:
+        post-id: tools.post-id
+        limit: tools.limit
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: facebook-create-comment
+      description: Facebook Create Comment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: graph-comments.createcomment
+      with:
+        post-id: tools.post-id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

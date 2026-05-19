@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Facebook Marketing API — Ads
+  description: 'Facebook Marketing API — Ads. 1 operations. Lead operation: Facebook List Ads. Self-contained Naftiko capability
+    covering one Facebook business surface.'
+  tags:
+  - Facebook
+  - Ads
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FACEBOOK_API_KEY: FACEBOOK_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: marketing-ads
+    baseUri: https://graph.facebook.com/v21.0
+    description: Facebook Marketing API — Ads business capability. Self-contained, no shared references.
+    resources:
+    - name: act_{ad-account-id}-ads
+      path: /act_{ad-account-id}/ads
+      operations:
+      - name: listads
+        method: GET
+        description: Facebook List Ads
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ad-account-id
+          in: path
+          type: string
+          description: The ad account ID.
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.FACEBOOK_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: marketing-ads-rest
+    port: 8080
+    description: REST adapter for Facebook Marketing API — Ads. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/act-ad-account-id/ads
+      name: act-ad-account-id-ads
+      description: REST surface for act_{ad-account-id}-ads.
+      operations:
+      - method: GET
+        name: listads
+        description: Facebook List Ads
+        call: marketing-ads.listads
+        with:
+          ad-account-id: rest.ad-account-id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: marketing-ads-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Facebook Marketing API — Ads. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: facebook-list-ads
+      description: Facebook List Ads
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: marketing-ads.listads
+      with:
+        ad-account-id: tools.ad-account-id
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,211 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Facebook Graph API — Posts
+  description: 'Facebook Graph API — Posts. 4 operations. Lead operation: Facebook Get Post. Self-contained Naftiko capability
+    covering one Facebook business surface.'
+  tags:
+  - Facebook
+  - Posts
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FACEBOOK_API_KEY: FACEBOOK_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: graph-posts
+    baseUri: https://graph.facebook.com/v21.0
+    description: Facebook Graph API — Posts business capability. Self-contained, no shared references.
+    resources:
+    - name: post-id
+      path: /{post-id}
+      operations:
+      - name: getpost
+        method: GET
+        description: Facebook Get Post
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: post-id
+          in: path
+          type: string
+          description: The post ID.
+          required: true
+        - name: fields
+          in: query
+          type: string
+          description: Comma-separated list of fields to return.
+      - name: deletepost
+        method: DELETE
+        description: Facebook Delete Post
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: post-id
+          in: path
+          type: string
+          description: The post ID.
+          required: true
+    - name: user-id-feed
+      path: /{user-id}/feed
+      operations:
+      - name: getuserfeed
+        method: GET
+        description: Facebook Get User Feed
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: user-id
+          in: path
+          type: string
+          description: The user ID.
+          required: true
+        - name: limit
+          in: query
+          type: integer
+          description: Maximum number of posts to return.
+      - name: createpost
+        method: POST
+        description: Facebook Create Post
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: user-id
+          in: path
+          type: string
+          description: The user ID.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.FACEBOOK_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: graph-posts-rest
+    port: 8080
+    description: REST adapter for Facebook Graph API — Posts. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/{post-id}
+      name: post-id
+      description: REST surface for post-id.
+      operations:
+      - method: GET
+        name: getpost
+        description: Facebook Get Post
+        call: graph-posts.getpost
+        with:
+          post-id: rest.post-id
+          fields: rest.fields
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletepost
+        description: Facebook Delete Post
+        call: graph-posts.deletepost
+        with:
+          post-id: rest.post-id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/{user-id}/feed
+      name: user-id-feed
+      description: REST surface for user-id-feed.
+      operations:
+      - method: GET
+        name: getuserfeed
+        description: Facebook Get User Feed
+        call: graph-posts.getuserfeed
+        with:
+          user-id: rest.user-id
+          limit: rest.limit
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createpost
+        description: Facebook Create Post
+        call: graph-posts.createpost
+        with:
+          user-id: rest.user-id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: graph-posts-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Facebook Graph API — Posts. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: facebook-get-post
+      description: Facebook Get Post
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: graph-posts.getpost
+      with:
+        post-id: tools.post-id
+        fields: tools.fields
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: facebook-delete-post
+      description: Facebook Delete Post
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: graph-posts.deletepost
+      with:
+        post-id: tools.post-id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: facebook-get-user-feed
+      description: Facebook Get User Feed
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: graph-posts.getuserfeed
+      with:
+        user-id: tools.user-id
+        limit: tools.limit
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: facebook-create-post
+      description: Facebook Create Post
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: graph-posts.createpost
+      with:
+        user-id: tools.user-id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

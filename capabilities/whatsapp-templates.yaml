@@ -1,0 +1,122 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Facebook WhatsApp Business API — Templates
+  description: 'Facebook WhatsApp Business API — Templates. 2 operations. Lead operation: Facebook List Message Templates.
+    Self-contained Naftiko capability covering one Facebook business surface.'
+  tags:
+  - Facebook
+  - Templates
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FACEBOOK_API_KEY: FACEBOOK_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: whatsapp-templates
+    baseUri: https://graph.facebook.com/v21.0
+    description: Facebook WhatsApp Business API — Templates business capability. Self-contained, no shared references.
+    resources:
+    - name: waba-id-message_templates
+      path: /{waba-id}/message_templates
+      operations:
+      - name: listmessagetemplates
+        method: GET
+        description: Facebook List Message Templates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: waba-id
+          in: path
+          type: string
+          description: WhatsApp Business Account ID.
+          required: true
+      - name: createmessagetemplate
+        method: POST
+        description: Facebook Create Message Template
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: waba-id
+          in: path
+          type: string
+          description: WhatsApp Business Account ID.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.FACEBOOK_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: whatsapp-templates-rest
+    port: 8080
+    description: REST adapter for Facebook WhatsApp Business API — Templates. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/{waba-id}/message-templates
+      name: waba-id-message-templates
+      description: REST surface for waba-id-message_templates.
+      operations:
+      - method: GET
+        name: listmessagetemplates
+        description: Facebook List Message Templates
+        call: whatsapp-templates.listmessagetemplates
+        with:
+          waba-id: rest.waba-id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createmessagetemplate
+        description: Facebook Create Message Template
+        call: whatsapp-templates.createmessagetemplate
+        with:
+          waba-id: rest.waba-id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: whatsapp-templates-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Facebook WhatsApp Business API — Templates. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: facebook-list-message-templates
+      description: Facebook List Message Templates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: whatsapp-templates.listmessagetemplates
+      with:
+        waba-id: tools.waba-id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: facebook-create-message-template
+      description: Facebook Create Message Template
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: whatsapp-templates.createmessagetemplate
+      with:
+        waba-id: tools.waba-id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

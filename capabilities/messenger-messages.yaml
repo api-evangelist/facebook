@@ -1,0 +1,87 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Facebook Messenger Platform API — Messages
+  description: 'Facebook Messenger Platform API — Messages. 1 operations. Lead operation: Facebook Send Message. Self-contained
+    Naftiko capability covering one Facebook business surface.'
+  tags:
+  - Facebook
+  - Messages
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FACEBOOK_API_KEY: FACEBOOK_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: messenger-messages
+    baseUri: https://graph.facebook.com/v21.0
+    description: Facebook Messenger Platform API — Messages business capability. Self-contained, no shared references.
+    resources:
+    - name: page-id-messages
+      path: /{page-id}/messages
+      operations:
+      - name: sendmessage
+        method: POST
+        description: Facebook Send Message
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: page-id
+          in: path
+          type: string
+          description: The page ID.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.FACEBOOK_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: messenger-messages-rest
+    port: 8080
+    description: REST adapter for Facebook Messenger Platform API — Messages. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/{page-id}/messages
+      name: page-id-messages
+      description: REST surface for page-id-messages.
+      operations:
+      - method: POST
+        name: sendmessage
+        description: Facebook Send Message
+        call: messenger-messages.sendmessage
+        with:
+          page-id: rest.page-id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: messenger-messages-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Facebook Messenger Platform API — Messages. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: facebook-send-message
+      description: Facebook Send Message
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: messenger-messages.sendmessage
+      with:
+        page-id: tools.page-id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

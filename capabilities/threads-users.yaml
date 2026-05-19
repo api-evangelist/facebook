@@ -1,0 +1,86 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Facebook Threads API — Users
+  description: 'Facebook Threads API — Users. 1 operations. Lead operation: Facebook Get Threads User. Self-contained Naftiko
+    capability covering one Facebook business surface.'
+  tags:
+  - Facebook
+  - Users
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FACEBOOK_API_KEY: FACEBOOK_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: threads-users
+    baseUri: https://graph.threads.net/v1.0
+    description: Facebook Threads API — Users business capability. Self-contained, no shared references.
+    resources:
+    - name: threads-user-id
+      path: /{threads-user-id}
+      operations:
+      - name: getthreadsuser
+        method: GET
+        description: Facebook Get Threads User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: threads-user-id
+          in: path
+          type: string
+          description: The Threads user ID.
+          required: true
+        - name: fields
+          in: query
+          type: string
+          description: Comma-separated list of fields.
+    authentication:
+      type: bearer
+      token: '{{env.FACEBOOK_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: threads-users-rest
+    port: 8080
+    description: REST adapter for Facebook Threads API — Users. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/{threads-user-id}
+      name: threads-user-id
+      description: REST surface for threads-user-id.
+      operations:
+      - method: GET
+        name: getthreadsuser
+        description: Facebook Get Threads User
+        call: threads-users.getthreadsuser
+        with:
+          threads-user-id: rest.threads-user-id
+          fields: rest.fields
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: threads-users-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Facebook Threads API — Users. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: facebook-get-threads-user
+      description: Facebook Get Threads User
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: threads-users.getthreadsuser
+      with:
+        threads-user-id: tools.threads-user-id
+        fields: tools.fields
+      outputParameters:
+      - type: object
+        mapping: $.

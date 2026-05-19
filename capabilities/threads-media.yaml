@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Facebook Threads API — Media
+  description: 'Facebook Threads API — Media. 1 operations. Lead operation: Facebook Get Threads Media. Self-contained Naftiko
+    capability covering one Facebook business surface.'
+  tags:
+  - Facebook
+  - Media
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FACEBOOK_API_KEY: FACEBOOK_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: threads-media
+    baseUri: https://graph.threads.net/v1.0
+    description: Facebook Threads API — Media business capability. Self-contained, no shared references.
+    resources:
+    - name: threads-media-id
+      path: /{threads-media-id}
+      operations:
+      - name: getthreadsmedia
+        method: GET
+        description: Facebook Get Threads Media
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: threads-media-id
+          in: path
+          type: string
+          description: The Threads media ID.
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.FACEBOOK_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: threads-media-rest
+    port: 8080
+    description: REST adapter for Facebook Threads API — Media. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/{threads-media-id}
+      name: threads-media-id
+      description: REST surface for threads-media-id.
+      operations:
+      - method: GET
+        name: getthreadsmedia
+        description: Facebook Get Threads Media
+        call: threads-media.getthreadsmedia
+        with:
+          threads-media-id: rest.threads-media-id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: threads-media-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Facebook Threads API — Media. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: facebook-get-threads-media
+      description: Facebook Get Threads Media
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: threads-media.getthreadsmedia
+      with:
+        threads-media-id: tools.threads-media-id
+      outputParameters:
+      - type: object
+        mapping: $.

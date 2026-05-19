@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Facebook Instagram API — Tags
+  description: 'Facebook Instagram API — Tags. 1 operations. Lead operation: Facebook Get Instagram Tags. Self-contained Naftiko
+    capability covering one Facebook business surface.'
+  tags:
+  - Facebook
+  - Tags
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FACEBOOK_API_KEY: FACEBOOK_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: instagram-tags
+    baseUri: https://graph.facebook.com/v21.0
+    description: Facebook Instagram API — Tags business capability. Self-contained, no shared references.
+    resources:
+    - name: ig-user-id-tags
+      path: /{ig-user-id}/tags
+      operations:
+      - name: getinstagramtags
+        method: GET
+        description: Facebook Get Instagram Tags
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ig-user-id
+          in: path
+          type: string
+          description: The Instagram user ID.
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.FACEBOOK_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: instagram-tags-rest
+    port: 8080
+    description: REST adapter for Facebook Instagram API — Tags. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/{ig-user-id}/tags
+      name: ig-user-id-tags
+      description: REST surface for ig-user-id-tags.
+      operations:
+      - method: GET
+        name: getinstagramtags
+        description: Facebook Get Instagram Tags
+        call: instagram-tags.getinstagramtags
+        with:
+          ig-user-id: rest.ig-user-id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: instagram-tags-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Facebook Instagram API — Tags. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: facebook-get-instagram-tags
+      description: Facebook Get Instagram Tags
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: instagram-tags.getinstagramtags
+      with:
+        ig-user-id: tools.ig-user-id
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,87 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Facebook WhatsApp Business API — Messages
+  description: 'Facebook WhatsApp Business API — Messages. 1 operations. Lead operation: Facebook Send WhatsApp Message. Self-contained
+    Naftiko capability covering one Facebook business surface.'
+  tags:
+  - Facebook
+  - Messages
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FACEBOOK_API_KEY: FACEBOOK_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: whatsapp-messages
+    baseUri: https://graph.facebook.com/v21.0
+    description: Facebook WhatsApp Business API — Messages business capability. Self-contained, no shared references.
+    resources:
+    - name: phone-number-id-messages
+      path: /{phone-number-id}/messages
+      operations:
+      - name: sendwhatsappmessage
+        method: POST
+        description: Facebook Send WhatsApp Message
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: phone-number-id
+          in: path
+          type: string
+          description: The phone number ID.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.FACEBOOK_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: whatsapp-messages-rest
+    port: 8080
+    description: REST adapter for Facebook WhatsApp Business API — Messages. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/{phone-number-id}/messages
+      name: phone-number-id-messages
+      description: REST surface for phone-number-id-messages.
+      operations:
+      - method: POST
+        name: sendwhatsappmessage
+        description: Facebook Send WhatsApp Message
+        call: whatsapp-messages.sendwhatsappmessage
+        with:
+          phone-number-id: rest.phone-number-id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: whatsapp-messages-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Facebook WhatsApp Business API — Messages. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: facebook-send-whatsapp-message
+      description: Facebook Send WhatsApp Message
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: whatsapp-messages.sendwhatsappmessage
+      with:
+        phone-number-id: tools.phone-number-id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,86 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Facebook Instagram API — Users
+  description: 'Facebook Instagram API — Users. 1 operations. Lead operation: Facebook Get Instagram User. Self-contained
+    Naftiko capability covering one Facebook business surface.'
+  tags:
+  - Facebook
+  - Users
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FACEBOOK_API_KEY: FACEBOOK_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: instagram-users
+    baseUri: https://graph.facebook.com/v21.0
+    description: Facebook Instagram API — Users business capability. Self-contained, no shared references.
+    resources:
+    - name: ig-user-id
+      path: /{ig-user-id}
+      operations:
+      - name: getinstagramuser
+        method: GET
+        description: Facebook Get Instagram User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ig-user-id
+          in: path
+          type: string
+          description: The Instagram user ID.
+          required: true
+        - name: fields
+          in: query
+          type: string
+          description: Comma-separated list of fields to return.
+    authentication:
+      type: bearer
+      token: '{{env.FACEBOOK_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: instagram-users-rest
+    port: 8080
+    description: REST adapter for Facebook Instagram API — Users. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/{ig-user-id}
+      name: ig-user-id
+      description: REST surface for ig-user-id.
+      operations:
+      - method: GET
+        name: getinstagramuser
+        description: Facebook Get Instagram User
+        call: instagram-users.getinstagramuser
+        with:
+          ig-user-id: rest.ig-user-id
+          fields: rest.fields
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: instagram-users-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Facebook Instagram API — Users. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: facebook-get-instagram-user
+      description: Facebook Get Instagram User
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: instagram-users.getinstagramuser
+      with:
+        ig-user-id: tools.ig-user-id
+        fields: tools.fields
+      outputParameters:
+      - type: object
+        mapping: $.
