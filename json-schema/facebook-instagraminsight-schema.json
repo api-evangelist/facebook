@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/InstagramInsight",
+  "title": "InstagramInsight",
+  "type": "object",
+  "description": "An Instagram account insight metric.",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Metric name.",
+      "example": "impressions"
+    },
+    "period": {
+      "type": "string",
+      "description": "Aggregation period.",
+      "example": "day"
+    },
+    "values": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "description": "Metric value."
+          },
+          "end_time": {
+            "type": "string",
+            "format": "date-time",
+            "description": "End time of the period."
+          }
+        }
+      }
+    }
+  }
+}

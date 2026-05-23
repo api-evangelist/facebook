@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomAudience",
+  "title": "CustomAudience",
+  "type": "object",
+  "description": "A custom audience for ad targeting.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Custom audience ID.",
+      "example": "700001234567890"
+    },
+    "name": {
+      "type": "string",
+      "description": "Audience name.",
+      "example": "Website Visitors Last 30 Days"
+    },
+    "description": {
+      "type": "string",
+      "description": "Audience description."
+    },
+    "approximate_count": {
+      "type": "integer",
+      "description": "Approximate audience size.",
+      "example": 25000
+    },
+    "subtype": {
+      "type": "string",
+      "description": "Audience subtype.",
+      "enum": [
+        "CUSTOM",
+        "LOOKALIKE",
+        "WEBSITE"
+      ]
+    },
+    "delivery_status": {
+      "type": "object",
+      "description": "Audience delivery status."
+    }
+  }
+}

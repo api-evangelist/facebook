@@ -1,0 +1,32 @@
+{
+  "operationId": "sendMessage",
+  "method": "POST",
+  "path": "/{page-id}/messages",
+  "summary": "Facebook Send Message",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "name": "SendMessageRequestExample",
+      "example": {
+        "recipient": {
+          "id": "100001234567890"
+        },
+        "messaging_type": "RESPONSE",
+        "message": {
+          "text": "Hello! How can I help you today?"
+        }
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "name": "SendMessage200Example",
+      "example": {
+        "recipient_id": "100001234567890",
+        "message_id": "mid.1234567890"
+      }
+    }
+  ]
+}

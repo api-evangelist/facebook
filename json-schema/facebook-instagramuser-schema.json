@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/InstagramUser",
+  "title": "InstagramUser",
+  "type": "object",
+  "description": "An Instagram Business or Creator account.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Instagram user ID.",
+      "example": "17841405822304914"
+    },
+    "username": {
+      "type": "string",
+      "description": "Instagram username.",
+      "example": "examplebrand"
+    },
+    "name": {
+      "type": "string",
+      "description": "Display name.",
+      "example": "Example Brand"
+    },
+    "biography": {
+      "type": "string",
+      "description": "Account biography.",
+      "example": "Official account for Example Brand"
+    },
+    "followers_count": {
+      "type": "integer",
+      "description": "Number of followers.",
+      "example": 250000
+    },
+    "follows_count": {
+      "type": "integer",
+      "description": "Number of accounts followed.",
+      "example": 500
+    },
+    "media_count": {
+      "type": "integer",
+      "description": "Number of media posts.",
+      "example": 1200
+    },
+    "profile_picture_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Profile picture URL."
+    },
+    "website": {
+      "type": "string",
+      "format": "uri",
+      "description": "Website URL."
+    }
+  }
+}

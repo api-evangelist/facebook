@@ -1,0 +1,19 @@
+{
+  "operationId": "getThreadsUser",
+  "method": "GET",
+  "path": "/{threads-user-id}",
+  "summary": "Facebook Get Threads User",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "name": "GetThreadsUser200Example",
+      "example": {
+        "id": "12345678901234567",
+        "username": "examplebrand",
+        "threads_biography": "Sharing ideas and updates"
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ThreadsInsight",
+  "title": "ThreadsInsight",
+  "type": "object",
+  "description": "A Threads insight metric.",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Metric name.",
+      "example": "views"
+    },
+    "period": {
+      "type": "string",
+      "description": "Aggregation period."
+    },
+    "values": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

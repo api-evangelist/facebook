@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ThreadsPostRequest",
+  "title": "ThreadsPostRequest",
+  "type": "object",
+  "description": "Request to create a Threads post.",
+  "properties": {
+    "media_type": {
+      "type": "string",
+      "description": "Media type.",
+      "enum": [
+        "TEXT",
+        "IMAGE",
+        "VIDEO",
+        "CAROUSEL"
+      ],
+      "example": "TEXT"
+    },
+    "text": {
+      "type": "string",
+      "description": "Post text content.",
+      "example": "Hello Threads! This is my first post."
+    },
+    "image_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the image."
+    },
+    "video_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the video."
+    }
+  },
+  "required": [
+    "media_type"
+  ]
+}

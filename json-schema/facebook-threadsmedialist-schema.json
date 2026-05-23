@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ThreadsMediaList",
+  "title": "ThreadsMediaList",
+  "type": "object",
+  "description": "List of Threads media.",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ThreadsMedia"
+      }
+    }
+  }
+}

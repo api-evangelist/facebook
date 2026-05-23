@@ -1,0 +1,195 @@
+{
+  "provider": "Facebook",
+  "providerId": "facebook",
+  "kind": "json-structure",
+  "description": "Structural overview of the Facebook API surface; extracted from openapi/.",
+  "schemaCount": 11,
+  "operationCount": 13,
+  "schemas": [
+    {
+      "name": "User",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "Post",
+      "type": "object",
+      "propertyCount": 8,
+      "required": []
+    },
+    {
+      "name": "PostRequest",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "PostList",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "Comment",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "CommentList",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "Page",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    },
+    {
+      "name": "Photo",
+      "type": "object",
+      "propertyCount": 8,
+      "required": []
+    },
+    {
+      "name": "PhotoList",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "TokenDebugInfo",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "Paging",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    }
+  ],
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/me",
+      "operationId": "getCurrentUser",
+      "summary": "Facebook Get Current User",
+      "tags": [
+        "Users"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/{user-id}",
+      "operationId": "getUser",
+      "summary": "Facebook Get User",
+      "tags": [
+        "Users"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/{user-id}/feed",
+      "operationId": "getUserFeed",
+      "summary": "Facebook Get User Feed",
+      "tags": [
+        "Posts"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/{user-id}/feed",
+      "operationId": "createPost",
+      "summary": "Facebook Create Post",
+      "tags": [
+        "Posts"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/{page-id}",
+      "operationId": "getPage",
+      "summary": "Facebook Get Page",
+      "tags": [
+        "Pages"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/{page-id}/feed",
+      "operationId": "getPageFeed",
+      "summary": "Facebook Get Page Feed",
+      "tags": [
+        "Pages"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/{post-id}",
+      "operationId": "getPost",
+      "summary": "Facebook Get Post",
+      "tags": [
+        "Posts"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/{post-id}",
+      "operationId": "deletePost",
+      "summary": "Facebook Delete Post",
+      "tags": [
+        "Posts"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/{post-id}/comments",
+      "operationId": "getPostComments",
+      "summary": "Facebook Get Post Comments",
+      "tags": [
+        "Comments"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/{post-id}/comments",
+      "operationId": "createComment",
+      "summary": "Facebook Create Comment",
+      "tags": [
+        "Comments"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/{user-id}/photos",
+      "operationId": "getUserPhotos",
+      "summary": "Facebook Get User Photos",
+      "tags": [
+        "Photos"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/{photo-id}",
+      "operationId": "getPhoto",
+      "summary": "Facebook Get Photo",
+      "tags": [
+        "Photos"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/debug_token",
+      "operationId": "debugToken",
+      "summary": "Facebook Debug Token",
+      "tags": [
+        "Authentication"
+      ]
+    }
+  ]
+}

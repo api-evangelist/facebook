@@ -1,0 +1,19 @@
+{
+  "operationId": "getCurrentUser",
+  "method": "GET",
+  "path": "/me",
+  "summary": "Facebook Get Current User",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "name": "GetCurrentUser200Example",
+      "example": {
+        "id": "100001234567890",
+        "name": "Jane Smith",
+        "email": "jsmith@example.com"
+      }
+    }
+  ]
+}

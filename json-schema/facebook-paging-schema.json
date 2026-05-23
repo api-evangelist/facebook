@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Paging",
+  "title": "Paging",
+  "type": "object",
+  "description": "Pagination cursors.",
+  "properties": {
+    "cursors": {
+      "type": "object",
+      "properties": {
+        "before": {
+          "type": "string",
+          "description": "Cursor for the previous page."
+        },
+        "after": {
+          "type": "string",
+          "description": "Cursor for the next page."
+        }
+      }
+    },
+    "next": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL for the next page of results."
+    },
+    "previous": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL for the previous page of results."
+    }
+  }
+}

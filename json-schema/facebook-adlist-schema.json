@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AdList",
+  "title": "AdList",
+  "type": "object",
+  "description": "Paginated list of ads.",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Ad"
+      }
+    },
+    "paging": {
+      "$ref": "#/components/schemas/Paging"
+    }
+  }
+}

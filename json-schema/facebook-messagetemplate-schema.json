@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/MessageTemplate",
+  "title": "MessageTemplate",
+  "type": "object",
+  "description": "A WhatsApp message template.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Template ID.",
+      "example": "800001234567890"
+    },
+    "name": {
+      "type": "string",
+      "description": "Template name.",
+      "example": "order_confirmation"
+    },
+    "language": {
+      "type": "string",
+      "description": "Template language.",
+      "example": "en_US"
+    },
+    "status": {
+      "type": "string",
+      "description": "Template approval status.",
+      "enum": [
+        "APPROVED",
+        "PENDING",
+        "REJECTED"
+      ],
+      "example": "APPROVED"
+    },
+    "category": {
+      "type": "string",
+      "description": "Template category.",
+      "enum": [
+        "MARKETING",
+        "UTILITY",
+        "AUTHENTICATION"
+      ],
+      "example": "UTILITY"
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "HEADER",
+              "BODY",
+              "FOOTER",
+              "BUTTONS"
+            ]
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

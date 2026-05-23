@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Comment",
+  "title": "Comment",
+  "type": "object",
+  "description": "A comment on a post.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Comment ID.",
+      "example": "100001234567890_987654321_111111"
+    },
+    "message": {
+      "type": "string",
+      "description": "Comment text.",
+      "example": "Great post!"
+    },
+    "created_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Time the comment was created."
+    },
+    "from": {
+      "type": "object",
+      "description": "The user who made the comment.",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "like_count": {
+      "type": "integer",
+      "description": "Number of likes on the comment.",
+      "example": 5
+    }
+  }
+}

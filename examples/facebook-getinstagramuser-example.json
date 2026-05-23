@@ -1,0 +1,22 @@
+{
+  "operationId": "getInstagramUser",
+  "method": "GET",
+  "path": "/{ig-user-id}",
+  "summary": "Facebook Get Instagram User",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "name": "GetInstagramUser200Example",
+      "example": {
+        "id": "17841405822304914",
+        "username": "examplebrand",
+        "name": "Example Brand",
+        "biography": "Official account for Example Brand",
+        "followers_count": 250000,
+        "media_count": 1200
+      }
+    }
+  ]
+}

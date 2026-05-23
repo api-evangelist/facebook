@@ -1,0 +1,19 @@
+{
+  "operationId": "createCampaign",
+  "method": "POST",
+  "path": "/act_{ad-account-id}/campaigns",
+  "summary": "Facebook Create Campaign",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "name": "CreateCampaignRequestExample",
+      "example": {
+        "name": "Spring Sale 2026",
+        "objective": "OUTCOME_SALES",
+        "status": "PAUSED",
+        "special_ad_categories": []
+      }
+    }
+  ],
+  "responseExamples": []
+}

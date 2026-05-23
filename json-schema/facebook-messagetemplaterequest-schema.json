@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/MessageTemplateRequest",
+  "title": "MessageTemplateRequest",
+  "type": "object",
+  "description": "Request to create a message template.",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Template name.",
+      "example": "order_update"
+    },
+    "language": {
+      "type": "string",
+      "description": "Template language.",
+      "example": "en_US"
+    },
+    "category": {
+      "type": "string",
+      "description": "Template category.",
+      "enum": [
+        "MARKETING",
+        "UTILITY",
+        "AUTHENTICATION"
+      ]
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "required": [
+    "name",
+    "language",
+    "category",
+    "components"
+  ]
+}

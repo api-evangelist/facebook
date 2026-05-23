@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/WhatsAppPhoneNumber",
+  "title": "WhatsAppPhoneNumber",
+  "type": "object",
+  "description": "A WhatsApp Business phone number.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Phone number ID.",
+      "example": "106540352242922"
+    },
+    "display_phone_number": {
+      "type": "string",
+      "description": "Display phone number.",
+      "example": "+1 555 123 4567"
+    },
+    "verified_name": {
+      "type": "string",
+      "description": "Verified business name.",
+      "example": "Example Business"
+    },
+    "quality_rating": {
+      "type": "string",
+      "description": "Phone number quality rating.",
+      "enum": [
+        "GREEN",
+        "YELLOW",
+        "RED"
+      ],
+      "example": "GREEN"
+    },
+    "status": {
+      "type": "string",
+      "description": "Phone number status.",
+      "example": "CONNECTED"
+    }
+  }
+}

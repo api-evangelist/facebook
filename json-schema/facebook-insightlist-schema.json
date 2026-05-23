@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/InsightList",
+  "title": "InsightList",
+  "type": "object",
+  "description": "Paginated list of insights.",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Insight"
+      }
+    },
+    "paging": {
+      "$ref": "#/components/schemas/Paging"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "operationId": "createThreadsMedia",
+  "method": "POST",
+  "path": "/{threads-user-id}/threads",
+  "summary": "Facebook Create Threads Media",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "name": "CreateThreadsMediaRequestExample",
+      "example": {
+        "media_type": "TEXT",
+        "text": "Hello Threads! This is my first post."
+      }
+    }
+  ],
+  "responseExamples": []
+}

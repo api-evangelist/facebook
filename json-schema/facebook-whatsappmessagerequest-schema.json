@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/WhatsAppMessageRequest",
+  "title": "WhatsAppMessageRequest",
+  "type": "object",
+  "description": "Request to send a WhatsApp message.",
+  "properties": {
+    "messaging_product": {
+      "type": "string",
+      "description": "Must be whatsapp.",
+      "example": "whatsapp"
+    },
+    "to": {
+      "type": "string",
+      "description": "Recipient phone number.",
+      "example": "15551234567"
+    },
+    "type": {
+      "type": "string",
+      "description": "Message type.",
+      "enum": [
+        "text",
+        "image",
+        "video",
+        "audio",
+        "document",
+        "template",
+        "interactive",
+        "location",
+        "contacts",
+        "reaction"
+      ],
+      "example": "text"
+    },
+    "text": {
+      "type": "object",
+      "description": "Text message content.",
+      "properties": {
+        "body": {
+          "type": "string",
+          "description": "Message body.",
+          "example": "Hello from our business!"
+        },
+        "preview_url": {
+          "type": "boolean",
+          "description": "Whether to show URL preview."
+        }
+      }
+    },
+    "template": {
+      "type": "object",
+      "description": "Template message content.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Template name."
+        },
+        "language": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string",
+              "description": "Language code."
+            }
+          }
+        },
+        "components": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "messaging_product",
+    "to",
+    "type"
+  ]
+}

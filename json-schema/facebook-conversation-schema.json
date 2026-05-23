@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Conversation",
+  "title": "Conversation",
+  "type": "object",
+  "description": "A Messenger conversation.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Conversation ID.",
+      "example": "t_100001234567890"
+    },
+    "updated_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last update time."
+    },
+    "participants": {
+      "type": "object",
+      "description": "Conversation participants.",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "messages": {
+      "type": "object",
+      "description": "Messages in the conversation.",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Message"
+          }
+        }
+      }
+    }
+  }
+}

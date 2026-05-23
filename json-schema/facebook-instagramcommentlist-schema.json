@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/InstagramCommentList",
+  "title": "InstagramCommentList",
+  "type": "object",
+  "description": "Paginated list of Instagram comments.",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/InstagramComment"
+      }
+    },
+    "paging": {
+      "$ref": "#/components/schemas/Paging"
+    }
+  }
+}

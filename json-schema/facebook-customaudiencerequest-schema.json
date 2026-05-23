@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomAudienceRequest",
+  "title": "CustomAudienceRequest",
+  "type": "object",
+  "description": "Request to create a custom audience.",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Audience name."
+    },
+    "description": {
+      "type": "string",
+      "description": "Audience description."
+    },
+    "subtype": {
+      "type": "string",
+      "description": "Audience subtype."
+    },
+    "customer_file_source": {
+      "type": "string",
+      "description": "Source of customer data."
+    }
+  },
+  "required": [
+    "name",
+    "subtype"
+  ]
+}

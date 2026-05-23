@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Ad",
+  "title": "Ad",
+  "type": "object",
+  "description": "An individual advertisement.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Ad ID.",
+      "example": "600001234567890"
+    },
+    "name": {
+      "type": "string",
+      "description": "Ad name.",
+      "example": "Spring Sale Banner Ad"
+    },
+    "adset_id": {
+      "type": "string",
+      "description": "Parent ad set ID."
+    },
+    "campaign_id": {
+      "type": "string",
+      "description": "Parent campaign ID."
+    },
+    "status": {
+      "type": "string",
+      "description": "Ad status.",
+      "enum": [
+        "ACTIVE",
+        "PAUSED",
+        "DELETED",
+        "ARCHIVED"
+      ]
+    },
+    "creative": {
+      "type": "object",
+      "description": "Creative specification.",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

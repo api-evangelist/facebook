@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SendMessageRequest",
+  "title": "SendMessageRequest",
+  "type": "object",
+  "description": "Request to send a message.",
+  "properties": {
+    "recipient": {
+      "type": "object",
+      "description": "Message recipient.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Recipient user ID.",
+          "example": "100001234567890"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "messaging_type": {
+      "type": "string",
+      "description": "Messaging type.",
+      "enum": [
+        "RESPONSE",
+        "UPDATE",
+        "MESSAGE_TAG"
+      ],
+      "example": "RESPONSE"
+    },
+    "message": {
+      "type": "object",
+      "description": "Message content.",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Message text.",
+          "example": "Hello! How can I help you today?"
+        },
+        "attachment": {
+          "type": "object",
+          "description": "Message attachment.",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "image",
+                "audio",
+                "video",
+                "file",
+                "template"
+              ]
+            },
+            "payload": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "recipient",
+    "messaging_type",
+    "message"
+  ]
+}

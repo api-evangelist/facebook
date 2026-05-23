@@ -1,0 +1,21 @@
+{
+  "operationId": "getAdAccount",
+  "method": "GET",
+  "path": "/act_{ad-account-id}",
+  "summary": "Facebook Get Ad Account",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "name": "GetAdAccount200Example",
+      "example": {
+        "id": "act_123456789",
+        "name": "My Ad Account",
+        "account_status": 1,
+        "currency": "USD",
+        "balance": "500.00"
+      }
+    }
+  ]
+}

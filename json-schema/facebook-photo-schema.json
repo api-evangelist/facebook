@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Photo",
+  "title": "Photo",
+  "type": "object",
+  "description": "A Facebook photo.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Photo ID.",
+      "example": "300001234567890"
+    },
+    "name": {
+      "type": "string",
+      "description": "Photo caption.",
+      "example": "Sunset at the beach"
+    },
+    "created_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Time the photo was uploaded."
+    },
+    "link": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the photo on Facebook."
+    },
+    "picture": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to a thumbnail of the photo."
+    },
+    "source": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the full-size photo."
+    },
+    "width": {
+      "type": "integer",
+      "description": "Photo width in pixels.",
+      "example": 1920
+    },
+    "height": {
+      "type": "integer",
+      "description": "Photo height in pixels.",
+      "example": 1080
+    }
+  }
+}

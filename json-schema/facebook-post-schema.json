@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Post",
+  "title": "Post",
+  "type": "object",
+  "description": "A Facebook post.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The post ID.",
+      "example": "100001234567890_987654321"
+    },
+    "message": {
+      "type": "string",
+      "description": "Post message text.",
+      "example": "Hello world!"
+    },
+    "created_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Time the post was created.",
+      "example": "2026-04-18T10:00:00+0000"
+    },
+    "updated_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Time the post was last updated."
+    },
+    "from": {
+      "type": "object",
+      "description": "The user or page that created the post.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Creator ID."
+        },
+        "name": {
+          "type": "string",
+          "description": "Creator name."
+        }
+      }
+    },
+    "type": {
+      "type": "string",
+      "description": "Post type.",
+      "enum": [
+        "link",
+        "status",
+        "photo",
+        "video",
+        "offer"
+      ],
+      "example": "status"
+    },
+    "link": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL attached to the post."
+    },
+    "permalink_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Permanent URL to the post."
+    }
+  }
+}

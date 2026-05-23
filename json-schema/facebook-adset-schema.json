@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AdSet",
+  "title": "AdSet",
+  "type": "object",
+  "description": "An ad set within a campaign.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Ad set ID.",
+      "example": "500001234567890"
+    },
+    "name": {
+      "type": "string",
+      "description": "Ad set name.",
+      "example": "Women 25-34 Interest Targeting"
+    },
+    "campaign_id": {
+      "type": "string",
+      "description": "Parent campaign ID."
+    },
+    "status": {
+      "type": "string",
+      "description": "Ad set status.",
+      "enum": [
+        "ACTIVE",
+        "PAUSED",
+        "DELETED",
+        "ARCHIVED"
+      ]
+    },
+    "daily_budget": {
+      "type": "string",
+      "description": "Daily budget in cents."
+    },
+    "start_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Ad set start time."
+    },
+    "end_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Ad set end time."
+    },
+    "targeting": {
+      "type": "object",
+      "description": "Targeting specification."
+    },
+    "bid_amount": {
+      "type": "string",
+      "description": "Bid amount in cents."
+    }
+  }
+}

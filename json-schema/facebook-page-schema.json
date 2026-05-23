@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Page",
+  "title": "Page",
+  "type": "object",
+  "description": "A Facebook Page.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The page ID.",
+      "example": "200001234567890"
+    },
+    "name": {
+      "type": "string",
+      "description": "The page name.",
+      "example": "Example Brand"
+    },
+    "category": {
+      "type": "string",
+      "description": "Page category.",
+      "example": "Technology Company"
+    },
+    "fan_count": {
+      "type": "integer",
+      "description": "Number of page fans.",
+      "example": 150000
+    },
+    "about": {
+      "type": "string",
+      "description": "Page description."
+    },
+    "website": {
+      "type": "string",
+      "format": "uri",
+      "description": "Page website URL."
+    },
+    "link": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the Facebook Page."
+    }
+  }
+}

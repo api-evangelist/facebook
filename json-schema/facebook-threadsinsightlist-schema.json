@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ThreadsInsightList",
+  "title": "ThreadsInsightList",
+  "type": "object",
+  "description": "List of Threads insights.",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ThreadsInsight"
+      }
+    }
+  }
+}

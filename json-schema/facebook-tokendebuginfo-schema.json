@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TokenDebugInfo",
+  "title": "TokenDebugInfo",
+  "type": "object",
+  "description": "Debug information about an access token.",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "app_id": {
+          "type": "string",
+          "description": "The app ID."
+        },
+        "type": {
+          "type": "string",
+          "description": "Token type.",
+          "enum": [
+            "USER",
+            "PAGE",
+            "APP"
+          ]
+        },
+        "user_id": {
+          "type": "string",
+          "description": "User ID associated with token."
+        },
+        "is_valid": {
+          "type": "boolean",
+          "description": "Whether the token is valid."
+        },
+        "expires_at": {
+          "type": "integer",
+          "description": "Token expiration timestamp."
+        },
+        "scopes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Permissions granted to the token."
+        }
+      }
+    }
+  }
+}

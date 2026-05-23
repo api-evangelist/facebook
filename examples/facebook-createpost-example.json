@@ -1,0 +1,17 @@
+{
+  "operationId": "createPost",
+  "method": "POST",
+  "path": "/{user-id}/feed",
+  "summary": "Facebook Create Post",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "name": "CreatePostRequestExample",
+      "example": {
+        "message": "Check out this amazing content!",
+        "link": "https://example.com/article"
+      }
+    }
+  ],
+  "responseExamples": []
+}

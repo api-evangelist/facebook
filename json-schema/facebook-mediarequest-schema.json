@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/MediaRequest",
+  "title": "MediaRequest",
+  "type": "object",
+  "description": "Request to create an Instagram media container.",
+  "properties": {
+    "image_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the image to publish.",
+      "example": "https://example.com/photo.jpg"
+    },
+    "caption": {
+      "type": "string",
+      "description": "Media caption.",
+      "example": "Beautiful sunset!"
+    },
+    "video_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the video to publish."
+    },
+    "media_type": {
+      "type": "string",
+      "description": "Media type for carousels.",
+      "enum": [
+        "CAROUSEL"
+      ]
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Insight",
+  "title": "Insight",
+  "type": "object",
+  "description": "Advertising performance insight.",
+  "properties": {
+    "impressions": {
+      "type": "string",
+      "description": "Number of impressions.",
+      "example": "15000"
+    },
+    "clicks": {
+      "type": "string",
+      "description": "Number of clicks.",
+      "example": "450"
+    },
+    "spend": {
+      "type": "string",
+      "description": "Amount spent.",
+      "example": "125.50"
+    },
+    "cpc": {
+      "type": "string",
+      "description": "Cost per click.",
+      "example": "0.28"
+    },
+    "cpm": {
+      "type": "string",
+      "description": "Cost per thousand impressions.",
+      "example": "8.37"
+    },
+    "ctr": {
+      "type": "string",
+      "description": "Click-through rate.",
+      "example": "3.00"
+    },
+    "reach": {
+      "type": "string",
+      "description": "Number of unique users reached.",
+      "example": "12000"
+    },
+    "date_start": {
+      "type": "string",
+      "format": "date",
+      "description": "Start date of the insight period."
+    },
+    "date_stop": {
+      "type": "string",
+      "format": "date",
+      "description": "End date of the insight period."
+    }
+  }
+}

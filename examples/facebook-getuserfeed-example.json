@@ -1,0 +1,27 @@
+{
+  "operationId": "getUserFeed",
+  "method": "GET",
+  "path": "/{user-id}/feed",
+  "summary": "Facebook Get User Feed",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "name": "GetUserFeed200Example",
+      "example": {
+        "data": [
+          {
+            "id": "100001234567890_987654321",
+            "message": "Hello world!",
+            "created_time": "2026-04-18T10:00:00+0000",
+            "from": {
+              "id": "100001234567890",
+              "name": "Jane Smith"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

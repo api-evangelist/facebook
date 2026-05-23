@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ThreadsUser",
+  "title": "ThreadsUser",
+  "type": "object",
+  "description": "A Threads user profile.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Threads user ID.",
+      "example": "12345678901234567"
+    },
+    "username": {
+      "type": "string",
+      "description": "Threads username.",
+      "example": "examplebrand"
+    },
+    "threads_profile_picture_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Profile picture URL."
+    },
+    "threads_biography": {
+      "type": "string",
+      "description": "User biography.",
+      "example": "Sharing ideas and updates"
+    }
+  }
+}

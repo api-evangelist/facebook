@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CampaignRequest",
+  "title": "CampaignRequest",
+  "type": "object",
+  "description": "Request to create a campaign.",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Campaign name.",
+      "example": "Spring Sale 2026"
+    },
+    "objective": {
+      "type": "string",
+      "description": "Campaign objective.",
+      "example": "OUTCOME_SALES"
+    },
+    "status": {
+      "type": "string",
+      "description": "Initial campaign status.",
+      "example": "PAUSED"
+    },
+    "special_ad_categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Special ad categories."
+    }
+  },
+  "required": [
+    "name",
+    "objective",
+    "special_ad_categories"
+  ]
+}

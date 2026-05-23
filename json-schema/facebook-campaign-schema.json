@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Campaign",
+  "title": "Campaign",
+  "type": "object",
+  "description": "An advertising campaign.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Campaign ID.",
+      "example": "400001234567890"
+    },
+    "name": {
+      "type": "string",
+      "description": "Campaign name.",
+      "example": "Spring Sale 2026"
+    },
+    "objective": {
+      "type": "string",
+      "description": "Campaign objective.",
+      "example": "OUTCOME_SALES"
+    },
+    "status": {
+      "type": "string",
+      "description": "Campaign status.",
+      "enum": [
+        "ACTIVE",
+        "PAUSED",
+        "DELETED",
+        "ARCHIVED"
+      ],
+      "example": "ACTIVE"
+    },
+    "daily_budget": {
+      "type": "string",
+      "description": "Daily budget in cents.",
+      "example": "5000"
+    },
+    "lifetime_budget": {
+      "type": "string",
+      "description": "Lifetime budget in cents."
+    },
+    "created_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Campaign creation time."
+    },
+    "updated_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Campaign last update time."
+    }
+  }
+}

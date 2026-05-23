@@ -1,0 +1,17 @@
+{
+  "operationId": "createInstagramMedia",
+  "method": "POST",
+  "path": "/{ig-user-id}/media",
+  "summary": "Facebook Create Instagram Media",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "name": "CreateInstagramMediaRequestExample",
+      "example": {
+        "image_url": "https://example.com/photo.jpg",
+        "caption": "Beautiful sunset!"
+      }
+    }
+  ],
+  "responseExamples": []
+}

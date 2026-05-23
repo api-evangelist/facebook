@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/InstagramComment",
+  "title": "InstagramComment",
+  "type": "object",
+  "description": "A comment on Instagram media.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Comment ID.",
+      "example": "17858893269000001"
+    },
+    "text": {
+      "type": "string",
+      "description": "Comment text.",
+      "example": "Love this photo!"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Comment timestamp."
+    },
+    "username": {
+      "type": "string",
+      "description": "Username of the commenter.",
+      "example": "photolovers"
+    },
+    "like_count": {
+      "type": "integer",
+      "description": "Number of likes on the comment.",
+      "example": 3
+    }
+  }
+}

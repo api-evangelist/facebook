@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SendMessageResponse",
+  "title": "SendMessageResponse",
+  "type": "object",
+  "description": "Response from sending a message.",
+  "properties": {
+    "recipient_id": {
+      "type": "string",
+      "description": "Recipient user ID.",
+      "example": "100001234567890"
+    },
+    "message_id": {
+      "type": "string",
+      "description": "Sent message ID.",
+      "example": "mid.1234567890"
+    }
+  }
+}

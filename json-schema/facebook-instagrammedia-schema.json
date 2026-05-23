@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/InstagramMedia",
+  "title": "InstagramMedia",
+  "type": "object",
+  "description": "An Instagram media object.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Media ID.",
+      "example": "17895695668004550"
+    },
+    "caption": {
+      "type": "string",
+      "description": "Media caption.",
+      "example": "Beautiful sunset!"
+    },
+    "media_type": {
+      "type": "string",
+      "description": "Media type.",
+      "enum": [
+        "IMAGE",
+        "VIDEO",
+        "CAROUSEL_ALBUM"
+      ],
+      "example": "IMAGE"
+    },
+    "media_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the media."
+    },
+    "permalink": {
+      "type": "string",
+      "format": "uri",
+      "description": "Permanent URL to the media on Instagram."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Publishing timestamp."
+    },
+    "like_count": {
+      "type": "integer",
+      "description": "Number of likes.",
+      "example": 1500
+    },
+    "comments_count": {
+      "type": "integer",
+      "description": "Number of comments.",
+      "example": 45
+    }
+  }
+}

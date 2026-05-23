@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ConversationList",
+  "title": "ConversationList",
+  "type": "object",
+  "description": "Paginated list of conversations.",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Conversation"
+      }
+    },
+    "paging": {
+      "type": "object",
+      "properties": {
+        "cursors": {
+          "type": "object",
+          "properties": {
+            "before": {
+              "type": "string"
+            },
+            "after": {
+              "type": "string"
+            }
+          }
+        },
+        "next": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    }
+  }
+}

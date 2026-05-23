@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PostRequest",
+  "title": "PostRequest",
+  "type": "object",
+  "description": "Request to create a post.",
+  "properties": {
+    "message": {
+      "type": "string",
+      "description": "Post message text.",
+      "example": "Check out this amazing content!"
+    },
+    "link": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to attach to the post.",
+      "example": "https://example.com/article"
+    },
+    "place": {
+      "type": "string",
+      "description": "Page ID of a location to tag."
+    },
+    "tags": {
+      "type": "string",
+      "description": "Comma-separated user IDs to tag."
+    }
+  }
+}

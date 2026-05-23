@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PhoneNumberList",
+  "title": "PhoneNumberList",
+  "type": "object",
+  "description": "List of WhatsApp phone numbers.",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WhatsAppPhoneNumber"
+      }
+    }
+  }
+}

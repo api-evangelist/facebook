@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AdAccount",
+  "title": "AdAccount",
+  "type": "object",
+  "description": "A Facebook ad account.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Ad account ID prefixed with act_.",
+      "example": "act_123456789"
+    },
+    "name": {
+      "type": "string",
+      "description": "Account name.",
+      "example": "My Ad Account"
+    },
+    "account_status": {
+      "type": "integer",
+      "description": "Account status code.",
+      "example": 1
+    },
+    "currency": {
+      "type": "string",
+      "description": "Account currency code.",
+      "example": "USD"
+    },
+    "balance": {
+      "type": "string",
+      "description": "Account balance.",
+      "example": "500.00"
+    },
+    "spend_cap": {
+      "type": "string",
+      "description": "Spend cap for the account."
+    }
+  }
+}

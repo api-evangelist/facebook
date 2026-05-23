@@ -1,0 +1,41 @@
+{
+  "operationId": "sendWhatsAppMessage",
+  "method": "POST",
+  "path": "/{phone-number-id}/messages",
+  "summary": "Facebook Send WhatsApp Message",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "name": "SendWhatsAppMessageRequestExample",
+      "example": {
+        "messaging_product": "whatsapp",
+        "to": "15551234567",
+        "type": "text",
+        "text": {
+          "body": "Hello from our business!"
+        }
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "name": "SendWhatsAppMessage200Example",
+      "example": {
+        "messaging_product": "whatsapp",
+        "contacts": [
+          {
+            "input": "15551234567",
+            "wa_id": "15551234567"
+          }
+        ],
+        "messages": [
+          {
+            "id": "wamid.ABCdef123456"
+          }
+        ]
+      }
+    }
+  ]
+}

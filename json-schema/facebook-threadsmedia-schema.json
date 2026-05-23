@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ThreadsMedia",
+  "title": "ThreadsMedia",
+  "type": "object",
+  "description": "A Threads post.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Media ID.",
+      "example": "98765432101234567"
+    },
+    "media_type": {
+      "type": "string",
+      "description": "Media type.",
+      "enum": [
+        "TEXT_POST",
+        "IMAGE",
+        "VIDEO",
+        "CAROUSEL_ALBUM"
+      ],
+      "example": "TEXT_POST"
+    },
+    "text": {
+      "type": "string",
+      "description": "Post text content.",
+      "example": "Hello Threads!"
+    },
+    "permalink": {
+      "type": "string",
+      "format": "uri",
+      "description": "Permanent URL to the post."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Publishing timestamp."
+    },
+    "username": {
+      "type": "string",
+      "description": "Author username.",
+      "example": "examplebrand"
+    },
+    "is_quote_post": {
+      "type": "boolean",
+      "description": "Whether this is a quote post.",
+      "example": false
+    }
+  }
+}
