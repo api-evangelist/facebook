@@ -254,6 +254,8 @@ common:
   url: rules/facebook-spectral-rules.yml
 - type: Vocabulary
   url: vocabulary/facebook-vocabulary.yaml
+- type: LLMsTxt
+  url: https://developers.facebook.com/llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
