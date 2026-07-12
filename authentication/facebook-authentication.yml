@@ -1,0 +1,19 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/facebook-graph-api.yaml, openapi/facebook-instagram-api.yaml, openapi/facebook-marketing-api.yaml,
+  openapi/facebook-messenger-api.yaml, openapi/facebook-threads-api.yaml, openapi/facebook-whatsapp-api.yaml
+summary:
+  types:
+  - http
+schemes:
+- name: BearerAuth
+  type: http
+  scheme: bearer
+  description: OAuth 2.0 access token for Facebook Graph API.
+  sources:
+  - openapi/facebook-graph-api.yaml
+  - openapi/facebook-instagram-api.yaml
+  - openapi/facebook-marketing-api.yaml
+  - openapi/facebook-messenger-api.yaml
+  - openapi/facebook-threads-api.yaml
+  - openapi/facebook-whatsapp-api.yaml

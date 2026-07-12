@@ -183,6 +183,12 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/whatsapp-templates.yaml
 common:
+- type: VulnerabilityDisclosure
+  url: security/facebook-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/facebook-domain-security.yml
+- type: Authentication
+  url: authentication/facebook-authentication.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/facebook
 - type: Portal
