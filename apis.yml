@@ -183,6 +183,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/whatsapp-templates.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/facebook-agentic-access.yml
 - type: VulnerabilityDisclosure
   url: security/facebook-vulnerability-disclosure.yml
 - type: DomainSecurity
