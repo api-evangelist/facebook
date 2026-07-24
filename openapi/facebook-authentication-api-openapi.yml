@@ -1,0 +1,81 @@
+openapi: 3.0.3
+info:
+  title: Facebook Graph Ad Accounts Authentication API
+  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  version: '21.0'
+  contact:
+    name: Meta Platforms
+    url: https://developers.facebook.com
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.facebook.com/v21.0
+  description: Facebook Graph API v21.0
+security:
+- BearerAuth: []
+tags:
+- name: Authentication
+paths:
+  /debug_token:
+    get:
+      operationId: debugToken
+      summary: Facebook Debug Token
+      description: Get metadata about an access token.
+      tags:
+      - Authentication
+      parameters:
+      - name: input_token
+        in: query
+        required: true
+        description: The access token to debug.
+        schema:
+          type: string
+        example: EAABsbCS1iZA...
+      responses:
+        '200':
+          description: Token information retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenDebugInfo'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    TokenDebugInfo:
+      type: object
+      description: Debug information about an access token.
+      properties:
+        data:
+          type: object
+          properties:
+            app_id:
+              type: string
+              description: The app ID.
+            type:
+              type: string
+              description: Token type.
+              enum:
+              - USER
+              - PAGE
+              - APP
+            user_id:
+              type: string
+              description: User ID associated with token.
+            is_valid:
+              type: boolean
+              description: Whether the token is valid.
+            expires_at:
+              type: integer
+              description: Token expiration timestamp.
+            scopes:
+              type: array
+              items:
+                type: string
+              description: Permissions granted to the token.
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 access token for Facebook Graph API.

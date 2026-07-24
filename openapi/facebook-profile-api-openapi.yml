@@ -1,0 +1,137 @@
+openapi: 3.0.3
+info:
+  title: Facebook Graph Ad Accounts Profile API
+  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  version: '21.0'
+  contact:
+    name: Meta Platforms
+    url: https://developers.facebook.com
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.facebook.com/v21.0
+  description: Facebook Graph API v21.0
+security:
+- BearerAuth: []
+tags:
+- name: Profile
+paths:
+  /{page-id}/messenger_profile:
+    get:
+      operationId: getMessengerProfile
+      summary: Facebook Get Messenger Profile
+      description: Retrieve the Messenger profile settings for a page.
+      tags:
+      - Profile
+      parameters:
+      - name: page-id
+        in: path
+        required: true
+        description: The page ID.
+        schema:
+          type: string
+        example: '200001234567890'
+      - name: fields
+        in: query
+        description: Comma-separated list of profile fields.
+        schema:
+          type: string
+        example: greeting,get_started,persistent_menu
+      responses:
+        '200':
+          description: Messenger profile retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessengerProfile'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      operationId: updateMessengerProfile
+      summary: Facebook Update Messenger Profile
+      description: Update the Messenger profile settings for a page.
+      tags:
+      - Profile
+      parameters:
+      - name: page-id
+        in: path
+        required: true
+        description: The page ID.
+        schema:
+          type: string
+        example: '200001234567890'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MessengerProfileUpdate'
+      responses:
+        '200':
+          description: Profile updated successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: string
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    MessengerProfile:
+      type: object
+      description: Messenger profile settings.
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              greeting:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    locale:
+                      type: string
+                    text:
+                      type: string
+              get_started:
+                type: object
+                properties:
+                  payload:
+                    type: string
+              persistent_menu:
+                type: array
+                items:
+                  type: object
+    MessengerProfileUpdate:
+      type: object
+      description: Update for Messenger profile settings.
+      properties:
+        greeting:
+          type: array
+          items:
+            type: object
+            properties:
+              locale:
+                type: string
+                example: default
+              text:
+                type: string
+                example: Welcome to our page!
+        get_started:
+          type: object
+          properties:
+            payload:
+              type: string
+              example: GET_STARTED
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 access token for Facebook Graph API.

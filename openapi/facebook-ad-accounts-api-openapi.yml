@@ -1,0 +1,93 @@
+openapi: 3.0.3
+info:
+  title: Facebook Graph Ad Accounts API
+  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  version: '21.0'
+  contact:
+    name: Meta Platforms
+    url: https://developers.facebook.com
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.facebook.com/v21.0
+  description: Facebook Graph API v21.0
+security:
+- BearerAuth: []
+tags:
+- name: Ad Accounts
+paths:
+  /act_{ad-account-id}:
+    get:
+      operationId: getAdAccount
+      summary: Facebook Get Ad Account
+      description: Retrieve an ad account by ID.
+      tags:
+      - Ad Accounts
+      parameters:
+      - name: ad-account-id
+        in: path
+        required: true
+        description: The ad account ID.
+        schema:
+          type: string
+        example: '123456789'
+      - name: fields
+        in: query
+        description: Comma-separated list of fields to return.
+        schema:
+          type: string
+        example: id,name,account_status,currency
+      responses:
+        '200':
+          description: Ad account retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdAccount'
+              examples:
+                GetAdAccount200Example:
+                  summary: Default getAdAccount 200 response
+                  x-microcks-default: true
+                  value:
+                    id: act_123456789
+                    name: My Ad Account
+                    account_status: 1
+                    currency: USD
+                    balance: '500.00'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    AdAccount:
+      type: object
+      description: A Facebook ad account.
+      properties:
+        id:
+          type: string
+          description: Ad account ID prefixed with act_.
+          example: act_123456789
+        name:
+          type: string
+          description: Account name.
+          example: My Ad Account
+        account_status:
+          type: integer
+          description: Account status code.
+          example: 1
+        currency:
+          type: string
+          description: Account currency code.
+          example: USD
+        balance:
+          type: string
+          description: Account balance.
+          example: '500.00'
+        spend_cap:
+          type: string
+          description: Spend cap for the account.
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 access token for Facebook Graph API.

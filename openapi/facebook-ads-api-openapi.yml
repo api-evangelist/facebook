@@ -1,0 +1,109 @@
+openapi: 3.0.3
+info:
+  title: Facebook Graph Ad Accounts Ads API
+  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  version: '21.0'
+  contact:
+    name: Meta Platforms
+    url: https://developers.facebook.com
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.facebook.com/v21.0
+  description: Facebook Graph API v21.0
+security:
+- BearerAuth: []
+tags:
+- name: Ads
+paths:
+  /act_{ad-account-id}/ads:
+    get:
+      operationId: listAds
+      summary: Facebook List Ads
+      description: Retrieve ads for an ad account.
+      tags:
+      - Ads
+      parameters:
+      - name: ad-account-id
+        in: path
+        required: true
+        description: The ad account ID.
+        schema:
+          type: string
+        example: '123456789'
+      responses:
+        '200':
+          description: Ads retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdList'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    Ad:
+      type: object
+      description: An individual advertisement.
+      properties:
+        id:
+          type: string
+          description: Ad ID.
+          example: '600001234567890'
+        name:
+          type: string
+          description: Ad name.
+          example: Spring Sale Banner Ad
+        adset_id:
+          type: string
+          description: Parent ad set ID.
+        campaign_id:
+          type: string
+          description: Parent campaign ID.
+        status:
+          type: string
+          description: Ad status.
+          enum:
+          - ACTIVE
+          - PAUSED
+          - DELETED
+          - ARCHIVED
+        creative:
+          type: object
+          description: Creative specification.
+          properties:
+            id:
+              type: string
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+            after:
+              type: string
+        next:
+          type: string
+          format: uri
+        previous:
+          type: string
+          format: uri
+    AdList:
+      type: object
+      description: Paginated list of ads.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Ad'
+        paging:
+          $ref: '#/components/schemas/Paging'
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 access token for Facebook Graph API.

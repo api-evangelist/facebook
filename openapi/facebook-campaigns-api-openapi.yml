@@ -1,0 +1,217 @@
+openapi: 3.0.3
+info:
+  title: Facebook Graph Ad Accounts Campaigns API
+  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  version: '21.0'
+  contact:
+    name: Meta Platforms
+    url: https://developers.facebook.com
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.facebook.com/v21.0
+  description: Facebook Graph API v21.0
+security:
+- BearerAuth: []
+tags:
+- name: Campaigns
+paths:
+  /act_{ad-account-id}/campaigns:
+    get:
+      operationId: listCampaigns
+      summary: Facebook List Campaigns
+      description: Retrieve campaigns for an ad account.
+      tags:
+      - Campaigns
+      parameters:
+      - name: ad-account-id
+        in: path
+        required: true
+        description: The ad account ID.
+        schema:
+          type: string
+        example: '123456789'
+      - name: limit
+        in: query
+        description: Maximum number of campaigns to return.
+        schema:
+          type: integer
+        example: 25
+      responses:
+        '200':
+          description: Campaigns retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CampaignList'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      operationId: createCampaign
+      summary: Facebook Create Campaign
+      description: Create a new advertising campaign.
+      tags:
+      - Campaigns
+      parameters:
+      - name: ad-account-id
+        in: path
+        required: true
+        description: The ad account ID.
+        schema:
+          type: string
+        example: '123456789'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CampaignRequest'
+            examples:
+              CreateCampaignRequestExample:
+                summary: Default createCampaign request
+                x-microcks-default: true
+                value:
+                  name: Spring Sale 2026
+                  objective: OUTCOME_SALES
+                  status: PAUSED
+                  special_ad_categories: []
+      responses:
+        '200':
+          description: Campaign created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+        '400':
+          description: Invalid campaign configuration.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /{campaign-id}:
+    get:
+      operationId: getCampaign
+      summary: Facebook Get Campaign
+      description: Retrieve a specific campaign by ID.
+      tags:
+      - Campaigns
+      parameters:
+      - name: campaign-id
+        in: path
+        required: true
+        description: The campaign ID.
+        schema:
+          type: string
+        example: '400001234567890'
+      responses:
+        '200':
+          description: Campaign retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Campaign'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    CampaignRequest:
+      type: object
+      description: Request to create a campaign.
+      properties:
+        name:
+          type: string
+          description: Campaign name.
+          example: Spring Sale 2026
+        objective:
+          type: string
+          description: Campaign objective.
+          example: OUTCOME_SALES
+        status:
+          type: string
+          description: Initial campaign status.
+          example: PAUSED
+        special_ad_categories:
+          type: array
+          items:
+            type: string
+          description: Special ad categories.
+      required:
+      - name
+      - objective
+      - special_ad_categories
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+            after:
+              type: string
+        next:
+          type: string
+          format: uri
+        previous:
+          type: string
+          format: uri
+    Campaign:
+      type: object
+      description: An advertising campaign.
+      properties:
+        id:
+          type: string
+          description: Campaign ID.
+          example: '400001234567890'
+        name:
+          type: string
+          description: Campaign name.
+          example: Spring Sale 2026
+        objective:
+          type: string
+          description: Campaign objective.
+          example: OUTCOME_SALES
+        status:
+          type: string
+          description: Campaign status.
+          enum:
+          - ACTIVE
+          - PAUSED
+          - DELETED
+          - ARCHIVED
+          example: ACTIVE
+        daily_budget:
+          type: string
+          description: Daily budget in cents.
+          example: '5000'
+        lifetime_budget:
+          type: string
+          description: Lifetime budget in cents.
+        created_time:
+          type: string
+          format: date-time
+          description: Campaign creation time.
+        updated_time:
+          type: string
+          format: date-time
+          description: Campaign last update time.
+    CampaignList:
+      type: object
+      description: Paginated list of campaigns.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Campaign'
+        paging:
+          $ref: '#/components/schemas/Paging'
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 access token for Facebook Graph API.

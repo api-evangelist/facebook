@@ -1,0 +1,177 @@
+openapi: 3.0.3
+info:
+  title: Facebook Graph Ad Accounts Templates API
+  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  version: '21.0'
+  contact:
+    name: Meta Platforms
+    url: https://developers.facebook.com
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.facebook.com/v21.0
+  description: Facebook Graph API v21.0
+security:
+- BearerAuth: []
+tags:
+- name: Templates
+paths:
+  /{waba-id}/message_templates:
+    get:
+      operationId: listMessageTemplates
+      summary: Facebook List Message Templates
+      description: Retrieve message templates for a WhatsApp Business Account.
+      tags:
+      - Templates
+      parameters:
+      - name: waba-id
+        in: path
+        required: true
+        description: WhatsApp Business Account ID.
+        schema:
+          type: string
+        example: '102290129340398'
+      responses:
+        '200':
+          description: Templates retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageTemplateList'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      operationId: createMessageTemplate
+      summary: Facebook Create Message Template
+      description: Create a new message template.
+      tags:
+      - Templates
+      parameters:
+      - name: waba-id
+        in: path
+        required: true
+        description: WhatsApp Business Account ID.
+        schema:
+          type: string
+        example: '102290129340398'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MessageTemplateRequest'
+      responses:
+        '200':
+          description: Template created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  status:
+                    type: string
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    MessageTemplateList:
+      type: object
+      description: Paginated list of message templates.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/MessageTemplate'
+        paging:
+          type: object
+          properties:
+            cursors:
+              type: object
+              properties:
+                before:
+                  type: string
+                after:
+                  type: string
+    MessageTemplateRequest:
+      type: object
+      description: Request to create a message template.
+      properties:
+        name:
+          type: string
+          description: Template name.
+          example: order_update
+        language:
+          type: string
+          description: Template language.
+          example: en_US
+        category:
+          type: string
+          description: Template category.
+          enum:
+          - MARKETING
+          - UTILITY
+          - AUTHENTICATION
+        components:
+          type: array
+          items:
+            type: object
+      required:
+      - name
+      - language
+      - category
+      - components
+    MessageTemplate:
+      type: object
+      description: A WhatsApp message template.
+      properties:
+        id:
+          type: string
+          description: Template ID.
+          example: '800001234567890'
+        name:
+          type: string
+          description: Template name.
+          example: order_confirmation
+        language:
+          type: string
+          description: Template language.
+          example: en_US
+        status:
+          type: string
+          description: Template approval status.
+          enum:
+          - APPROVED
+          - PENDING
+          - REJECTED
+          example: APPROVED
+        category:
+          type: string
+          description: Template category.
+          enum:
+          - MARKETING
+          - UTILITY
+          - AUTHENTICATION
+          example: UTILITY
+        components:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                - HEADER
+                - BODY
+                - FOOTER
+                - BUTTONS
+              text:
+                type: string
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 access token for Facebook Graph API.

@@ -1,0 +1,332 @@
+openapi: 3.0.3
+info:
+  title: Facebook Graph Ad Accounts Media API
+  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  version: '21.0'
+  contact:
+    name: Meta Platforms
+    url: https://developers.facebook.com
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.facebook.com/v21.0
+  description: Facebook Graph API v21.0
+security:
+- BearerAuth: []
+tags:
+- name: Media
+paths:
+  /{ig-user-id}/media:
+    get:
+      operationId: listInstagramMedia
+      summary: Facebook List Instagram Media
+      description: Retrieve media objects for an Instagram account.
+      tags:
+      - Media
+      parameters:
+      - name: ig-user-id
+        in: path
+        required: true
+        description: The Instagram user ID.
+        schema:
+          type: string
+        example: '17841405822304914'
+      - name: limit
+        in: query
+        description: Maximum number of media to return.
+        schema:
+          type: integer
+        example: 25
+      responses:
+        '200':
+          description: Media list retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MediaList'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      operationId: createInstagramMedia
+      summary: Facebook Create Instagram Media
+      description: Create a media container for publishing to Instagram.
+      tags:
+      - Media
+      parameters:
+      - name: ig-user-id
+        in: path
+        required: true
+        description: The Instagram user ID.
+        schema:
+          type: string
+        example: '17841405822304914'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MediaRequest'
+            examples:
+              CreateInstagramMediaRequestExample:
+                summary: Default createInstagramMedia request
+                x-microcks-default: true
+                value:
+                  image_url: https://example.com/photo.jpg
+                  caption: Beautiful sunset!
+      responses:
+        '200':
+          description: Media container created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /{ig-user-id}/media_publish:
+    post:
+      operationId: publishInstagramMedia
+      summary: Facebook Publish Instagram Media
+      description: Publish a previously created media container.
+      tags:
+      - Media
+      parameters:
+      - name: ig-user-id
+        in: path
+        required: true
+        description: The Instagram user ID.
+        schema:
+          type: string
+        example: '17841405822304914'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                creation_id:
+                  type: string
+                  description: ID of the media container to publish.
+              required:
+              - creation_id
+      responses:
+        '200':
+          description: Media published successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /{threads-media-id}:
+    get:
+      operationId: getThreadsMedia
+      summary: Facebook Get Threads Media
+      description: Retrieve a specific Threads post.
+      tags:
+      - Media
+      parameters:
+      - name: threads-media-id
+        in: path
+        required: true
+        description: The Threads media ID.
+        schema:
+          type: string
+        example: '98765432101234567'
+      responses:
+        '200':
+          description: Threads media retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThreadsMedia'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /{phone-number-id}/media:
+    post:
+      operationId: uploadWhatsAppMedia
+      summary: Facebook Upload WhatsApp Media
+      description: Upload media for use in WhatsApp messages.
+      tags:
+      - Media
+      parameters:
+      - name: phone-number-id
+        in: path
+        required: true
+        description: The phone number ID.
+        schema:
+          type: string
+        example: '106540352242922'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                messaging_product:
+                  type: string
+                  example: whatsapp
+                file:
+                  type: string
+                  format: binary
+                type:
+                  type: string
+                  example: image/jpeg
+      responses:
+        '200':
+          description: Media uploaded successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: Media ID.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    MediaRequest:
+      type: object
+      description: Request to create an Instagram media container.
+      properties:
+        image_url:
+          type: string
+          format: uri
+          description: URL of the image to publish.
+          example: https://example.com/photo.jpg
+        caption:
+          type: string
+          description: Media caption.
+          example: Beautiful sunset!
+        video_url:
+          type: string
+          format: uri
+          description: URL of the video to publish.
+        media_type:
+          type: string
+          description: Media type for carousels.
+          enum:
+          - CAROUSEL
+    ThreadsMedia:
+      type: object
+      description: A Threads post.
+      properties:
+        id:
+          type: string
+          description: Media ID.
+          example: '98765432101234567'
+        media_type:
+          type: string
+          description: Media type.
+          enum:
+          - TEXT_POST
+          - IMAGE
+          - VIDEO
+          - CAROUSEL_ALBUM
+          example: TEXT_POST
+        text:
+          type: string
+          description: Post text content.
+          example: Hello Threads!
+        permalink:
+          type: string
+          format: uri
+          description: Permanent URL to the post.
+        timestamp:
+          type: string
+          format: date-time
+          description: Publishing timestamp.
+        username:
+          type: string
+          description: Author username.
+          example: examplebrand
+        is_quote_post:
+          type: boolean
+          description: Whether this is a quote post.
+          example: false
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+            after:
+              type: string
+        next:
+          type: string
+          format: uri
+        previous:
+          type: string
+          format: uri
+    InstagramMedia:
+      type: object
+      description: An Instagram media object.
+      properties:
+        id:
+          type: string
+          description: Media ID.
+          example: '17895695668004550'
+        caption:
+          type: string
+          description: Media caption.
+          example: Beautiful sunset!
+        media_type:
+          type: string
+          description: Media type.
+          enum:
+          - IMAGE
+          - VIDEO
+          - CAROUSEL_ALBUM
+          example: IMAGE
+        media_url:
+          type: string
+          format: uri
+          description: URL to the media.
+        permalink:
+          type: string
+          format: uri
+          description: Permanent URL to the media on Instagram.
+        timestamp:
+          type: string
+          format: date-time
+          description: Publishing timestamp.
+        like_count:
+          type: integer
+          description: Number of likes.
+          example: 1500
+        comments_count:
+          type: integer
+          description: Number of comments.
+          example: 45
+    MediaList:
+      type: object
+      description: Paginated list of Instagram media.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/InstagramMedia'
+        paging:
+          $ref: '#/components/schemas/Paging'
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 access token for Facebook Graph API.

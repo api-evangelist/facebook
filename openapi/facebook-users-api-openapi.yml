@@ -1,0 +1,269 @@
+openapi: 3.0.3
+info:
+  title: Facebook Graph Ad Accounts Users API
+  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  version: '21.0'
+  contact:
+    name: Meta Platforms
+    url: https://developers.facebook.com
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.facebook.com/v21.0
+  description: Facebook Graph API v21.0
+security:
+- BearerAuth: []
+tags:
+- name: Users
+paths:
+  /me:
+    get:
+      operationId: getCurrentUser
+      summary: Facebook Get Current User
+      description: Retrieve the profile of the currently authenticated user.
+      tags:
+      - Users
+      parameters:
+      - name: fields
+        in: query
+        description: Comma-separated list of fields to return.
+        schema:
+          type: string
+        example: id,name,email,picture
+      responses:
+        '200':
+          description: User profile retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                GetCurrentUser200Example:
+                  summary: Default getCurrentUser 200 response
+                  x-microcks-default: true
+                  value:
+                    id: '100001234567890'
+                    name: Jane Smith
+                    email: jsmith@example.com
+        '401':
+          description: Invalid or expired access token.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /{user-id}:
+    get:
+      operationId: getUser
+      summary: Facebook Get User
+      description: Retrieve a user profile by user ID.
+      tags:
+      - Users
+      parameters:
+      - name: user-id
+        in: path
+        required: true
+        description: The user ID.
+        schema:
+          type: string
+        example: '100001234567890'
+      - name: fields
+        in: query
+        description: Comma-separated list of fields to return.
+        schema:
+          type: string
+        example: id,name,email
+      responses:
+        '200':
+          description: User profile retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: User not found.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /{ig-user-id}:
+    get:
+      operationId: getInstagramUser
+      summary: Facebook Get Instagram User
+      description: Retrieve an Instagram Business or Creator account profile.
+      tags:
+      - Users
+      parameters:
+      - name: ig-user-id
+        in: path
+        required: true
+        description: The Instagram user ID.
+        schema:
+          type: string
+        example: '17841405822304914'
+      - name: fields
+        in: query
+        description: Comma-separated list of fields to return.
+        schema:
+          type: string
+        example: id,username,name,biography,followers_count,media_count
+      responses:
+        '200':
+          description: Instagram user retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InstagramUser'
+              examples:
+                GetInstagramUser200Example:
+                  summary: Default getInstagramUser 200 response
+                  x-microcks-default: true
+                  value:
+                    id: '17841405822304914'
+                    username: examplebrand
+                    name: Example Brand
+                    biography: Official account for Example Brand
+                    followers_count: 250000
+                    media_count: 1200
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /{threads-user-id}:
+    get:
+      operationId: getThreadsUser
+      summary: Facebook Get Threads User
+      description: Retrieve a Threads user profile.
+      tags:
+      - Users
+      parameters:
+      - name: threads-user-id
+        in: path
+        required: true
+        description: The Threads user ID.
+        schema:
+          type: string
+        example: '12345678901234567'
+      - name: fields
+        in: query
+        description: Comma-separated list of fields.
+        schema:
+          type: string
+        example: id,username,threads_profile_picture_url,threads_biography
+      responses:
+        '200':
+          description: Threads user retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThreadsUser'
+              examples:
+                GetThreadsUser200Example:
+                  summary: Default getThreadsUser 200 response
+                  x-microcks-default: true
+                  value:
+                    id: '12345678901234567'
+                    username: examplebrand
+                    threads_biography: Sharing ideas and updates
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    InstagramUser:
+      type: object
+      description: An Instagram Business or Creator account.
+      properties:
+        id:
+          type: string
+          description: Instagram user ID.
+          example: '17841405822304914'
+        username:
+          type: string
+          description: Instagram username.
+          example: examplebrand
+        name:
+          type: string
+          description: Display name.
+          example: Example Brand
+        biography:
+          type: string
+          description: Account biography.
+          example: Official account for Example Brand
+        followers_count:
+          type: integer
+          description: Number of followers.
+          example: 250000
+        follows_count:
+          type: integer
+          description: Number of accounts followed.
+          example: 500
+        media_count:
+          type: integer
+          description: Number of media posts.
+          example: 1200
+        profile_picture_url:
+          type: string
+          format: uri
+          description: Profile picture URL.
+        website:
+          type: string
+          format: uri
+          description: Website URL.
+    User:
+      type: object
+      description: A Facebook user profile.
+      properties:
+        id:
+          type: string
+          description: The user ID.
+          example: '100001234567890'
+        name:
+          type: string
+          description: The user's full name.
+          example: Jane Smith
+        email:
+          type: string
+          format: email
+          description: The user's email address.
+          example: jsmith@example.com
+        picture:
+          type: object
+          description: Profile picture data.
+          properties:
+            data:
+              type: object
+              properties:
+                url:
+                  type: string
+                  format: uri
+                  description: URL of the profile picture.
+        first_name:
+          type: string
+          description: First name.
+          example: Jane
+        last_name:
+          type: string
+          description: Last name.
+          example: Smith
+    ThreadsUser:
+      type: object
+      description: A Threads user profile.
+      properties:
+        id:
+          type: string
+          description: Threads user ID.
+          example: '12345678901234567'
+        username:
+          type: string
+          description: Threads username.
+          example: examplebrand
+        threads_profile_picture_url:
+          type: string
+          format: uri
+          description: Profile picture URL.
+        threads_biography:
+          type: string
+          description: User biography.
+          example: Sharing ideas and updates
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 access token for Facebook Graph API.

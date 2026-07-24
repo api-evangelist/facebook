@@ -1,0 +1,173 @@
+openapi: 3.0.3
+info:
+  title: Facebook Graph Ad Accounts Ad Sets API
+  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  version: '21.0'
+  contact:
+    name: Meta Platforms
+    url: https://developers.facebook.com
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.facebook.com/v21.0
+  description: Facebook Graph API v21.0
+security:
+- BearerAuth: []
+tags:
+- name: Ad Sets
+paths:
+  /act_{ad-account-id}/adsets:
+    get:
+      operationId: listAdSets
+      summary: Facebook List Ad Sets
+      description: Retrieve ad sets for an ad account.
+      tags:
+      - Ad Sets
+      parameters:
+      - name: ad-account-id
+        in: path
+        required: true
+        description: The ad account ID.
+        schema:
+          type: string
+        example: '123456789'
+      responses:
+        '200':
+          description: Ad sets retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdSetList'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      operationId: createAdSet
+      summary: Facebook Create Ad Set
+      description: Create a new ad set within a campaign.
+      tags:
+      - Ad Sets
+      parameters:
+      - name: ad-account-id
+        in: path
+        required: true
+        description: The ad account ID.
+        schema:
+          type: string
+        example: '123456789'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdSetRequest'
+      responses:
+        '200':
+          description: Ad set created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    AdSetRequest:
+      type: object
+      description: Request to create an ad set.
+      properties:
+        name:
+          type: string
+          description: Ad set name.
+        campaign_id:
+          type: string
+          description: Parent campaign ID.
+        daily_budget:
+          type: string
+          description: Daily budget in cents.
+        targeting:
+          type: object
+          description: Targeting specification.
+        status:
+          type: string
+          description: Initial ad set status.
+      required:
+      - name
+      - campaign_id
+      - targeting
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+            after:
+              type: string
+        next:
+          type: string
+          format: uri
+        previous:
+          type: string
+          format: uri
+    AdSetList:
+      type: object
+      description: Paginated list of ad sets.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdSet'
+        paging:
+          $ref: '#/components/schemas/Paging'
+    AdSet:
+      type: object
+      description: An ad set within a campaign.
+      properties:
+        id:
+          type: string
+          description: Ad set ID.
+          example: '500001234567890'
+        name:
+          type: string
+          description: Ad set name.
+          example: Women 25-34 Interest Targeting
+        campaign_id:
+          type: string
+          description: Parent campaign ID.
+        status:
+          type: string
+          description: Ad set status.
+          enum:
+          - ACTIVE
+          - PAUSED
+          - DELETED
+          - ARCHIVED
+        daily_budget:
+          type: string
+          description: Daily budget in cents.
+        start_time:
+          type: string
+          format: date-time
+          description: Ad set start time.
+        end_time:
+          type: string
+          format: date-time
+          description: Ad set end time.
+        targeting:
+          type: object
+          description: Targeting specification.
+        bid_amount:
+          type: string
+          description: Bid amount in cents.
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 access token for Facebook Graph API.

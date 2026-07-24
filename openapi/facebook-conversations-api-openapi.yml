@@ -1,0 +1,152 @@
+openapi: 3.0.3
+info:
+  title: Facebook Graph Ad Accounts Conversations API
+  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  version: '21.0'
+  contact:
+    name: Meta Platforms
+    url: https://developers.facebook.com
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.facebook.com/v21.0
+  description: Facebook Graph API v21.0
+security:
+- BearerAuth: []
+tags:
+- name: Conversations
+paths:
+  /{conversation-id}:
+    get:
+      operationId: getConversation
+      summary: Facebook Get Conversation
+      description: Retrieve a conversation by ID.
+      tags:
+      - Conversations
+      parameters:
+      - name: conversation-id
+        in: path
+        required: true
+        description: The conversation ID.
+        schema:
+          type: string
+        example: t_100001234567890
+      responses:
+        '200':
+          description: Conversation retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Conversation'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /{page-id}/conversations:
+    get:
+      operationId: listConversations
+      summary: Facebook List Conversations
+      description: Retrieve all conversations for a page.
+      tags:
+      - Conversations
+      parameters:
+      - name: page-id
+        in: path
+        required: true
+        description: The page ID.
+        schema:
+          type: string
+        example: '200001234567890'
+      responses:
+        '200':
+          description: Conversations retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConversationList'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    Message:
+      type: object
+      description: A message in a conversation.
+      properties:
+        id:
+          type: string
+          description: Message ID.
+          example: mid.1234567890
+        message:
+          type: string
+          description: Message text.
+          example: Hello!
+        created_time:
+          type: string
+          format: date-time
+          description: Message creation time.
+        from:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+    ConversationList:
+      type: object
+      description: Paginated list of conversations.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Conversation'
+        paging:
+          type: object
+          properties:
+            cursors:
+              type: object
+              properties:
+                before:
+                  type: string
+                after:
+                  type: string
+            next:
+              type: string
+              format: uri
+    Conversation:
+      type: object
+      description: A Messenger conversation.
+      properties:
+        id:
+          type: string
+          description: Conversation ID.
+          example: t_100001234567890
+        updated_time:
+          type: string
+          format: date-time
+          description: Last update time.
+        participants:
+          type: object
+          description: Conversation participants.
+          properties:
+            data:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+        messages:
+          type: object
+          description: Messages in the conversation.
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/Message'
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 access token for Facebook Graph API.

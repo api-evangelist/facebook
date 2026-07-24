@@ -1,0 +1,199 @@
+openapi: 3.0.3
+info:
+  title: Facebook Graph Ad Accounts Pages API
+  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  version: '21.0'
+  contact:
+    name: Meta Platforms
+    url: https://developers.facebook.com
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.facebook.com/v21.0
+  description: Facebook Graph API v21.0
+security:
+- BearerAuth: []
+tags:
+- name: Pages
+paths:
+  /{page-id}:
+    get:
+      operationId: getPage
+      summary: Facebook Get Page
+      description: Retrieve information about a Facebook Page.
+      tags:
+      - Pages
+      parameters:
+      - name: page-id
+        in: path
+        required: true
+        description: The page ID.
+        schema:
+          type: string
+        example: '200001234567890'
+      - name: fields
+        in: query
+        description: Comma-separated list of fields to return.
+        schema:
+          type: string
+        example: id,name,category,fan_count
+      responses:
+        '200':
+          description: Page information retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Page'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /{page-id}/feed:
+    get:
+      operationId: getPageFeed
+      summary: Facebook Get Page Feed
+      description: Retrieve posts from a page's feed.
+      tags:
+      - Pages
+      parameters:
+      - name: page-id
+        in: path
+        required: true
+        description: The page ID.
+        schema:
+          type: string
+        example: '200001234567890'
+      - name: limit
+        in: query
+        description: Maximum number of posts to return.
+        schema:
+          type: integer
+        example: 25
+      responses:
+        '200':
+          description: Page feed posts retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostList'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+              description: Cursor for the previous page.
+            after:
+              type: string
+              description: Cursor for the next page.
+        next:
+          type: string
+          format: uri
+          description: URL for the next page of results.
+        previous:
+          type: string
+          format: uri
+          description: URL for the previous page of results.
+    Post:
+      type: object
+      description: A Facebook post.
+      properties:
+        id:
+          type: string
+          description: The post ID.
+          example: '100001234567890_987654321'
+        message:
+          type: string
+          description: Post message text.
+          example: Hello world!
+        created_time:
+          type: string
+          format: date-time
+          description: Time the post was created.
+          example: 2026-04-18T10:00:00+0000
+        updated_time:
+          type: string
+          format: date-time
+          description: Time the post was last updated.
+        from:
+          type: object
+          description: The user or page that created the post.
+          properties:
+            id:
+              type: string
+              description: Creator ID.
+            name:
+              type: string
+              description: Creator name.
+        type:
+          type: string
+          description: Post type.
+          enum:
+          - link
+          - status
+          - photo
+          - video
+          - offer
+          example: status
+        link:
+          type: string
+          format: uri
+          description: URL attached to the post.
+        permalink_url:
+          type: string
+          format: uri
+          description: Permanent URL to the post.
+    PostList:
+      type: object
+      description: Paginated list of posts.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Post'
+          description: Array of posts.
+        paging:
+          $ref: '#/components/schemas/Paging'
+    Page:
+      type: object
+      description: A Facebook Page.
+      properties:
+        id:
+          type: string
+          description: The page ID.
+          example: '200001234567890'
+        name:
+          type: string
+          description: The page name.
+          example: Example Brand
+        category:
+          type: string
+          description: Page category.
+          example: Technology Company
+        fan_count:
+          type: integer
+          description: Number of page fans.
+          example: 150000
+        about:
+          type: string
+          description: Page description.
+        website:
+          type: string
+          format: uri
+          description: Page website URL.
+        link:
+          type: string
+          format: uri
+          description: URL to the Facebook Page.
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 access token for Facebook Graph API.

@@ -1,0 +1,230 @@
+openapi: 3.0.3
+info:
+  title: Facebook Graph Ad Accounts Comments API
+  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  version: '21.0'
+  contact:
+    name: Meta Platforms
+    url: https://developers.facebook.com
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.facebook.com/v21.0
+  description: Facebook Graph API v21.0
+security:
+- BearerAuth: []
+tags:
+- name: Comments
+paths:
+  /{post-id}/comments:
+    get:
+      operationId: getPostComments
+      summary: Facebook Get Post Comments
+      description: Retrieve comments on a specific post.
+      tags:
+      - Comments
+      parameters:
+      - name: post-id
+        in: path
+        required: true
+        description: The post ID.
+        schema:
+          type: string
+        example: '100001234567890_987654321'
+      - name: limit
+        in: query
+        description: Maximum number of comments to return.
+        schema:
+          type: integer
+        example: 25
+      responses:
+        '200':
+          description: Comments retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommentList'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      operationId: createComment
+      summary: Facebook Create Comment
+      description: Post a comment on a specific post.
+      tags:
+      - Comments
+      parameters:
+      - name: post-id
+        in: path
+        required: true
+        description: The post ID.
+        schema:
+          type: string
+        example: '100001234567890_987654321'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                  description: Comment text.
+              required:
+              - message
+      responses:
+        '200':
+          description: Comment created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /{media-id}/comments:
+    get:
+      operationId: getInstagramComments
+      summary: Facebook Get Instagram Comments
+      description: Retrieve comments on an Instagram media object.
+      tags:
+      - Comments
+      parameters:
+      - name: media-id
+        in: path
+        required: true
+        description: The media ID.
+        schema:
+          type: string
+        example: '17895695668004550'
+      responses:
+        '200':
+          description: Comments retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InstagramCommentList'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    InstagramComment:
+      type: object
+      description: A comment on Instagram media.
+      properties:
+        id:
+          type: string
+          description: Comment ID.
+          example: '17858893269000001'
+        text:
+          type: string
+          description: Comment text.
+          example: Love this photo!
+        timestamp:
+          type: string
+          format: date-time
+          description: Comment timestamp.
+        username:
+          type: string
+          description: Username of the commenter.
+          example: photolovers
+        like_count:
+          type: integer
+          description: Number of likes on the comment.
+          example: 3
+    Comment:
+      type: object
+      description: A comment on a post.
+      properties:
+        id:
+          type: string
+          description: Comment ID.
+          example: '100001234567890_987654321_111111'
+        message:
+          type: string
+          description: Comment text.
+          example: Great post!
+        created_time:
+          type: string
+          format: date-time
+          description: Time the comment was created.
+        from:
+          type: object
+          description: The user who made the comment.
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+        like_count:
+          type: integer
+          description: Number of likes on the comment.
+          example: 5
+    CommentList:
+      type: object
+      description: Paginated list of comments.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Comment'
+        paging:
+          $ref: '#/components/schemas/Paging'
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+              description: Cursor for the previous page.
+            after:
+              type: string
+              description: Cursor for the next page.
+        next:
+          type: string
+          format: uri
+          description: URL for the next page of results.
+        previous:
+          type: string
+          format: uri
+          description: URL for the previous page of results.
+    InstagramCommentList:
+      type: object
+      description: Paginated list of Instagram comments.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/InstagramComment'
+        paging:
+          $ref: '#/components/schemas/Paging_2'
+    Paging_2:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+            after:
+              type: string
+        next:
+          type: string
+          format: uri
+        previous:
+          type: string
+          format: uri
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 access token for Facebook Graph API.

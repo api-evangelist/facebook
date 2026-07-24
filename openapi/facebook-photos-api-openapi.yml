@@ -1,0 +1,148 @@
+openapi: 3.0.3
+info:
+  title: Facebook Graph Ad Accounts Photos API
+  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  version: '21.0'
+  contact:
+    name: Meta Platforms
+    url: https://developers.facebook.com
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.facebook.com/v21.0
+  description: Facebook Graph API v21.0
+security:
+- BearerAuth: []
+tags:
+- name: Photos
+paths:
+  /{user-id}/photos:
+    get:
+      operationId: getUserPhotos
+      summary: Facebook Get User Photos
+      description: Retrieve photos uploaded by a user.
+      tags:
+      - Photos
+      parameters:
+      - name: user-id
+        in: path
+        required: true
+        description: The user ID.
+        schema:
+          type: string
+        example: '100001234567890'
+      - name: limit
+        in: query
+        description: Maximum number of photos to return.
+        schema:
+          type: integer
+        example: 25
+      responses:
+        '200':
+          description: Photos retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PhotoList'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /{photo-id}:
+    get:
+      operationId: getPhoto
+      summary: Facebook Get Photo
+      description: Retrieve a specific photo by ID.
+      tags:
+      - Photos
+      parameters:
+      - name: photo-id
+        in: path
+        required: true
+        description: The photo ID.
+        schema:
+          type: string
+        example: '300001234567890'
+      responses:
+        '200':
+          description: Photo retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Photo'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    Photo:
+      type: object
+      description: A Facebook photo.
+      properties:
+        id:
+          type: string
+          description: Photo ID.
+          example: '300001234567890'
+        name:
+          type: string
+          description: Photo caption.
+          example: Sunset at the beach
+        created_time:
+          type: string
+          format: date-time
+          description: Time the photo was uploaded.
+        link:
+          type: string
+          format: uri
+          description: URL to the photo on Facebook.
+        picture:
+          type: string
+          format: uri
+          description: URL to a thumbnail of the photo.
+        source:
+          type: string
+          format: uri
+          description: URL to the full-size photo.
+        width:
+          type: integer
+          description: Photo width in pixels.
+          example: 1920
+        height:
+          type: integer
+          description: Photo height in pixels.
+          example: 1080
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+              description: Cursor for the previous page.
+            after:
+              type: string
+              description: Cursor for the next page.
+        next:
+          type: string
+          format: uri
+          description: URL for the next page of results.
+        previous:
+          type: string
+          format: uri
+          description: URL for the previous page of results.
+    PhotoList:
+      type: object
+      description: Paginated list of photos.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Photo'
+        paging:
+          $ref: '#/components/schemas/Paging'
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 access token for Facebook Graph API.

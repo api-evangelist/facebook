@@ -1,0 +1,95 @@
+openapi: 3.0.3
+info:
+  title: Facebook Graph Ad Accounts Replies API
+  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  version: '21.0'
+  contact:
+    name: Meta Platforms
+    url: https://developers.facebook.com
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.facebook.com/v21.0
+  description: Facebook Graph API v21.0
+security:
+- BearerAuth: []
+tags:
+- name: Replies
+paths:
+  /{threads-media-id}/replies:
+    get:
+      operationId: getThreadsReplies
+      summary: Facebook Get Threads Replies
+      description: Retrieve replies to a Threads post.
+      tags:
+      - Replies
+      parameters:
+      - name: threads-media-id
+        in: path
+        required: true
+        description: The Threads media ID.
+        schema:
+          type: string
+        example: '98765432101234567'
+      responses:
+        '200':
+          description: Replies retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThreadsMediaList'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    ThreadsMediaList:
+      type: object
+      description: List of Threads media.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/ThreadsMedia'
+    ThreadsMedia:
+      type: object
+      description: A Threads post.
+      properties:
+        id:
+          type: string
+          description: Media ID.
+          example: '98765432101234567'
+        media_type:
+          type: string
+          description: Media type.
+          enum:
+          - TEXT_POST
+          - IMAGE
+          - VIDEO
+          - CAROUSEL_ALBUM
+          example: TEXT_POST
+        text:
+          type: string
+          description: Post text content.
+          example: Hello Threads!
+        permalink:
+          type: string
+          format: uri
+          description: Permanent URL to the post.
+        timestamp:
+          type: string
+          format: date-time
+          description: Publishing timestamp.
+        username:
+          type: string
+          description: Author username.
+          example: examplebrand
+        is_quote_post:
+          type: boolean
+          description: Whether this is a quote post.
+          example: false
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 access token for Facebook Graph API.

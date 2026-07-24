@@ -1,0 +1,269 @@
+openapi: 3.0.3
+info:
+  title: Facebook Graph Ad Accounts Posts API
+  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  version: '21.0'
+  contact:
+    name: Meta Platforms
+    url: https://developers.facebook.com
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.facebook.com/v21.0
+  description: Facebook Graph API v21.0
+security:
+- BearerAuth: []
+tags:
+- name: Posts
+paths:
+  /{user-id}/feed:
+    get:
+      operationId: getUserFeed
+      summary: Facebook Get User Feed
+      description: Retrieve posts from a user's feed.
+      tags:
+      - Posts
+      parameters:
+      - name: user-id
+        in: path
+        required: true
+        description: The user ID.
+        schema:
+          type: string
+        example: '100001234567890'
+      - name: limit
+        in: query
+        description: Maximum number of posts to return.
+        schema:
+          type: integer
+        example: 25
+      responses:
+        '200':
+          description: Feed posts retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostList'
+              examples:
+                GetUserFeed200Example:
+                  summary: Default getUserFeed 200 response
+                  x-microcks-default: true
+                  value:
+                    data:
+                    - id: '100001234567890_987654321'
+                      message: Hello world!
+                      created_time: 2026-04-18T10:00:00+0000
+                      from:
+                        id: '100001234567890'
+                        name: Jane Smith
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      operationId: createPost
+      summary: Facebook Create Post
+      description: Publish a new post to a user's feed.
+      tags:
+      - Posts
+      parameters:
+      - name: user-id
+        in: path
+        required: true
+        description: The user ID.
+        schema:
+          type: string
+        example: '100001234567890'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostRequest'
+            examples:
+              CreatePostRequestExample:
+                summary: Default createPost request
+                x-microcks-default: true
+                value:
+                  message: Check out this amazing content!
+                  link: https://example.com/article
+      responses:
+        '200':
+          description: Post created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The new post ID.
+        '400':
+          description: Invalid post content.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /{post-id}:
+    get:
+      operationId: getPost
+      summary: Facebook Get Post
+      description: Retrieve a specific post by ID.
+      tags:
+      - Posts
+      parameters:
+      - name: post-id
+        in: path
+        required: true
+        description: The post ID.
+        schema:
+          type: string
+        example: '100001234567890_987654321'
+      - name: fields
+        in: query
+        description: Comma-separated list of fields to return.
+        schema:
+          type: string
+        example: id,message,created_time,from
+      responses:
+        '200':
+          description: Post retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    delete:
+      operationId: deletePost
+      summary: Facebook Delete Post
+      description: Delete a post by ID.
+      tags:
+      - Posts
+      parameters:
+      - name: post-id
+        in: path
+        required: true
+        description: The post ID.
+        schema:
+          type: string
+        example: '100001234567890_987654321'
+      responses:
+        '200':
+          description: Post deleted successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    PostRequest:
+      type: object
+      description: Request to create a post.
+      properties:
+        message:
+          type: string
+          description: Post message text.
+          example: Check out this amazing content!
+        link:
+          type: string
+          format: uri
+          description: URL to attach to the post.
+          example: https://example.com/article
+        place:
+          type: string
+          description: Page ID of a location to tag.
+        tags:
+          type: string
+          description: Comma-separated user IDs to tag.
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+              description: Cursor for the previous page.
+            after:
+              type: string
+              description: Cursor for the next page.
+        next:
+          type: string
+          format: uri
+          description: URL for the next page of results.
+        previous:
+          type: string
+          format: uri
+          description: URL for the previous page of results.
+    Post:
+      type: object
+      description: A Facebook post.
+      properties:
+        id:
+          type: string
+          description: The post ID.
+          example: '100001234567890_987654321'
+        message:
+          type: string
+          description: Post message text.
+          example: Hello world!
+        created_time:
+          type: string
+          format: date-time
+          description: Time the post was created.
+          example: 2026-04-18T10:00:00+0000
+        updated_time:
+          type: string
+          format: date-time
+          description: Time the post was last updated.
+        from:
+          type: object
+          description: The user or page that created the post.
+          properties:
+            id:
+              type: string
+              description: Creator ID.
+            name:
+              type: string
+              description: Creator name.
+        type:
+          type: string
+          description: Post type.
+          enum:
+          - link
+          - status
+          - photo
+          - video
+          - offer
+          example: status
+        link:
+          type: string
+          format: uri
+          description: URL attached to the post.
+        permalink_url:
+          type: string
+          format: uri
+          description: Permanent URL to the post.
+    PostList:
+      type: object
+      description: Paginated list of posts.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Post'
+          description: Array of posts.
+        paging:
+          $ref: '#/components/schemas/Paging'
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 access token for Facebook Graph API.

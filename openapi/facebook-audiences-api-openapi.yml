@@ -1,0 +1,158 @@
+openapi: 3.0.3
+info:
+  title: Facebook Graph Ad Accounts Audiences API
+  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  version: '21.0'
+  contact:
+    name: Meta Platforms
+    url: https://developers.facebook.com
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.facebook.com/v21.0
+  description: Facebook Graph API v21.0
+security:
+- BearerAuth: []
+tags:
+- name: Audiences
+paths:
+  /act_{ad-account-id}/customaudiences:
+    get:
+      operationId: listCustomAudiences
+      summary: Facebook List Custom Audiences
+      description: Retrieve custom audiences for an ad account.
+      tags:
+      - Audiences
+      parameters:
+      - name: ad-account-id
+        in: path
+        required: true
+        description: The ad account ID.
+        schema:
+          type: string
+        example: '123456789'
+      responses:
+        '200':
+          description: Custom audiences retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomAudienceList'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      operationId: createCustomAudience
+      summary: Facebook Create Custom Audience
+      description: Create a new custom audience.
+      tags:
+      - Audiences
+      parameters:
+      - name: ad-account-id
+        in: path
+        required: true
+        description: The ad account ID.
+        schema:
+          type: string
+        example: '123456789'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomAudienceRequest'
+      responses:
+        '200':
+          description: Custom audience created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    CustomAudienceRequest:
+      type: object
+      description: Request to create a custom audience.
+      properties:
+        name:
+          type: string
+          description: Audience name.
+        description:
+          type: string
+          description: Audience description.
+        subtype:
+          type: string
+          description: Audience subtype.
+        customer_file_source:
+          type: string
+          description: Source of customer data.
+      required:
+      - name
+      - subtype
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+            after:
+              type: string
+        next:
+          type: string
+          format: uri
+        previous:
+          type: string
+          format: uri
+    CustomAudienceList:
+      type: object
+      description: Paginated list of custom audiences.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomAudience'
+        paging:
+          $ref: '#/components/schemas/Paging'
+    CustomAudience:
+      type: object
+      description: A custom audience for ad targeting.
+      properties:
+        id:
+          type: string
+          description: Custom audience ID.
+          example: '700001234567890'
+        name:
+          type: string
+          description: Audience name.
+          example: Website Visitors Last 30 Days
+        description:
+          type: string
+          description: Audience description.
+        approximate_count:
+          type: integer
+          description: Approximate audience size.
+          example: 25000
+        subtype:
+          type: string
+          description: Audience subtype.
+          enum:
+          - CUSTOM
+          - LOOKALIKE
+          - WEBSITE
+        delivery_status:
+          type: object
+          description: Audience delivery status.
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 access token for Facebook Graph API.

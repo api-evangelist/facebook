@@ -1,0 +1,117 @@
+openapi: 3.0.3
+info:
+  title: Facebook Graph Ad Accounts Tags API
+  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  version: '21.0'
+  contact:
+    name: Meta Platforms
+    url: https://developers.facebook.com
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.facebook.com/v21.0
+  description: Facebook Graph API v21.0
+security:
+- BearerAuth: []
+tags:
+- name: Tags
+paths:
+  /{ig-user-id}/tags:
+    get:
+      operationId: getInstagramTags
+      summary: Facebook Get Instagram Tags
+      description: Retrieve media where the user has been tagged.
+      tags:
+      - Tags
+      parameters:
+      - name: ig-user-id
+        in: path
+        required: true
+        description: The Instagram user ID.
+        schema:
+          type: string
+        example: '17841405822304914'
+      responses:
+        '200':
+          description: Tagged media retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MediaList'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+            after:
+              type: string
+        next:
+          type: string
+          format: uri
+        previous:
+          type: string
+          format: uri
+    InstagramMedia:
+      type: object
+      description: An Instagram media object.
+      properties:
+        id:
+          type: string
+          description: Media ID.
+          example: '17895695668004550'
+        caption:
+          type: string
+          description: Media caption.
+          example: Beautiful sunset!
+        media_type:
+          type: string
+          description: Media type.
+          enum:
+          - IMAGE
+          - VIDEO
+          - CAROUSEL_ALBUM
+          example: IMAGE
+        media_url:
+          type: string
+          format: uri
+          description: URL to the media.
+        permalink:
+          type: string
+          format: uri
+          description: Permanent URL to the media on Instagram.
+        timestamp:
+          type: string
+          format: date-time
+          description: Publishing timestamp.
+        like_count:
+          type: integer
+          description: Number of likes.
+          example: 1500
+        comments_count:
+          type: integer
+          description: Number of comments.
+          example: 45
+    MediaList:
+      type: object
+      description: Paginated list of Instagram media.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/InstagramMedia'
+        paging:
+          $ref: '#/components/schemas/Paging'
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 access token for Facebook Graph API.

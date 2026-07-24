@@ -1,0 +1,111 @@
+openapi: 3.0.3
+info:
+  title: Facebook Graph Ad Accounts Phone Numbers API
+  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  version: '21.0'
+  contact:
+    name: Meta Platforms
+    url: https://developers.facebook.com
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.facebook.com/v21.0
+  description: Facebook Graph API v21.0
+security:
+- BearerAuth: []
+tags:
+- name: Phone Numbers
+paths:
+  /{phone-number-id}:
+    get:
+      operationId: getWhatsAppPhoneNumber
+      summary: Facebook Get WhatsApp Phone Number
+      description: Retrieve phone number details.
+      tags:
+      - Phone Numbers
+      parameters:
+      - name: phone-number-id
+        in: path
+        required: true
+        description: The phone number ID.
+        schema:
+          type: string
+        example: '106540352242922'
+      responses:
+        '200':
+          description: Phone number details retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WhatsAppPhoneNumber'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /{waba-id}/phone_numbers:
+    get:
+      operationId: listWhatsAppPhoneNumbers
+      summary: Facebook List WhatsApp Phone Numbers
+      description: Retrieve phone numbers for a WhatsApp Business Account.
+      tags:
+      - Phone Numbers
+      parameters:
+      - name: waba-id
+        in: path
+        required: true
+        description: WhatsApp Business Account ID.
+        schema:
+          type: string
+        example: '102290129340398'
+      responses:
+        '200':
+          description: Phone numbers retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PhoneNumberList'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    WhatsAppPhoneNumber:
+      type: object
+      description: A WhatsApp Business phone number.
+      properties:
+        id:
+          type: string
+          description: Phone number ID.
+          example: '106540352242922'
+        display_phone_number:
+          type: string
+          description: Display phone number.
+          example: +1 555 123 4567
+        verified_name:
+          type: string
+          description: Verified business name.
+          example: Example Business
+        quality_rating:
+          type: string
+          description: Phone number quality rating.
+          enum:
+          - GREEN
+          - YELLOW
+          - RED
+          example: GREEN
+        status:
+          type: string
+          description: Phone number status.
+          example: CONNECTED
+    PhoneNumberList:
+      type: object
+      description: List of WhatsApp phone numbers.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/WhatsAppPhoneNumber'
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 access token for Facebook Graph API.

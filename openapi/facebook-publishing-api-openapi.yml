@@ -1,0 +1,133 @@
+openapi: 3.0.3
+info:
+  title: Facebook Graph Ad Accounts Publishing API
+  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  version: '21.0'
+  contact:
+    name: Meta Platforms
+    url: https://developers.facebook.com
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.facebook.com/v21.0
+  description: Facebook Graph API v21.0
+security:
+- BearerAuth: []
+tags:
+- name: Publishing
+paths:
+  /{threads-user-id}/threads:
+    post:
+      operationId: createThreadsMedia
+      summary: Facebook Create Threads Media
+      description: Create a media container for a Threads post.
+      tags:
+      - Publishing
+      parameters:
+      - name: threads-user-id
+        in: path
+        required: true
+        description: The Threads user ID.
+        schema:
+          type: string
+        example: '12345678901234567'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ThreadsPostRequest'
+            examples:
+              CreateThreadsMediaRequestExample:
+                summary: Default createThreadsMedia request
+                x-microcks-default: true
+                value:
+                  media_type: TEXT
+                  text: Hello Threads! This is my first post.
+      responses:
+        '200':
+          description: Media container created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /{threads-user-id}/threads_publish:
+    post:
+      operationId: publishThreadsMedia
+      summary: Facebook Publish Threads Media
+      description: Publish a previously created Threads media container.
+      tags:
+      - Publishing
+      parameters:
+      - name: threads-user-id
+        in: path
+        required: true
+        description: The Threads user ID.
+        schema:
+          type: string
+        example: '12345678901234567'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                creation_id:
+                  type: string
+                  description: ID of the media container to publish.
+              required:
+              - creation_id
+      responses:
+        '200':
+          description: Thread published successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    ThreadsPostRequest:
+      type: object
+      description: Request to create a Threads post.
+      properties:
+        media_type:
+          type: string
+          description: Media type.
+          enum:
+          - TEXT
+          - IMAGE
+          - VIDEO
+          - CAROUSEL
+          example: TEXT
+        text:
+          type: string
+          description: Post text content.
+          example: Hello Threads! This is my first post.
+        image_url:
+          type: string
+          format: uri
+          description: URL of the image.
+        video_url:
+          type: string
+          format: uri
+          description: URL of the video.
+      required:
+      - media_type
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 access token for Facebook Graph API.

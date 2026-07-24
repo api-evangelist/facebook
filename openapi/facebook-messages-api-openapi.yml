@@ -1,0 +1,276 @@
+openapi: 3.0.3
+info:
+  title: Facebook Graph Ad Accounts Messages API
+  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  version: '21.0'
+  contact:
+    name: Meta Platforms
+    url: https://developers.facebook.com
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.facebook.com/v21.0
+  description: Facebook Graph API v21.0
+security:
+- BearerAuth: []
+tags:
+- name: Messages
+paths:
+  /{page-id}/messages:
+    post:
+      operationId: sendMessage
+      summary: Facebook Send Message
+      description: Send a message to a user via Messenger.
+      tags:
+      - Messages
+      parameters:
+      - name: page-id
+        in: path
+        required: true
+        description: The page ID.
+        schema:
+          type: string
+        example: '200001234567890'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SendMessageRequest'
+            examples:
+              SendMessageRequestExample:
+                summary: Default sendMessage request
+                x-microcks-default: true
+                value:
+                  recipient:
+                    id: '100001234567890'
+                  messaging_type: RESPONSE
+                  message:
+                    text: Hello! How can I help you today?
+      responses:
+        '200':
+          description: Message sent successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendMessageResponse'
+              examples:
+                SendMessage200Example:
+                  summary: Default sendMessage 200 response
+                  x-microcks-default: true
+                  value:
+                    recipient_id: '100001234567890'
+                    message_id: mid.1234567890
+        '400':
+          description: Invalid message request.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /{phone-number-id}/messages:
+    post:
+      operationId: sendWhatsAppMessage
+      summary: Facebook Send WhatsApp Message
+      description: Send a message to a WhatsApp user.
+      tags:
+      - Messages
+      parameters:
+      - name: phone-number-id
+        in: path
+        required: true
+        description: The phone number ID.
+        schema:
+          type: string
+        example: '106540352242922'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WhatsAppMessageRequest'
+            examples:
+              SendWhatsAppMessageRequestExample:
+                summary: Default sendWhatsAppMessage request
+                x-microcks-default: true
+                value:
+                  messaging_product: whatsapp
+                  to: '15551234567'
+                  type: text
+                  text:
+                    body: Hello from our business!
+      responses:
+        '200':
+          description: Message sent successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WhatsAppMessageResponse'
+              examples:
+                SendWhatsAppMessage200Example:
+                  summary: Default sendWhatsAppMessage 200 response
+                  x-microcks-default: true
+                  value:
+                    messaging_product: whatsapp
+                    contacts:
+                    - input: '15551234567'
+                      wa_id: '15551234567'
+                    messages:
+                    - id: wamid.ABCdef123456
+        '400':
+          description: Invalid message request.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    SendMessageResponse:
+      type: object
+      description: Response from sending a message.
+      properties:
+        recipient_id:
+          type: string
+          description: Recipient user ID.
+          example: '100001234567890'
+        message_id:
+          type: string
+          description: Sent message ID.
+          example: mid.1234567890
+    WhatsAppMessageRequest:
+      type: object
+      description: Request to send a WhatsApp message.
+      properties:
+        messaging_product:
+          type: string
+          description: Must be whatsapp.
+          example: whatsapp
+        to:
+          type: string
+          description: Recipient phone number.
+          example: '15551234567'
+        type:
+          type: string
+          description: Message type.
+          enum:
+          - text
+          - image
+          - video
+          - audio
+          - document
+          - template
+          - interactive
+          - location
+          - contacts
+          - reaction
+          example: text
+        text:
+          type: object
+          description: Text message content.
+          properties:
+            body:
+              type: string
+              description: Message body.
+              example: Hello from our business!
+            preview_url:
+              type: boolean
+              description: Whether to show URL preview.
+        template:
+          type: object
+          description: Template message content.
+          properties:
+            name:
+              type: string
+              description: Template name.
+            language:
+              type: object
+              properties:
+                code:
+                  type: string
+                  description: Language code.
+            components:
+              type: array
+              items:
+                type: object
+      required:
+      - messaging_product
+      - to
+      - type
+    SendMessageRequest:
+      type: object
+      description: Request to send a message.
+      properties:
+        recipient:
+          type: object
+          description: Message recipient.
+          properties:
+            id:
+              type: string
+              description: Recipient user ID.
+              example: '100001234567890'
+          required:
+          - id
+        messaging_type:
+          type: string
+          description: Messaging type.
+          enum:
+          - RESPONSE
+          - UPDATE
+          - MESSAGE_TAG
+          example: RESPONSE
+        message:
+          type: object
+          description: Message content.
+          properties:
+            text:
+              type: string
+              description: Message text.
+              example: Hello! How can I help you today?
+            attachment:
+              type: object
+              description: Message attachment.
+              properties:
+                type:
+                  type: string
+                  enum:
+                  - image
+                  - audio
+                  - video
+                  - file
+                  - template
+                payload:
+                  type: object
+      required:
+      - recipient
+      - messaging_type
+      - message
+    WhatsAppMessageResponse:
+      type: object
+      description: Response from sending a WhatsApp message.
+      properties:
+        messaging_product:
+          type: string
+          description: Messaging product.
+          example: whatsapp
+        contacts:
+          type: array
+          items:
+            type: object
+            properties:
+              input:
+                type: string
+                description: Input phone number.
+              wa_id:
+                type: string
+                description: WhatsApp ID.
+        messages:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: Message ID.
+                example: wamid.ABCdef123456
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 access token for Facebook Graph API.
