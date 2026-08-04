@@ -1,0 +1,231 @@
+{
+  "info": {
+    "_postman_id": "1c3c430b-f8d5-404e-9133-c727b962761c",
+    "name": "Facebook Graph Ad Accounts Conversations API",
+    "description": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:36:15.000Z",
+    "updatedAt": "2026-07-28T01:36:16.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-1c3c430b-f8d5-404e-9133-c727b962761c"
+  },
+  "item": [
+    {
+      "name": "{conversation-id}",
+      "item": [
+        {
+          "name": "Facebook Get Conversation",
+          "id": "e4ca6809-155e-417d-a9aa-59bf7fc3974f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/:conversation-id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ":conversation-id"
+              ],
+              "variable": [
+                {
+                  "id": "15c36fc5-1b6f-48e6-bebb-a8191d604f1a",
+                  "key": "conversation-id",
+                  "value": "<string>",
+                  "description": "(Required) The conversation ID."
+                }
+              ]
+            },
+            "description": "Retrieve a conversation by ID."
+          },
+          "response": [
+            {
+              "id": "cff53edd-fa18-4e54-a414-773a72981ae6",
+              "name": "Conversation retrieved successfully.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:conversation-id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":conversation-id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "conversation-id"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"id\": \"<string>\",\n  \"updated_time\": \"<dateTime>\",\n  \"participants\": {\n    \"data\": [\n      {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\"\n      }\n    ]\n  },\n  \"messages\": {\n    \"data\": [\n      {\n        \"id\": \"<string>\",\n        \"message\": \"<string>\",\n        \"created_time\": \"<dateTime>\",\n        \"from\": {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      },\n      {\n        \"id\": \"<string>\",\n        \"message\": \"<string>\",\n        \"created_time\": \"<dateTime>\",\n        \"from\": {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      }\n    ]\n  }\n}",
+              "createdAt": "2026-07-28T01:36:16.000Z",
+              "updatedAt": "2026-07-28T01:36:16.000Z",
+              "uid": "35240-cff53edd-fa18-4e54-a414-773a72981ae6"
+            }
+          ],
+          "createdAt": "2026-07-28T01:36:16.000Z",
+          "updatedAt": "2026-07-28T01:36:16.000Z",
+          "uid": "35240-e4ca6809-155e-417d-a9aa-59bf7fc3974f"
+        }
+      ],
+      "id": "5267f89a-fae2-46e7-bfc8-e5ccca016acc",
+      "createdAt": "2026-07-28T01:36:16.000Z",
+      "updatedAt": "2026-07-28T01:36:16.000Z",
+      "uid": "35240-5267f89a-fae2-46e7-bfc8-e5ccca016acc"
+    },
+    {
+      "name": "{page-id}",
+      "item": [
+        {
+          "name": "conversations",
+          "item": [
+            {
+              "name": "Facebook List Conversations",
+              "id": "b8af56ad-e6c4-4a54-9e05-e105e75a7dce",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:page-id/conversations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":page-id",
+                    "conversations"
+                  ],
+                  "variable": [
+                    {
+                      "id": "440da1fb-3ffc-4cb9-a453-7f95ca8e8d53",
+                      "key": "page-id",
+                      "value": "<string>",
+                      "description": "(Required) The page ID."
+                    }
+                  ]
+                },
+                "description": "Retrieve all conversations for a page."
+              },
+              "response": [
+                {
+                  "id": "0a708c57-3d0a-4077-a542-2acb5da930ad",
+                  "name": "Conversations retrieved successfully.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/:page-id/conversations",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":page-id",
+                        "conversations"
+                      ],
+                      "variable": [
+                        {
+                          "key": "page-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"updated_time\": \"<dateTime>\",\n      \"participants\": {\n        \"data\": [\n          {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\"\n          }\n        ]\n      },\n      \"messages\": {\n        \"data\": [\n          {\n            \"id\": \"<string>\",\n            \"message\": \"<string>\",\n            \"created_time\": \"<dateTime>\",\n            \"from\": {\n              \"id\": \"<string>\",\n              \"name\": \"<string>\"\n            }\n          },\n          {\n            \"id\": \"<string>\",\n            \"message\": \"<string>\",\n            \"created_time\": \"<dateTime>\",\n            \"from\": {\n              \"id\": \"<string>\",\n              \"name\": \"<string>\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"updated_time\": \"<dateTime>\",\n      \"participants\": {\n        \"data\": [\n          {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\"\n          }\n        ]\n      },\n      \"messages\": {\n        \"data\": [\n          {\n            \"id\": \"<string>\",\n            \"message\": \"<string>\",\n            \"created_time\": \"<dateTime>\",\n            \"from\": {\n              \"id\": \"<string>\",\n              \"name\": \"<string>\"\n            }\n          },\n          {\n            \"id\": \"<string>\",\n            \"message\": \"<string>\",\n            \"created_time\": \"<dateTime>\",\n            \"from\": {\n              \"id\": \"<string>\",\n              \"name\": \"<string>\"\n            }\n          }\n        ]\n      }\n    }\n  ],\n  \"paging\": {\n    \"cursors\": {\n      \"before\": \"<string>\",\n      \"after\": \"<string>\"\n    },\n    \"next\": \"<uri>\"\n  }\n}",
+                  "createdAt": "2026-07-28T01:36:16.000Z",
+                  "updatedAt": "2026-07-28T01:36:16.000Z",
+                  "uid": "35240-0a708c57-3d0a-4077-a542-2acb5da930ad"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:16.000Z",
+              "updatedAt": "2026-07-28T01:36:16.000Z",
+              "uid": "35240-b8af56ad-e6c4-4a54-9e05-e105e75a7dce"
+            }
+          ],
+          "id": "cd2f6aaf-2fb6-4ac9-bc6b-0f139821381e",
+          "createdAt": "2026-07-28T01:36:16.000Z",
+          "updatedAt": "2026-07-28T01:36:16.000Z",
+          "uid": "35240-cd2f6aaf-2fb6-4ac9-bc6b-0f139821381e"
+        }
+      ],
+      "id": "daffa4df-9452-416a-a2e7-79598f706d1b",
+      "createdAt": "2026-07-28T01:36:16.000Z",
+      "updatedAt": "2026-07-28T01:36:16.000Z",
+      "uid": "35240-daffa4df-9452-416a-a2e7-79598f706d1b"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graph.facebook.com/v21.0"
+    }
+  ]
+}

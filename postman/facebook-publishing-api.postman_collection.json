@@ -1,0 +1,289 @@
+{
+  "info": {
+    "_postman_id": "3bfc306f-d444-46cb-8425-59ea4ec9a32f",
+    "name": "Facebook Graph Ad Accounts Publishing API",
+    "description": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:36:38.000Z",
+    "updatedAt": "2026-07-28T01:36:39.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3bfc306f-d444-46cb-8425-59ea4ec9a32f"
+  },
+  "item": [
+    {
+      "name": "{threads-user-id}",
+      "item": [
+        {
+          "name": "threads",
+          "item": [
+            {
+              "name": "Facebook Create Threads Media",
+              "id": "dcbd9ea3-a4ef-4e7c-9ca6-73cc6dc6e2d1",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"media_type\": \"CAROUSEL\",\n  \"text\": \"<string>\",\n  \"image_url\": \"<uri>\",\n  \"video_url\": \"<uri>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/:threads-user-id/threads",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":threads-user-id",
+                    "threads"
+                  ],
+                  "variable": [
+                    {
+                      "id": "8d006002-35c8-48fd-9b1f-afeab470b094",
+                      "key": "threads-user-id",
+                      "value": "<string>",
+                      "description": "(Required) The Threads user ID."
+                    }
+                  ]
+                },
+                "description": "Create a media container for a Threads post."
+              },
+              "response": [
+                {
+                  "id": "999d6495-a0ef-4e4d-981b-35c2d56a1d2c",
+                  "name": "Media container created successfully.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"media_type\": \"CAROUSEL\",\n  \"text\": \"<string>\",\n  \"image_url\": \"<uri>\",\n  \"video_url\": \"<uri>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/:threads-user-id/threads",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":threads-user-id",
+                        "threads"
+                      ],
+                      "variable": [
+                        {
+                          "key": "threads-user-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:36:39.000Z",
+                  "updatedAt": "2026-07-28T01:36:39.000Z",
+                  "uid": "35240-999d6495-a0ef-4e4d-981b-35c2d56a1d2c"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:39.000Z",
+              "updatedAt": "2026-07-28T01:36:39.000Z",
+              "uid": "35240-dcbd9ea3-a4ef-4e7c-9ca6-73cc6dc6e2d1"
+            }
+          ],
+          "id": "11614b6e-5a48-4340-845e-e5f45a328bb3",
+          "createdAt": "2026-07-28T01:36:39.000Z",
+          "updatedAt": "2026-07-28T01:36:39.000Z",
+          "uid": "35240-11614b6e-5a48-4340-845e-e5f45a328bb3"
+        },
+        {
+          "name": "threads_publish",
+          "item": [
+            {
+              "name": "Facebook Publish Threads Media",
+              "id": "c5c87551-a292-4cb6-8a88-cb04621e8a6a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"creation_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/:threads-user-id/threads_publish",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":threads-user-id",
+                    "threads_publish"
+                  ],
+                  "variable": [
+                    {
+                      "id": "48dbc3c3-8832-4fa7-b391-13b43bfb9a1a",
+                      "key": "threads-user-id",
+                      "value": "<string>",
+                      "description": "(Required) The Threads user ID."
+                    }
+                  ]
+                },
+                "description": "Publish a previously created Threads media container."
+              },
+              "response": [
+                {
+                  "id": "e4b086d3-05a7-4515-932c-e4ce480e1e82",
+                  "name": "Thread published successfully.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"creation_id\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/:threads-user-id/threads_publish",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":threads-user-id",
+                        "threads_publish"
+                      ],
+                      "variable": [
+                        {
+                          "key": "threads-user-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:36:39.000Z",
+                  "updatedAt": "2026-07-28T01:36:39.000Z",
+                  "uid": "35240-e4b086d3-05a7-4515-932c-e4ce480e1e82"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:39.000Z",
+              "updatedAt": "2026-07-28T01:36:39.000Z",
+              "uid": "35240-c5c87551-a292-4cb6-8a88-cb04621e8a6a"
+            }
+          ],
+          "id": "2072871d-ff01-41a7-9c17-2997d2dd0df2",
+          "createdAt": "2026-07-28T01:36:39.000Z",
+          "updatedAt": "2026-07-28T01:36:39.000Z",
+          "uid": "35240-2072871d-ff01-41a7-9c17-2997d2dd0df2"
+        }
+      ],
+      "id": "06477482-17ac-4619-b65a-80de7b437cdb",
+      "createdAt": "2026-07-28T01:36:39.000Z",
+      "updatedAt": "2026-07-28T01:36:39.000Z",
+      "uid": "35240-06477482-17ac-4619-b65a-80de7b437cdb"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graph.facebook.com/v21.0"
+    }
+  ]
+}

@@ -1,0 +1,538 @@
+{
+  "info": {
+    "_postman_id": "69e7c974-0745-4c75-ae8a-fc91be05a08a",
+    "name": "Facebook Graph Ad Accounts Users API",
+    "description": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:36:44.000Z",
+    "updatedAt": "2026-07-28T01:36:44.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-69e7c974-0745-4c75-ae8a-fc91be05a08a"
+  },
+  "item": [
+    {
+      "name": "me",
+      "item": [
+        {
+          "name": "Facebook Get Current User",
+          "id": "4c1be2f4-41c1-46c6-83e6-e6eeef5cfc24",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/me?fields=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "me"
+              ],
+              "query": [
+                {
+                  "description": "Comma-separated list of fields to return.",
+                  "key": "fields",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Retrieve the profile of the currently authenticated user."
+          },
+          "response": [
+            {
+              "id": "3a7735dd-9c00-49bb-b26b-94422627ad88",
+              "name": "User profile retrieved successfully.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/me?fields=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "me"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of fields to return.",
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"email\": \"<email>\",\n  \"picture\": {\n    \"data\": {\n      \"url\": \"<uri>\"\n    }\n  },\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:36:44.000Z",
+              "updatedAt": "2026-07-28T01:36:44.000Z",
+              "uid": "35240-3a7735dd-9c00-49bb-b26b-94422627ad88"
+            },
+            {
+              "id": "f2481fdd-20f4-461d-8e4d-6793bb81612b",
+              "name": "Invalid or expired access token.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/me?fields=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "me"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of fields to return.",
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:36:44.000Z",
+              "updatedAt": "2026-07-28T01:36:44.000Z",
+              "uid": "35240-f2481fdd-20f4-461d-8e4d-6793bb81612b"
+            }
+          ],
+          "createdAt": "2026-07-28T01:36:44.000Z",
+          "updatedAt": "2026-07-28T01:36:44.000Z",
+          "uid": "35240-4c1be2f4-41c1-46c6-83e6-e6eeef5cfc24"
+        }
+      ],
+      "id": "3c20c242-3999-4542-80bf-cd557ca15989",
+      "createdAt": "2026-07-28T01:36:44.000Z",
+      "updatedAt": "2026-07-28T01:36:44.000Z",
+      "uid": "35240-3c20c242-3999-4542-80bf-cd557ca15989"
+    },
+    {
+      "name": "{user-id}",
+      "item": [
+        {
+          "name": "Facebook Get User",
+          "id": "bb72b51f-4344-462a-9438-09ad0445c8bb",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/:user-id?fields=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ":user-id"
+              ],
+              "query": [
+                {
+                  "description": "Comma-separated list of fields to return.",
+                  "key": "fields",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "id": "fd49b6c6-f927-4942-ae24-a6094957e291",
+                  "key": "user-id",
+                  "value": "<string>",
+                  "description": "(Required) The user ID."
+                }
+              ]
+            },
+            "description": "Retrieve a user profile by user ID."
+          },
+          "response": [
+            {
+              "id": "665f406a-b8e6-43c9-a1fd-baa36a3950ce",
+              "name": "User profile retrieved successfully.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:user-id?fields=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":user-id"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of fields to return.",
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "user-id"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"email\": \"<email>\",\n  \"picture\": {\n    \"data\": {\n      \"url\": \"<uri>\"\n    }\n  },\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:36:44.000Z",
+              "updatedAt": "2026-07-28T01:36:44.000Z",
+              "uid": "35240-665f406a-b8e6-43c9-a1fd-baa36a3950ce"
+            },
+            {
+              "id": "2e53dcb5-7a55-4ba6-ac80-97f8c4820dde",
+              "name": "User not found.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:user-id?fields=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":user-id"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of fields to return.",
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "user-id"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:36:44.000Z",
+              "updatedAt": "2026-07-28T01:36:44.000Z",
+              "uid": "35240-2e53dcb5-7a55-4ba6-ac80-97f8c4820dde"
+            }
+          ],
+          "createdAt": "2026-07-28T01:36:44.000Z",
+          "updatedAt": "2026-07-28T01:36:44.000Z",
+          "uid": "35240-bb72b51f-4344-462a-9438-09ad0445c8bb"
+        }
+      ],
+      "id": "f856e43e-ab1e-4b66-8cad-9d526f787064",
+      "createdAt": "2026-07-28T01:36:44.000Z",
+      "updatedAt": "2026-07-28T01:36:44.000Z",
+      "uid": "35240-f856e43e-ab1e-4b66-8cad-9d526f787064"
+    },
+    {
+      "name": "{ig-user-id}",
+      "item": [
+        {
+          "name": "Facebook Get Instagram User",
+          "id": "2a950f58-32e4-4d71-bd29-4d5d40565b4e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/:ig-user-id?fields=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ":ig-user-id"
+              ],
+              "query": [
+                {
+                  "description": "Comma-separated list of fields to return.",
+                  "key": "fields",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "id": "c328dd96-1596-475e-9ad8-8c67997b185f",
+                  "key": "ig-user-id",
+                  "value": "<string>",
+                  "description": "(Required) The Instagram user ID."
+                }
+              ]
+            },
+            "description": "Retrieve an Instagram Business or Creator account profile."
+          },
+          "response": [
+            {
+              "id": "0a5ab0f1-e7b6-4298-9a7e-c573c87ca7ea",
+              "name": "Instagram user retrieved successfully.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:ig-user-id?fields=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":ig-user-id"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of fields to return.",
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "ig-user-id"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"id\": \"<string>\",\n  \"username\": \"<string>\",\n  \"name\": \"<string>\",\n  \"biography\": \"<string>\",\n  \"followers_count\": \"<integer>\",\n  \"follows_count\": \"<integer>\",\n  \"media_count\": \"<integer>\",\n  \"profile_picture_url\": \"<uri>\",\n  \"website\": \"<uri>\"\n}",
+              "createdAt": "2026-07-28T01:36:44.000Z",
+              "updatedAt": "2026-07-28T01:36:44.000Z",
+              "uid": "35240-0a5ab0f1-e7b6-4298-9a7e-c573c87ca7ea"
+            }
+          ],
+          "createdAt": "2026-07-28T01:36:44.000Z",
+          "updatedAt": "2026-07-28T01:36:44.000Z",
+          "uid": "35240-2a950f58-32e4-4d71-bd29-4d5d40565b4e"
+        }
+      ],
+      "id": "fb336f6b-19ee-4065-8ac9-82a7a6d64052",
+      "createdAt": "2026-07-28T01:36:44.000Z",
+      "updatedAt": "2026-07-28T01:36:44.000Z",
+      "uid": "35240-fb336f6b-19ee-4065-8ac9-82a7a6d64052"
+    },
+    {
+      "name": "{threads-user-id}",
+      "item": [
+        {
+          "name": "Facebook Get Threads User",
+          "id": "9f7d52c3-86f5-4029-aa12-568a95b6944e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/:threads-user-id?fields=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ":threads-user-id"
+              ],
+              "query": [
+                {
+                  "description": "Comma-separated list of fields.",
+                  "key": "fields",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "id": "b9ba0b62-4946-4764-bc29-e9d6767c8dc7",
+                  "key": "threads-user-id",
+                  "value": "<string>",
+                  "description": "(Required) The Threads user ID."
+                }
+              ]
+            },
+            "description": "Retrieve a Threads user profile."
+          },
+          "response": [
+            {
+              "id": "4b2e3df6-0b57-4ff1-be58-931c7c850388",
+              "name": "Threads user retrieved successfully.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:threads-user-id?fields=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":threads-user-id"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of fields.",
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "threads-user-id"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"id\": \"<string>\",\n  \"username\": \"<string>\",\n  \"threads_profile_picture_url\": \"<uri>\",\n  \"threads_biography\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:36:44.000Z",
+              "updatedAt": "2026-07-28T01:36:44.000Z",
+              "uid": "35240-4b2e3df6-0b57-4ff1-be58-931c7c850388"
+            }
+          ],
+          "createdAt": "2026-07-28T01:36:44.000Z",
+          "updatedAt": "2026-07-28T01:36:44.000Z",
+          "uid": "35240-9f7d52c3-86f5-4029-aa12-568a95b6944e"
+        }
+      ],
+      "id": "6cfbc82e-5bef-49b8-9676-4b95692143b1",
+      "createdAt": "2026-07-28T01:36:44.000Z",
+      "updatedAt": "2026-07-28T01:36:44.000Z",
+      "uid": "35240-6cfbc82e-5bef-49b8-9676-4b95692143b1"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graph.facebook.com/v21.0"
+    }
+  ]
+}

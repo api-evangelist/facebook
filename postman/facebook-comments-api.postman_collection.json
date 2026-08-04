@@ -1,0 +1,372 @@
+{
+  "info": {
+    "_postman_id": "8235ca34-531f-49af-9fa7-27f0fdf85c44",
+    "name": "Facebook Graph Ad Accounts Comments API",
+    "description": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:36:00.000Z",
+    "updatedAt": "2026-07-28T01:36:00.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8235ca34-531f-49af-9fa7-27f0fdf85c44"
+  },
+  "item": [
+    {
+      "name": "{post-id}",
+      "item": [
+        {
+          "name": "comments",
+          "item": [
+            {
+              "name": "Facebook Get Post Comments",
+              "id": "72c187c1-cfe5-480e-979a-3b4086744148",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:post-id/comments?limit=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":post-id",
+                    "comments"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of comments to return.",
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "537b976c-1a46-45bd-8a97-cf172ef3f93f",
+                      "key": "post-id",
+                      "value": "<string>",
+                      "description": "(Required) The post ID."
+                    }
+                  ]
+                },
+                "description": "Retrieve comments on a specific post."
+              },
+              "response": [
+                {
+                  "id": "1c3f8c12-b993-43c3-8418-c8938d2c2eba",
+                  "name": "Comments retrieved successfully.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/:post-id/comments?limit=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":post-id",
+                        "comments"
+                      ],
+                      "query": [
+                        {
+                          "description": "Maximum number of comments to return.",
+                          "key": "limit",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "post-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"message\": \"<string>\",\n      \"created_time\": \"<dateTime>\",\n      \"from\": {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\"\n      },\n      \"like_count\": \"<integer>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"message\": \"<string>\",\n      \"created_time\": \"<dateTime>\",\n      \"from\": {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\"\n      },\n      \"like_count\": \"<integer>\"\n    }\n  ],\n  \"paging\": {\n    \"cursors\": {\n      \"before\": \"<string>\",\n      \"after\": \"<string>\"\n    },\n    \"next\": \"<uri>\",\n    \"previous\": \"<uri>\"\n  }\n}",
+                  "createdAt": "2026-07-28T01:36:00.000Z",
+                  "updatedAt": "2026-07-28T01:36:00.000Z",
+                  "uid": "35240-1c3f8c12-b993-43c3-8418-c8938d2c2eba"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:00.000Z",
+              "updatedAt": "2026-07-28T01:36:00.000Z",
+              "uid": "35240-72c187c1-cfe5-480e-979a-3b4086744148"
+            },
+            {
+              "name": "Facebook Create Comment",
+              "id": "838a02dc-e0fd-477d-b1ac-24dc230e80ec",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"message\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/:post-id/comments",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":post-id",
+                    "comments"
+                  ],
+                  "variable": [
+                    {
+                      "id": "ec4af1d8-9555-4f9c-8722-b469a0af3ae6",
+                      "key": "post-id",
+                      "value": "<string>",
+                      "description": "(Required) The post ID."
+                    }
+                  ]
+                },
+                "description": "Post a comment on a specific post."
+              },
+              "response": [
+                {
+                  "id": "3c2b22ef-9d24-43a5-b263-aaff30458add",
+                  "name": "Comment created successfully.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"message\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/:post-id/comments",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":post-id",
+                        "comments"
+                      ],
+                      "variable": [
+                        {
+                          "key": "post-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:36:00.000Z",
+                  "updatedAt": "2026-07-28T01:36:00.000Z",
+                  "uid": "35240-3c2b22ef-9d24-43a5-b263-aaff30458add"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:00.000Z",
+              "updatedAt": "2026-07-28T01:36:00.000Z",
+              "uid": "35240-838a02dc-e0fd-477d-b1ac-24dc230e80ec"
+            }
+          ],
+          "id": "7295c967-dd8f-4d3a-8a6a-625230f1b3c7",
+          "createdAt": "2026-07-28T01:36:00.000Z",
+          "updatedAt": "2026-07-28T01:36:00.000Z",
+          "uid": "35240-7295c967-dd8f-4d3a-8a6a-625230f1b3c7"
+        }
+      ],
+      "id": "63f2b187-a86f-4c03-81ca-2410ed5adc85",
+      "createdAt": "2026-07-28T01:36:00.000Z",
+      "updatedAt": "2026-07-28T01:36:00.000Z",
+      "uid": "35240-63f2b187-a86f-4c03-81ca-2410ed5adc85"
+    },
+    {
+      "name": "{media-id}",
+      "item": [
+        {
+          "name": "comments",
+          "item": [
+            {
+              "name": "Facebook Get Instagram Comments",
+              "id": "18208284-b993-4e47-97fd-7a3338673ff6",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:media-id/comments",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":media-id",
+                    "comments"
+                  ],
+                  "variable": [
+                    {
+                      "id": "90e99694-f84e-4aef-979f-e44c5fe8f6a4",
+                      "key": "media-id",
+                      "value": "<string>",
+                      "description": "(Required) The media ID."
+                    }
+                  ]
+                },
+                "description": "Retrieve comments on an Instagram media object."
+              },
+              "response": [
+                {
+                  "id": "a59995d8-7038-44cc-acda-8dfa58263a15",
+                  "name": "Comments retrieved successfully.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/:media-id/comments",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":media-id",
+                        "comments"
+                      ],
+                      "variable": [
+                        {
+                          "key": "media-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"text\": \"<string>\",\n      \"timestamp\": \"<dateTime>\",\n      \"username\": \"<string>\",\n      \"like_count\": \"<integer>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"text\": \"<string>\",\n      \"timestamp\": \"<dateTime>\",\n      \"username\": \"<string>\",\n      \"like_count\": \"<integer>\"\n    }\n  ],\n  \"paging\": {\n    \"cursors\": {\n      \"before\": \"<string>\",\n      \"after\": \"<string>\"\n    },\n    \"next\": \"<uri>\",\n    \"previous\": \"<uri>\"\n  }\n}",
+                  "createdAt": "2026-07-28T01:36:00.000Z",
+                  "updatedAt": "2026-07-28T01:36:00.000Z",
+                  "uid": "35240-a59995d8-7038-44cc-acda-8dfa58263a15"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:00.000Z",
+              "updatedAt": "2026-07-28T01:36:00.000Z",
+              "uid": "35240-18208284-b993-4e47-97fd-7a3338673ff6"
+            }
+          ],
+          "id": "93c2527f-e175-4001-95b9-89eed864576a",
+          "createdAt": "2026-07-28T01:36:00.000Z",
+          "updatedAt": "2026-07-28T01:36:00.000Z",
+          "uid": "35240-93c2527f-e175-4001-95b9-89eed864576a"
+        }
+      ],
+      "id": "690808b6-3056-459c-a9b7-a737714e4903",
+      "createdAt": "2026-07-28T01:36:00.000Z",
+      "updatedAt": "2026-07-28T01:36:00.000Z",
+      "uid": "35240-690808b6-3056-459c-a9b7-a737714e4903"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graph.facebook.com/v21.0"
+    }
+  ]
+}

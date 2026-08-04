@@ -1,0 +1,387 @@
+{
+  "info": {
+    "_postman_id": "ef59cde2-1ebf-4250-9ef0-66687e1475e4",
+    "name": "Facebook Graph Ad Accounts Campaigns API",
+    "description": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:35:58.000Z",
+    "updatedAt": "2026-07-28T01:35:58.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-ef59cde2-1ebf-4250-9ef0-66687e1475e4"
+  },
+  "item": [
+    {
+      "name": "act_{ad-account-id}",
+      "item": [
+        {
+          "name": "campaigns",
+          "item": [
+            {
+              "name": "Facebook List Campaigns",
+              "id": "29b371d3-7941-49d1-8672-8da77baec594",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/act_{{ad-account-id}}/campaigns?limit=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "act_{{ad-account-id}}",
+                    "campaigns"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of campaigns to return.",
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ]
+                },
+                "description": "Retrieve campaigns for an ad account."
+              },
+              "response": [
+                {
+                  "id": "219a745b-f881-4d2a-a622-f9c088d164fb",
+                  "name": "Campaigns retrieved successfully.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/act_{{ad-account-id}}/campaigns?limit=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "act_{{ad-account-id}}",
+                        "campaigns"
+                      ],
+                      "query": [
+                        {
+                          "description": "Maximum number of campaigns to return.",
+                          "key": "limit",
+                          "value": "<integer>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"objective\": \"<string>\",\n      \"status\": \"ACTIVE\",\n      \"daily_budget\": \"<string>\",\n      \"lifetime_budget\": \"<string>\",\n      \"created_time\": \"<dateTime>\",\n      \"updated_time\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"objective\": \"<string>\",\n      \"status\": \"DELETED\",\n      \"daily_budget\": \"<string>\",\n      \"lifetime_budget\": \"<string>\",\n      \"created_time\": \"<dateTime>\",\n      \"updated_time\": \"<dateTime>\"\n    }\n  ],\n  \"paging\": {\n    \"cursors\": {\n      \"before\": \"<string>\",\n      \"after\": \"<string>\"\n    },\n    \"next\": \"<uri>\",\n    \"previous\": \"<uri>\"\n  }\n}",
+                  "createdAt": "2026-07-28T01:35:58.000Z",
+                  "updatedAt": "2026-07-28T01:35:58.000Z",
+                  "uid": "35240-219a745b-f881-4d2a-a622-f9c088d164fb"
+                }
+              ],
+              "createdAt": "2026-07-28T01:35:58.000Z",
+              "updatedAt": "2026-07-28T01:35:58.000Z",
+              "uid": "35240-29b371d3-7941-49d1-8672-8da77baec594"
+            },
+            {
+              "name": "Facebook Create Campaign",
+              "id": "7ce374d3-ded6-4548-bb2a-4b3175da265c",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"objective\": \"<string>\",\n  \"special_ad_categories\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/act_{{ad-account-id}}/campaigns",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "act_{{ad-account-id}}",
+                    "campaigns"
+                  ]
+                },
+                "description": "Create a new advertising campaign."
+              },
+              "response": [
+                {
+                  "id": "e01b08be-575a-46e6-b1fa-78b3fe80ef2a",
+                  "name": "Campaign created successfully.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"objective\": \"<string>\",\n  \"special_ad_categories\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/act_{{ad-account-id}}/campaigns",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "act_{{ad-account-id}}",
+                        "campaigns"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:35:58.000Z",
+                  "updatedAt": "2026-07-28T01:35:58.000Z",
+                  "uid": "35240-e01b08be-575a-46e6-b1fa-78b3fe80ef2a"
+                },
+                {
+                  "id": "0cb05e6d-7656-4c9d-8ea0-8cadfe5619e7",
+                  "name": "Invalid campaign configuration.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"objective\": \"<string>\",\n  \"special_ad_categories\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/act_{{ad-account-id}}/campaigns",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "act_{{ad-account-id}}",
+                        "campaigns"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:35:58.000Z",
+                  "updatedAt": "2026-07-28T01:35:58.000Z",
+                  "uid": "35240-0cb05e6d-7656-4c9d-8ea0-8cadfe5619e7"
+                }
+              ],
+              "createdAt": "2026-07-28T01:35:58.000Z",
+              "updatedAt": "2026-07-28T01:35:58.000Z",
+              "uid": "35240-7ce374d3-ded6-4548-bb2a-4b3175da265c"
+            }
+          ],
+          "id": "e5201fd3-3ddf-40c6-9a66-cae6111e1fdb",
+          "createdAt": "2026-07-28T01:35:58.000Z",
+          "updatedAt": "2026-07-28T01:35:58.000Z",
+          "uid": "35240-e5201fd3-3ddf-40c6-9a66-cae6111e1fdb"
+        }
+      ],
+      "id": "0cd775c9-d0e8-4297-9ac2-d20fb706b4a9",
+      "createdAt": "2026-07-28T01:35:58.000Z",
+      "updatedAt": "2026-07-28T01:35:58.000Z",
+      "uid": "35240-0cd775c9-d0e8-4297-9ac2-d20fb706b4a9"
+    },
+    {
+      "name": "{campaign-id}",
+      "item": [
+        {
+          "name": "Facebook Get Campaign",
+          "id": "8bb989fe-f933-45d8-889b-4b8ebb1229d7",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/:campaign-id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ":campaign-id"
+              ],
+              "variable": [
+                {
+                  "id": "6877cbe0-3b0f-43cd-9e79-53a2948fbf1e",
+                  "key": "campaign-id",
+                  "value": "<string>",
+                  "description": "(Required) The campaign ID."
+                }
+              ]
+            },
+            "description": "Retrieve a specific campaign by ID."
+          },
+          "response": [
+            {
+              "id": "c3a2079d-38c8-42d4-9571-edde973dd42a",
+              "name": "Campaign retrieved successfully.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:campaign-id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":campaign-id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "campaign-id"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"objective\": \"<string>\",\n  \"status\": \"ACTIVE\",\n  \"daily_budget\": \"<string>\",\n  \"lifetime_budget\": \"<string>\",\n  \"created_time\": \"<dateTime>\",\n  \"updated_time\": \"<dateTime>\"\n}",
+              "createdAt": "2026-07-28T01:35:58.000Z",
+              "updatedAt": "2026-07-28T01:35:58.000Z",
+              "uid": "35240-c3a2079d-38c8-42d4-9571-edde973dd42a"
+            }
+          ],
+          "createdAt": "2026-07-28T01:35:58.000Z",
+          "updatedAt": "2026-07-28T01:35:58.000Z",
+          "uid": "35240-8bb989fe-f933-45d8-889b-4b8ebb1229d7"
+        }
+      ],
+      "id": "fadda972-1a7e-4d97-9ce7-b2804d2e3030",
+      "createdAt": "2026-07-28T01:35:58.000Z",
+      "updatedAt": "2026-07-28T01:35:58.000Z",
+      "uid": "35240-fadda972-1a7e-4d97-9ce7-b2804d2e3030"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graph.facebook.com/v21.0"
+    },
+    {
+      "key": "ad-account-id",
+      "value": "<string>"
+    }
+  ]
+}

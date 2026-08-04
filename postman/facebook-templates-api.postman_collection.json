@@ -1,0 +1,252 @@
+{
+  "info": {
+    "_postman_id": "939ed044-1d03-4264-aab1-c5a50c3e4ad2",
+    "name": "Facebook Graph Ad Accounts Templates API",
+    "description": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:36:43.000Z",
+    "updatedAt": "2026-07-28T01:36:43.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-939ed044-1d03-4264-aab1-c5a50c3e4ad2"
+  },
+  "item": [
+    {
+      "name": "{waba-id}",
+      "item": [
+        {
+          "name": "message_templates",
+          "item": [
+            {
+              "name": "Facebook List Message Templates",
+              "id": "b7fc4b75-a165-4c28-bfd2-e8e2e504640d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:waba-id/message_templates",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":waba-id",
+                    "message_templates"
+                  ],
+                  "variable": [
+                    {
+                      "id": "7129a929-5b1d-434c-bbea-3be0716f2fa3",
+                      "key": "waba-id",
+                      "value": "<string>",
+                      "description": "(Required) WhatsApp Business Account ID."
+                    }
+                  ]
+                },
+                "description": "Retrieve message templates for a WhatsApp Business Account."
+              },
+              "response": [
+                {
+                  "id": "8bcb14df-f9cd-4cdf-b6b3-eeb1cd720c5f",
+                  "name": "Templates retrieved successfully.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/:waba-id/message_templates",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":waba-id",
+                        "message_templates"
+                      ],
+                      "variable": [
+                        {
+                          "key": "waba-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"language\": \"<string>\",\n      \"status\": \"PENDING\",\n      \"category\": \"UTILITY\",\n      \"components\": [\n        {\n          \"type\": \"BODY\",\n          \"text\": \"<string>\"\n        },\n        {\n          \"type\": \"BUTTONS\",\n          \"text\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"language\": \"<string>\",\n      \"status\": \"APPROVED\",\n      \"category\": \"UTILITY\",\n      \"components\": [\n        {\n          \"type\": \"HEADER\",\n          \"text\": \"<string>\"\n        },\n        {\n          \"type\": \"FOOTER\",\n          \"text\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"paging\": {\n    \"cursors\": {\n      \"before\": \"<string>\",\n      \"after\": \"<string>\"\n    }\n  }\n}",
+                  "createdAt": "2026-07-28T01:36:43.000Z",
+                  "updatedAt": "2026-07-28T01:36:43.000Z",
+                  "uid": "35240-8bcb14df-f9cd-4cdf-b6b3-eeb1cd720c5f"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:43.000Z",
+              "updatedAt": "2026-07-28T01:36:43.000Z",
+              "uid": "35240-b7fc4b75-a165-4c28-bfd2-e8e2e504640d"
+            },
+            {
+              "name": "Facebook Create Message Template",
+              "id": "898217c5-c16b-4255-b7c6-b7c8b8160865",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"language\": \"<string>\",\n  \"category\": \"MARKETING\",\n  \"components\": []\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/:waba-id/message_templates",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":waba-id",
+                    "message_templates"
+                  ],
+                  "variable": [
+                    {
+                      "id": "24beb1cf-4e88-4bdc-b06d-2e023cb44b48",
+                      "key": "waba-id",
+                      "value": "<string>",
+                      "description": "(Required) WhatsApp Business Account ID."
+                    }
+                  ]
+                },
+                "description": "Create a new message template."
+              },
+              "response": [
+                {
+                  "id": "64c55ca3-0600-4f59-bb73-e5355fcd18d1",
+                  "name": "Template created successfully.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"language\": \"<string>\",\n  \"category\": \"MARKETING\",\n  \"components\": []\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/:waba-id/message_templates",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":waba-id",
+                        "message_templates"
+                      ],
+                      "variable": [
+                        {
+                          "key": "waba-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"status\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:36:43.000Z",
+                  "updatedAt": "2026-07-28T01:36:43.000Z",
+                  "uid": "35240-64c55ca3-0600-4f59-bb73-e5355fcd18d1"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:43.000Z",
+              "updatedAt": "2026-07-28T01:36:43.000Z",
+              "uid": "35240-898217c5-c16b-4255-b7c6-b7c8b8160865"
+            }
+          ],
+          "id": "26ea2f07-9ec4-40db-b211-9f340852c37e",
+          "createdAt": "2026-07-28T01:36:43.000Z",
+          "updatedAt": "2026-07-28T01:36:43.000Z",
+          "uid": "35240-26ea2f07-9ec4-40db-b211-9f340852c37e"
+        }
+      ],
+      "id": "9ecb4418-c01e-4af1-8e58-157032c42cb1",
+      "createdAt": "2026-07-28T01:36:43.000Z",
+      "updatedAt": "2026-07-28T01:36:43.000Z",
+      "uid": "35240-9ecb4418-c01e-4af1-8e58-157032c42cb1"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graph.facebook.com/v21.0"
+    }
+  ]
+}

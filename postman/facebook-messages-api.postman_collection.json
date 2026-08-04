@@ -1,0 +1,404 @@
+{
+  "info": {
+    "_postman_id": "ef5ad0a6-810e-4fb6-99fe-b89126e8c2d4",
+    "name": "Facebook Graph Ad Accounts Messages API",
+    "description": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:36:33.000Z",
+    "updatedAt": "2026-07-28T01:36:33.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-ef5ad0a6-810e-4fb6-99fe-b89126e8c2d4"
+  },
+  "item": [
+    {
+      "name": "{page-id}",
+      "item": [
+        {
+          "name": "messages",
+          "item": [
+            {
+              "name": "Facebook Send Message",
+              "id": "b3ccba08-b46b-4fdd-b3f5-ab1b8b1ffa34",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"recipient\": {\n    \"id\": \"<string>\"\n  },\n  \"messaging_type\": \"UPDATE\",\n  \"message\": {\n    \"text\": \"<string>\",\n    \"attachment\": {\n      \"type\": \"video\",\n      \"payload\": {}\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/:page-id/messages",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":page-id",
+                    "messages"
+                  ],
+                  "variable": [
+                    {
+                      "id": "4c9df09e-b466-48c0-a656-58321c90a092",
+                      "key": "page-id",
+                      "value": "<string>",
+                      "description": "(Required) The page ID."
+                    }
+                  ]
+                },
+                "description": "Send a message to a user via Messenger."
+              },
+              "response": [
+                {
+                  "id": "77b3a148-8655-4a6e-824f-1ae37469b2d9",
+                  "name": "Message sent successfully.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"recipient\": {\n    \"id\": \"<string>\"\n  },\n  \"messaging_type\": \"UPDATE\",\n  \"message\": {\n    \"text\": \"<string>\",\n    \"attachment\": {\n      \"type\": \"video\",\n      \"payload\": {}\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/:page-id/messages",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":page-id",
+                        "messages"
+                      ],
+                      "variable": [
+                        {
+                          "key": "page-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"recipient_id\": \"<string>\",\n  \"message_id\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:36:33.000Z",
+                  "updatedAt": "2026-07-28T01:36:33.000Z",
+                  "uid": "35240-77b3a148-8655-4a6e-824f-1ae37469b2d9"
+                },
+                {
+                  "id": "d68e6948-ca95-4b25-8578-54dc5e258ac3",
+                  "name": "Invalid message request.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"recipient\": {\n    \"id\": \"<string>\"\n  },\n  \"messaging_type\": \"UPDATE\",\n  \"message\": {\n    \"text\": \"<string>\",\n    \"attachment\": {\n      \"type\": \"video\",\n      \"payload\": {}\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/:page-id/messages",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":page-id",
+                        "messages"
+                      ],
+                      "variable": [
+                        {
+                          "key": "page-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:36:33.000Z",
+                  "updatedAt": "2026-07-28T01:36:33.000Z",
+                  "uid": "35240-d68e6948-ca95-4b25-8578-54dc5e258ac3"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:33.000Z",
+              "updatedAt": "2026-07-28T01:36:33.000Z",
+              "uid": "35240-b3ccba08-b46b-4fdd-b3f5-ab1b8b1ffa34"
+            }
+          ],
+          "id": "d8da4029-2b59-4b46-8596-00c59192df13",
+          "createdAt": "2026-07-28T01:36:33.000Z",
+          "updatedAt": "2026-07-28T01:36:33.000Z",
+          "uid": "35240-d8da4029-2b59-4b46-8596-00c59192df13"
+        }
+      ],
+      "id": "48907ada-3890-42a6-8e57-46866174f5dc",
+      "createdAt": "2026-07-28T01:36:33.000Z",
+      "updatedAt": "2026-07-28T01:36:33.000Z",
+      "uid": "35240-48907ada-3890-42a6-8e57-46866174f5dc"
+    },
+    {
+      "name": "{phone-number-id}",
+      "item": [
+        {
+          "name": "messages",
+          "item": [
+            {
+              "name": "Facebook Send WhatsApp Message",
+              "id": "06c20315-f9a7-4973-ba09-08f04f6122e1",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messaging_product\": \"<string>\",\n  \"to\": \"<string>\",\n  \"type\": \"reaction\",\n  \"text\": {\n    \"body\": \"<string>\",\n    \"preview_url\": \"<boolean>\"\n  },\n  \"template\": {\n    \"name\": \"<string>\",\n    \"language\": {\n      \"code\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/:phone-number-id/messages",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":phone-number-id",
+                    "messages"
+                  ],
+                  "variable": [
+                    {
+                      "id": "0c17151e-4c96-469b-8109-3faf55942b7d",
+                      "key": "phone-number-id",
+                      "value": "<string>",
+                      "description": "(Required) The phone number ID."
+                    }
+                  ]
+                },
+                "description": "Send a message to a WhatsApp user."
+              },
+              "response": [
+                {
+                  "id": "45f49571-3c1d-4551-82ef-37d4b23b24f6",
+                  "name": "Message sent successfully.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"messaging_product\": \"<string>\",\n  \"to\": \"<string>\",\n  \"type\": \"reaction\",\n  \"text\": {\n    \"body\": \"<string>\",\n    \"preview_url\": \"<boolean>\"\n  },\n  \"template\": {\n    \"name\": \"<string>\",\n    \"language\": {\n      \"code\": \"<string>\"\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/:phone-number-id/messages",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":phone-number-id",
+                        "messages"
+                      ],
+                      "variable": [
+                        {
+                          "key": "phone-number-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"messaging_product\": \"<string>\",\n  \"contacts\": [\n    {\n      \"input\": \"<string>\",\n      \"wa_id\": \"<string>\"\n    },\n    {\n      \"input\": \"<string>\",\n      \"wa_id\": \"<string>\"\n    }\n  ],\n  \"messages\": [\n    {\n      \"id\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:36:33.000Z",
+                  "updatedAt": "2026-07-28T01:36:33.000Z",
+                  "uid": "35240-45f49571-3c1d-4551-82ef-37d4b23b24f6"
+                },
+                {
+                  "id": "11f21354-c18b-4e82-baa3-4787f5ae6ff4",
+                  "name": "Invalid message request.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"messaging_product\": \"<string>\",\n  \"to\": \"<string>\",\n  \"type\": \"reaction\",\n  \"text\": {\n    \"body\": \"<string>\",\n    \"preview_url\": \"<boolean>\"\n  },\n  \"template\": {\n    \"name\": \"<string>\",\n    \"language\": {\n      \"code\": \"<string>\"\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/:phone-number-id/messages",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":phone-number-id",
+                        "messages"
+                      ],
+                      "variable": [
+                        {
+                          "key": "phone-number-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:36:33.000Z",
+                  "updatedAt": "2026-07-28T01:36:33.000Z",
+                  "uid": "35240-11f21354-c18b-4e82-baa3-4787f5ae6ff4"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:33.000Z",
+              "updatedAt": "2026-07-28T01:36:33.000Z",
+              "uid": "35240-06c20315-f9a7-4973-ba09-08f04f6122e1"
+            }
+          ],
+          "id": "fcfb4206-e71b-4bf1-9cd2-d623923e8402",
+          "createdAt": "2026-07-28T01:36:33.000Z",
+          "updatedAt": "2026-07-28T01:36:33.000Z",
+          "uid": "35240-fcfb4206-e71b-4bf1-9cd2-d623923e8402"
+        }
+      ],
+      "id": "e719d854-2d02-45f9-975b-f54fecb50da1",
+      "createdAt": "2026-07-28T01:36:33.000Z",
+      "updatedAt": "2026-07-28T01:36:33.000Z",
+      "uid": "35240-e719d854-2d02-45f9-975b-f54fecb50da1"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graph.facebook.com/v21.0"
+    }
+  ]
+}

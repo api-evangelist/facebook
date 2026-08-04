@@ -1,0 +1,391 @@
+{
+  "info": {
+    "_postman_id": "259d686c-6f2c-4a85-916e-bf6e34f17956",
+    "name": "Facebook Graph Ad Accounts Insights API",
+    "description": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:36:31.000Z",
+    "updatedAt": "2026-07-28T01:36:31.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-259d686c-6f2c-4a85-916e-bf6e34f17956"
+  },
+  "item": [
+    {
+      "name": "{ig-user-id}",
+      "item": [
+        {
+          "name": "insights",
+          "item": [
+            {
+              "name": "Facebook Get Instagram Insights",
+              "id": "8a959474-edeb-454f-909f-d95be3b178f2",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:ig-user-id/insights?metric=<string>&period=day",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":ig-user-id",
+                    "insights"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Comma-separated list of metrics.",
+                      "key": "metric",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) Aggregation period.",
+                      "key": "period",
+                      "value": "day"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "c01f3301-d09d-4ea0-a7ad-b4ce3f2e1387",
+                      "key": "ig-user-id",
+                      "value": "<string>",
+                      "description": "(Required) The Instagram user ID."
+                    }
+                  ]
+                },
+                "description": "Retrieve insights for an Instagram account."
+              },
+              "response": [
+                {
+                  "id": "4c5c2c42-b3be-4aae-b77f-06907316f320",
+                  "name": "Insights retrieved successfully.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/:ig-user-id/insights?metric=<string>&period=day",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":ig-user-id",
+                        "insights"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Comma-separated list of metrics.",
+                          "key": "metric",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) Aggregation period.",
+                          "key": "period",
+                          "value": "day"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "ig-user-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"name\": \"<string>\",\n      \"period\": \"<string>\",\n      \"values\": [\n        {\n          \"value\": \"<integer>\",\n          \"end_time\": \"<dateTime>\"\n        },\n        {\n          \"value\": \"<integer>\",\n          \"end_time\": \"<dateTime>\"\n        }\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"period\": \"<string>\",\n      \"values\": [\n        {\n          \"value\": \"<integer>\",\n          \"end_time\": \"<dateTime>\"\n        },\n        {\n          \"value\": \"<integer>\",\n          \"end_time\": \"<dateTime>\"\n        }\n      ]\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:36:32.000Z",
+                  "updatedAt": "2026-07-28T01:36:32.000Z",
+                  "uid": "35240-4c5c2c42-b3be-4aae-b77f-06907316f320"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:31.000Z",
+              "updatedAt": "2026-07-28T01:36:31.000Z",
+              "uid": "35240-8a959474-edeb-454f-909f-d95be3b178f2"
+            }
+          ],
+          "id": "b05914b0-bb93-4fef-9f07-71c5ed45deaa",
+          "createdAt": "2026-07-28T01:36:31.000Z",
+          "updatedAt": "2026-07-28T01:36:31.000Z",
+          "uid": "35240-b05914b0-bb93-4fef-9f07-71c5ed45deaa"
+        }
+      ],
+      "id": "ca8a3d92-8ddc-4d29-977a-168c76c4735a",
+      "createdAt": "2026-07-28T01:36:31.000Z",
+      "updatedAt": "2026-07-28T01:36:31.000Z",
+      "uid": "35240-ca8a3d92-8ddc-4d29-977a-168c76c4735a"
+    },
+    {
+      "name": "act_{ad-account-id}",
+      "item": [
+        {
+          "name": "insights",
+          "item": [
+            {
+              "name": "Facebook Get Account Insights",
+              "id": "3214ec47-a169-4578-95e7-d2ab2db6acf9",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/act_{{ad-account-id}}/insights?date_preset=last_7d",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "act_{{ad-account-id}}",
+                    "insights"
+                  ],
+                  "query": [
+                    {
+                      "description": "Predefined date range for insights.",
+                      "key": "date_preset",
+                      "value": "last_7d"
+                    }
+                  ]
+                },
+                "description": "Retrieve advertising insights for an ad account."
+              },
+              "response": [
+                {
+                  "id": "1f7c2e8c-a787-4873-8674-c86af11fda14",
+                  "name": "Insights retrieved successfully.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/act_{{ad-account-id}}/insights?date_preset=last_7d",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "act_{{ad-account-id}}",
+                        "insights"
+                      ],
+                      "query": [
+                        {
+                          "description": "Predefined date range for insights.",
+                          "key": "date_preset",
+                          "value": "last_7d"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"impressions\": \"<string>\",\n      \"clicks\": \"<string>\",\n      \"spend\": \"<string>\",\n      \"cpc\": \"<string>\",\n      \"cpm\": \"<string>\",\n      \"ctr\": \"<string>\",\n      \"reach\": \"<string>\",\n      \"date_start\": \"<date>\",\n      \"date_stop\": \"<date>\"\n    },\n    {\n      \"impressions\": \"<string>\",\n      \"clicks\": \"<string>\",\n      \"spend\": \"<string>\",\n      \"cpc\": \"<string>\",\n      \"cpm\": \"<string>\",\n      \"ctr\": \"<string>\",\n      \"reach\": \"<string>\",\n      \"date_start\": \"<date>\",\n      \"date_stop\": \"<date>\"\n    }\n  ],\n  \"paging\": {\n    \"cursors\": {\n      \"before\": \"<string>\",\n      \"after\": \"<string>\"\n    },\n    \"next\": \"<uri>\",\n    \"previous\": \"<uri>\"\n  }\n}",
+                  "createdAt": "2026-07-28T01:36:32.000Z",
+                  "updatedAt": "2026-07-28T01:36:32.000Z",
+                  "uid": "35240-1f7c2e8c-a787-4873-8674-c86af11fda14"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:31.000Z",
+              "updatedAt": "2026-07-28T01:36:31.000Z",
+              "uid": "35240-3214ec47-a169-4578-95e7-d2ab2db6acf9"
+            }
+          ],
+          "id": "c743837c-81e0-4029-b260-d9daa76cc6c5",
+          "createdAt": "2026-07-28T01:36:31.000Z",
+          "updatedAt": "2026-07-28T01:36:31.000Z",
+          "uid": "35240-c743837c-81e0-4029-b260-d9daa76cc6c5"
+        }
+      ],
+      "id": "4e24ec46-c399-4ced-8f9a-30a7fc78e0f3",
+      "createdAt": "2026-07-28T01:36:31.000Z",
+      "updatedAt": "2026-07-28T01:36:31.000Z",
+      "uid": "35240-4e24ec46-c399-4ced-8f9a-30a7fc78e0f3"
+    },
+    {
+      "name": "{threads-user-id}",
+      "item": [
+        {
+          "name": "insights",
+          "item": [
+            {
+              "name": "Facebook Get Threads Insights",
+              "id": "ce7767a6-d2ca-4abf-a281-7649a6eea46a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:threads-user-id/insights?metric=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":threads-user-id",
+                    "insights"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Comma-separated list of metrics.",
+                      "key": "metric",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "fce3d14c-a503-4b0e-8290-5b475620a134",
+                      "key": "threads-user-id",
+                      "value": "<string>",
+                      "description": "(Required) The Threads user ID."
+                    }
+                  ]
+                },
+                "description": "Retrieve insights for a Threads user."
+              },
+              "response": [
+                {
+                  "id": "708c817f-8da0-47c6-b549-a44fc38d27ac",
+                  "name": "Insights retrieved successfully.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/:threads-user-id/insights?metric=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":threads-user-id",
+                        "insights"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Comma-separated list of metrics.",
+                          "key": "metric",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "threads-user-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"name\": \"<string>\",\n      \"period\": \"<string>\",\n      \"values\": [\n        {\n          \"value\": \"<integer>\"\n        },\n        {\n          \"value\": \"<integer>\"\n        }\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"period\": \"<string>\",\n      \"values\": [\n        {\n          \"value\": \"<integer>\"\n        },\n        {\n          \"value\": \"<integer>\"\n        }\n      ]\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:36:32.000Z",
+                  "updatedAt": "2026-07-28T01:36:32.000Z",
+                  "uid": "35240-708c817f-8da0-47c6-b549-a44fc38d27ac"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:31.000Z",
+              "updatedAt": "2026-07-28T01:36:31.000Z",
+              "uid": "35240-ce7767a6-d2ca-4abf-a281-7649a6eea46a"
+            }
+          ],
+          "id": "d2373d21-0c94-45aa-bdfb-8e666699df83",
+          "createdAt": "2026-07-28T01:36:31.000Z",
+          "updatedAt": "2026-07-28T01:36:31.000Z",
+          "uid": "35240-d2373d21-0c94-45aa-bdfb-8e666699df83"
+        }
+      ],
+      "id": "af3e2c64-68b4-41d5-8845-48689331443f",
+      "createdAt": "2026-07-28T01:36:31.000Z",
+      "updatedAt": "2026-07-28T01:36:31.000Z",
+      "uid": "35240-af3e2c64-68b4-41d5-8845-48689331443f"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graph.facebook.com/v21.0"
+    },
+    {
+      "key": "ad-account-id",
+      "value": "<string>"
+    }
+  ]
+}

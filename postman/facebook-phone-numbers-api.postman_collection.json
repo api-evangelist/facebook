@@ -1,0 +1,231 @@
+{
+  "info": {
+    "_postman_id": "0834ee85-383e-489c-8837-549fa6b84bab",
+    "name": "Facebook Graph Ad Accounts Phone Numbers API",
+    "description": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:36:35.000Z",
+    "updatedAt": "2026-07-28T01:36:35.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0834ee85-383e-489c-8837-549fa6b84bab"
+  },
+  "item": [
+    {
+      "name": "{phone-number-id}",
+      "item": [
+        {
+          "name": "Facebook Get WhatsApp Phone Number",
+          "id": "1813320d-e41a-4d00-ba70-a5474c45faf9",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/:phone-number-id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ":phone-number-id"
+              ],
+              "variable": [
+                {
+                  "id": "f50e5b17-c7dc-411a-b6c8-a45c28d8349c",
+                  "key": "phone-number-id",
+                  "value": "<string>",
+                  "description": "(Required) The phone number ID."
+                }
+              ]
+            },
+            "description": "Retrieve phone number details."
+          },
+          "response": [
+            {
+              "id": "8756c364-336a-4cc7-a465-1f24644118bb",
+              "name": "Phone number details retrieved successfully.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:phone-number-id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":phone-number-id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "phone-number-id"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"id\": \"<string>\",\n  \"display_phone_number\": \"<string>\",\n  \"verified_name\": \"<string>\",\n  \"quality_rating\": \"GREEN\",\n  \"status\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:36:35.000Z",
+              "updatedAt": "2026-07-28T01:36:35.000Z",
+              "uid": "35240-8756c364-336a-4cc7-a465-1f24644118bb"
+            }
+          ],
+          "createdAt": "2026-07-28T01:36:35.000Z",
+          "updatedAt": "2026-07-28T01:36:35.000Z",
+          "uid": "35240-1813320d-e41a-4d00-ba70-a5474c45faf9"
+        }
+      ],
+      "id": "fb749247-4828-45e5-b6fd-3b81d5f244a2",
+      "createdAt": "2026-07-28T01:36:35.000Z",
+      "updatedAt": "2026-07-28T01:36:35.000Z",
+      "uid": "35240-fb749247-4828-45e5-b6fd-3b81d5f244a2"
+    },
+    {
+      "name": "{waba-id}",
+      "item": [
+        {
+          "name": "phone_numbers",
+          "item": [
+            {
+              "name": "Facebook List WhatsApp Phone Numbers",
+              "id": "316b3853-3e6e-44a7-a5ab-a83671ee985e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:waba-id/phone_numbers",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":waba-id",
+                    "phone_numbers"
+                  ],
+                  "variable": [
+                    {
+                      "id": "b80c1b5f-a238-4f25-aadb-5039f80650e9",
+                      "key": "waba-id",
+                      "value": "<string>",
+                      "description": "(Required) WhatsApp Business Account ID."
+                    }
+                  ]
+                },
+                "description": "Retrieve phone numbers for a WhatsApp Business Account."
+              },
+              "response": [
+                {
+                  "id": "6624bc3d-7348-4201-80e6-9f19b7683907",
+                  "name": "Phone numbers retrieved successfully.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/:waba-id/phone_numbers",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":waba-id",
+                        "phone_numbers"
+                      ],
+                      "variable": [
+                        {
+                          "key": "waba-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"display_phone_number\": \"<string>\",\n      \"verified_name\": \"<string>\",\n      \"quality_rating\": \"GREEN\",\n      \"status\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"display_phone_number\": \"<string>\",\n      \"verified_name\": \"<string>\",\n      \"quality_rating\": \"GREEN\",\n      \"status\": \"<string>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:36:35.000Z",
+                  "updatedAt": "2026-07-28T01:36:35.000Z",
+                  "uid": "35240-6624bc3d-7348-4201-80e6-9f19b7683907"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:35.000Z",
+              "updatedAt": "2026-07-28T01:36:35.000Z",
+              "uid": "35240-316b3853-3e6e-44a7-a5ab-a83671ee985e"
+            }
+          ],
+          "id": "e3a86487-9333-4aab-91aa-9c751bed6f42",
+          "createdAt": "2026-07-28T01:36:35.000Z",
+          "updatedAt": "2026-07-28T01:36:35.000Z",
+          "uid": "35240-e3a86487-9333-4aab-91aa-9c751bed6f42"
+        }
+      ],
+      "id": "3b129de1-3e9c-4042-a9b6-47eb8db8a753",
+      "createdAt": "2026-07-28T01:36:35.000Z",
+      "updatedAt": "2026-07-28T01:36:35.000Z",
+      "uid": "35240-3b129de1-3e9c-4042-a9b6-47eb8db8a753"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graph.facebook.com/v21.0"
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "info": {
+    "_postman_id": "1eb764a9-5656-4cdd-aeed-7377bee3eef3",
+    "name": "Facebook Graph Ad Accounts API",
+    "description": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:35:39.000Z",
+    "updatedAt": "2026-07-28T01:35:39.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-1eb764a9-5656-4cdd-aeed-7377bee3eef3"
+  },
+  "item": [
+    {
+      "name": "act_{ad-account-id}",
+      "item": [
+        {
+          "name": "Facebook Get Ad Account",
+          "id": "d1b09dc7-3e2f-4158-9181-bb13553bcb63",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/act_{{ad-account-id}}?fields=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "act_{{ad-account-id}}"
+              ],
+              "query": [
+                {
+                  "description": "Comma-separated list of fields to return.",
+                  "key": "fields",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Retrieve an ad account by ID."
+          },
+          "response": [
+            {
+              "id": "618fcca5-defd-4dd5-a438-bf73da200940",
+              "name": "Ad account retrieved successfully.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/act_{{ad-account-id}}?fields=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "act_{{ad-account-id}}"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of fields to return.",
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"account_status\": \"<integer>\",\n  \"currency\": \"<string>\",\n  \"balance\": \"<string>\",\n  \"spend_cap\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:35:39.000Z",
+              "updatedAt": "2026-07-28T01:35:39.000Z",
+              "uid": "35240-618fcca5-defd-4dd5-a438-bf73da200940"
+            }
+          ],
+          "createdAt": "2026-07-28T01:35:39.000Z",
+          "updatedAt": "2026-07-28T01:35:39.000Z",
+          "uid": "35240-d1b09dc7-3e2f-4158-9181-bb13553bcb63"
+        }
+      ],
+      "id": "df82241f-3e21-4d95-9faa-c6c88618f9e5",
+      "createdAt": "2026-07-28T01:35:39.000Z",
+      "updatedAt": "2026-07-28T01:35:39.000Z",
+      "uid": "35240-df82241f-3e21-4d95-9faa-c6c88618f9e5"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graph.facebook.com/v21.0"
+    },
+    {
+      "key": "ad-account-id",
+      "value": "<string>"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "info": {
+    "_postman_id": "6f5135a4-9b72-4e99-ae67-20087ef46b72",
+    "name": "Facebook Graph Ad Accounts Ads API",
+    "description": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:35:52.000Z",
+    "updatedAt": "2026-07-28T01:35:52.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-6f5135a4-9b72-4e99-ae67-20087ef46b72"
+  },
+  "item": [
+    {
+      "name": "act_{ad-account-id}",
+      "item": [
+        {
+          "name": "ads",
+          "item": [
+            {
+              "name": "Facebook List Ads",
+              "id": "ecb77aec-7d82-41af-8080-4437a0eedebf",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/act_{{ad-account-id}}/ads",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "act_{{ad-account-id}}",
+                    "ads"
+                  ]
+                },
+                "description": "Retrieve ads for an ad account."
+              },
+              "response": [
+                {
+                  "id": "cdc7cdd6-dcd2-4e89-9b63-1930edfdfadc",
+                  "name": "Ads retrieved successfully.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/act_{{ad-account-id}}/ads",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "act_{{ad-account-id}}",
+                        "ads"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"adset_id\": \"<string>\",\n      \"campaign_id\": \"<string>\",\n      \"status\": \"DELETED\",\n      \"creative\": {\n        \"id\": \"<string>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"adset_id\": \"<string>\",\n      \"campaign_id\": \"<string>\",\n      \"status\": \"DELETED\",\n      \"creative\": {\n        \"id\": \"<string>\"\n      }\n    }\n  ],\n  \"paging\": {\n    \"cursors\": {\n      \"before\": \"<string>\",\n      \"after\": \"<string>\"\n    },\n    \"next\": \"<uri>\",\n    \"previous\": \"<uri>\"\n  }\n}",
+                  "createdAt": "2026-07-28T01:35:52.000Z",
+                  "updatedAt": "2026-07-28T01:35:52.000Z",
+                  "uid": "35240-cdc7cdd6-dcd2-4e89-9b63-1930edfdfadc"
+                }
+              ],
+              "createdAt": "2026-07-28T01:35:52.000Z",
+              "updatedAt": "2026-07-28T01:35:52.000Z",
+              "uid": "35240-ecb77aec-7d82-41af-8080-4437a0eedebf"
+            }
+          ],
+          "id": "00b43f0d-f3a8-40a7-8f84-14c11ec7d508",
+          "createdAt": "2026-07-28T01:35:52.000Z",
+          "updatedAt": "2026-07-28T01:35:52.000Z",
+          "uid": "35240-00b43f0d-f3a8-40a7-8f84-14c11ec7d508"
+        }
+      ],
+      "id": "cb5ce928-3c14-4422-a38c-09fcff9a46d9",
+      "createdAt": "2026-07-28T01:35:52.000Z",
+      "updatedAt": "2026-07-28T01:35:52.000Z",
+      "uid": "35240-cb5ce928-3c14-4422-a38c-09fcff9a46d9"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graph.facebook.com/v21.0"
+    },
+    {
+      "key": "ad-account-id",
+      "value": "<string>"
+    }
+  ]
+}

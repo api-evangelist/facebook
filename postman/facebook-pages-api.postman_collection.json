@@ -1,0 +1,250 @@
+{
+  "info": {
+    "_postman_id": "1406bf7a-dfbb-471d-bf42-e030ef77fede",
+    "name": "Facebook Graph Ad Accounts Pages API",
+    "description": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:36:34.000Z",
+    "updatedAt": "2026-07-28T01:36:34.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-1406bf7a-dfbb-471d-bf42-e030ef77fede"
+  },
+  "item": [
+    {
+      "name": "{page-id}",
+      "item": [
+        {
+          "name": "feed",
+          "item": [
+            {
+              "name": "Facebook Get Page Feed",
+              "id": "bdb3f7ad-6620-4799-a5e7-f86363765d66",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:page-id/feed?limit=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":page-id",
+                    "feed"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of posts to return.",
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "bbc69735-5139-46b6-bda1-44a9a79d8e62",
+                      "key": "page-id",
+                      "value": "<string>",
+                      "description": "(Required) The page ID."
+                    }
+                  ]
+                },
+                "description": "Retrieve posts from a page's feed."
+              },
+              "response": [
+                {
+                  "id": "f8639a45-7ff5-4f83-a73a-a99d32c79ace",
+                  "name": "Page feed posts retrieved successfully.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/:page-id/feed?limit=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":page-id",
+                        "feed"
+                      ],
+                      "query": [
+                        {
+                          "description": "Maximum number of posts to return.",
+                          "key": "limit",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "page-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"message\": \"<string>\",\n      \"created_time\": \"<dateTime>\",\n      \"updated_time\": \"<dateTime>\",\n      \"from\": {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\"\n      },\n      \"type\": \"status\",\n      \"link\": \"<uri>\",\n      \"permalink_url\": \"<uri>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"message\": \"<string>\",\n      \"created_time\": \"<dateTime>\",\n      \"updated_time\": \"<dateTime>\",\n      \"from\": {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\"\n      },\n      \"type\": \"status\",\n      \"link\": \"<uri>\",\n      \"permalink_url\": \"<uri>\"\n    }\n  ],\n  \"paging\": {\n    \"cursors\": {\n      \"before\": \"<string>\",\n      \"after\": \"<string>\"\n    },\n    \"next\": \"<uri>\",\n    \"previous\": \"<uri>\"\n  }\n}",
+                  "createdAt": "2026-07-28T01:36:34.000Z",
+                  "updatedAt": "2026-07-28T01:36:34.000Z",
+                  "uid": "35240-f8639a45-7ff5-4f83-a73a-a99d32c79ace"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:34.000Z",
+              "updatedAt": "2026-07-28T01:36:34.000Z",
+              "uid": "35240-bdb3f7ad-6620-4799-a5e7-f86363765d66"
+            }
+          ],
+          "id": "b247840e-80a8-4a02-beaf-ca33fb805858",
+          "createdAt": "2026-07-28T01:36:34.000Z",
+          "updatedAt": "2026-07-28T01:36:34.000Z",
+          "uid": "35240-b247840e-80a8-4a02-beaf-ca33fb805858"
+        },
+        {
+          "name": "Facebook Get Page",
+          "id": "322cb214-0750-40f5-ba89-288bbc45dc86",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/:page-id?fields=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ":page-id"
+              ],
+              "query": [
+                {
+                  "description": "Comma-separated list of fields to return.",
+                  "key": "fields",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "id": "75d56c80-b853-4454-8653-b1c4fe5f4851",
+                  "key": "page-id",
+                  "value": "<string>",
+                  "description": "(Required) The page ID."
+                }
+              ]
+            },
+            "description": "Retrieve information about a Facebook Page."
+          },
+          "response": [
+            {
+              "id": "e30073a5-9336-4985-9579-15b99785556a",
+              "name": "Page information retrieved successfully.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:page-id?fields=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":page-id"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of fields to return.",
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "page-id"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"category\": \"<string>\",\n  \"fan_count\": \"<integer>\",\n  \"about\": \"<string>\",\n  \"website\": \"<uri>\",\n  \"link\": \"<uri>\"\n}",
+              "createdAt": "2026-07-28T01:36:34.000Z",
+              "updatedAt": "2026-07-28T01:36:34.000Z",
+              "uid": "35240-e30073a5-9336-4985-9579-15b99785556a"
+            }
+          ],
+          "createdAt": "2026-07-28T01:36:34.000Z",
+          "updatedAt": "2026-07-28T01:36:34.000Z",
+          "uid": "35240-322cb214-0750-40f5-ba89-288bbc45dc86"
+        }
+      ],
+      "id": "d297b04b-316e-4579-9302-eb985b5b9894",
+      "createdAt": "2026-07-28T01:36:34.000Z",
+      "updatedAt": "2026-07-28T01:36:34.000Z",
+      "uid": "35240-d297b04b-316e-4579-9302-eb985b5b9894"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graph.facebook.com/v21.0"
+    }
+  ]
+}

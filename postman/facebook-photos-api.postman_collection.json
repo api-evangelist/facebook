@@ -1,0 +1,245 @@
+{
+  "info": {
+    "_postman_id": "a9be893e-d1d1-4848-acce-6657564c0fc5",
+    "name": "Facebook Graph Ad Accounts Photos API",
+    "description": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:36:35.000Z",
+    "updatedAt": "2026-07-28T01:36:36.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-a9be893e-d1d1-4848-acce-6657564c0fc5"
+  },
+  "item": [
+    {
+      "name": "{user-id}",
+      "item": [
+        {
+          "name": "photos",
+          "item": [
+            {
+              "name": "Facebook Get User Photos",
+              "id": "995ee1d2-c04f-4fab-ad87-eac56282fdd2",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:user-id/photos?limit=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":user-id",
+                    "photos"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of photos to return.",
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "4144d411-e82f-4429-a639-c99ee9216964",
+                      "key": "user-id",
+                      "value": "<string>",
+                      "description": "(Required) The user ID."
+                    }
+                  ]
+                },
+                "description": "Retrieve photos uploaded by a user."
+              },
+              "response": [
+                {
+                  "id": "f20188ff-8e17-4ca3-bebe-06a530d02dbe",
+                  "name": "Photos retrieved successfully.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/:user-id/photos?limit=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":user-id",
+                        "photos"
+                      ],
+                      "query": [
+                        {
+                          "description": "Maximum number of photos to return.",
+                          "key": "limit",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "user-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"created_time\": \"<dateTime>\",\n      \"link\": \"<uri>\",\n      \"picture\": \"<uri>\",\n      \"source\": \"<uri>\",\n      \"width\": \"<integer>\",\n      \"height\": \"<integer>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"created_time\": \"<dateTime>\",\n      \"link\": \"<uri>\",\n      \"picture\": \"<uri>\",\n      \"source\": \"<uri>\",\n      \"width\": \"<integer>\",\n      \"height\": \"<integer>\"\n    }\n  ],\n  \"paging\": {\n    \"cursors\": {\n      \"before\": \"<string>\",\n      \"after\": \"<string>\"\n    },\n    \"next\": \"<uri>\",\n    \"previous\": \"<uri>\"\n  }\n}",
+                  "createdAt": "2026-07-28T01:36:36.000Z",
+                  "updatedAt": "2026-07-28T01:36:36.000Z",
+                  "uid": "35240-f20188ff-8e17-4ca3-bebe-06a530d02dbe"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:36.000Z",
+              "updatedAt": "2026-07-28T01:36:36.000Z",
+              "uid": "35240-995ee1d2-c04f-4fab-ad87-eac56282fdd2"
+            }
+          ],
+          "id": "f9b6ed70-9b54-4e57-a952-8573bcec6076",
+          "createdAt": "2026-07-28T01:36:36.000Z",
+          "updatedAt": "2026-07-28T01:36:36.000Z",
+          "uid": "35240-f9b6ed70-9b54-4e57-a952-8573bcec6076"
+        }
+      ],
+      "id": "866cfbde-d9b7-4890-90f9-77053249f905",
+      "createdAt": "2026-07-28T01:36:36.000Z",
+      "updatedAt": "2026-07-28T01:36:36.000Z",
+      "uid": "35240-866cfbde-d9b7-4890-90f9-77053249f905"
+    },
+    {
+      "name": "{photo-id}",
+      "item": [
+        {
+          "name": "Facebook Get Photo",
+          "id": "d972350f-4e5b-4317-802e-f05e51a0e2f5",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/:photo-id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ":photo-id"
+              ],
+              "variable": [
+                {
+                  "id": "1be3b9ee-eebb-4cb3-84b0-136369193b2c",
+                  "key": "photo-id",
+                  "value": "<string>",
+                  "description": "(Required) The photo ID."
+                }
+              ]
+            },
+            "description": "Retrieve a specific photo by ID."
+          },
+          "response": [
+            {
+              "id": "ababf0fc-7e9c-4989-b4b4-82ded2ff2e49",
+              "name": "Photo retrieved successfully.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:photo-id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":photo-id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "photo-id"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"created_time\": \"<dateTime>\",\n  \"link\": \"<uri>\",\n  \"picture\": \"<uri>\",\n  \"source\": \"<uri>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\"\n}",
+              "createdAt": "2026-07-28T01:36:36.000Z",
+              "updatedAt": "2026-07-28T01:36:36.000Z",
+              "uid": "35240-ababf0fc-7e9c-4989-b4b4-82ded2ff2e49"
+            }
+          ],
+          "createdAt": "2026-07-28T01:36:36.000Z",
+          "updatedAt": "2026-07-28T01:36:36.000Z",
+          "uid": "35240-d972350f-4e5b-4317-802e-f05e51a0e2f5"
+        }
+      ],
+      "id": "eaa403bd-61e9-4fc6-9a92-dcb717c031a9",
+      "createdAt": "2026-07-28T01:36:36.000Z",
+      "updatedAt": "2026-07-28T01:36:36.000Z",
+      "uid": "35240-eaa403bd-61e9-4fc6-9a92-dcb717c031a9"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graph.facebook.com/v21.0"
+    }
+  ]
+}

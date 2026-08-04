@@ -1,0 +1,639 @@
+{
+  "info": {
+    "_postman_id": "699e8928-4483-424c-af90-ccd46013913a",
+    "name": "Facebook Graph Ad Accounts Media API",
+    "description": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:36:32.000Z",
+    "updatedAt": "2026-07-28T01:36:32.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-699e8928-4483-424c-af90-ccd46013913a"
+  },
+  "item": [
+    {
+      "name": "{ig-user-id}",
+      "item": [
+        {
+          "name": "media",
+          "item": [
+            {
+              "name": "Facebook List Instagram Media",
+              "id": "16b1e3fb-75ca-4a4a-bf71-0a376edc7935",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:ig-user-id/media?limit=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":ig-user-id",
+                    "media"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of media to return.",
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "2affc044-2d9f-45b5-8694-ca437586895d",
+                      "key": "ig-user-id",
+                      "value": "<string>",
+                      "description": "(Required) The Instagram user ID."
+                    }
+                  ]
+                },
+                "description": "Retrieve media objects for an Instagram account."
+              },
+              "response": [
+                {
+                  "id": "7831ea41-fe1b-4cce-98af-2f0bdea4c35a",
+                  "name": "Media list retrieved successfully.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/:ig-user-id/media?limit=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":ig-user-id",
+                        "media"
+                      ],
+                      "query": [
+                        {
+                          "description": "Maximum number of media to return.",
+                          "key": "limit",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "ig-user-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"caption\": \"<string>\",\n      \"media_type\": \"VIDEO\",\n      \"media_url\": \"<uri>\",\n      \"permalink\": \"<uri>\",\n      \"timestamp\": \"<dateTime>\",\n      \"like_count\": \"<integer>\",\n      \"comments_count\": \"<integer>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"caption\": \"<string>\",\n      \"media_type\": \"VIDEO\",\n      \"media_url\": \"<uri>\",\n      \"permalink\": \"<uri>\",\n      \"timestamp\": \"<dateTime>\",\n      \"like_count\": \"<integer>\",\n      \"comments_count\": \"<integer>\"\n    }\n  ],\n  \"paging\": {\n    \"cursors\": {\n      \"before\": \"<string>\",\n      \"after\": \"<string>\"\n    },\n    \"next\": \"<uri>\",\n    \"previous\": \"<uri>\"\n  }\n}",
+                  "createdAt": "2026-07-28T01:36:32.000Z",
+                  "updatedAt": "2026-07-28T01:36:32.000Z",
+                  "uid": "35240-7831ea41-fe1b-4cce-98af-2f0bdea4c35a"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:32.000Z",
+              "updatedAt": "2026-07-28T01:36:32.000Z",
+              "uid": "35240-16b1e3fb-75ca-4a4a-bf71-0a376edc7935"
+            },
+            {
+              "name": "Facebook Create Instagram Media",
+              "id": "7d34931b-0103-469f-a562-7bce6a86d316",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"image_url\": \"<uri>\",\n  \"caption\": \"<string>\",\n  \"video_url\": \"<uri>\",\n  \"media_type\": \"CAROUSEL\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/:ig-user-id/media",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":ig-user-id",
+                    "media"
+                  ],
+                  "variable": [
+                    {
+                      "id": "893f8c5c-5423-48d3-8333-875a62ef69d6",
+                      "key": "ig-user-id",
+                      "value": "<string>",
+                      "description": "(Required) The Instagram user ID."
+                    }
+                  ]
+                },
+                "description": "Create a media container for publishing to Instagram."
+              },
+              "response": [
+                {
+                  "id": "bb6a88c2-a7f1-4a21-a975-fa86c09c65d8",
+                  "name": "Media container created successfully.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"image_url\": \"<uri>\",\n  \"caption\": \"<string>\",\n  \"video_url\": \"<uri>\",\n  \"media_type\": \"CAROUSEL\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/:ig-user-id/media",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":ig-user-id",
+                        "media"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ig-user-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:36:32.000Z",
+                  "updatedAt": "2026-07-28T01:36:32.000Z",
+                  "uid": "35240-bb6a88c2-a7f1-4a21-a975-fa86c09c65d8"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:32.000Z",
+              "updatedAt": "2026-07-28T01:36:32.000Z",
+              "uid": "35240-7d34931b-0103-469f-a562-7bce6a86d316"
+            }
+          ],
+          "id": "69da8d04-f450-4332-b71e-14da44af85a1",
+          "createdAt": "2026-07-28T01:36:32.000Z",
+          "updatedAt": "2026-07-28T01:36:32.000Z",
+          "uid": "35240-69da8d04-f450-4332-b71e-14da44af85a1"
+        },
+        {
+          "name": "media_publish",
+          "item": [
+            {
+              "name": "Facebook Publish Instagram Media",
+              "id": "ecf9da73-8753-471d-acab-4b25cb5fdc93",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"creation_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/:ig-user-id/media_publish",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":ig-user-id",
+                    "media_publish"
+                  ],
+                  "variable": [
+                    {
+                      "id": "7ead474f-b90e-483e-88c2-6d34fc28efc6",
+                      "key": "ig-user-id",
+                      "value": "<string>",
+                      "description": "(Required) The Instagram user ID."
+                    }
+                  ]
+                },
+                "description": "Publish a previously created media container."
+              },
+              "response": [
+                {
+                  "id": "f9d35fa7-0f4d-44c3-a6a6-df71925c86de",
+                  "name": "Media published successfully.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"creation_id\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/:ig-user-id/media_publish",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":ig-user-id",
+                        "media_publish"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ig-user-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:36:32.000Z",
+                  "updatedAt": "2026-07-28T01:36:32.000Z",
+                  "uid": "35240-f9d35fa7-0f4d-44c3-a6a6-df71925c86de"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:32.000Z",
+              "updatedAt": "2026-07-28T01:36:32.000Z",
+              "uid": "35240-ecf9da73-8753-471d-acab-4b25cb5fdc93"
+            }
+          ],
+          "id": "f9bd01d7-7942-481f-a7c7-0695aed11433",
+          "createdAt": "2026-07-28T01:36:32.000Z",
+          "updatedAt": "2026-07-28T01:36:32.000Z",
+          "uid": "35240-f9bd01d7-7942-481f-a7c7-0695aed11433"
+        }
+      ],
+      "id": "70aa7207-4c81-43b7-bc28-3ad4540107e3",
+      "createdAt": "2026-07-28T01:36:32.000Z",
+      "updatedAt": "2026-07-28T01:36:32.000Z",
+      "uid": "35240-70aa7207-4c81-43b7-bc28-3ad4540107e3"
+    },
+    {
+      "name": "{threads-media-id}",
+      "item": [
+        {
+          "name": "Facebook Get Threads Media",
+          "id": "595b1b2b-9ec9-4a90-b359-4b6ea5730953",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/:threads-media-id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ":threads-media-id"
+              ],
+              "variable": [
+                {
+                  "id": "243b694c-9988-40a1-85c4-e0c478dab0ab",
+                  "key": "threads-media-id",
+                  "value": "<string>",
+                  "description": "(Required) The Threads media ID."
+                }
+              ]
+            },
+            "description": "Retrieve a specific Threads post."
+          },
+          "response": [
+            {
+              "id": "78e27c11-739a-44b6-8b66-e4879733317a",
+              "name": "Threads media retrieved successfully.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:threads-media-id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":threads-media-id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "threads-media-id"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"id\": \"<string>\",\n  \"media_type\": \"TEXT_POST\",\n  \"text\": \"<string>\",\n  \"permalink\": \"<uri>\",\n  \"timestamp\": \"<dateTime>\",\n  \"username\": \"<string>\",\n  \"is_quote_post\": \"<boolean>\"\n}",
+              "createdAt": "2026-07-28T01:36:32.000Z",
+              "updatedAt": "2026-07-28T01:36:32.000Z",
+              "uid": "35240-78e27c11-739a-44b6-8b66-e4879733317a"
+            }
+          ],
+          "createdAt": "2026-07-28T01:36:32.000Z",
+          "updatedAt": "2026-07-28T01:36:32.000Z",
+          "uid": "35240-595b1b2b-9ec9-4a90-b359-4b6ea5730953"
+        }
+      ],
+      "id": "764c4384-a70c-485c-8def-d42223431195",
+      "createdAt": "2026-07-28T01:36:32.000Z",
+      "updatedAt": "2026-07-28T01:36:32.000Z",
+      "uid": "35240-764c4384-a70c-485c-8def-d42223431195"
+    },
+    {
+      "name": "{phone-number-id}",
+      "item": [
+        {
+          "name": "media",
+          "item": [
+            {
+              "name": "Facebook Upload WhatsApp Media",
+              "id": "4201423b-5ec2-479d-b7fd-c103c7bc0a11",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "multipart/form-data"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "messaging_product",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "key": "file",
+                      "type": "file",
+                      "value": null
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/:phone-number-id/media",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":phone-number-id",
+                    "media"
+                  ],
+                  "variable": [
+                    {
+                      "id": "84b82f31-b414-409e-974b-2ce1fb7a2fb2",
+                      "key": "phone-number-id",
+                      "value": "<string>",
+                      "description": "(Required) The phone number ID."
+                    }
+                  ]
+                },
+                "description": "Upload media for use in WhatsApp messages."
+              },
+              "response": [
+                {
+                  "id": "6440a97e-ca03-4cd7-91c2-80441b2c0f61",
+                  "name": "Media uploaded successfully.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "multipart/form-data"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "messaging_product",
+                          "value": "<string>",
+                          "type": "text"
+                        },
+                        {
+                          "key": "file",
+                          "type": "file"
+                        },
+                        {
+                          "key": "type",
+                          "value": "<string>",
+                          "type": "text"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/:phone-number-id/media",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":phone-number-id",
+                        "media"
+                      ],
+                      "variable": [
+                        {
+                          "key": "phone-number-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:36:32.000Z",
+                  "updatedAt": "2026-07-28T01:36:32.000Z",
+                  "uid": "35240-6440a97e-ca03-4cd7-91c2-80441b2c0f61"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:32.000Z",
+              "updatedAt": "2026-07-28T01:36:32.000Z",
+              "uid": "35240-4201423b-5ec2-479d-b7fd-c103c7bc0a11"
+            }
+          ],
+          "id": "9b1ac3b0-3b36-4256-bc1f-61595cc3258f",
+          "createdAt": "2026-07-28T01:36:32.000Z",
+          "updatedAt": "2026-07-28T01:36:32.000Z",
+          "uid": "35240-9b1ac3b0-3b36-4256-bc1f-61595cc3258f"
+        }
+      ],
+      "id": "f585862f-3504-4311-b953-4b5d70f4b6c5",
+      "createdAt": "2026-07-28T01:36:32.000Z",
+      "updatedAt": "2026-07-28T01:36:32.000Z",
+      "uid": "35240-f585862f-3504-4311-b953-4b5d70f4b6c5"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graph.facebook.com/v21.0"
+    }
+  ]
+}

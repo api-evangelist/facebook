@@ -1,0 +1,266 @@
+{
+  "info": {
+    "_postman_id": "fe7ec4ee-ae7c-4f9e-9163-7f847af714e7",
+    "name": "Facebook Graph Ad Accounts Profile API",
+    "description": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:36:37.000Z",
+    "updatedAt": "2026-07-28T01:36:38.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-fe7ec4ee-ae7c-4f9e-9163-7f847af714e7"
+  },
+  "item": [
+    {
+      "name": "{page-id}",
+      "item": [
+        {
+          "name": "messenger_profile",
+          "item": [
+            {
+              "name": "Facebook Get Messenger Profile",
+              "id": "ade11812-6993-4f27-be27-4fe3d87e489a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:page-id/messenger_profile?fields=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":page-id",
+                    "messenger_profile"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of profile fields.",
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "8df92160-2cfe-4ab6-b7fd-2ad6f37995a7",
+                      "key": "page-id",
+                      "value": "<string>",
+                      "description": "(Required) The page ID."
+                    }
+                  ]
+                },
+                "description": "Retrieve the Messenger profile settings for a page."
+              },
+              "response": [
+                {
+                  "id": "96200d7e-0143-4ebc-a557-c5321b0f8968",
+                  "name": "Messenger profile retrieved successfully.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/:page-id/messenger_profile?fields=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":page-id",
+                        "messenger_profile"
+                      ],
+                      "query": [
+                        {
+                          "description": "Comma-separated list of profile fields.",
+                          "key": "fields",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "page-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"greeting\": [\n        {\n          \"locale\": \"<string>\",\n          \"text\": \"<string>\"\n        },\n        {\n          \"locale\": \"<string>\",\n          \"text\": \"<string>\"\n        }\n      ],\n      \"get_started\": {\n        \"payload\": \"<string>\"\n      }\n    },\n    {\n      \"greeting\": [\n        {\n          \"locale\": \"<string>\",\n          \"text\": \"<string>\"\n        },\n        {\n          \"locale\": \"<string>\",\n          \"text\": \"<string>\"\n        }\n      ],\n      \"get_started\": {\n        \"payload\": \"<string>\"\n      }\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:36:38.000Z",
+                  "updatedAt": "2026-07-28T01:36:38.000Z",
+                  "uid": "35240-96200d7e-0143-4ebc-a557-c5321b0f8968"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:38.000Z",
+              "updatedAt": "2026-07-28T01:36:38.000Z",
+              "uid": "35240-ade11812-6993-4f27-be27-4fe3d87e489a"
+            },
+            {
+              "name": "Facebook Update Messenger Profile",
+              "id": "0bfe5577-90ac-4dd5-8a63-e6f5d34487b4",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"greeting\": [\n    {\n      \"locale\": \"<string>\",\n      \"text\": \"<string>\"\n    },\n    {\n      \"locale\": \"<string>\",\n      \"text\": \"<string>\"\n    }\n  ],\n  \"get_started\": {\n    \"payload\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/:page-id/messenger_profile",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":page-id",
+                    "messenger_profile"
+                  ],
+                  "variable": [
+                    {
+                      "id": "ef48cd90-79da-4257-adfe-4deb3a9867db",
+                      "key": "page-id",
+                      "value": "<string>",
+                      "description": "(Required) The page ID."
+                    }
+                  ]
+                },
+                "description": "Update the Messenger profile settings for a page."
+              },
+              "response": [
+                {
+                  "id": "685a5834-e61f-4278-a130-f3a88c34d661",
+                  "name": "Profile updated successfully.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"greeting\": [\n    {\n      \"locale\": \"<string>\",\n      \"text\": \"<string>\"\n    },\n    {\n      \"locale\": \"<string>\",\n      \"text\": \"<string>\"\n    }\n  ],\n  \"get_started\": {\n    \"payload\": \"<string>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/:page-id/messenger_profile",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":page-id",
+                        "messenger_profile"
+                      ],
+                      "variable": [
+                        {
+                          "key": "page-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"result\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:36:38.000Z",
+                  "updatedAt": "2026-07-28T01:36:38.000Z",
+                  "uid": "35240-685a5834-e61f-4278-a130-f3a88c34d661"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:38.000Z",
+              "updatedAt": "2026-07-28T01:36:38.000Z",
+              "uid": "35240-0bfe5577-90ac-4dd5-8a63-e6f5d34487b4"
+            }
+          ],
+          "id": "69a01df1-9501-4978-857b-408c15a0fb48",
+          "createdAt": "2026-07-28T01:36:38.000Z",
+          "updatedAt": "2026-07-28T01:36:38.000Z",
+          "uid": "35240-69a01df1-9501-4978-857b-408c15a0fb48"
+        }
+      ],
+      "id": "569d8b51-5fe3-4aac-9537-07f3d2a96be5",
+      "createdAt": "2026-07-28T01:36:38.000Z",
+      "updatedAt": "2026-07-28T01:36:38.000Z",
+      "uid": "35240-569d8b51-5fe3-4aac-9537-07f3d2a96be5"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graph.facebook.com/v21.0"
+    }
+  ]
+}

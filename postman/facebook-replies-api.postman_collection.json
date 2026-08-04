@@ -1,0 +1,136 @@
+{
+  "info": {
+    "_postman_id": "96289d0e-daf4-450d-a93e-88be48b68ed5",
+    "name": "Facebook Graph Ad Accounts Replies API",
+    "description": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:36:41.000Z",
+    "updatedAt": "2026-07-28T01:36:41.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-96289d0e-daf4-450d-a93e-88be48b68ed5"
+  },
+  "item": [
+    {
+      "name": "{threads-media-id}",
+      "item": [
+        {
+          "name": "replies",
+          "item": [
+            {
+              "name": "Facebook Get Threads Replies",
+              "id": "a2a6e1bc-3c99-438d-80ed-4fcdf2931d22",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:threads-media-id/replies",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":threads-media-id",
+                    "replies"
+                  ],
+                  "variable": [
+                    {
+                      "id": "02f3836d-3073-4f80-aaf1-56cdb71b3530",
+                      "key": "threads-media-id",
+                      "value": "<string>",
+                      "description": "(Required) The Threads media ID."
+                    }
+                  ]
+                },
+                "description": "Retrieve replies to a Threads post."
+              },
+              "response": [
+                {
+                  "id": "0200d80f-f5ec-4cc9-a672-a32a9b088310",
+                  "name": "Replies retrieved successfully.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/:threads-media-id/replies",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":threads-media-id",
+                        "replies"
+                      ],
+                      "variable": [
+                        {
+                          "key": "threads-media-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"media_type\": \"VIDEO\",\n      \"text\": \"<string>\",\n      \"permalink\": \"<uri>\",\n      \"timestamp\": \"<dateTime>\",\n      \"username\": \"<string>\",\n      \"is_quote_post\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"media_type\": \"TEXT_POST\",\n      \"text\": \"<string>\",\n      \"permalink\": \"<uri>\",\n      \"timestamp\": \"<dateTime>\",\n      \"username\": \"<string>\",\n      \"is_quote_post\": \"<boolean>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:36:41.000Z",
+                  "updatedAt": "2026-07-28T01:36:41.000Z",
+                  "uid": "35240-0200d80f-f5ec-4cc9-a672-a32a9b088310"
+                }
+              ],
+              "createdAt": "2026-07-28T01:36:41.000Z",
+              "updatedAt": "2026-07-28T01:36:41.000Z",
+              "uid": "35240-a2a6e1bc-3c99-438d-80ed-4fcdf2931d22"
+            }
+          ],
+          "id": "400fae90-ef74-4cbb-bd49-436b40326cbf",
+          "createdAt": "2026-07-28T01:36:41.000Z",
+          "updatedAt": "2026-07-28T01:36:41.000Z",
+          "uid": "35240-400fae90-ef74-4cbb-bd49-436b40326cbf"
+        }
+      ],
+      "id": "21d819ca-2d1f-4ce2-90e5-1bd4be0c1e5c",
+      "createdAt": "2026-07-28T01:36:41.000Z",
+      "updatedAt": "2026-07-28T01:36:41.000Z",
+      "uid": "35240-21d819ca-2d1f-4ce2-90e5-1bd4be0c1e5c"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graph.facebook.com/v21.0"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "info": {
+    "_postman_id": "523ed1b4-1b52-4516-a544-9e97b66e1433",
+    "name": "Facebook Graph Ad Accounts Authentication API",
+    "description": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:35:55.000Z",
+    "updatedAt": "2026-07-28T01:35:55.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-523ed1b4-1b52-4516-a544-9e97b66e1433"
+  },
+  "item": [
+    {
+      "name": "debug_token",
+      "item": [
+        {
+          "name": "Facebook Debug Token",
+          "id": "32159a6a-b9d3-4bde-98a3-3afb07429b78",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/debug_token?input_token=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "debug_token"
+              ],
+              "query": [
+                {
+                  "description": "(Required) The access token to debug.",
+                  "key": "input_token",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Get metadata about an access token."
+          },
+          "response": [
+            {
+              "id": "81b38799-b553-4131-9e5b-3eb3814974e4",
+              "name": "Token information retrieved successfully.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/debug_token?input_token=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "debug_token"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The access token to debug.",
+                      "key": "input_token",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": {\n    \"app_id\": \"<string>\",\n    \"type\": \"PAGE\",\n    \"user_id\": \"<string>\",\n    \"is_valid\": \"<boolean>\",\n    \"expires_at\": \"<integer>\",\n    \"scopes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "createdAt": "2026-07-28T01:35:56.000Z",
+              "updatedAt": "2026-07-28T01:35:56.000Z",
+              "uid": "35240-81b38799-b553-4131-9e5b-3eb3814974e4"
+            }
+          ],
+          "createdAt": "2026-07-28T01:35:56.000Z",
+          "updatedAt": "2026-07-28T01:35:56.000Z",
+          "uid": "35240-32159a6a-b9d3-4bde-98a3-3afb07429b78"
+        }
+      ],
+      "id": "31975d2b-3e39-4ffc-9f74-3fb8f205a1d2",
+      "createdAt": "2026-07-28T01:35:56.000Z",
+      "updatedAt": "2026-07-28T01:35:56.000Z",
+      "uid": "35240-31975d2b-3e39-4ffc-9f74-3fb8f205a1d2"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graph.facebook.com/v21.0"
+    }
+  ]
+}
