@@ -48,76 +48,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 - aid: facebook:facebook-ad-sets-api
   name: Facebook Ad Sets API
   description: The Ad Sets API from Facebook — 1 operation(s) for ad sets.
@@ -134,76 +76,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 - aid: facebook:facebook-ads-api
   name: Facebook Ads API
   description: The Ads API from Facebook — 1 operation(s) for ads.
@@ -220,76 +104,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 - aid: facebook:facebook-audiences-api
   name: Facebook Audiences API
   description: The Audiences API from Facebook — 1 operation(s) for audiences.
@@ -306,76 +132,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 - aid: facebook:facebook-authentication-api
   name: Facebook Authentication API
   description: The Authentication API from Facebook — 1 operation(s) for authentication.
@@ -392,76 +160,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 - aid: facebook:facebook-campaigns-api
   name: Facebook Campaigns API
   description: The Campaigns API from Facebook — 2 operation(s) for campaigns.
@@ -478,76 +188,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 - aid: facebook:facebook-comments-api
   name: Facebook Comments API
   description: The Comments API from Facebook — 2 operation(s) for comments.
@@ -564,76 +216,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 - aid: facebook:facebook-conversations-api
   name: Facebook Conversations API
   description: The Conversations API from Facebook — 2 operation(s) for conversations.
@@ -650,76 +244,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 - aid: facebook:facebook-insights-api
   name: Facebook Insights API
   description: The Insights API from Facebook — 3 operation(s) for insights.
@@ -736,76 +272,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 - aid: facebook:facebook-media-api
   name: Facebook Media API
   description: The Media API from Facebook — 4 operation(s) for media.
@@ -822,76 +300,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 - aid: facebook:facebook-messages-api
   name: Facebook Messages API
   description: The Messages API from Facebook — 2 operation(s) for messages.
@@ -908,76 +328,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 - aid: facebook:facebook-pages-api
   name: Facebook Pages API
   description: The Pages API from Facebook — 2 operation(s) for pages.
@@ -994,76 +356,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 - aid: facebook:facebook-phone-numbers-api
   name: Facebook Phone Numbers API
   description: The Phone Numbers API from Facebook — 2 operation(s) for phone numbers.
@@ -1080,76 +384,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 - aid: facebook:facebook-photos-api
   name: Facebook Photos API
   description: The Photos API from Facebook — 2 operation(s) for photos.
@@ -1166,76 +412,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 - aid: facebook:facebook-posts-api
   name: Facebook Posts API
   description: The Posts API from Facebook — 2 operation(s) for posts.
@@ -1252,76 +440,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 - aid: facebook:facebook-profile-api
   name: Facebook Profile API
   description: The Profile API from Facebook — 1 operation(s) for profile.
@@ -1338,76 +468,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 - aid: facebook:facebook-publishing-api
   name: Facebook Publishing API
   description: The Publishing API from Facebook — 2 operation(s) for publishing.
@@ -1424,76 +496,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 - aid: facebook:facebook-replies-api
   name: Facebook Replies API
   description: The Replies API from Facebook — 1 operation(s) for replies.
@@ -1510,76 +524,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 - aid: facebook:facebook-tags-api
   name: Facebook Tags API
   description: The Tags API from Facebook — 1 operation(s) for tags.
@@ -1596,76 +552,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 - aid: facebook:facebook-templates-api
   name: Facebook Templates API
   description: The Templates API from Facebook — 1 operation(s) for templates.
@@ -1682,76 +580,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 - aid: facebook:facebook-users-api
   name: Facebook Users API
   description: The Users API from Facebook — 4 operation(s) for users.
@@ -1768,76 +608,18 @@ apis:
     url: https://developers.facebook.com/docs/graph-api/reference
   - type: Authentication
     url: https://developers.facebook.com/docs/facebook-login/access-tokens
-  - type: X-NaftikoCapability
-    url: capabilities/graph-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-photos.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-posts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/marketing-api
   - type: APIReference
     url: https://developers.facebook.com/docs/marketing-api/reference
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-accounts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ad-sets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-ads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-audiences.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-campaigns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/marketing-insights.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/instagram-platform
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-tags.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/instagram-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/messenger-platform
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-conversations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/messenger-profile.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/threads
-  - type: X-NaftikoCapability
-    url: capabilities/threads-insights.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-publishing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-replies.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/threads-users.yaml
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-media.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-phone-numbers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/whatsapp-templates.yaml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/facebook/overview
