@@ -1,0 +1,243 @@
+{
+  "item": [
+    {
+      "id": "1bd499f7-7de1-437b-95a6-a7cb993f429a",
+      "name": "Photos",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ecd7eb53-2729-4f56-a268-b5175e31a6fd",
+          "name": "Facebook Get User Photos",
+          "request": {
+            "name": "Facebook Get User Photos",
+            "description": {
+              "content": "Retrieve photos uploaded by a user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":user-id",
+                "photos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "Maximum number of photos to return."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user-id",
+                  "description": "(Required) The user ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2f9bf925-2e47-4fdc-a552-809edbd875dd",
+              "name": "Photos retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":user-id",
+                    "photos"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user-id",
+                      "description": "(Required) The user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"300001234567890\",\n      \"name\": \"Sunset at the beach\",\n      \"created_time\": \"2015-03-10T09:02:04.093Z\",\n      \"link\": \"https://ftTD.dxwigxjpOYBBl9Go,UEDUvSlLel2N2bWEBM4frYcC-dt65Pn5Px,rFAHFm5kOO\",\n      \"picture\": \"https://VGjOIOmBGHm.jteoSwn2xNYScLAsOxioq5h\",\n      \"source\": \"http://BCyIZtSEdVuo.cyasdffiprtj\",\n      \"width\": 1920,\n      \"height\": 1080\n    },\n    {\n      \"id\": \"300001234567890\",\n      \"name\": \"Sunset at the beach\",\n      \"created_time\": \"2016-03-01T22:25:02.564Z\",\n      \"link\": \"http://XPDhrVPqWkpsmnvLYAWnYryRkZ.fhbtqcO9HCn+OQoLSGpinm,daagQ4Gc1iU6qmXt2HelQRyvvJ5\",\n      \"picture\": \"http://D.kcfiOZ3.dmr0B5T+DVhjRAp\",\n      \"source\": \"https://OevqWRNnloutyWWCMHkljdwEWkcxVy.aqbpd02-ChqIEzu8xHzisb\",\n      \"width\": 1920,\n      \"height\": 1080\n    }\n  ],\n  \"paging\": {\n    \"cursors\": {\n      \"before\": \"string\",\n      \"after\": \"string\"\n    },\n    \"next\": \"http://CffVBqQtjoLErHPxRQzCic.oaulYT-Ux+ohKtyfjwugBJEsN4tHU,gCFGc\",\n    \"previous\": \"http://DMDmDsknFVZTqINOTMDtR.yqEyHpCuWw+RHgeR91ezT+spTEfBwWJPjSMMlSapMb1PRqEL.PrfI5l1WyC\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "78819e97-874a-4d04-a0d9-56f058c5ac86",
+          "name": "Facebook Get Photo",
+          "request": {
+            "name": "Facebook Get Photo",
+            "description": {
+              "content": "Retrieve a specific photo by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":photo-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "photo-id",
+                  "description": "(Required) The photo ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f889a08c-03b2-4361-a557-da8ea9e608ab",
+              "name": "Photo retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":photo-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "photo-id",
+                      "description": "(Required) The photo ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"300001234567890\",\n  \"name\": \"Sunset at the beach\",\n  \"created_time\": \"1952-03-30T05:08:44.904Z\",\n  \"link\": \"https://txXZETtCYRKaPZawsYKuDwJ.gvreVtRLpLxjnz6SWkmLSLyoz2-f.YXPPW\",\n  \"picture\": \"http://TikCIclPhUyOJQ.inqhDdWLhWJTofqiFT0hZm+DDpCz07HTbPa,SZ81iEkeIQ.s,XJFdOYkbwQ2c0\",\n  \"source\": \"http://YobpzkSnh.gimr2TIZaohCu0RBdrDpU\",\n  \"width\": 1920,\n  \"height\": 1080\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://graph.facebook.com/v21.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c6e65e09-8107-47cc-9020-4c82227a6928",
+    "name": "Facebook Graph Ad Accounts Photos API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+      "type": "text/plain"
+    }
+  }
+}

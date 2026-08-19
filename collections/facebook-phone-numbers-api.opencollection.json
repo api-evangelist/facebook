@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Facebook Graph Ad Accounts Phone Numbers API",
+    "version": "21.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Phone Numbers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Facebook Get WhatsApp Phone Number",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:phone-number-id",
+            "params": [
+              {
+                "name": "phone-number-id",
+                "value": "106540352242922",
+                "type": "path",
+                "description": "The phone number ID."
+              }
+            ]
+          },
+          "docs": "Retrieve phone number details."
+        },
+        {
+          "info": {
+            "name": "Facebook List WhatsApp Phone Numbers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:waba-id/phone_numbers",
+            "params": [
+              {
+                "name": "waba-id",
+                "value": "102290129340398",
+                "type": "path",
+                "description": "WhatsApp Business Account ID."
+              }
+            ]
+          },
+          "docs": "Retrieve phone numbers for a WhatsApp Business Account."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

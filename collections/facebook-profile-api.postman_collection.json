@@ -1,0 +1,266 @@
+{
+  "item": [
+    {
+      "id": "bcf1fbfe-b50f-47d0-a899-d2f747deb308",
+      "name": "Profile",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3fe158ed-efe6-4b14-bbc8-71c8d9cbd118",
+          "name": "Facebook Get Messenger Profile",
+          "request": {
+            "name": "Facebook Get Messenger Profile",
+            "description": {
+              "content": "Retrieve the Messenger profile settings for a page.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":page-id",
+                "messenger_profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of profile fields."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "page-id",
+                  "description": "(Required) The page ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "db7c5a83-78c3-4ad2-9698-905bbcb6004e",
+              "name": "Messenger profile retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":page-id",
+                    "messenger_profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "greeting,get_started,persistent_menu"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "page-id",
+                      "description": "(Required) The page ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"greeting\": [\n        {\n          \"locale\": \"string\",\n          \"text\": \"string\"\n        },\n        {\n          \"locale\": \"string\",\n          \"text\": \"string\"\n        }\n      ],\n      \"get_started\": {\n        \"payload\": \"string\"\n      }\n    },\n    {\n      \"greeting\": [\n        {\n          \"locale\": \"string\",\n          \"text\": \"string\"\n        },\n        {\n          \"locale\": \"string\",\n          \"text\": \"string\"\n        }\n      ],\n      \"get_started\": {\n        \"payload\": \"string\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3fc23f79-9113-413f-bfc6-4e4072f88759",
+          "name": "Facebook Update Messenger Profile",
+          "request": {
+            "name": "Facebook Update Messenger Profile",
+            "description": {
+              "content": "Update the Messenger profile settings for a page.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":page-id",
+                "messenger_profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "page-id",
+                  "description": "(Required) The page ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"greeting\": [\n    {\n      \"locale\": \"<string>\",\n      \"text\": \"<string>\"\n    },\n    {\n      \"locale\": \"<string>\",\n      \"text\": \"<string>\"\n    }\n  ],\n  \"get_started\": {\n    \"payload\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ac78d12e-c9c6-4cfe-8bab-05a0a7a7dd11",
+              "name": "Profile updated successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":page-id",
+                    "messenger_profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "page-id",
+                      "description": "(Required) The page ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"greeting\": [\n    {\n      \"locale\": \"default\",\n      \"text\": \"Welcome to our page!\"\n    },\n    {\n      \"locale\": \"default\",\n      \"text\": \"Welcome to our page!\"\n    }\n  ],\n  \"get_started\": {\n    \"payload\": \"GET_STARTED\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://graph.facebook.com/v21.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3e75aadc-f5d0-44f3-8678-e24330e137e7",
+    "name": "Facebook Graph Ad Accounts Profile API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+      "type": "text/plain"
+    }
+  }
+}

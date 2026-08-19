@@ -1,0 +1,70 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Facebook Graph Ad Accounts Messages API",
+    "version": "21.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Messages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Facebook Send Message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.facebook.com/v21.0/:page-id/messages",
+            "params": [
+              {
+                "name": "page-id",
+                "value": "200001234567890",
+                "type": "path",
+                "description": "The page ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send a message to a user via Messenger."
+        },
+        {
+          "info": {
+            "name": "Facebook Send WhatsApp Message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.facebook.com/v21.0/:phone-number-id/messages",
+            "params": [
+              {
+                "name": "phone-number-id",
+                "value": "106540352242922",
+                "type": "path",
+                "description": "The phone number ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send a message to a WhatsApp user."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

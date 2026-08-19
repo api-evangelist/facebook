@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Facebook Graph Ad Accounts Templates API",
+    "version": "21.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Templates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Facebook List Message Templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:waba-id/message_templates",
+            "params": [
+              {
+                "name": "waba-id",
+                "value": "102290129340398",
+                "type": "path",
+                "description": "WhatsApp Business Account ID."
+              }
+            ]
+          },
+          "docs": "Retrieve message templates for a WhatsApp Business Account."
+        },
+        {
+          "info": {
+            "name": "Facebook Create Message Template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.facebook.com/v21.0/:waba-id/message_templates",
+            "params": [
+              {
+                "name": "waba-id",
+                "value": "102290129340398",
+                "type": "path",
+                "description": "WhatsApp Business Account ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new message template."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

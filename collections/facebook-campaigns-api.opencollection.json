@@ -1,0 +1,91 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Facebook Graph Ad Accounts Campaigns API",
+    "version": "21.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Campaigns",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Facebook List Campaigns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/act_:ad-account-id/campaigns",
+            "params": [
+              {
+                "name": "ad-account-id",
+                "value": "123456789",
+                "type": "path",
+                "description": "The ad account ID."
+              },
+              {
+                "name": "limit",
+                "value": "25",
+                "type": "query",
+                "description": "Maximum number of campaigns to return."
+              }
+            ]
+          },
+          "docs": "Retrieve campaigns for an ad account."
+        },
+        {
+          "info": {
+            "name": "Facebook Create Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.facebook.com/v21.0/act_:ad-account-id/campaigns",
+            "params": [
+              {
+                "name": "ad-account-id",
+                "value": "123456789",
+                "type": "path",
+                "description": "The ad account ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new advertising campaign."
+        },
+        {
+          "info": {
+            "name": "Facebook Get Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:campaign-id",
+            "params": [
+              {
+                "name": "campaign-id",
+                "value": "400001234567890",
+                "type": "path",
+                "description": "The campaign ID."
+              }
+            ]
+          },
+          "docs": "Retrieve a specific campaign by ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

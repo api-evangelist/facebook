@@ -1,0 +1,137 @@
+{
+  "item": [
+    {
+      "id": "cb42d0ad-baac-4b13-96ad-fae0c7395730",
+      "name": "Replies",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2c74877e-c41a-4790-a35c-d1d0d8c084a6",
+          "name": "Facebook Get Threads Replies",
+          "request": {
+            "name": "Facebook Get Threads Replies",
+            "description": {
+              "content": "Retrieve replies to a Threads post.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":threads-media-id",
+                "replies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "threads-media-id",
+                  "description": "(Required) The Threads media ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5fb26cc8-a48c-4e21-9ff9-7a716e2fb129",
+              "name": "Replies retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":threads-media-id",
+                    "replies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "threads-media-id",
+                      "description": "(Required) The Threads media ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"98765432101234567\",\n      \"media_type\": \"TEXT_POST\",\n      \"text\": \"Hello Threads!\",\n      \"permalink\": \"https://XR.qcjKgKG\",\n      \"timestamp\": \"1950-06-13T04:01:45.107Z\",\n      \"username\": \"examplebrand\",\n      \"is_quote_post\": false\n    },\n    {\n      \"id\": \"98765432101234567\",\n      \"media_type\": \"TEXT_POST\",\n      \"text\": \"Hello Threads!\",\n      \"permalink\": \"https://cghGjnQjj.bfkwanxeKuM3JBWJ2LFZGUiGUOW.5EA3cuowDbp\",\n      \"timestamp\": \"2012-04-17T21:02:16.465Z\",\n      \"username\": \"examplebrand\",\n      \"is_quote_post\": false\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://graph.facebook.com/v21.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "eeea6d70-728e-465b-9f5a-8c88bf0ee12b",
+    "name": "Facebook Graph Ad Accounts Replies API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+      "type": "text/plain"
+    }
+  }
+}

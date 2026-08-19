@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Facebook Graph Ad Accounts Audiences API",
+    "version": "21.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Audiences",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Facebook List Custom Audiences",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/act_:ad-account-id/customaudiences",
+            "params": [
+              {
+                "name": "ad-account-id",
+                "value": "123456789",
+                "type": "path",
+                "description": "The ad account ID."
+              }
+            ]
+          },
+          "docs": "Retrieve custom audiences for an ad account."
+        },
+        {
+          "info": {
+            "name": "Facebook Create Custom Audience",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.facebook.com/v21.0/act_:ad-account-id/customaudiences",
+            "params": [
+              {
+                "name": "ad-account-id",
+                "value": "123456789",
+                "type": "path",
+                "description": "The ad account ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new custom audience."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

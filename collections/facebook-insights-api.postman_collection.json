@@ -1,0 +1,369 @@
+{
+  "item": [
+    {
+      "id": "c3f1952a-b00f-4b90-ba03-d98373be9d7a",
+      "name": "Insights",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "713325b9-c35d-4730-bfeb-e31451d64463",
+          "name": "Facebook Get Instagram Insights",
+          "request": {
+            "name": "Facebook Get Instagram Insights",
+            "description": {
+              "content": "Retrieve insights for an Instagram account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":ig-user-id",
+                "insights"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "metric",
+                  "value": "<string>",
+                  "description": "(Required) Comma-separated list of metrics."
+                },
+                {
+                  "disabled": false,
+                  "key": "period",
+                  "value": "<string>",
+                  "description": "(Required) Aggregation period."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "ig-user-id",
+                  "description": "(Required) The Instagram user ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2832e561-6bce-4da7-9a73-6613b25b87bc",
+              "name": "Insights retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":ig-user-id",
+                    "insights"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "metric",
+                      "value": "impressions,reach,follower_count"
+                    },
+                    {
+                      "key": "period",
+                      "value": "day"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ig-user-id",
+                      "description": "(Required) The Instagram user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"name\": \"impressions\",\n      \"period\": \"day\",\n      \"values\": [\n        {\n          \"value\": 9829,\n          \"end_time\": \"1952-12-26T02:01:57.003Z\"\n        },\n        {\n          \"value\": 3285,\n          \"end_time\": \"1995-03-01T19:50:29.395Z\"\n        }\n      ]\n    },\n    {\n      \"name\": \"impressions\",\n      \"period\": \"day\",\n      \"values\": [\n        {\n          \"value\": 2296,\n          \"end_time\": \"2023-12-16T07:16:40.214Z\"\n        },\n        {\n          \"value\": 9791,\n          \"end_time\": \"1966-07-26T22:49:40.239Z\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1b98a7f3-9f0f-494f-b5c9-155d43c77bac",
+          "name": "Facebook Get Account Insights",
+          "request": {
+            "name": "Facebook Get Account Insights",
+            "description": {
+              "content": "Retrieve advertising insights for an ad account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "act_{{ad-account-id}}",
+                "insights"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "date_preset",
+                  "value": "<string>",
+                  "description": "Predefined date range for insights."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ff25f120-bba4-450a-baa9-f19b5e0a9de9",
+              "name": "Insights retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "act_{{ad-account-id}}",
+                    "insights"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date_preset",
+                      "value": "last_7d"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"impressions\": \"15000\",\n      \"clicks\": \"450\",\n      \"spend\": \"125.50\",\n      \"cpc\": \"0.28\",\n      \"cpm\": \"8.37\",\n      \"ctr\": \"3.00\",\n      \"reach\": \"12000\",\n      \"date_start\": \"1978-02-11\",\n      \"date_stop\": \"2021-01-11\"\n    },\n    {\n      \"impressions\": \"15000\",\n      \"clicks\": \"450\",\n      \"spend\": \"125.50\",\n      \"cpc\": \"0.28\",\n      \"cpm\": \"8.37\",\n      \"ctr\": \"3.00\",\n      \"reach\": \"12000\",\n      \"date_start\": \"1974-02-15\",\n      \"date_stop\": \"1989-06-18\"\n    }\n  ],\n  \"paging\": {\n    \"cursors\": {\n      \"before\": \"string\",\n      \"after\": \"string\"\n    },\n    \"next\": \"https://HnjQYDqYN.hwlWWJWP+PuUEmrn2khoO7ChW\",\n    \"previous\": \"https://Buoyb.corYttR,AG+sLLMvK+xGPimbZsiIOMqZKjb\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e8f407e4-9db9-4606-90b8-9ccb09cf316e",
+          "name": "Facebook Get Threads Insights",
+          "request": {
+            "name": "Facebook Get Threads Insights",
+            "description": {
+              "content": "Retrieve insights for a Threads user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":threads-user-id",
+                "insights"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "metric",
+                  "value": "<string>",
+                  "description": "(Required) Comma-separated list of metrics."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "threads-user-id",
+                  "description": "(Required) The Threads user ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c0b75ef8-497f-43e1-946e-19adb2e98939",
+              "name": "Insights retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":threads-user-id",
+                    "insights"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "metric",
+                      "value": "views,likes,replies"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "threads-user-id",
+                      "description": "(Required) The Threads user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"name\": \"views\",\n      \"period\": \"string\",\n      \"values\": [\n        {\n          \"value\": 2787\n        },\n        {\n          \"value\": 7610\n        }\n      ]\n    },\n    {\n      \"name\": \"views\",\n      \"period\": \"string\",\n      \"values\": [\n        {\n          \"value\": 787\n        },\n        {\n          \"value\": 6079\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://graph.facebook.com/v21.0",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) The ad account ID.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "ad-account-id"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6891f140-95aa-4af0-99cb-913c58bd9902",
+    "name": "Facebook Graph Ad Accounts Insights API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+      "type": "text/plain"
+    }
+  }
+}

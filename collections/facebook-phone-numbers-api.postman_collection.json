@@ -1,0 +1,231 @@
+{
+  "item": [
+    {
+      "id": "35bfa461-4538-4573-83b7-2f94cd8260de",
+      "name": "Phone Numbers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "287432e9-7b51-43bd-8a8b-20113695df00",
+          "name": "Facebook Get WhatsApp Phone Number",
+          "request": {
+            "name": "Facebook Get WhatsApp Phone Number",
+            "description": {
+              "content": "Retrieve phone number details.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":phone-number-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "phone-number-id",
+                  "description": "(Required) The phone number ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b350f548-868e-4aec-a717-42dba6055029",
+              "name": "Phone number details retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":phone-number-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "phone-number-id",
+                      "description": "(Required) The phone number ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"106540352242922\",\n  \"display_phone_number\": \"+1 555 123 4567\",\n  \"verified_name\": \"Example Business\",\n  \"quality_rating\": \"GREEN\",\n  \"status\": \"CONNECTED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "65ab105c-df9d-4d22-89fb-75d179b1baf6",
+          "name": "Facebook List WhatsApp Phone Numbers",
+          "request": {
+            "name": "Facebook List WhatsApp Phone Numbers",
+            "description": {
+              "content": "Retrieve phone numbers for a WhatsApp Business Account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":waba-id",
+                "phone_numbers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "waba-id",
+                  "description": "(Required) WhatsApp Business Account ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f0cab7bc-de65-4e4a-a4a9-2eb8b542906d",
+              "name": "Phone numbers retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":waba-id",
+                    "phone_numbers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "waba-id",
+                      "description": "(Required) WhatsApp Business Account ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"106540352242922\",\n      \"display_phone_number\": \"+1 555 123 4567\",\n      \"verified_name\": \"Example Business\",\n      \"quality_rating\": \"GREEN\",\n      \"status\": \"CONNECTED\"\n    },\n    {\n      \"id\": \"106540352242922\",\n      \"display_phone_number\": \"+1 555 123 4567\",\n      \"verified_name\": \"Example Business\",\n      \"quality_rating\": \"GREEN\",\n      \"status\": \"CONNECTED\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://graph.facebook.com/v21.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2d1cddcb-f8bf-4733-b58c-9202a677ade4",
+    "name": "Facebook Graph Ad Accounts Phone Numbers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+      "type": "text/plain"
+    }
+  }
+}

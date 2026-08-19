@@ -1,0 +1,232 @@
+{
+  "item": [
+    {
+      "id": "774d29ea-8da6-416a-b12e-027a6c812d35",
+      "name": "Ad Sets",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "117951b0-ebec-4ff7-8540-11a76eab8b8e",
+          "name": "Facebook List Ad Sets",
+          "request": {
+            "name": "Facebook List Ad Sets",
+            "description": {
+              "content": "Retrieve ad sets for an ad account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "act_{{ad-account-id}}",
+                "adsets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "53243443-39a8-45c3-952f-ecfc5abcf446",
+              "name": "Ad sets retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "act_{{ad-account-id}}",
+                    "adsets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"500001234567890\",\n      \"name\": \"Women 25-34 Interest Targeting\",\n      \"campaign_id\": \"string\",\n      \"status\": \"DELETED\",\n      \"daily_budget\": \"string\",\n      \"start_time\": \"1993-06-15T10:50:14.206Z\",\n      \"end_time\": \"1964-12-15T06:22:48.216Z\",\n      \"targeting\": {},\n      \"bid_amount\": \"string\"\n    },\n    {\n      \"id\": \"500001234567890\",\n      \"name\": \"Women 25-34 Interest Targeting\",\n      \"campaign_id\": \"string\",\n      \"status\": \"PAUSED\",\n      \"daily_budget\": \"string\",\n      \"start_time\": \"2017-10-22T04:01:45.642Z\",\n      \"end_time\": \"1990-01-23T15:59:09.531Z\",\n      \"targeting\": {},\n      \"bid_amount\": \"string\"\n    }\n  ],\n  \"paging\": {\n    \"cursors\": {\n      \"before\": \"string\",\n      \"after\": \"string\"\n    },\n    \"next\": \"https://hzxtoBdeYXNQeB.ffgWJeNmXzBl,Y,RnQm7t,NwmQtD,rFxBfXPBsvzJ6tQybOjh4KP\",\n    \"previous\": \"https://cQgsMR.jzrtpGRrJUOkKakpJL3bRmfx56os3NKXUHHaNRzMYYzO6.phG9shnBJatT\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c41d5b8e-25d8-4196-aba3-55c92b888312",
+          "name": "Facebook Create Ad Set",
+          "request": {
+            "name": "Facebook Create Ad Set",
+            "description": {
+              "content": "Create a new ad set within a campaign.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "act_{{ad-account-id}}",
+                "adsets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"campaign_id\": \"<string>\",\n  \"targeting\": \"<object>\",\n  \"daily_budget\": \"<string>\",\n  \"status\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "29e75887-81ac-4f1f-95c0-3672215c5b49",
+              "name": "Ad set created successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "act_{{ad-account-id}}",
+                    "adsets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"campaign_id\": \"<string>\",\n  \"targeting\": \"<object>\",\n  \"daily_budget\": \"<string>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://graph.facebook.com/v21.0",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) The ad account ID.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "ad-account-id"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f6fe1cfa-ef9e-4aa2-98ec-ab1ca05f662e",
+    "name": "Facebook Graph Ad Accounts Ad Sets API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+      "type": "text/plain"
+    }
+  }
+}

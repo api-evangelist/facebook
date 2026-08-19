@@ -1,0 +1,131 @@
+{
+  "item": [
+    {
+      "id": "d077a02f-7295-47d1-aca3-1ccab637d1cd",
+      "name": "Ads",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "40607dc4-e922-45ec-a4fb-6fb82108c805",
+          "name": "Facebook List Ads",
+          "request": {
+            "name": "Facebook List Ads",
+            "description": {
+              "content": "Retrieve ads for an ad account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "act_{{ad-account-id}}",
+                "ads"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "17776476-b2e1-4ebf-a2b3-16611ffe367d",
+              "name": "Ads retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "act_{{ad-account-id}}",
+                    "ads"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"600001234567890\",\n      \"name\": \"Spring Sale Banner Ad\",\n      \"adset_id\": \"string\",\n      \"campaign_id\": \"string\",\n      \"status\": \"ACTIVE\",\n      \"creative\": {\n        \"id\": \"string\"\n      }\n    },\n    {\n      \"id\": \"600001234567890\",\n      \"name\": \"Spring Sale Banner Ad\",\n      \"adset_id\": \"string\",\n      \"campaign_id\": \"string\",\n      \"status\": \"ACTIVE\",\n      \"creative\": {\n        \"id\": \"string\"\n      }\n    }\n  ],\n  \"paging\": {\n    \"cursors\": {\n      \"before\": \"string\",\n      \"after\": \"string\"\n    },\n    \"next\": \"https://aDGgaJaXsYeFv.qcEbh67NPp7JsAmnY3psLYiWNeLcjsfkHFxaimGvGV\",\n    \"previous\": \"https://zkEBTJ.cfw2WioTBD89LrjA18mVUz\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://graph.facebook.com/v21.0",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) The ad account ID.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "ad-account-id"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ff6fdab9-fd6d-46d5-a136-305e5dd35eb5",
+    "name": "Facebook Graph Ad Accounts Ads API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+      "type": "text/plain"
+    }
+  }
+}

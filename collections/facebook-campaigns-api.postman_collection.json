@@ -1,0 +1,386 @@
+{
+  "item": [
+    {
+      "id": "48ea4ab9-a6aa-4124-99bc-ef8defc136a0",
+      "name": "Campaigns",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bf936eb1-16d2-451f-abeb-7386590e646f",
+          "name": "Facebook List Campaigns",
+          "request": {
+            "name": "Facebook List Campaigns",
+            "description": {
+              "content": "Retrieve campaigns for an ad account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "act_{{ad-account-id}}",
+                "campaigns"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "Maximum number of campaigns to return."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "eccaa881-c115-49a3-b63e-1a130eaf5af5",
+              "name": "Campaigns retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "act_{{ad-account-id}}",
+                    "campaigns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"400001234567890\",\n      \"name\": \"Spring Sale 2026\",\n      \"objective\": \"OUTCOME_SALES\",\n      \"status\": \"ACTIVE\",\n      \"daily_budget\": \"5000\",\n      \"lifetime_budget\": \"string\",\n      \"created_time\": \"2007-04-28T01:42:02.120Z\",\n      \"updated_time\": \"2000-11-05T01:21:09.621Z\"\n    },\n    {\n      \"id\": \"400001234567890\",\n      \"name\": \"Spring Sale 2026\",\n      \"objective\": \"OUTCOME_SALES\",\n      \"status\": \"ACTIVE\",\n      \"daily_budget\": \"5000\",\n      \"lifetime_budget\": \"string\",\n      \"created_time\": \"1951-01-13T16:24:44.151Z\",\n      \"updated_time\": \"1994-09-06T13:33:53.121Z\"\n    }\n  ],\n  \"paging\": {\n    \"cursors\": {\n      \"before\": \"string\",\n      \"after\": \"string\"\n    },\n    \"next\": \"http://rilExWiNqKiprocPZ.mcuitWLf5E2bew9.SK.FG5jBMAJIA7A-,ipEeHMzZM\",\n    \"previous\": \"https://iVSpzrKTkqHTKaXkZo.kegQAYzP+B0aS6KVz-lhgl-XXeTLAT17iHtcLI+7JeuT4ph4vowtDz3if21A\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2c4caee5-815f-4972-b3ab-79994c3e72fc",
+          "name": "Facebook Create Campaign",
+          "request": {
+            "name": "Facebook Create Campaign",
+            "description": {
+              "content": "Create a new advertising campaign.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "act_{{ad-account-id}}",
+                "campaigns"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"objective\": \"<string>\",\n  \"special_ad_categories\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4a146985-4a9c-4e89-a3a1-27de16454637",
+              "name": "Campaign created successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "act_{{ad-account-id}}",
+                    "campaigns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Spring Sale 2026\",\n  \"objective\": \"OUTCOME_SALES\",\n  \"status\": \"PAUSED\",\n  \"special_ad_categories\": []\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "136888b7-9197-4cf1-8952-3498dcd8802d",
+              "name": "Invalid campaign configuration.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "act_{{ad-account-id}}",
+                    "campaigns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Spring Sale 2026\",\n  \"objective\": \"OUTCOME_SALES\",\n  \"status\": \"PAUSED\",\n  \"special_ad_categories\": []\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "95520d41-6921-4e8f-a26e-7dcf52cc735a",
+          "name": "Facebook Get Campaign",
+          "request": {
+            "name": "Facebook Get Campaign",
+            "description": {
+              "content": "Retrieve a specific campaign by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":campaign-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "campaign-id",
+                  "description": "(Required) The campaign ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "34384094-6708-45b8-89f2-961aa47063f2",
+              "name": "Campaign retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":campaign-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "campaign-id",
+                      "description": "(Required) The campaign ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"400001234567890\",\n  \"name\": \"Spring Sale 2026\",\n  \"objective\": \"OUTCOME_SALES\",\n  \"status\": \"ACTIVE\",\n  \"daily_budget\": \"5000\",\n  \"lifetime_budget\": \"string\",\n  \"created_time\": \"1980-03-29T12:16:47.134Z\",\n  \"updated_time\": \"1958-08-24T23:47:25.773Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://graph.facebook.com/v21.0",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) The ad account ID.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "ad-account-id"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d07991bd-64ed-46c9-91bb-2a06077c935f",
+    "name": "Facebook Graph Ad Accounts Campaigns API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+      "type": "text/plain"
+    }
+  }
+}

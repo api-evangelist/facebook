@@ -1,0 +1,232 @@
+{
+  "item": [
+    {
+      "id": "2565cbe6-af2f-452e-8300-0cabd833e308",
+      "name": "Audiences",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2419412e-dc59-4a05-a566-eacf4f1c6553",
+          "name": "Facebook List Custom Audiences",
+          "request": {
+            "name": "Facebook List Custom Audiences",
+            "description": {
+              "content": "Retrieve custom audiences for an ad account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "act_{{ad-account-id}}",
+                "customaudiences"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "32b9e923-faad-4d80-8c1d-f605b093c8fd",
+              "name": "Custom audiences retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "act_{{ad-account-id}}",
+                    "customaudiences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"700001234567890\",\n      \"name\": \"Website Visitors Last 30 Days\",\n      \"description\": \"string\",\n      \"approximate_count\": 25000,\n      \"subtype\": \"WEBSITE\",\n      \"delivery_status\": {}\n    },\n    {\n      \"id\": \"700001234567890\",\n      \"name\": \"Website Visitors Last 30 Days\",\n      \"description\": \"string\",\n      \"approximate_count\": 25000,\n      \"subtype\": \"LOOKALIKE\",\n      \"delivery_status\": {}\n    }\n  ],\n  \"paging\": {\n    \"cursors\": {\n      \"before\": \"string\",\n      \"after\": \"string\"\n    },\n    \"next\": \"https://PnsUeGoWGGCJMSlWtfSCTzjOonIB.qkfu1ceUBi-ZLCyy7fZ1\",\n    \"previous\": \"https://XlHbDilRVABvDUiDHGVeNXWpuOSanAM.jfPwINEF5Inhr7i6vgP2Vpf2lwC+2E83t9\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "04a8b95a-9941-4d47-9eed-a8e443267dae",
+          "name": "Facebook Create Custom Audience",
+          "request": {
+            "name": "Facebook Create Custom Audience",
+            "description": {
+              "content": "Create a new custom audience.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "act_{{ad-account-id}}",
+                "customaudiences"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"subtype\": \"<string>\",\n  \"description\": \"<string>\",\n  \"customer_file_source\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "82fd67b3-08f1-43c2-b2b1-2f99413ce60c",
+              "name": "Custom audience created successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "act_{{ad-account-id}}",
+                    "customaudiences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"subtype\": \"<string>\",\n  \"description\": \"<string>\",\n  \"customer_file_source\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://graph.facebook.com/v21.0",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) The ad account ID.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "ad-account-id"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5c24d8bb-3eeb-465a-aed5-d6381659ae71",
+    "name": "Facebook Graph Ad Accounts Audiences API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+      "type": "text/plain"
+    }
+  }
+}

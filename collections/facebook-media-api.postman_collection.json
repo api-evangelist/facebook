@@ -1,0 +1,630 @@
+{
+  "item": [
+    {
+      "id": "455e3f1f-0356-4d16-a01b-ae63907c995e",
+      "name": "Media",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3573f308-783f-47ed-9f18-acf096f529df",
+          "name": "Facebook List Instagram Media",
+          "request": {
+            "name": "Facebook List Instagram Media",
+            "description": {
+              "content": "Retrieve media objects for an Instagram account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":ig-user-id",
+                "media"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "Maximum number of media to return."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "ig-user-id",
+                  "description": "(Required) The Instagram user ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ecd2ab6f-05c0-49f4-b173-5b7d61fb4d35",
+              "name": "Media list retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":ig-user-id",
+                    "media"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ig-user-id",
+                      "description": "(Required) The Instagram user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"17895695668004550\",\n      \"caption\": \"Beautiful sunset!\",\n      \"media_type\": \"IMAGE\",\n      \"media_url\": \"http://dQNhTKhp.iojeWX.PL0rPLOQLnMhADWfzDYRJvukl3XXnImRvXU,3S\",\n      \"permalink\": \"https://OV.gbpyz1r0xilTKzQ52Gw4z44IBnPrX\",\n      \"timestamp\": \"1987-08-12T03:52:20.768Z\",\n      \"like_count\": 1500,\n      \"comments_count\": 45\n    },\n    {\n      \"id\": \"17895695668004550\",\n      \"caption\": \"Beautiful sunset!\",\n      \"media_type\": \"IMAGE\",\n      \"media_url\": \"http://wIJoYADOPA.npgKur,bdEV,zkMIIIl1Gw0TwzWnEdf5S9C7FgxnrO6-0\",\n      \"permalink\": \"https://obpWFphDlqvmbSPGVxNn.nuadEORcj,onJyHyofV2xpisuzl6h2fBV5zohpdX\",\n      \"timestamp\": \"1984-04-12T20:13:53.846Z\",\n      \"like_count\": 1500,\n      \"comments_count\": 45\n    }\n  ],\n  \"paging\": {\n    \"cursors\": {\n      \"before\": \"string\",\n      \"after\": \"string\"\n    },\n    \"next\": \"http://KatYVUgWStFaxK.hjdygfZ+69x50hRKZkbxUg4wCc8OCf9Ct5kECKrxgF7IEpGoWcr55,jECNdh\",\n    \"previous\": \"http://bXFaUDqCeOfsBcYbnJFQFITZb.mpyIN,BZAUcoDQt8li\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f9897f30-27ea-4c3d-bc2d-ad19e39e71e0",
+          "name": "Facebook Create Instagram Media",
+          "request": {
+            "name": "Facebook Create Instagram Media",
+            "description": {
+              "content": "Create a media container for publishing to Instagram.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":ig-user-id",
+                "media"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "ig-user-id",
+                  "description": "(Required) The Instagram user ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"image_url\": \"<uri>\",\n  \"caption\": \"<string>\",\n  \"video_url\": \"<uri>\",\n  \"media_type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6b818d17-fce3-4a6f-90d5-2084baa45b06",
+              "name": "Media container created successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":ig-user-id",
+                    "media"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ig-user-id",
+                      "description": "(Required) The Instagram user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"image_url\": \"https://example.com/photo.jpg\",\n  \"caption\": \"Beautiful sunset!\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "09ecb2ad-9d81-4fa6-b707-f5392017cda9",
+          "name": "Facebook Publish Instagram Media",
+          "request": {
+            "name": "Facebook Publish Instagram Media",
+            "description": {
+              "content": "Publish a previously created media container.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":ig-user-id",
+                "media_publish"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "ig-user-id",
+                  "description": "(Required) The Instagram user ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"creation_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b75d0fa1-663c-425f-b1e9-93d214699551",
+              "name": "Media published successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":ig-user-id",
+                    "media_publish"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ig-user-id",
+                      "description": "(Required) The Instagram user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"creation_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f990c922-8690-4f6f-91fb-9b5b4d7e7468",
+          "name": "Facebook Get Threads Media",
+          "request": {
+            "name": "Facebook Get Threads Media",
+            "description": {
+              "content": "Retrieve a specific Threads post.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":threads-media-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "threads-media-id",
+                  "description": "(Required) The Threads media ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "528d7e1b-a377-4840-81bf-f6b9b1553816",
+              "name": "Threads media retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":threads-media-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "threads-media-id",
+                      "description": "(Required) The Threads media ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"98765432101234567\",\n  \"media_type\": \"TEXT_POST\",\n  \"text\": \"Hello Threads!\",\n  \"permalink\": \"http://PxHNzT.eckw+GNx3wveEJcXv\",\n  \"timestamp\": \"2007-08-27T11:24:12.893Z\",\n  \"username\": \"examplebrand\",\n  \"is_quote_post\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c65fd71-8034-42d6-8d36-d9710f1c6f3b",
+          "name": "Facebook Upload WhatsApp Media",
+          "request": {
+            "name": "Facebook Upload WhatsApp Media",
+            "description": {
+              "content": "Upload media for use in WhatsApp messages.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":phone-number-id",
+                "media"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "phone-number-id",
+                  "description": "(Required) The phone number ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "messaging_product",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": ""
+                },
+                {
+                  "key": "type",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7c579f09-13a9-4eb9-a725-617761aa473e",
+              "name": "Media uploaded successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":phone-number-id",
+                    "media"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "phone-number-id",
+                      "description": "(Required) The phone number ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "messaging_product",
+                      "value": "whatsapp",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "type",
+                      "value": "image/jpeg",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://graph.facebook.com/v21.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "71baa0a5-6b8a-4613-b04b-36721099020c",
+    "name": "Facebook Graph Ad Accounts Media API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+      "type": "text/plain"
+    }
+  }
+}

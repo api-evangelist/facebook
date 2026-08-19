@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Facebook Graph Ad Accounts Authentication API",
+    "version": "21.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Facebook Debug Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/debug_token",
+            "params": [
+              {
+                "name": "input_token",
+                "value": "EAABsbCS1iZA...",
+                "type": "query",
+                "description": "The access token to debug."
+              }
+            ]
+          },
+          "docs": "Get metadata about an access token."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

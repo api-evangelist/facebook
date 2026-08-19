@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Facebook Graph Ad Accounts Insights API",
+    "version": "21.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Insights",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Facebook Get Instagram Insights",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:ig-user-id/insights",
+            "params": [
+              {
+                "name": "ig-user-id",
+                "value": "17841405822304914",
+                "type": "path",
+                "description": "The Instagram user ID."
+              },
+              {
+                "name": "metric",
+                "value": "impressions,reach,follower_count",
+                "type": "query",
+                "description": "Comma-separated list of metrics."
+              },
+              {
+                "name": "period",
+                "value": "day",
+                "type": "query",
+                "description": "Aggregation period."
+              }
+            ]
+          },
+          "docs": "Retrieve insights for an Instagram account."
+        },
+        {
+          "info": {
+            "name": "Facebook Get Account Insights",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/act_:ad-account-id/insights",
+            "params": [
+              {
+                "name": "ad-account-id",
+                "value": "123456789",
+                "type": "path",
+                "description": "The ad account ID."
+              },
+              {
+                "name": "date_preset",
+                "value": "last_7d",
+                "type": "query",
+                "description": "Predefined date range for insights."
+              }
+            ]
+          },
+          "docs": "Retrieve advertising insights for an ad account."
+        },
+        {
+          "info": {
+            "name": "Facebook Get Threads Insights",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:threads-user-id/insights",
+            "params": [
+              {
+                "name": "threads-user-id",
+                "value": "12345678901234567",
+                "type": "path",
+                "description": "The Threads user ID."
+              },
+              {
+                "name": "metric",
+                "value": "views,likes,replies",
+                "type": "query",
+                "description": "Comma-separated list of metrics."
+              }
+            ]
+          },
+          "docs": "Retrieve insights for a Threads user."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

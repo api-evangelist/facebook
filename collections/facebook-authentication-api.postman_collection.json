@@ -1,0 +1,131 @@
+{
+  "item": [
+    {
+      "id": "9dd5f91e-00dd-4797-94b2-10a8c44023af",
+      "name": "Authentication",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bc9e2cfd-d386-475d-a391-758d9865bf39",
+          "name": "Facebook Debug Token",
+          "request": {
+            "name": "Facebook Debug Token",
+            "description": {
+              "content": "Get metadata about an access token.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "debug_token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "input_token",
+                  "value": "<string>",
+                  "description": "(Required) The access token to debug."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9a8da7fd-eeac-4250-a187-9432d3b3d4c6",
+              "name": "Token information retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "debug_token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "input_token",
+                      "value": "EAABsbCS1iZA..."
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"app_id\": \"string\",\n    \"type\": \"APP\",\n    \"user_id\": \"string\",\n    \"is_valid\": false,\n    \"expires_at\": 606,\n    \"scopes\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://graph.facebook.com/v21.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d3d37cbc-7362-4f87-9f82-cc8f7fa90e9e",
+    "name": "Facebook Graph Ad Accounts Authentication API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+      "type": "text/plain"
+    }
+  }
+}

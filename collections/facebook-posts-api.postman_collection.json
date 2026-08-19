@@ -1,0 +1,522 @@
+{
+  "item": [
+    {
+      "id": "d862c69b-c3a1-4fa9-ae75-bb277bdb33bd",
+      "name": "Posts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9c0f040c-7aee-4871-a140-d56bc00b9734",
+          "name": "Facebook Get User Feed",
+          "request": {
+            "name": "Facebook Get User Feed",
+            "description": {
+              "content": "Retrieve posts from a user's feed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":user-id",
+                "feed"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "Maximum number of posts to return."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user-id",
+                  "description": "(Required) The user ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a1c30cd3-d1d2-4068-b75f-5c273ef66f9a",
+              "name": "Feed posts retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":user-id",
+                    "feed"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user-id",
+                      "description": "(Required) The user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"100001234567890_987654321\",\n      \"message\": \"Hello world!\",\n      \"created_time\": \"2026-04-18T10:00:00+0000\",\n      \"from\": {\n        \"id\": \"100001234567890\",\n        \"name\": \"Jane Smith\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "71749ae4-f5c2-421c-817b-5747fb30d89c",
+          "name": "Facebook Create Post",
+          "request": {
+            "name": "Facebook Create Post",
+            "description": {
+              "content": "Publish a new post to a user's feed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":user-id",
+                "feed"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user-id",
+                  "description": "(Required) The user ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"message\": \"<string>\",\n  \"link\": \"<uri>\",\n  \"place\": \"<string>\",\n  \"tags\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5f4dcd06-3415-4445-8a8f-bdfaca8714d3",
+              "name": "Post created successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":user-id",
+                    "feed"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user-id",
+                      "description": "(Required) The user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"message\": \"Check out this amazing content!\",\n  \"link\": \"https://example.com/article\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0be15efb-7ed5-4ffa-87a8-3e6e9f7eac8b",
+              "name": "Invalid post content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":user-id",
+                    "feed"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user-id",
+                      "description": "(Required) The user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"message\": \"Check out this amazing content!\",\n  \"link\": \"https://example.com/article\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fa693525-8874-4351-813b-ae3a0c6db5e3",
+          "name": "Facebook Get Post",
+          "request": {
+            "name": "Facebook Get Post",
+            "description": {
+              "content": "Retrieve a specific post by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":post-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to return."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "post-id",
+                  "description": "(Required) The post ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "410af244-8b09-4297-a788-8828651470f9",
+              "name": "Post retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":post-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "id,message,created_time,from"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "post-id",
+                      "description": "(Required) The post ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"100001234567890_987654321\",\n  \"message\": \"Hello world!\",\n  \"created_time\": \"2026-04-18T10:00:00+0000\",\n  \"updated_time\": \"1977-02-02T22:46:22.038Z\",\n  \"from\": {\n    \"id\": \"string\",\n    \"name\": \"string\"\n  },\n  \"type\": \"status\",\n  \"link\": \"https://OfrkvGHezSiaLOEahGsQj.jnfypgytQKz3JGWLaRfNLeQoz1X6U1oCZzrMSxDqnAI\",\n  \"permalink_url\": \"https://IhXgvhXSUkdhnJvMPAuIgJE.zfmIUMnEOJmURfD0GZMYpmaj3.JED9alSaBZl7b6hhXNgh3h0E\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1ecd52b2-e496-4363-bc06-78436f2a124f",
+          "name": "Facebook Delete Post",
+          "request": {
+            "name": "Facebook Delete Post",
+            "description": {
+              "content": "Delete a post by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":post-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "post-id",
+                  "description": "(Required) The post ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "831849e3-de11-4a54-8013-2949be0e820c",
+              "name": "Post deleted successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":post-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "post-id",
+                      "description": "(Required) The post ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://graph.facebook.com/v21.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bd5c8889-0e82-4865-aa28-428143abb8e2",
+    "name": "Facebook Graph Ad Accounts Posts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+      "type": "text/plain"
+    }
+  }
+}

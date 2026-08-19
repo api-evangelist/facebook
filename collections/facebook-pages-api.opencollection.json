@@ -1,0 +1,74 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Facebook Graph Ad Accounts Pages API",
+    "version": "21.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Pages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Facebook Get Page",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:page-id",
+            "params": [
+              {
+                "name": "page-id",
+                "value": "200001234567890",
+                "type": "path",
+                "description": "The page ID."
+              },
+              {
+                "name": "fields",
+                "value": "id,name,category,fan_count",
+                "type": "query",
+                "description": "Comma-separated list of fields to return."
+              }
+            ]
+          },
+          "docs": "Retrieve information about a Facebook Page."
+        },
+        {
+          "info": {
+            "name": "Facebook Get Page Feed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:page-id/feed",
+            "params": [
+              {
+                "name": "page-id",
+                "value": "200001234567890",
+                "type": "path",
+                "description": "The page ID."
+              },
+              {
+                "name": "limit",
+                "value": "25",
+                "type": "query",
+                "description": "Maximum number of posts to return."
+              }
+            ]
+          },
+          "docs": "Retrieve posts from a page's feed."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

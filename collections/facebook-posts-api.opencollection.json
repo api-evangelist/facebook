@@ -1,0 +1,116 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Facebook Graph Ad Accounts Posts API",
+    "version": "21.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Posts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Facebook Get User Feed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:user-id/feed",
+            "params": [
+              {
+                "name": "user-id",
+                "value": "100001234567890",
+                "type": "path",
+                "description": "The user ID."
+              },
+              {
+                "name": "limit",
+                "value": "25",
+                "type": "query",
+                "description": "Maximum number of posts to return."
+              }
+            ]
+          },
+          "docs": "Retrieve posts from a user's feed."
+        },
+        {
+          "info": {
+            "name": "Facebook Create Post",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.facebook.com/v21.0/:user-id/feed",
+            "params": [
+              {
+                "name": "user-id",
+                "value": "100001234567890",
+                "type": "path",
+                "description": "The user ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Publish a new post to a user's feed."
+        },
+        {
+          "info": {
+            "name": "Facebook Get Post",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:post-id",
+            "params": [
+              {
+                "name": "post-id",
+                "value": "100001234567890_987654321",
+                "type": "path",
+                "description": "The post ID."
+              },
+              {
+                "name": "fields",
+                "value": "id,message,created_time,from",
+                "type": "query",
+                "description": "Comma-separated list of fields to return."
+              }
+            ]
+          },
+          "docs": "Retrieve a specific post by ID."
+        },
+        {
+          "info": {
+            "name": "Facebook Delete Post",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://graph.facebook.com/v21.0/:post-id",
+            "params": [
+              {
+                "name": "post-id",
+                "value": "100001234567890_987654321",
+                "type": "path",
+                "description": "The post ID."
+              }
+            ]
+          },
+          "docs": "Delete a post by ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

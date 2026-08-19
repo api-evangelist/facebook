@@ -1,0 +1,70 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Facebook Graph Ad Accounts Publishing API",
+    "version": "21.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Publishing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Facebook Create Threads Media",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.facebook.com/v21.0/:threads-user-id/threads",
+            "params": [
+              {
+                "name": "threads-user-id",
+                "value": "12345678901234567",
+                "type": "path",
+                "description": "The Threads user ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a media container for a Threads post."
+        },
+        {
+          "info": {
+            "name": "Facebook Publish Threads Media",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.facebook.com/v21.0/:threads-user-id/threads_publish",
+            "params": [
+              {
+                "name": "threads-user-id",
+                "value": "12345678901234567",
+                "type": "path",
+                "description": "The Threads user ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Publish a previously created Threads media container."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

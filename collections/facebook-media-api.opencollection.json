@@ -1,0 +1,153 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Facebook Graph Ad Accounts Media API",
+    "version": "21.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Media",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Facebook List Instagram Media",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:ig-user-id/media",
+            "params": [
+              {
+                "name": "ig-user-id",
+                "value": "17841405822304914",
+                "type": "path",
+                "description": "The Instagram user ID."
+              },
+              {
+                "name": "limit",
+                "value": "25",
+                "type": "query",
+                "description": "Maximum number of media to return."
+              }
+            ]
+          },
+          "docs": "Retrieve media objects for an Instagram account."
+        },
+        {
+          "info": {
+            "name": "Facebook Create Instagram Media",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.facebook.com/v21.0/:ig-user-id/media",
+            "params": [
+              {
+                "name": "ig-user-id",
+                "value": "17841405822304914",
+                "type": "path",
+                "description": "The Instagram user ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a media container for publishing to Instagram."
+        },
+        {
+          "info": {
+            "name": "Facebook Publish Instagram Media",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.facebook.com/v21.0/:ig-user-id/media_publish",
+            "params": [
+              {
+                "name": "ig-user-id",
+                "value": "17841405822304914",
+                "type": "path",
+                "description": "The Instagram user ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Publish a previously created media container."
+        },
+        {
+          "info": {
+            "name": "Facebook Get Threads Media",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:threads-media-id",
+            "params": [
+              {
+                "name": "threads-media-id",
+                "value": "98765432101234567",
+                "type": "path",
+                "description": "The Threads media ID."
+              }
+            ]
+          },
+          "docs": "Retrieve a specific Threads post."
+        },
+        {
+          "info": {
+            "name": "Facebook Upload WhatsApp Media",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.facebook.com/v21.0/:phone-number-id/media",
+            "params": [
+              {
+                "name": "phone-number-id",
+                "value": "106540352242922",
+                "type": "path",
+                "description": "The phone number ID."
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "messaging_product",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "type",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upload media for use in WhatsApp messages."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Facebook Graph Ad Accounts Conversations API",
+    "version": "21.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Conversations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Facebook Get Conversation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:conversation-id",
+            "params": [
+              {
+                "name": "conversation-id",
+                "value": "t_100001234567890",
+                "type": "path",
+                "description": "The conversation ID."
+              }
+            ]
+          },
+          "docs": "Retrieve a conversation by ID."
+        },
+        {
+          "info": {
+            "name": "Facebook List Conversations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:page-id/conversations",
+            "params": [
+              {
+                "name": "page-id",
+                "value": "200001234567890",
+                "type": "path",
+                "description": "The page ID."
+              }
+            ]
+          },
+          "docs": "Retrieve all conversations for a page."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

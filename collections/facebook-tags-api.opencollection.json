@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Facebook Graph Ad Accounts Tags API",
+    "version": "21.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tags",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Facebook Get Instagram Tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:ig-user-id/tags",
+            "params": [
+              {
+                "name": "ig-user-id",
+                "value": "17841405822304914",
+                "type": "path",
+                "description": "The Instagram user ID."
+              }
+            ]
+          },
+          "docs": "Retrieve media where the user has been tagged."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

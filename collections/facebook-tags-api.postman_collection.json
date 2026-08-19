@@ -1,0 +1,137 @@
+{
+  "item": [
+    {
+      "id": "b3f3edfe-31ab-4d4b-9fe6-039a7598b1aa",
+      "name": "Tags",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a159b54a-d891-4cdd-a14e-9e09a6a36345",
+          "name": "Facebook Get Instagram Tags",
+          "request": {
+            "name": "Facebook Get Instagram Tags",
+            "description": {
+              "content": "Retrieve media where the user has been tagged.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":ig-user-id",
+                "tags"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "ig-user-id",
+                  "description": "(Required) The Instagram user ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "40dd74c1-26f5-441a-b4e5-a823ccfeac34",
+              "name": "Tagged media retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":ig-user-id",
+                    "tags"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ig-user-id",
+                      "description": "(Required) The Instagram user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"17895695668004550\",\n      \"caption\": \"Beautiful sunset!\",\n      \"media_type\": \"IMAGE\",\n      \"media_url\": \"http://UezSIqudIFOaep.jbqcev,vGyBdzFpdUQf1Ice8GpQRSoYL\",\n      \"permalink\": \"https://WmOCYsLFDLeNU.gjEsJxncjPUaEpgFkU\",\n      \"timestamp\": \"2020-12-04T19:09:17.578Z\",\n      \"like_count\": 1500,\n      \"comments_count\": 45\n    },\n    {\n      \"id\": \"17895695668004550\",\n      \"caption\": \"Beautiful sunset!\",\n      \"media_type\": \"IMAGE\",\n      \"media_url\": \"http://nPcxSMXUxSCQmtVGy.akhbX2NDvsNzlwr.cKiZ1yHj3RNtdY6UndLPAZtKP9IE+fvgll\",\n      \"permalink\": \"https://fR.raxotdWNkBvSNEmyjRwPsG8ZzwTY4ghgZcoGvwDA\",\n      \"timestamp\": \"1956-01-17T22:52:30.041Z\",\n      \"like_count\": 1500,\n      \"comments_count\": 45\n    }\n  ],\n  \"paging\": {\n    \"cursors\": {\n      \"before\": \"string\",\n      \"after\": \"string\"\n    },\n    \"next\": \"https://dWixzLHEU.wyjUKyxsKMzkkL9zKwP1,XnGtVh2+NRYT+OtFti71EOFIDpuwnTRSjLRomWifi4cHtiR\",\n    \"previous\": \"https://EJHrmp.iiyxIYCEGEm7.4NmTByzyJQM\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://graph.facebook.com/v21.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "09230eba-9b3a-4de6-8a79-63e8d6f6de69",
+    "name": "Facebook Graph Ad Accounts Tags API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+      "type": "text/plain"
+    }
+  }
+}

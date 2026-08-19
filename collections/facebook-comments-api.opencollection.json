@@ -1,0 +1,91 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Facebook Graph Ad Accounts Comments API",
+    "version": "21.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Comments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Facebook Get Post Comments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:post-id/comments",
+            "params": [
+              {
+                "name": "post-id",
+                "value": "100001234567890_987654321",
+                "type": "path",
+                "description": "The post ID."
+              },
+              {
+                "name": "limit",
+                "value": "25",
+                "type": "query",
+                "description": "Maximum number of comments to return."
+              }
+            ]
+          },
+          "docs": "Retrieve comments on a specific post."
+        },
+        {
+          "info": {
+            "name": "Facebook Create Comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.facebook.com/v21.0/:post-id/comments",
+            "params": [
+              {
+                "name": "post-id",
+                "value": "100001234567890_987654321",
+                "type": "path",
+                "description": "The post ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Post a comment on a specific post."
+        },
+        {
+          "info": {
+            "name": "Facebook Get Instagram Comments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:media-id/comments",
+            "params": [
+              {
+                "name": "media-id",
+                "value": "17895695668004550",
+                "type": "path",
+                "description": "The media ID."
+              }
+            ]
+          },
+          "docs": "Retrieve comments on an Instagram media object."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

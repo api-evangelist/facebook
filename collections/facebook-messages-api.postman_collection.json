@@ -1,0 +1,387 @@
+{
+  "item": [
+    {
+      "id": "a241fbb9-e07d-440e-b1be-5188a7980287",
+      "name": "Messages",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2d81c7c8-b8f4-4523-9382-53ae807136ac",
+          "name": "Facebook Send Message",
+          "request": {
+            "name": "Facebook Send Message",
+            "description": {
+              "content": "Send a message to a user via Messenger.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":page-id",
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "page-id",
+                  "description": "(Required) The page ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"recipient\": {\n    \"id\": \"<string>\"\n  },\n  \"messaging_type\": \"<string>\",\n  \"message\": {\n    \"text\": \"<string>\",\n    \"attachment\": {\n      \"type\": \"<string>\",\n      \"payload\": \"<object>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "950a06ca-430f-4f1a-857c-22ff6f0312da",
+              "name": "Message sent successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":page-id",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "page-id",
+                      "description": "(Required) The page ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"recipient\": {\n    \"id\": \"100001234567890\"\n  },\n  \"messaging_type\": \"RESPONSE\",\n  \"message\": {\n    \"text\": \"Hello! How can I help you today?\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"recipient_id\": \"100001234567890\",\n  \"message_id\": \"mid.1234567890\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e11b46f5-e338-47c8-9c73-02050d12961d",
+              "name": "Invalid message request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":page-id",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "page-id",
+                      "description": "(Required) The page ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"recipient\": {\n    \"id\": \"100001234567890\"\n  },\n  \"messaging_type\": \"RESPONSE\",\n  \"message\": {\n    \"text\": \"Hello! How can I help you today?\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "07b5a004-7af6-4a41-8314-89a62d8eb22d",
+          "name": "Facebook Send WhatsApp Message",
+          "request": {
+            "name": "Facebook Send WhatsApp Message",
+            "description": {
+              "content": "Send a message to a WhatsApp user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":phone-number-id",
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "phone-number-id",
+                  "description": "(Required) The phone number ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messaging_product\": \"<string>\",\n  \"to\": \"<string>\",\n  \"type\": \"<string>\",\n  \"text\": {\n    \"body\": \"<string>\",\n    \"preview_url\": \"<boolean>\"\n  },\n  \"template\": {\n    \"name\": \"<string>\",\n    \"language\": {\n      \"code\": \"<string>\"\n    },\n    \"components\": [\n      \"<object>\",\n      \"<object>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e3530e0e-e70d-4f81-9fd4-ddecd5974706",
+              "name": "Message sent successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":phone-number-id",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "phone-number-id",
+                      "description": "(Required) The phone number ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"15551234567\",\n  \"type\": \"text\",\n  \"text\": {\n    \"body\": \"Hello from our business!\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"messaging_product\": \"whatsapp\",\n  \"contacts\": [\n    {\n      \"input\": \"15551234567\",\n      \"wa_id\": \"15551234567\"\n    }\n  ],\n  \"messages\": [\n    {\n      \"id\": \"wamid.ABCdef123456\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3a969cfe-d15c-4ec9-82e7-215cafb7a102",
+              "name": "Invalid message request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":phone-number-id",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "phone-number-id",
+                      "description": "(Required) The phone number ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"15551234567\",\n  \"type\": \"text\",\n  \"text\": {\n    \"body\": \"Hello from our business!\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://graph.facebook.com/v21.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "824e53f0-3593-4a92-bbbe-0780076945df",
+    "name": "Facebook Graph Ad Accounts Messages API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+      "type": "text/plain"
+    }
+  }
+}

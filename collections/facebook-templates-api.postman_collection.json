@@ -1,0 +1,254 @@
+{
+  "item": [
+    {
+      "id": "0cd49f61-5d0f-40e3-9ce6-74fc51579792",
+      "name": "Templates",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "959b5232-5534-4591-a442-c2dc4eb61f0b",
+          "name": "Facebook List Message Templates",
+          "request": {
+            "name": "Facebook List Message Templates",
+            "description": {
+              "content": "Retrieve message templates for a WhatsApp Business Account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":waba-id",
+                "message_templates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "waba-id",
+                  "description": "(Required) WhatsApp Business Account ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cd9759de-f9e0-4c75-adf4-98819af235de",
+              "name": "Templates retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":waba-id",
+                    "message_templates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "waba-id",
+                      "description": "(Required) WhatsApp Business Account ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"800001234567890\",\n      \"name\": \"order_confirmation\",\n      \"language\": \"en_US\",\n      \"status\": \"APPROVED\",\n      \"category\": \"UTILITY\",\n      \"components\": [\n        {\n          \"type\": \"BODY\",\n          \"text\": \"string\"\n        },\n        {\n          \"type\": \"BODY\",\n          \"text\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": \"800001234567890\",\n      \"name\": \"order_confirmation\",\n      \"language\": \"en_US\",\n      \"status\": \"APPROVED\",\n      \"category\": \"UTILITY\",\n      \"components\": [\n        {\n          \"type\": \"BODY\",\n          \"text\": \"string\"\n        },\n        {\n          \"type\": \"HEADER\",\n          \"text\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"paging\": {\n    \"cursors\": {\n      \"before\": \"string\",\n      \"after\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4fe05088-92ce-4697-8e60-c81647d566c7",
+          "name": "Facebook Create Message Template",
+          "request": {
+            "name": "Facebook Create Message Template",
+            "description": {
+              "content": "Create a new message template.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":waba-id",
+                "message_templates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "waba-id",
+                  "description": "(Required) WhatsApp Business Account ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"language\": \"<string>\",\n  \"category\": \"<string>\",\n  \"components\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "72f02cd8-c2db-4f0f-ba5a-1c8b4901696f",
+              "name": "Template created successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":waba-id",
+                    "message_templates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "waba-id",
+                      "description": "(Required) WhatsApp Business Account ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"order_update\",\n  \"language\": \"en_US\",\n  \"category\": \"<string>\",\n  \"components\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"status\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://graph.facebook.com/v21.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d4633bab-354c-45c9-a8da-6d19a07b1685",
+    "name": "Facebook Graph Ad Accounts Templates API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+      "type": "text/plain"
+    }
+  }
+}

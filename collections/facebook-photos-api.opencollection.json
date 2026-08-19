@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Facebook Graph Ad Accounts Photos API",
+    "version": "21.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Photos",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Facebook Get User Photos",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:user-id/photos",
+            "params": [
+              {
+                "name": "user-id",
+                "value": "100001234567890",
+                "type": "path",
+                "description": "The user ID."
+              },
+              {
+                "name": "limit",
+                "value": "25",
+                "type": "query",
+                "description": "Maximum number of photos to return."
+              }
+            ]
+          },
+          "docs": "Retrieve photos uploaded by a user."
+        },
+        {
+          "info": {
+            "name": "Facebook Get Photo",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:photo-id",
+            "params": [
+              {
+                "name": "photo-id",
+                "value": "300001234567890",
+                "type": "path",
+                "description": "The photo ID."
+              }
+            ]
+          },
+          "docs": "Retrieve a specific photo by ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

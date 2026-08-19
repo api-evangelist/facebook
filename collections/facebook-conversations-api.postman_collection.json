@@ -1,0 +1,231 @@
+{
+  "item": [
+    {
+      "id": "418e1fb8-0fad-40d6-8c17-a2a51b117b81",
+      "name": "Conversations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7d717de8-4e7e-49ff-a811-76d888e60a7e",
+          "name": "Facebook Get Conversation",
+          "request": {
+            "name": "Facebook Get Conversation",
+            "description": {
+              "content": "Retrieve a conversation by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":conversation-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "conversation-id",
+                  "description": "(Required) The conversation ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "def83a0c-30ee-46dc-8b9e-b8e53aedeb37",
+              "name": "Conversation retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":conversation-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "conversation-id",
+                      "description": "(Required) The conversation ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"t_100001234567890\",\n  \"updated_time\": \"1960-04-09T12:36:35.692Z\",\n  \"participants\": {\n    \"data\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\"\n      }\n    ]\n  },\n  \"messages\": {\n    \"data\": [\n      {\n        \"id\": \"mid.1234567890\",\n        \"message\": \"Hello!\",\n        \"created_time\": \"1998-08-04T02:19:16.181Z\",\n        \"from\": {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      },\n      {\n        \"id\": \"mid.1234567890\",\n        \"message\": \"Hello!\",\n        \"created_time\": \"1984-09-23T07:45:35.808Z\",\n        \"from\": {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1e637027-2a29-4002-9ed0-e2e760de5f9a",
+          "name": "Facebook List Conversations",
+          "request": {
+            "name": "Facebook List Conversations",
+            "description": {
+              "content": "Retrieve all conversations for a page.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":page-id",
+                "conversations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "page-id",
+                  "description": "(Required) The page ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "71d0848d-7aeb-4c7c-821d-a71e1060a55c",
+              "name": "Conversations retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":page-id",
+                    "conversations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "page-id",
+                      "description": "(Required) The page ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"t_100001234567890\",\n      \"updated_time\": \"1982-08-31T23:59:04.639Z\",\n      \"participants\": {\n        \"data\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\"\n          }\n        ]\n      },\n      \"messages\": {\n        \"data\": [\n          {\n            \"id\": \"mid.1234567890\",\n            \"message\": \"Hello!\",\n            \"created_time\": \"1974-11-25T07:05:04.569Z\",\n            \"from\": {\n              \"id\": \"string\",\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": \"mid.1234567890\",\n            \"message\": \"Hello!\",\n            \"created_time\": \"1995-09-09T10:06:48.755Z\",\n            \"from\": {\n              \"id\": \"string\",\n              \"name\": \"string\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"t_100001234567890\",\n      \"updated_time\": \"1980-07-16T00:15:00.289Z\",\n      \"participants\": {\n        \"data\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\"\n          }\n        ]\n      },\n      \"messages\": {\n        \"data\": [\n          {\n            \"id\": \"mid.1234567890\",\n            \"message\": \"Hello!\",\n            \"created_time\": \"2025-05-21T13:45:56.375Z\",\n            \"from\": {\n              \"id\": \"string\",\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": \"mid.1234567890\",\n            \"message\": \"Hello!\",\n            \"created_time\": \"2019-08-26T21:31:17.485Z\",\n            \"from\": {\n              \"id\": \"string\",\n              \"name\": \"string\"\n            }\n          }\n        ]\n      }\n    }\n  ],\n  \"paging\": {\n    \"cursors\": {\n      \"before\": \"string\",\n      \"after\": \"string\"\n    },\n    \"next\": \"https://WzJyQEygBzDflJOQNehBxvxyAlAi.zcstwwVTXim08c0\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://graph.facebook.com/v21.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4749bd06-095b-417c-b122-ae34fa58e813",
+    "name": "Facebook Graph Ad Accounts Conversations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.\n\nContact Support:\n Name: Meta Platforms",
+      "type": "text/plain"
+    }
+  }
+}

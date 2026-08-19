@@ -1,0 +1,72 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Facebook Graph Ad Accounts Profile API",
+    "version": "21.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Profile",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Facebook Get Messenger Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:page-id/messenger_profile",
+            "params": [
+              {
+                "name": "page-id",
+                "value": "200001234567890",
+                "type": "path",
+                "description": "The page ID."
+              },
+              {
+                "name": "fields",
+                "value": "greeting,get_started,persistent_menu",
+                "type": "query",
+                "description": "Comma-separated list of profile fields."
+              }
+            ]
+          },
+          "docs": "Retrieve the Messenger profile settings for a page."
+        },
+        {
+          "info": {
+            "name": "Facebook Update Messenger Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.facebook.com/v21.0/:page-id/messenger_profile",
+            "params": [
+              {
+                "name": "page-id",
+                "value": "200001234567890",
+                "type": "path",
+                "description": "The page ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the Messenger profile settings for a page."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

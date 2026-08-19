@@ -1,0 +1,118 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Facebook Graph Ad Accounts Users API",
+    "version": "21.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Facebook Get Current User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/me",
+            "params": [
+              {
+                "name": "fields",
+                "value": "id,name,email,picture",
+                "type": "query",
+                "description": "Comma-separated list of fields to return."
+              }
+            ]
+          },
+          "docs": "Retrieve the profile of the currently authenticated user."
+        },
+        {
+          "info": {
+            "name": "Facebook Get User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:user-id",
+            "params": [
+              {
+                "name": "user-id",
+                "value": "100001234567890",
+                "type": "path",
+                "description": "The user ID."
+              },
+              {
+                "name": "fields",
+                "value": "id,name,email",
+                "type": "query",
+                "description": "Comma-separated list of fields to return."
+              }
+            ]
+          },
+          "docs": "Retrieve a user profile by user ID."
+        },
+        {
+          "info": {
+            "name": "Facebook Get Instagram User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:ig-user-id",
+            "params": [
+              {
+                "name": "ig-user-id",
+                "value": "17841405822304914",
+                "type": "path",
+                "description": "The Instagram user ID."
+              },
+              {
+                "name": "fields",
+                "value": "id,username,name,biography,followers_count,media_count",
+                "type": "query",
+                "description": "Comma-separated list of fields to return."
+              }
+            ]
+          },
+          "docs": "Retrieve an Instagram Business or Creator account profile."
+        },
+        {
+          "info": {
+            "name": "Facebook Get Threads User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/:threads-user-id",
+            "params": [
+              {
+                "name": "threads-user-id",
+                "value": "12345678901234567",
+                "type": "path",
+                "description": "The Threads user ID."
+              },
+              {
+                "name": "fields",
+                "value": "id,username,threads_profile_picture_url,threads_biography",
+                "type": "query",
+                "description": "Comma-separated list of fields."
+              }
+            ]
+          },
+          "docs": "Retrieve a Threads user profile."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

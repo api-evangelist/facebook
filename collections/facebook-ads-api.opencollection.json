@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Facebook Graph Ad Accounts Ads API",
+    "version": "21.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Ads",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Facebook List Ads",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.facebook.com/v21.0/act_:ad-account-id/ads",
+            "params": [
+              {
+                "name": "ad-account-id",
+                "value": "123456789",
+                "type": "path",
+                "description": "The ad account ID."
+              }
+            ]
+          },
+          "docs": "Retrieve ads for an ad account."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
