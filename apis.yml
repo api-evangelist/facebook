@@ -23,6 +23,13 @@ tags:
   - Advertising
   - Content Publishing
   - Messaging
+  - Social-Media
+  - Social Networking
+tags_raw:
+  - Fortune 500
+  - Advertising
+  - Content Publishing
+  - Messaging
   - Social Media
   - Social Networking
 url: https://developers.facebook.com
@@ -318,6 +325,8 @@ apis:
   humanURL: https://developers.facebook.com/docs/graph-api
   baseURL: https://graph.facebook.com
   tags:
+  - Message
+  tags_raw:
   - Messages
   properties:
   - type: OpenAPI
@@ -598,6 +607,8 @@ apis:
   humanURL: https://developers.facebook.com/docs/graph-api
   baseURL: https://graph.facebook.com
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
