@@ -4,6 +4,18 @@ description: Facebook is Meta's social networking platform providing APIs for de
   The Facebook Graph API is the primary way to read and write data to the Facebook social graph. Meta also provides APIs for
   marketing and advertising, Instagram content management, Messenger bots, Threads publishing, and WhatsApp business messaging.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
