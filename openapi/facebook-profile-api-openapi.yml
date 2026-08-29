@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Facebook Graph Ad Accounts Profile API
-  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  title: Facebook Messenger Platform Profile API
+  description: Build messaging experiences on Facebook Messenger and Instagram Direct. Send and receive messages, create bot interactions, use templates, and manage conversation routing.
   version: '21.0'
   contact:
     name: Meta Platforms
@@ -10,7 +10,7 @@ info:
   x-last-validated: '2026-04-18'
 servers:
 - url: https://graph.facebook.com/v21.0
-  description: Facebook Graph API v21.0
+  description: Messenger Platform API v21.0
 security:
 - BearerAuth: []
 tags:
@@ -82,6 +82,27 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    MessengerProfileUpdate:
+      type: object
+      description: Update for Messenger profile settings.
+      properties:
+        greeting:
+          type: array
+          items:
+            type: object
+            properties:
+              locale:
+                type: string
+                example: default
+              text:
+                type: string
+                example: Welcome to our page!
+        get_started:
+          type: object
+          properties:
+            payload:
+              type: string
+              example: GET_STARTED
     MessengerProfile:
       type: object
       description: Messenger profile settings.
@@ -109,29 +130,8 @@ components:
                 type: array
                 items:
                   type: object
-    MessengerProfileUpdate:
-      type: object
-      description: Update for Messenger profile settings.
-      properties:
-        greeting:
-          type: array
-          items:
-            type: object
-            properties:
-              locale:
-                type: string
-                example: default
-              text:
-                type: string
-                example: Welcome to our page!
-        get_started:
-          type: object
-          properties:
-            payload:
-              type: string
-              example: GET_STARTED
   securitySchemes:
     BearerAuth:
       type: http
       scheme: bearer
-      description: OAuth 2.0 access token for Facebook Graph API.
+      description: Page access token with pages_messaging permission.

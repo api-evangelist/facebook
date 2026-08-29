@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Facebook Graph Ad Accounts Posts API
+  title: Facebook Graph Posts API
   description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
   version: '21.0'
   contact:
@@ -162,6 +162,17 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    PostList:
+      type: object
+      description: Paginated list of posts.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Post'
+          description: Array of posts.
+        paging:
+          $ref: '#/components/schemas/Paging'
     PostRequest:
       type: object
       description: Request to create a post.
@@ -181,27 +192,6 @@ components:
         tags:
           type: string
           description: Comma-separated user IDs to tag.
-    Paging:
-      type: object
-      description: Pagination cursors.
-      properties:
-        cursors:
-          type: object
-          properties:
-            before:
-              type: string
-              description: Cursor for the previous page.
-            after:
-              type: string
-              description: Cursor for the next page.
-        next:
-          type: string
-          format: uri
-          description: URL for the next page of results.
-        previous:
-          type: string
-          format: uri
-          description: URL for the previous page of results.
     Post:
       type: object
       description: A Facebook post.
@@ -251,17 +241,27 @@ components:
           type: string
           format: uri
           description: Permanent URL to the post.
-    PostList:
+    Paging:
       type: object
-      description: Paginated list of posts.
+      description: Pagination cursors.
       properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Post'
-          description: Array of posts.
-        paging:
-          $ref: '#/components/schemas/Paging'
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+              description: Cursor for the previous page.
+            after:
+              type: string
+              description: Cursor for the next page.
+        next:
+          type: string
+          format: uri
+          description: URL for the next page of results.
+        previous:
+          type: string
+          format: uri
+          description: URL for the previous page of results.
   securitySchemes:
     BearerAuth:
       type: http

@@ -1,16 +1,18 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Facebook Graph Ad Accounts Users API
-  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
-  version: '21.0'
+  title: Facebook Users API
   contact:
     name: Meta Platforms
     url: https://developers.facebook.com
   x-generated-from: documentation
   x-last-validated: '2026-04-18'
+  version: '1.0'
+  description: 'Operations tagged Users across 3 of this provider''s published API definitions: facebook-graph-api.yaml, facebook-instagram-api.yaml, facebook-threads-api.yaml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://graph.facebook.com/v21.0
   description: Facebook Graph API v21.0
+- url: https://graph.threads.net/v1.0
+  description: Threads API v1.0
 security:
 - BearerAuth: []
 tags:
@@ -50,6 +52,9 @@ paths:
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
+    servers:
+    - url: https://graph.facebook.com/v21.0
+      description: Facebook Graph API v21.0
   /{user-id}:
     get:
       operationId: getUser
@@ -83,6 +88,9 @@ paths:
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
+    servers:
+    - url: https://graph.facebook.com/v21.0
+      description: Facebook Graph API v21.0
   /{ig-user-id}:
     get:
       operationId: getInstagramUser
@@ -125,6 +133,9 @@ paths:
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
+    servers:
+    - url: https://graph.facebook.com/v21.0
+      description: Instagram API v21.0 via Graph API
   /{threads-user-id}:
     get:
       operationId: getThreadsUser
@@ -164,8 +175,47 @@ paths:
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
+    servers:
+    - url: https://graph.threads.net/v1.0
+      description: Threads API v1.0
 components:
   schemas:
+    User:
+      type: object
+      description: A Facebook user profile.
+      properties:
+        id:
+          type: string
+          description: The user ID.
+          example: '100001234567890'
+        name:
+          type: string
+          description: The user's full name.
+          example: Jane Smith
+        email:
+          type: string
+          format: email
+          description: The user's email address.
+          example: jsmith@example.com
+        picture:
+          type: object
+          description: Profile picture data.
+          properties:
+            data:
+              type: object
+              properties:
+                url:
+                  type: string
+                  format: uri
+                  description: URL of the profile picture.
+        first_name:
+          type: string
+          description: First name.
+          example: Jane
+        last_name:
+          type: string
+          description: Last name.
+          example: Smith
     InstagramUser:
       type: object
       description: An Instagram Business or Creator account.
@@ -206,42 +256,6 @@ components:
           type: string
           format: uri
           description: Website URL.
-    User:
-      type: object
-      description: A Facebook user profile.
-      properties:
-        id:
-          type: string
-          description: The user ID.
-          example: '100001234567890'
-        name:
-          type: string
-          description: The user's full name.
-          example: Jane Smith
-        email:
-          type: string
-          format: email
-          description: The user's email address.
-          example: jsmith@example.com
-        picture:
-          type: object
-          description: Profile picture data.
-          properties:
-            data:
-              type: object
-              properties:
-                url:
-                  type: string
-                  format: uri
-                  description: URL of the profile picture.
-        first_name:
-          type: string
-          description: First name.
-          example: Jane
-        last_name:
-          type: string
-          description: Last name.
-          example: Smith
     ThreadsUser:
       type: object
       description: A Threads user profile.
@@ -267,3 +281,7 @@ components:
       type: http
       scheme: bearer
       description: OAuth 2.0 access token for Facebook Graph API.
+x-refined-from:
+- facebook-graph-api.yaml
+- facebook-instagram-api.yaml
+- facebook-threads-api.yaml

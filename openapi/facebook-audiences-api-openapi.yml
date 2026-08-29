@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Facebook Graph Ad Accounts Audiences API
-  description: The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions.
+  title: Facebook Marketing Audiences API
+  description: Programmatically manage Facebook ad campaigns, ad sets, ad creatives, Custom Audiences, and advertising reports.
   version: '21.0'
   contact:
     name: Meta Platforms
@@ -10,7 +10,7 @@ info:
   x-last-validated: '2026-04-18'
 servers:
 - url: https://graph.facebook.com/v21.0
-  description: Facebook Graph API v21.0
+  description: Facebook Marketing API v21.0
 security:
 - BearerAuth: []
 tags:
@@ -112,16 +112,6 @@ components:
         previous:
           type: string
           format: uri
-    CustomAudienceList:
-      type: object
-      description: Paginated list of custom audiences.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomAudience'
-        paging:
-          $ref: '#/components/schemas/Paging'
     CustomAudience:
       type: object
       description: A custom audience for ad targeting.
@@ -151,8 +141,18 @@ components:
         delivery_status:
           type: object
           description: Audience delivery status.
+    CustomAudienceList:
+      type: object
+      description: Paginated list of custom audiences.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomAudience'
+        paging:
+          $ref: '#/components/schemas/Paging'
   securitySchemes:
     BearerAuth:
       type: http
       scheme: bearer
-      description: OAuth 2.0 access token for Facebook Graph API.
+      description: OAuth 2.0 access token with ads_management permission.
