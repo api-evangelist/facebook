@@ -1,8 +1,9 @@
 aid: facebook
 name: Facebook
-description: Facebook is Meta's social networking platform providing APIs for developers to integrate with Facebook's ecosystem.
-  The Facebook Graph API is the primary way to read and write data to the Facebook social graph. Meta also provides APIs for
-  marketing and advertising, Instagram content management, Messenger bots, Threads publishing, and WhatsApp business messaging.
+description: Facebook is Meta's social networking platform providing APIs for developers to integrate
+  with Facebook's ecosystem. The Facebook Graph API is the primary way to read and write data to the Facebook
+  social graph. Meta also provides APIs for marketing and advertising, Instagram content management, Messenger
+  bots, Threads publishing, and WhatsApp business messaging.
 type: Index
 deliveryModel:
   model: saas
@@ -32,22 +33,22 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/facebook.png
 tags:
-  - Fortune 500
-  - Advertising
-  - Content Publishing
-  - Messaging
-  - Social-Media
-  - Social Networking
+- Fortune 500
+- Advertising
+- Content Publishing
+- Messaging
+- Social-Media
+- Social Networking
 tags_raw:
-  - Fortune 500
-  - Advertising
-  - Content Publishing
-  - Messaging
-  - Social Media
-  - Social Networking
+- Fortune 500
+- Advertising
+- Content Publishing
+- Messaging
+- Social Media
+- Social Networking
 url: https://developers.facebook.com
 created: '2024-01-15'
-modified: '2026-05-19'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 position: Consuming
 access: 3rd-Party
@@ -645,6 +646,8 @@ apis:
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
 common:
+- type: Website
+  url: https://facebook.com
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/facebook/overview
 - type: AgenticAccess
@@ -684,7 +687,8 @@ common:
 - type: Features
   data:
   - name: Graph API
-    description: HTTP-based API for reading and writing to the Facebook social graph with nodes, edges, and fields.
+    description: HTTP-based API for reading and writing to the Facebook social graph with nodes, edges,
+      and fields.
   - name: Webhooks
     description: Real-time notifications when changes occur to data your app has access to.
   - name: Batch Requests
