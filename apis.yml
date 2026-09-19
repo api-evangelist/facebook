@@ -39,8 +39,8 @@ tags:
 - Messaging
 - Social-Media
 - Social Networking
-- Facebook
 tags_raw:
+- Facebook
 - Fortune 500
 - Advertising
 - Content Publishing
@@ -482,6 +482,8 @@ apis:
   humanURL: https://developers.facebook.com/docs/graph-api
   baseURL: https://graph.facebook.com
   tags:
+  - Profiles
+  tags_raw:
   - Profile
   properties:
   - type: OpenAPI
