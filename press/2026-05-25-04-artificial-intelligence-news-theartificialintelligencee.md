@@ -1,7 +1,9 @@
 ---
 title: Artificial Intelligence News (@theartificialintelligencee)
 url: https://www.facebook.com/theartificialintelligencee/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Facebook" press release artificial intelligence'
 position: 4
 source: serpapi-google

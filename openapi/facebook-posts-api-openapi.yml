@@ -162,17 +162,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    PostList:
-      type: object
-      description: Paginated list of posts.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Post'
-          description: Array of posts.
-        paging:
-          $ref: '#/components/schemas/Paging'
     PostRequest:
       type: object
       description: Request to create a post.
@@ -241,6 +230,17 @@ components:
           type: string
           format: uri
           description: Permanent URL to the post.
+    PostList:
+      type: object
+      description: Paginated list of posts.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Post'
+          description: Array of posts.
+        paging:
+          $ref: '#/components/schemas/Paging'
     Paging:
       type: object
       description: Pagination cursors.

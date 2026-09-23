@@ -74,6 +74,37 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    PhotoList:
+      type: object
+      description: Paginated list of photos.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Photo'
+        paging:
+          $ref: '#/components/schemas/Paging'
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+              description: Cursor for the previous page.
+            after:
+              type: string
+              description: Cursor for the next page.
+        next:
+          type: string
+          format: uri
+          description: URL for the next page of results.
+        previous:
+          type: string
+          format: uri
+          description: URL for the previous page of results.
     Photo:
       type: object
       description: A Facebook photo.
@@ -110,37 +141,6 @@ components:
           type: integer
           description: Photo height in pixels.
           example: 1080
-    PhotoList:
-      type: object
-      description: Paginated list of photos.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Photo'
-        paging:
-          $ref: '#/components/schemas/Paging'
-    Paging:
-      type: object
-      description: Pagination cursors.
-      properties:
-        cursors:
-          type: object
-          properties:
-            before:
-              type: string
-              description: Cursor for the previous page.
-            after:
-              type: string
-              description: Cursor for the next page.
-        next:
-          type: string
-          format: uri
-          description: URL for the next page of results.
-        previous:
-          type: string
-          format: uri
-          description: URL for the previous page of results.
   securitySchemes:
     BearerAuth:
       type: http

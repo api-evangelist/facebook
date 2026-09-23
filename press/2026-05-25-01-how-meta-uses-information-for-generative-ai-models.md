@@ -1,7 +1,9 @@
 ---
 title: How Meta uses information for generative AI models
 url: https://www.facebook.com/privacy/genai/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Facebook" press release artificial intelligence'
 position: 1
 source: serpapi-google

@@ -119,27 +119,6 @@ paths:
       description: Instagram API v21.0 via Graph API
 components:
   schemas:
-    Paging:
-      type: object
-      description: Pagination cursors.
-      properties:
-        cursors:
-          type: object
-          properties:
-            before:
-              type: string
-              description: Cursor for the previous page.
-            after:
-              type: string
-              description: Cursor for the next page.
-        next:
-          type: string
-          format: uri
-          description: URL for the next page of results.
-        previous:
-          type: string
-          format: uri
-          description: URL for the previous page of results.
     Comment:
       type: object
       description: A comment on a post.
@@ -168,6 +147,27 @@ components:
           type: integer
           description: Number of likes on the comment.
           example: 5
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+              description: Cursor for the previous page.
+            after:
+              type: string
+              description: Cursor for the next page.
+        next:
+          type: string
+          format: uri
+          description: URL for the next page of results.
+        previous:
+          type: string
+          format: uri
+          description: URL for the previous page of results.
     CommentList:
       type: object
       description: Paginated list of comments.
@@ -202,16 +202,6 @@ components:
           type: integer
           description: Number of likes on the comment.
           example: 3
-    InstagramCommentList:
-      type: object
-      description: Paginated list of Instagram comments.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/InstagramComment'
-        paging:
-          $ref: '#/components/schemas/Paging_2'
     Paging_2:
       type: object
       description: Pagination cursors.
@@ -229,6 +219,16 @@ components:
         previous:
           type: string
           format: uri
+    InstagramCommentList:
+      type: object
+      description: Paginated list of Instagram comments.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/InstagramComment'
+        paging:
+          $ref: '#/components/schemas/Paging_2'
   securitySchemes:
     BearerAuth:
       type: http

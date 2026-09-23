@@ -1,7 +1,9 @@
 ---
 title: 'Meta: Digital Marketing and Artificial Intelligence (AI) at ...'
 url: https://www.hbs.edu/faculty/Pages/item.aspx?num=68063
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Facebook" press release artificial intelligence'
 position: 2
 source: serpapi-google

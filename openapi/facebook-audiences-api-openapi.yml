@@ -76,6 +76,16 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    CustomAudienceList:
+      type: object
+      description: Paginated list of custom audiences.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomAudience'
+        paging:
+          $ref: '#/components/schemas/Paging'
     CustomAudienceRequest:
       type: object
       description: Request to create a custom audience.
@@ -141,16 +151,6 @@ components:
         delivery_status:
           type: object
           description: Audience delivery status.
-    CustomAudienceList:
-      type: object
-      description: Paginated list of custom audiences.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomAudience'
-        paging:
-          $ref: '#/components/schemas/Paging'
   securitySchemes:
     BearerAuth:
       type: http

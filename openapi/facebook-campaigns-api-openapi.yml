@@ -118,41 +118,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    CampaignRequest:
-      type: object
-      description: Request to create a campaign.
-      properties:
-        name:
-          type: string
-          description: Campaign name.
-          example: Spring Sale 2026
-        objective:
-          type: string
-          description: Campaign objective.
-          example: OUTCOME_SALES
-        status:
-          type: string
-          description: Initial campaign status.
-          example: PAUSED
-        special_ad_categories:
-          type: array
-          items:
-            type: string
-          description: Special ad categories.
-      required:
-      - name
-      - objective
-      - special_ad_categories
-    CampaignList:
-      type: object
-      description: Paginated list of campaigns.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Campaign'
-        paging:
-          $ref: '#/components/schemas/Paging'
     Campaign:
       type: object
       description: An advertising campaign.
@@ -210,6 +175,41 @@ components:
         previous:
           type: string
           format: uri
+    CampaignList:
+      type: object
+      description: Paginated list of campaigns.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Campaign'
+        paging:
+          $ref: '#/components/schemas/Paging'
+    CampaignRequest:
+      type: object
+      description: Request to create a campaign.
+      properties:
+        name:
+          type: string
+          description: Campaign name.
+          example: Spring Sale 2026
+        objective:
+          type: string
+          description: Campaign objective.
+          example: OUTCOME_SALES
+        status:
+          type: string
+          description: Initial campaign status.
+          example: PAUSED
+        special_ad_categories:
+          type: array
+          items:
+            type: string
+          description: Special ad categories.
+      required:
+      - name
+      - objective
+      - special_ad_categories
   securitySchemes:
     BearerAuth:
       type: http

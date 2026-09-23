@@ -76,6 +76,23 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+            after:
+              type: string
+        next:
+          type: string
+          format: uri
+        previous:
+          type: string
+          format: uri
     AdSet:
       type: object
       description: An ad set within a campaign.
@@ -149,23 +166,6 @@ components:
             $ref: '#/components/schemas/AdSet'
         paging:
           $ref: '#/components/schemas/Paging'
-    Paging:
-      type: object
-      description: Pagination cursors.
-      properties:
-        cursors:
-          type: object
-          properties:
-            before:
-              type: string
-            after:
-              type: string
-        next:
-          type: string
-          format: uri
-        previous:
-          type: string
-          format: uri
   securitySchemes:
     BearerAuth:
       type: http

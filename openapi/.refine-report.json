@@ -1,12 +1,12 @@
 {
   "provider": "facebook",
   "sources": [
-    "_original/facebook-graph-api.yaml",
-    "_original/facebook-instagram-api.yaml",
-    "_original/facebook-marketing-api.yaml",
-    "_original/facebook-messenger-api.yaml",
-    "_original/facebook-threads-api.yaml",
-    "_original/facebook-whatsapp-api.yaml"
+    "_ae-authored/facebook-graph-api.yaml",
+    "_ae-authored/facebook-instagram-api.yaml",
+    "_ae-authored/facebook-marketing-api.yaml",
+    "_ae-authored/facebook-messenger-api.yaml",
+    "_ae-authored/facebook-threads-api.yaml",
+    "_ae-authored/facebook-whatsapp-api.yaml"
   ],
   "outputs": [
     "facebook-authentication-api-openapi.yml",
@@ -35,7 +35,7 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "sourced from openapi/_original/ (6 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "facebook-graph-api.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
     "facebook-graph-api.yaml: declared missing tag: Authentication",
     "facebook-graph-api.yaml: declared missing tag: Comments",
@@ -75,7 +75,8 @@
     "tag 'Users' spans 3 source specs (facebook-graph-api.yaml, facebook-instagram-api.yaml, facebook-threads-api.yaml): per-path servers applied",
     "tag 'Insights' spans 3 source specs (facebook-instagram-api.yaml, facebook-marketing-api.yaml, facebook-threads-api.yaml): per-path servers applied",
     "tag 'Media' spans 3 source specs (facebook-instagram-api.yaml, facebook-threads-api.yaml, facebook-whatsapp-api.yaml): per-path servers applied",
-    "tag 'Messages' spans 2 source specs (facebook-messenger-api.yaml, facebook-whatsapp-api.yaml): per-path servers applied"
+    "tag 'Messages' spans 2 source specs (facebook-messenger-api.yaml, facebook-whatsapp-api.yaml): per-path servers applied",
+    "apis.yml register: already-registered"
   ],
   "skipped": [
     "facebook-ad-accounts-api-openapi.yml: previously refined output, superseded by openapi/_original/",

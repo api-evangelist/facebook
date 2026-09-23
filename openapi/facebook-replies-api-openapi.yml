@@ -43,14 +43,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    ThreadsMediaList:
-      type: object
-      description: List of Threads media.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/ThreadsMedia'
     ThreadsMedia:
       type: object
       description: A Threads post.
@@ -88,6 +80,14 @@ components:
           type: boolean
           description: Whether this is a quote post.
           example: false
+    ThreadsMediaList:
+      type: object
+      description: List of Threads media.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/ThreadsMedia'
   securitySchemes:
     BearerAuth:
       type: http

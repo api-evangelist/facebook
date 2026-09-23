@@ -1,7 +1,9 @@
 ---
 title: How Facebook Uses Artificial Intelligence
 url: https://blog.kambria.io/how-facebook-uses-artificial-intelligence/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Facebook" press release artificial intelligence'
 position: 5
 source: serpapi-google
