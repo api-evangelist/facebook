@@ -86,6 +86,23 @@ components:
             $ref: '#/components/schemas/CustomAudience'
         paging:
           $ref: '#/components/schemas/Paging'
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+            after:
+              type: string
+        next:
+          type: string
+          format: uri
+        previous:
+          type: string
+          format: uri
     CustomAudienceRequest:
       type: object
       description: Request to create a custom audience.
@@ -105,23 +122,6 @@ components:
       required:
       - name
       - subtype
-    Paging:
-      type: object
-      description: Pagination cursors.
-      properties:
-        cursors:
-          type: object
-          properties:
-            before:
-              type: string
-            after:
-              type: string
-        next:
-          type: string
-          format: uri
-        previous:
-          type: string
-          format: uri
     CustomAudience:
       type: object
       description: A custom audience for ad targeting.

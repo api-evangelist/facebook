@@ -129,17 +129,6 @@ components:
           type: string
           format: uri
           description: Permanent URL to the post.
-    PostList:
-      type: object
-      description: Paginated list of posts.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Post'
-          description: Array of posts.
-        paging:
-          $ref: '#/components/schemas/Paging'
     Paging:
       type: object
       description: Pagination cursors.
@@ -161,6 +150,17 @@ components:
           type: string
           format: uri
           description: URL for the previous page of results.
+    PostList:
+      type: object
+      description: Paginated list of posts.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Post'
+          description: Array of posts.
+        paging:
+          $ref: '#/components/schemas/Paging'
     Page:
       type: object
       description: A Facebook Page.

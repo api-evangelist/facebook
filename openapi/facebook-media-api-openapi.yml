@@ -213,28 +213,6 @@ paths:
       description: WhatsApp Business API v21.0
 components:
   schemas:
-    MediaRequest:
-      type: object
-      description: Request to create an Instagram media container.
-      properties:
-        image_url:
-          type: string
-          format: uri
-          description: URL of the image to publish.
-          example: https://example.com/photo.jpg
-        caption:
-          type: string
-          description: Media caption.
-          example: Beautiful sunset!
-        video_url:
-          type: string
-          format: uri
-          description: URL of the video to publish.
-        media_type:
-          type: string
-          description: Media type for carousels.
-          enum:
-          - CAROUSEL
     InstagramMedia:
       type: object
       description: An Instagram media object.
@@ -275,16 +253,6 @@ components:
           type: integer
           description: Number of comments.
           example: 45
-    MediaList:
-      type: object
-      description: Paginated list of Instagram media.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/InstagramMedia'
-        paging:
-          $ref: '#/components/schemas/Paging'
     Paging:
       type: object
       description: Pagination cursors.
@@ -302,6 +270,38 @@ components:
         previous:
           type: string
           format: uri
+    MediaRequest:
+      type: object
+      description: Request to create an Instagram media container.
+      properties:
+        image_url:
+          type: string
+          format: uri
+          description: URL of the image to publish.
+          example: https://example.com/photo.jpg
+        caption:
+          type: string
+          description: Media caption.
+          example: Beautiful sunset!
+        video_url:
+          type: string
+          format: uri
+          description: URL of the video to publish.
+        media_type:
+          type: string
+          description: Media type for carousels.
+          enum:
+          - CAROUSEL
+    MediaList:
+      type: object
+      description: Paginated list of Instagram media.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/InstagramMedia'
+        paging:
+          $ref: '#/components/schemas/Paging'
     ThreadsMedia:
       type: object
       description: A Threads post.

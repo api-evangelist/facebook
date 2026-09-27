@@ -175,16 +175,6 @@ components:
                 type: string
                 format: date-time
                 description: End time of the period.
-    InsightList:
-      type: object
-      description: Paginated list of insights.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Insight'
-        paging:
-          $ref: '#/components/schemas/Paging'
     Insight:
       type: object
       description: Advertising performance insight.
@@ -242,6 +232,16 @@ components:
         previous:
           type: string
           format: uri
+    InsightList:
+      type: object
+      description: Paginated list of insights.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Insight'
+        paging:
+          $ref: '#/components/schemas/Paging'
     ThreadsInsight:
       type: object
       description: A Threads insight metric.

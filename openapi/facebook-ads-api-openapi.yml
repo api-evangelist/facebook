@@ -53,6 +53,23 @@ components:
             $ref: '#/components/schemas/Ad'
         paging:
           $ref: '#/components/schemas/Paging'
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+            after:
+              type: string
+        next:
+          type: string
+          format: uri
+        previous:
+          type: string
+          format: uri
     Ad:
       type: object
       description: An individual advertisement.
@@ -85,23 +102,6 @@ components:
           properties:
             id:
               type: string
-    Paging:
-      type: object
-      description: Pagination cursors.
-      properties:
-        cursors:
-          type: object
-          properties:
-            before:
-              type: string
-            after:
-              type: string
-        next:
-          type: string
-          format: uri
-        previous:
-          type: string
-          format: uri
   securitySchemes:
     BearerAuth:
       type: http

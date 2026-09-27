@@ -188,6 +188,34 @@ components:
           type: string
           description: Sent message ID.
           example: mid.1234567890
+    WhatsAppMessageResponse:
+      type: object
+      description: Response from sending a WhatsApp message.
+      properties:
+        messaging_product:
+          type: string
+          description: Messaging product.
+          example: whatsapp
+        contacts:
+          type: array
+          items:
+            type: object
+            properties:
+              input:
+                type: string
+                description: Input phone number.
+              wa_id:
+                type: string
+                description: WhatsApp ID.
+        messages:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: Message ID.
+                example: wamid.ABCdef123456
     WhatsAppMessageRequest:
       type: object
       description: Request to send a WhatsApp message.
@@ -247,34 +275,6 @@ components:
       - messaging_product
       - to
       - type
-    WhatsAppMessageResponse:
-      type: object
-      description: Response from sending a WhatsApp message.
-      properties:
-        messaging_product:
-          type: string
-          description: Messaging product.
-          example: whatsapp
-        contacts:
-          type: array
-          items:
-            type: object
-            properties:
-              input:
-                type: string
-                description: Input phone number.
-              wa_id:
-                type: string
-                description: WhatsApp ID.
-        messages:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: string
-                description: Message ID.
-                example: wamid.ABCdef123456
   securitySchemes:
     BearerAuth:
       type: http
