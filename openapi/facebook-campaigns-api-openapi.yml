@@ -118,6 +118,23 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+            after:
+              type: string
+        next:
+          type: string
+          format: uri
+        previous:
+          type: string
+          format: uri
     Campaign:
       type: object
       description: An advertising campaign.
@@ -158,33 +175,6 @@ components:
           type: string
           format: date-time
           description: Campaign last update time.
-    Paging:
-      type: object
-      description: Pagination cursors.
-      properties:
-        cursors:
-          type: object
-          properties:
-            before:
-              type: string
-            after:
-              type: string
-        next:
-          type: string
-          format: uri
-        previous:
-          type: string
-          format: uri
-    CampaignList:
-      type: object
-      description: Paginated list of campaigns.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Campaign'
-        paging:
-          $ref: '#/components/schemas/Paging'
     CampaignRequest:
       type: object
       description: Request to create a campaign.
@@ -210,6 +200,16 @@ components:
       - name
       - objective
       - special_ad_categories
+    CampaignList:
+      type: object
+      description: Paginated list of campaigns.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Campaign'
+        paging:
+          $ref: '#/components/schemas/Paging'
   securitySchemes:
     BearerAuth:
       type: http

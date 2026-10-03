@@ -76,16 +76,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    CustomAudienceList:
-      type: object
-      description: Paginated list of custom audiences.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomAudience'
-        paging:
-          $ref: '#/components/schemas/Paging'
     Paging:
       type: object
       description: Pagination cursors.
@@ -103,25 +93,16 @@ components:
         previous:
           type: string
           format: uri
-    CustomAudienceRequest:
+    CustomAudienceList:
       type: object
-      description: Request to create a custom audience.
+      description: Paginated list of custom audiences.
       properties:
-        name:
-          type: string
-          description: Audience name.
-        description:
-          type: string
-          description: Audience description.
-        subtype:
-          type: string
-          description: Audience subtype.
-        customer_file_source:
-          type: string
-          description: Source of customer data.
-      required:
-      - name
-      - subtype
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomAudience'
+        paging:
+          $ref: '#/components/schemas/Paging'
     CustomAudience:
       type: object
       description: A custom audience for ad targeting.
@@ -151,6 +132,25 @@ components:
         delivery_status:
           type: object
           description: Audience delivery status.
+    CustomAudienceRequest:
+      type: object
+      description: Request to create a custom audience.
+      properties:
+        name:
+          type: string
+          description: Audience name.
+        description:
+          type: string
+          description: Audience description.
+        subtype:
+          type: string
+          description: Audience subtype.
+        customer_file_source:
+          type: string
+          description: Source of customer data.
+      required:
+      - name
+      - subtype
   securitySchemes:
     BearerAuth:
       type: http

@@ -43,16 +43,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    AdList:
-      type: object
-      description: Paginated list of ads.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Ad'
-        paging:
-          $ref: '#/components/schemas/Paging'
     Paging:
       type: object
       description: Pagination cursors.
@@ -102,6 +92,16 @@ components:
           properties:
             id:
               type: string
+    AdList:
+      type: object
+      description: Paginated list of ads.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Ad'
+        paging:
+          $ref: '#/components/schemas/Paging'
   securitySchemes:
     BearerAuth:
       type: http

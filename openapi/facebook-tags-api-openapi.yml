@@ -43,6 +43,23 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+            after:
+              type: string
+        next:
+          type: string
+          format: uri
+        previous:
+          type: string
+          format: uri
     InstagramMedia:
       type: object
       description: An Instagram media object.
@@ -83,23 +100,6 @@ components:
           type: integer
           description: Number of comments.
           example: 45
-    Paging:
-      type: object
-      description: Pagination cursors.
-      properties:
-        cursors:
-          type: object
-          properties:
-            before:
-              type: string
-            after:
-              type: string
-        next:
-          type: string
-          format: uri
-        previous:
-          type: string
-          format: uri
     MediaList:
       type: object
       description: Paginated list of Instagram media.

@@ -175,6 +175,33 @@ components:
                 type: string
                 format: date-time
                 description: End time of the period.
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+            after:
+              type: string
+        next:
+          type: string
+          format: uri
+        previous:
+          type: string
+          format: uri
+    InsightList:
+      type: object
+      description: Paginated list of insights.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Insight'
+        paging:
+          $ref: '#/components/schemas/Paging'
     Insight:
       type: object
       description: Advertising performance insight.
@@ -215,33 +242,14 @@ components:
           type: string
           format: date
           description: End date of the insight period.
-    Paging:
+    ThreadsInsightList:
       type: object
-      description: Pagination cursors.
-      properties:
-        cursors:
-          type: object
-          properties:
-            before:
-              type: string
-            after:
-              type: string
-        next:
-          type: string
-          format: uri
-        previous:
-          type: string
-          format: uri
-    InsightList:
-      type: object
-      description: Paginated list of insights.
+      description: List of Threads insights.
       properties:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/Insight'
-        paging:
-          $ref: '#/components/schemas/Paging'
+            $ref: '#/components/schemas/ThreadsInsight'
     ThreadsInsight:
       type: object
       description: A Threads insight metric.
@@ -260,14 +268,6 @@ components:
             properties:
               value:
                 type: integer
-    ThreadsInsightList:
-      type: object
-      description: List of Threads insights.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/ThreadsInsight'
   securitySchemes:
     BearerAuth:
       type: http

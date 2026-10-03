@@ -119,16 +119,6 @@ paths:
       description: Instagram API v21.0 via Graph API
 components:
   schemas:
-    CommentList:
-      type: object
-      description: Paginated list of comments.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Comment'
-        paging:
-          $ref: '#/components/schemas/Paging'
     Paging:
       type: object
       description: Pagination cursors.
@@ -150,6 +140,16 @@ components:
           type: string
           format: uri
           description: URL for the previous page of results.
+    CommentList:
+      type: object
+      description: Paginated list of comments.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Comment'
+        paging:
+          $ref: '#/components/schemas/Paging'
     Comment:
       type: object
       description: A comment on a post.
@@ -178,30 +178,6 @@ components:
           type: integer
           description: Number of likes on the comment.
           example: 5
-    InstagramComment:
-      type: object
-      description: A comment on Instagram media.
-      properties:
-        id:
-          type: string
-          description: Comment ID.
-          example: '17858893269000001'
-        text:
-          type: string
-          description: Comment text.
-          example: Love this photo!
-        timestamp:
-          type: string
-          format: date-time
-          description: Comment timestamp.
-        username:
-          type: string
-          description: Username of the commenter.
-          example: photolovers
-        like_count:
-          type: integer
-          description: Number of likes on the comment.
-          example: 3
     Paging_2:
       type: object
       description: Pagination cursors.
@@ -229,6 +205,30 @@ components:
             $ref: '#/components/schemas/InstagramComment'
         paging:
           $ref: '#/components/schemas/Paging_2'
+    InstagramComment:
+      type: object
+      description: A comment on Instagram media.
+      properties:
+        id:
+          type: string
+          description: Comment ID.
+          example: '17858893269000001'
+        text:
+          type: string
+          description: Comment text.
+          example: Love this photo!
+        timestamp:
+          type: string
+          format: date-time
+          description: Comment timestamp.
+        username:
+          type: string
+          description: Username of the commenter.
+          example: photolovers
+        like_count:
+          type: integer
+          description: Number of likes on the comment.
+          example: 3
   securitySchemes:
     BearerAuth:
       type: http
