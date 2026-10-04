@@ -80,6 +80,17 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    PostList:
+      type: object
+      description: Paginated list of posts.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Post'
+          description: Array of posts.
+        paging:
+          $ref: '#/components/schemas/Paging'
     Paging:
       type: object
       description: Pagination cursors.
@@ -101,37 +112,6 @@ components:
           type: string
           format: uri
           description: URL for the previous page of results.
-    Page:
-      type: object
-      description: A Facebook Page.
-      properties:
-        id:
-          type: string
-          description: The page ID.
-          example: '200001234567890'
-        name:
-          type: string
-          description: The page name.
-          example: Example Brand
-        category:
-          type: string
-          description: Page category.
-          example: Technology Company
-        fan_count:
-          type: integer
-          description: Number of page fans.
-          example: 150000
-        about:
-          type: string
-          description: Page description.
-        website:
-          type: string
-          format: uri
-          description: Page website URL.
-        link:
-          type: string
-          format: uri
-          description: URL to the Facebook Page.
     Post:
       type: object
       description: A Facebook post.
@@ -181,17 +161,37 @@ components:
           type: string
           format: uri
           description: Permanent URL to the post.
-    PostList:
+    Page:
       type: object
-      description: Paginated list of posts.
+      description: A Facebook Page.
       properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Post'
-          description: Array of posts.
-        paging:
-          $ref: '#/components/schemas/Paging'
+        id:
+          type: string
+          description: The page ID.
+          example: '200001234567890'
+        name:
+          type: string
+          description: The page name.
+          example: Example Brand
+        category:
+          type: string
+          description: Page category.
+          example: Technology Company
+        fan_count:
+          type: integer
+          description: Number of page fans.
+          example: 150000
+        about:
+          type: string
+          description: Page description.
+        website:
+          type: string
+          format: uri
+          description: Page website URL.
+        link:
+          type: string
+          format: uri
+          description: URL to the Facebook Page.
   securitySchemes:
     BearerAuth:
       type: http

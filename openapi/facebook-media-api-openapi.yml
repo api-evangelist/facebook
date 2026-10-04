@@ -213,23 +213,6 @@ paths:
       description: WhatsApp Business API v21.0
 components:
   schemas:
-    Paging:
-      type: object
-      description: Pagination cursors.
-      properties:
-        cursors:
-          type: object
-          properties:
-            before:
-              type: string
-            after:
-              type: string
-        next:
-          type: string
-          format: uri
-        previous:
-          type: string
-          format: uri
     InstagramMedia:
       type: object
       description: An Instagram media object.
@@ -280,6 +263,23 @@ components:
             $ref: '#/components/schemas/InstagramMedia'
         paging:
           $ref: '#/components/schemas/Paging'
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+            after:
+              type: string
+        next:
+          type: string
+          format: uri
+        previous:
+          type: string
+          format: uri
     MediaRequest:
       type: object
       description: Request to create an Instagram media container.

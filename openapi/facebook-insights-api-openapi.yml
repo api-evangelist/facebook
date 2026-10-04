@@ -143,14 +143,6 @@ paths:
       description: Threads API v1.0
 components:
   schemas:
-    InstagramInsightList:
-      type: object
-      description: List of Instagram insights.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/InstagramInsight'
     InstagramInsight:
       type: object
       description: An Instagram account insight metric.
@@ -175,6 +167,14 @@ components:
                 type: string
                 format: date-time
                 description: End time of the period.
+    InstagramInsightList:
+      type: object
+      description: List of Instagram insights.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/InstagramInsight'
     Paging:
       type: object
       description: Pagination cursors.

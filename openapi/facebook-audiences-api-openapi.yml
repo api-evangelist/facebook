@@ -76,33 +76,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    Paging:
-      type: object
-      description: Pagination cursors.
-      properties:
-        cursors:
-          type: object
-          properties:
-            before:
-              type: string
-            after:
-              type: string
-        next:
-          type: string
-          format: uri
-        previous:
-          type: string
-          format: uri
-    CustomAudienceList:
-      type: object
-      description: Paginated list of custom audiences.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomAudience'
-        paging:
-          $ref: '#/components/schemas/Paging'
     CustomAudience:
       type: object
       description: A custom audience for ad targeting.
@@ -132,6 +105,33 @@ components:
         delivery_status:
           type: object
           description: Audience delivery status.
+    CustomAudienceList:
+      type: object
+      description: Paginated list of custom audiences.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomAudience'
+        paging:
+          $ref: '#/components/schemas/Paging'
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+            after:
+              type: string
+        next:
+          type: string
+          format: uri
+        previous:
+          type: string
+          format: uri
     CustomAudienceRequest:
       type: object
       description: Request to create a custom audience.

@@ -74,6 +74,16 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    PhotoList:
+      type: object
+      description: Paginated list of photos.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Photo'
+        paging:
+          $ref: '#/components/schemas/Paging'
     Paging:
       type: object
       description: Pagination cursors.
@@ -131,16 +141,6 @@ components:
           type: integer
           description: Photo height in pixels.
           example: 1080
-    PhotoList:
-      type: object
-      description: Paginated list of photos.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Photo'
-        paging:
-          $ref: '#/components/schemas/Paging'
   securitySchemes:
     BearerAuth:
       type: http

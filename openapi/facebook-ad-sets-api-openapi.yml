@@ -76,23 +76,39 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    Paging:
+    AdSetRequest:
       type: object
-      description: Pagination cursors.
+      description: Request to create an ad set.
       properties:
-        cursors:
+        name:
+          type: string
+          description: Ad set name.
+        campaign_id:
+          type: string
+          description: Parent campaign ID.
+        daily_budget:
+          type: string
+          description: Daily budget in cents.
+        targeting:
           type: object
-          properties:
-            before:
-              type: string
-            after:
-              type: string
-        next:
+          description: Targeting specification.
+        status:
           type: string
-          format: uri
-        previous:
-          type: string
-          format: uri
+          description: Initial ad set status.
+      required:
+      - name
+      - campaign_id
+      - targeting
+    AdSetList:
+      type: object
+      description: Paginated list of ad sets.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdSet'
+        paging:
+          $ref: '#/components/schemas/Paging'
     AdSet:
       type: object
       description: An ad set within a campaign.
@@ -133,39 +149,23 @@ components:
         bid_amount:
           type: string
           description: Bid amount in cents.
-    AdSetRequest:
+    Paging:
       type: object
-      description: Request to create an ad set.
+      description: Pagination cursors.
       properties:
-        name:
-          type: string
-          description: Ad set name.
-        campaign_id:
-          type: string
-          description: Parent campaign ID.
-        daily_budget:
-          type: string
-          description: Daily budget in cents.
-        targeting:
+        cursors:
           type: object
-          description: Targeting specification.
-        status:
+          properties:
+            before:
+              type: string
+            after:
+              type: string
+        next:
           type: string
-          description: Initial ad set status.
-      required:
-      - name
-      - campaign_id
-      - targeting
-    AdSetList:
-      type: object
-      description: Paginated list of ad sets.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AdSet'
-        paging:
-          $ref: '#/components/schemas/Paging'
+          format: uri
+        previous:
+          type: string
+          format: uri
   securitySchemes:
     BearerAuth:
       type: http

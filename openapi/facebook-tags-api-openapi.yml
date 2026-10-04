@@ -60,6 +60,16 @@ components:
         previous:
           type: string
           format: uri
+    MediaList:
+      type: object
+      description: Paginated list of Instagram media.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/InstagramMedia'
+        paging:
+          $ref: '#/components/schemas/Paging'
     InstagramMedia:
       type: object
       description: An Instagram media object.
@@ -100,16 +110,6 @@ components:
           type: integer
           description: Number of comments.
           example: 45
-    MediaList:
-      type: object
-      description: Paginated list of Instagram media.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/InstagramMedia'
-        paging:
-          $ref: '#/components/schemas/Paging'
   securitySchemes:
     BearerAuth:
       type: http

@@ -162,27 +162,36 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    Paging:
+    PostRequest:
       type: object
-      description: Pagination cursors.
+      description: Request to create a post.
       properties:
-        cursors:
-          type: object
-          properties:
-            before:
-              type: string
-              description: Cursor for the previous page.
-            after:
-              type: string
-              description: Cursor for the next page.
-        next:
+        message:
+          type: string
+          description: Post message text.
+          example: Check out this amazing content!
+        link:
           type: string
           format: uri
-          description: URL for the next page of results.
-        previous:
+          description: URL to attach to the post.
+          example: https://example.com/article
+        place:
           type: string
-          format: uri
-          description: URL for the previous page of results.
+          description: Page ID of a location to tag.
+        tags:
+          type: string
+          description: Comma-separated user IDs to tag.
+    PostList:
+      type: object
+      description: Paginated list of posts.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Post'
+          description: Array of posts.
+        paging:
+          $ref: '#/components/schemas/Paging'
     Post:
       type: object
       description: A Facebook post.
@@ -232,36 +241,27 @@ components:
           type: string
           format: uri
           description: Permanent URL to the post.
-    PostRequest:
+    Paging:
       type: object
-      description: Request to create a post.
+      description: Pagination cursors.
       properties:
-        message:
-          type: string
-          description: Post message text.
-          example: Check out this amazing content!
-        link:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+              description: Cursor for the previous page.
+            after:
+              type: string
+              description: Cursor for the next page.
+        next:
           type: string
           format: uri
-          description: URL to attach to the post.
-          example: https://example.com/article
-        place:
+          description: URL for the next page of results.
+        previous:
           type: string
-          description: Page ID of a location to tag.
-        tags:
-          type: string
-          description: Comma-separated user IDs to tag.
-    PostList:
-      type: object
-      description: Paginated list of posts.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Post'
-          description: Array of posts.
-        paging:
-          $ref: '#/components/schemas/Paging'
+          format: uri
+          description: URL for the previous page of results.
   securitySchemes:
     BearerAuth:
       type: http

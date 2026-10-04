@@ -140,16 +140,6 @@ components:
           type: string
           format: uri
           description: URL for the previous page of results.
-    CommentList:
-      type: object
-      description: Paginated list of comments.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Comment'
-        paging:
-          $ref: '#/components/schemas/Paging'
     Comment:
       type: object
       description: A comment on a post.
@@ -178,6 +168,26 @@ components:
           type: integer
           description: Number of likes on the comment.
           example: 5
+    CommentList:
+      type: object
+      description: Paginated list of comments.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Comment'
+        paging:
+          $ref: '#/components/schemas/Paging'
+    InstagramCommentList:
+      type: object
+      description: Paginated list of Instagram comments.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/InstagramComment'
+        paging:
+          $ref: '#/components/schemas/Paging_2'
     Paging_2:
       type: object
       description: Pagination cursors.
@@ -195,16 +205,6 @@ components:
         previous:
           type: string
           format: uri
-    InstagramCommentList:
-      type: object
-      description: Paginated list of Instagram comments.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/InstagramComment'
-        paging:
-          $ref: '#/components/schemas/Paging_2'
     InstagramComment:
       type: object
       description: A comment on Instagram media.
