@@ -651,6 +651,10 @@ apis:
   - type: Documentation
     url: https://developers.facebook.com/docs/whatsapp
 common:
+- type: Plans
+  url: plans/facebook-plans-pricing.yml
+- type: FinOps
+  url: finops/facebook-finops.yml
 - type: Website
   url: https://facebook.com
 - type: PostmanWorkspace
