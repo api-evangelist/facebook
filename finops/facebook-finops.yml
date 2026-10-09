@@ -191,10 +191,8 @@ apis:
 unitEconomics:
   - name: Cost per 1K Impressions (CPM)
     metric: ad_spend / (impressions / 1000)
-    target: campaign-dependent
   - name: Cost per WhatsApp Conversation
     metric: whatsapp_spend / whatsapp_conversations
-    target: see WhatsApp Business pricing by country
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
