@@ -1,0 +1,117 @@
+generated: '2026-10-14'
+edges:
+- partner_name: Twilio Segment
+  partner: segment
+  partner_match: aggregator
+  marketplace: coverage
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: connector-coverage
+  evidence: https://www.twilio.com/docs/segment/connections/destinations/catalog/actions-facebook-conversions-api
+  coverage_role:
+  - destination
+  - source
+  cdp_signals:
+    destination:
+      catalog_entries:
+      - actions-facebook-conversions-api
+      - facebook-app-events
+      - facebook-pixel
+      - personas-facebook-custom-audiences
+      status: PUBLIC
+      partner_owned: false
+      connection_modes:
+      - cloud:mobile
+      - cloud:server
+      - cloud:web
+      - device:mobile
+      - device:web
+      accepted_methods:
+      - Identify
+      - Page
+      - Track
+      component_owners:
+      - SEGMENT
+    source:
+      catalog_entries:
+      - facebook-ads
+  detected_by: sweep-cdp.py
+  first_seen: '2026-10-14'
+- partner_name: RudderStack
+  partner: rudderstack
+  partner_match: aggregator
+  marketplace: coverage
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: connector-coverage
+  evidence: https://github.com/rudderlabs/rudder-integrations-config/tree/main/src/configurations/destinations/fb_custom_audience
+  coverage_role:
+  - destination
+  cdp_signals:
+    destination:
+      catalog_entries:
+      - fb_custom_audience
+      connection_modes:
+      - cloud
+      cloud_event_types:
+      - audiencelist
+      - record
+      audience: true
+      source_types: 3
+  detected_by: sweep-cdp.py
+  first_seen: '2026-10-14'
+- partner_name: mParticle
+  partner: mparticle
+  partner_match: aggregator
+  marketplace: coverage
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: connector-coverage
+  evidence: https://docs.mparticle.com/integrations/facebook/audience/
+  coverage_role:
+  - destination
+  cdp_signals:
+    destination:
+      catalog_entries:
+      - facebook
+      - facebook-offline-conversions
+      integration_types:
+      - audience
+      - event
+  detected_by: sweep-cdp.py
+  first_seen: '2026-10-14'
+- partner_name: Census
+  partner: getcensus
+  partner_match: aggregator
+  marketplace: coverage
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: connector-coverage
+  evidence: https://fivetran.com/docs/activations/destinations/available-destinations/facebook-ads
+  coverage_role:
+  - destination
+  cdp_signals:
+    destination:
+      catalog_entries:
+      - facebook-ads
+      - facebook-product-catalog
+      sync_behaviours:
+      - mirror
+      - update or create
+  detected_by: sweep-cdp.py
+  first_seen: '2026-10-14'
+method: searched
+checked:
+- https://docs.mparticle.com/integrations/facebook/audience/
+- https://fivetran.com/docs/activations/destinations/available-destinations/facebook-ads
+- https://github.com/rudderlabs/rudder-integrations-config/tree/main/src/configurations/destinations/fb_custom_audience
+- https://www.twilio.com/docs/segment/connections/destinations/catalog/actions-facebook-conversions-api
+source:
+- https://docs.mparticle.com/integrations/facebook/audience/
+- https://fivetran.com/docs/activations/destinations/available-destinations/facebook-ads
+- https://github.com/rudderlabs/rudder-integrations-config/tree/main/src/configurations/destinations/fb_custom_audience
+- https://www.twilio.com/docs/segment/connections/destinations/catalog/actions-facebook-conversions-api
