@@ -104,11 +104,43 @@ edges:
       - update or create
   detected_by: sweep-cdp.py
   first_seen: '2026-10-14'
+- partner_name: MCP Registry
+  partner: mcp
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://registry.modelcontextprotocol.io/v0/servers?search=io.github.facebook
+  contract_reference:
+    register: registry.modelcontextprotocol.io
+    spec_file: null
+    role: mcp-server-listing
+    registered_name: io.github.facebook/devtools
+    register_id: io.github.facebook/devtools
+    detected_by: sweep-agent-tools.py
+    detected: '2026-10-14'
+  mcp_registry:
+    servers:
+    - io.github.facebook/devtools
+    hosted_remote: 1
+    local_package: 0
+    transports:
+      streamable-http: 1
+    auth_declared: 0
+    catalog_declared: false
+    namespace_domains:
+    - facebook.com
+  matched_by:
+  - remote-domain+label
+  detected_by: sweep-agent-tools.py
+  first_seen: '2026-10-14'
 method: searched
 checked:
 - https://docs.mparticle.com/integrations/facebook/audience/
 - https://fivetran.com/docs/activations/destinations/available-destinations/facebook-ads
 - https://github.com/rudderlabs/rudder-integrations-config/tree/main/src/configurations/destinations/fb_custom_audience
+- https://registry.modelcontextprotocol.io/v0/servers
 - https://www.twilio.com/docs/segment/connections/destinations/catalog/actions-facebook-conversions-api
 source:
 - https://docs.mparticle.com/integrations/facebook/audience/
