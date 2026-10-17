@@ -68,6 +68,14 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    PhoneNumberList:
+      type: object
+      description: List of WhatsApp phone numbers.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/WhatsAppPhoneNumber'
     WhatsAppPhoneNumber:
       type: object
       description: A WhatsApp Business phone number.
@@ -96,14 +104,6 @@ components:
           type: string
           description: Phone number status.
           example: CONNECTED
-    PhoneNumberList:
-      type: object
-      description: List of WhatsApp phone numbers.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/WhatsAppPhoneNumber'
   securitySchemes:
     BearerAuth:
       type: http

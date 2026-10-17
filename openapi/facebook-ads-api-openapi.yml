@@ -43,6 +43,33 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+            after:
+              type: string
+        next:
+          type: string
+          format: uri
+        previous:
+          type: string
+          format: uri
+    AdList:
+      type: object
+      description: Paginated list of ads.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Ad'
+        paging:
+          $ref: '#/components/schemas/Paging'
     Ad:
       type: object
       description: An individual advertisement.
@@ -75,33 +102,6 @@ components:
           properties:
             id:
               type: string
-    Paging:
-      type: object
-      description: Pagination cursors.
-      properties:
-        cursors:
-          type: object
-          properties:
-            before:
-              type: string
-            after:
-              type: string
-        next:
-          type: string
-          format: uri
-        previous:
-          type: string
-          format: uri
-    AdList:
-      type: object
-      description: Paginated list of ads.
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Ad'
-        paging:
-          $ref: '#/components/schemas/Paging'
   securitySchemes:
     BearerAuth:
       type: http

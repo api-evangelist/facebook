@@ -162,25 +162,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    PostRequest:
-      type: object
-      description: Request to create a post.
-      properties:
-        message:
-          type: string
-          description: Post message text.
-          example: Check out this amazing content!
-        link:
-          type: string
-          format: uri
-          description: URL to attach to the post.
-          example: https://example.com/article
-        place:
-          type: string
-          description: Page ID of a location to tag.
-        tags:
-          type: string
-          description: Comma-separated user IDs to tag.
     PostList:
       type: object
       description: Paginated list of posts.
@@ -192,6 +173,27 @@ components:
           description: Array of posts.
         paging:
           $ref: '#/components/schemas/Paging'
+    Paging:
+      type: object
+      description: Pagination cursors.
+      properties:
+        cursors:
+          type: object
+          properties:
+            before:
+              type: string
+              description: Cursor for the previous page.
+            after:
+              type: string
+              description: Cursor for the next page.
+        next:
+          type: string
+          format: uri
+          description: URL for the next page of results.
+        previous:
+          type: string
+          format: uri
+          description: URL for the previous page of results.
     Post:
       type: object
       description: A Facebook post.
@@ -241,27 +243,25 @@ components:
           type: string
           format: uri
           description: Permanent URL to the post.
-    Paging:
+    PostRequest:
       type: object
-      description: Pagination cursors.
+      description: Request to create a post.
       properties:
-        cursors:
-          type: object
-          properties:
-            before:
-              type: string
-              description: Cursor for the previous page.
-            after:
-              type: string
-              description: Cursor for the next page.
-        next:
+        message:
+          type: string
+          description: Post message text.
+          example: Check out this amazing content!
+        link:
           type: string
           format: uri
-          description: URL for the next page of results.
-        previous:
+          description: URL to attach to the post.
+          example: https://example.com/article
+        place:
           type: string
-          format: uri
-          description: URL for the previous page of results.
+          description: Page ID of a location to tag.
+        tags:
+          type: string
+          description: Comma-separated user IDs to tag.
   securitySchemes:
     BearerAuth:
       type: http
