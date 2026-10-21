@@ -135,6 +135,71 @@ edges:
       - update or create
   detected_by: sweep-cdp.py
   first_seen: '2026-10-14'
+- partner_name: CocoaPods trunk
+  partner: null
+  partner_match: register
+  type: register
+  channel: package-registry
+  relationship: distribution-channel
+  direction: provider-built
+  evidence: https://cocoapods.org/pods/Facebook-iOS-SDK
+  category: iOS SDK (CocoaPods)
+  contract_reference:
+    register: CocoaPods trunk (cdn.cocoapods.org Specs; github.com/CocoaPods/Specs)
+    spec_file: null
+    role: cocoapods-publisher
+    registered_name: Facebook
+    matched_domain: facebook.com
+    matched_by: domain+name-among-holders
+    pods:
+    - pod: Facebook-iOS-SDK
+      version: 4.38.0
+      homepage: https://developers.facebook.com/docs/ios/
+      deprecated: true
+    - pod: FacebookCore
+      version: 0.9.0
+      homepage: https://developers.facebook.com/docs/swift
+      deprecated: false
+    - pod: FacebookGamingServices
+      version: 13.0.0
+      homepage: https://developers.facebook.com/docs/ios/
+      deprecated: true
+    - pod: FacebookLogin
+      version: 0.9.0
+      homepage: https://developers.facebook.com/docs/swift
+      deprecated: false
+    - pod: FacebookSDK
+      version: 11.2.1
+      homepage: https://developers.facebook.com/docs/ios/
+      deprecated: false
+    - pod: FacebookShare
+      version: 0.9.0
+      homepage: https://developers.facebook.com/docs/swift
+      deprecated: false
+    signal_note: latest podspec homepage (domain) + authors (name); pods, versions and counts are context
+    detected_by: sweep-mobile-sdk-index.py
+    detected: '2026-10-21'
+  detected_by: sweep-mobile-sdk-index.py
+  first_seen: '2026-10-21'
+- partner_name: Google Play Developer (Google Play SDK Index)
+  partner: google-play
+  partner_match: mirror
+  mirror_match: domain+name-among-holders
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: Google Play SDK Index
+  evidence: https://play.google.com/sdks/details/com-facebook-android-facebook-android-sdk
+  mirror_of: google-play/integrations/google-play-integration-edges.yml
+  apps:
+  - Facebook Android SDK
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: mobile SDK (ads, analytics, social)
+  publisher_verified:
+  - Registered in Google Play SDK Console
 method: searched
 checked:
 - https://docs.mparticle.com/integrations/facebook-offline-conversions/event/
@@ -143,6 +208,11 @@ checked:
 - https://github.com/rudderlabs/rudder-integrations-config/tree/main/src/configurations/destinations/fb_custom_audience
 - https://registry.modelcontextprotocol.io/v0/servers
 - https://www.twilio.com/docs/segment/connections/destinations/catalog/actions-facebook-conversions-api
+- https://cdn.cocoapods.org/all_pods.txt
+- https://cert.appdefensealliance.org/certifications
+- https://play.google.com/sdks
+- https://search.maven.org/solrsearch/select
+- google-play/integrations/google-play-integration-edges.yml
 source:
 - https://docs.mparticle.com/integrations/facebook/audience/
 - https://fivetran.com/docs/activations/destinations/available-destinations/facebook-ads

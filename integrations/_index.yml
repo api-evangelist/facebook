@@ -70,3 +70,62 @@
   relationship: connector-coverage
   status: not-a-workflow
   arazzo: null
+- slug: facebook-cocoapods-trunk
+  label: CocoaPods trunk
+  partner_name: CocoaPods trunk
+  category: iOS SDK (CocoaPods)
+  type: register
+  channel: package-registry
+  evidence: https://cocoapods.org/pods/Facebook-iOS-SDK
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: CocoaPods trunk (cdn.cocoapods.org Specs; github.com/CocoaPods/Specs)
+    spec_file: null
+    role: cocoapods-publisher
+    registered_name: Facebook
+    matched_domain: facebook.com
+    matched_by: domain+name-among-holders
+    pods:
+    - pod: Facebook-iOS-SDK
+      version: 4.38.0
+      homepage: https://developers.facebook.com/docs/ios/
+      deprecated: true
+    - pod: FacebookCore
+      version: 0.9.0
+      homepage: https://developers.facebook.com/docs/swift
+      deprecated: false
+    - pod: FacebookGamingServices
+      version: 13.0.0
+      homepage: https://developers.facebook.com/docs/ios/
+      deprecated: true
+    - pod: FacebookLogin
+      version: 0.9.0
+      homepage: https://developers.facebook.com/docs/swift
+      deprecated: false
+    - pod: FacebookSDK
+      version: 11.2.1
+      homepage: https://developers.facebook.com/docs/ios/
+      deprecated: false
+    - pod: FacebookShare
+      version: 0.9.0
+      homepage: https://developers.facebook.com/docs/swift
+      deprecated: false
+    signal_note: latest podspec homepage (domain) + authors (name); pods, versions and counts are context
+    detected_by: sweep-mobile-sdk-index.py
+    detected: '2026-10-21'
+  status: not-a-workflow
+  arazzo: null
+- slug: facebook-google-play-developer-google-play-sdk-index
+  label: Google Play Developer (Google Play SDK Index)
+  partner: google-play
+  partner_name: Google Play Developer (Google Play SDK Index)
+  category: mobile SDK (ads, analytics, social)
+  type: marketplace
+  marketplace: Google Play SDK Index
+  channel: partner-built
+  evidence: https://play.google.com/sdks/details/com-facebook-android-facebook-android-sdk
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
