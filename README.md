@@ -1,4 +1,4 @@
-# Facebook (facebook)
+# Facebook
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,235 +66,253 @@
 
 Facebook is Meta's social networking platform providing APIs for developers to integrate with Facebook's ecosystem. The Facebook Graph API is the primary way to read and write data to the Facebook social graph. Meta also provides APIs for marketing and advertising, Instagram content management, Messenger bots, Threads publishing, and WhatsApp business messaging.
 
-**URL:** [Visit APIs.json URL](https://developers.facebook.com)
+**Areas:** Facebook · Fortune 500 · Advertising · Content Publishing · Messaging · Social Media · Social Network
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Facebook on APIs.io
 
-## Tags:
+Everything profiled for Facebook is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/facebook/](https://apis.io/providers/facebook/)** — or go straight to one of the APIs or properties below.
 
- - Advertising, Content Publishing, Messaging, Social Media, Social Networking
+### APIs (21)
 
-## Timestamps
+- [Facebook Ad Accounts API](https://apis.io/apis/facebook/facebook-ad-accounts-api/) — The Ad Accounts API from Facebook — 1 operation(s) for ad accounts.
+- [Facebook Ad Sets API](https://apis.io/apis/facebook/facebook-ad-sets-api/) — The Ad Sets API from Facebook — 1 operation(s) for ad sets.
+- [Facebook Ads API](https://apis.io/apis/facebook/facebook-ads-api/) — The Ads API from Facebook — 1 operation(s) for ads.
+- [Facebook Audiences API](https://apis.io/apis/facebook/facebook-audiences-api/) — The Audiences API from Facebook — 1 operation(s) for audiences.
+- [Facebook Authentication API](https://apis.io/apis/facebook/facebook-authentication-api/) — The Authentication API from Facebook — 1 operation(s) for authentication.
+- [Facebook Campaigns API](https://apis.io/apis/facebook/facebook-campaigns-api/) — The Campaigns API from Facebook — 2 operation(s) for campaigns.
+- [Facebook Comments API](https://apis.io/apis/facebook/facebook-comments-api/) — The Comments API from Facebook — 2 operation(s) for comments.
+- [Facebook Conversations API](https://apis.io/apis/facebook/facebook-conversations-api/) — The Conversations API from Facebook — 2 operation(s) for conversations.
+- [Facebook Insights API](https://apis.io/apis/facebook/facebook-insights-api/) — The Insights API from Facebook — 3 operation(s) for insights.
+- [Facebook Media API](https://apis.io/apis/facebook/facebook-media-api/) — The Media API from Facebook — 4 operation(s) for media.
+- [Facebook Messages API](https://apis.io/apis/facebook/facebook-messages-api/) — The Messages API from Facebook — 2 operation(s) for messages.
+- [Facebook Pages API](https://apis.io/apis/facebook/facebook-pages-api/) — The Pages API from Facebook — 2 operation(s) for pages.
+- [Facebook Phone Numbers API](https://apis.io/apis/facebook/facebook-phone-numbers-api/) — The Phone Numbers API from Facebook — 2 operation(s) for phone numbers.
+- [Facebook Photos API](https://apis.io/apis/facebook/facebook-photos-api/) — The Photos API from Facebook — 2 operation(s) for photos.
+- [Facebook Posts API](https://apis.io/apis/facebook/facebook-posts-api/) — The Posts API from Facebook — 2 operation(s) for posts.
+- [Facebook Profile API](https://apis.io/apis/facebook/facebook-profile-api/) — The Profile API from Facebook — 1 operation(s) for profile.
+- [Facebook Publishing API](https://apis.io/apis/facebook/facebook-publishing-api/) — The Publishing API from Facebook — 2 operation(s) for publishing.
+- [Facebook Replies API](https://apis.io/apis/facebook/facebook-replies-api/) — The Replies API from Facebook — 1 operation(s) for replies.
+- [Facebook Tags API](https://apis.io/apis/facebook/facebook-tags-api/) — The Tags API from Facebook — 1 operation(s) for tags.
+- [Facebook Templates API](https://apis.io/apis/facebook/facebook-templates-api/) — The Templates API from Facebook — 1 operation(s) for templates.
+- [Facebook Users API](https://apis.io/apis/facebook/facebook-users-api/) — The Users API from Facebook — 4 operation(s) for users.
 
-- **Created:** 2024-01-15
-- **Modified:** 2026-04-18
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Facebook Graph API
-The primary way to read and write data to the Facebook social graph, providing access to user profiles, posts, pages, photos, videos, comments, and social interactions. Supports nodes, edges, and fields for flexible data access.
+#### Agentic access (1)
 
-**Human URL:** [https://developers.facebook.com/docs/graph-api](https://developers.facebook.com/docs/graph-api)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags:
+- [Facebook Agentic Access](https://apis.io/agentic-access/facebook/facebook-agentic-access/)
 
- - Comments, Graph, Pages, Photos, Posts, Social, Users, Videos
+#### JSON Schema (62)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://developers.facebook.com/docs/graph-api/overview)
-- [APIReference](https://developers.facebook.com/docs/graph-api/reference)
-- [Authentication](https://developers.facebook.com/docs/facebook-login/access-tokens)
-- [OpenAPI](openapi/facebook-graph-api.yaml)
+- [Ad](https://apis.io/schemas/facebook/facebook-ad/)
+- [AdAccount](https://apis.io/schemas/facebook/facebook-adaccount/)
+- [AdList](https://apis.io/schemas/facebook/facebook-adlist/)
+- [AdSet](https://apis.io/schemas/facebook/facebook-adset/)
+- [AdSetList](https://apis.io/schemas/facebook/facebook-adsetlist/)
+- [AdSetRequest](https://apis.io/schemas/facebook/facebook-adsetrequest/)
+- [Campaign](https://apis.io/schemas/facebook/facebook-campaign/)
+- [CampaignList](https://apis.io/schemas/facebook/facebook-campaignlist/)
+- [CampaignRequest](https://apis.io/schemas/facebook/facebook-campaignrequest/)
+- [Comment](https://apis.io/schemas/facebook/facebook-comment/)
+- [CommentList](https://apis.io/schemas/facebook/facebook-commentlist/)
+- [Conversation](https://apis.io/schemas/facebook/facebook-conversation/)
+- [ConversationList](https://apis.io/schemas/facebook/facebook-conversationlist/)
+- [CustomAudience](https://apis.io/schemas/facebook/facebook-customaudience/)
+- [CustomAudienceList](https://apis.io/schemas/facebook/facebook-customaudiencelist/)
+- [CustomAudienceRequest](https://apis.io/schemas/facebook/facebook-customaudiencerequest/)
+- [Insight](https://apis.io/schemas/facebook/facebook-insight/)
+- [InsightList](https://apis.io/schemas/facebook/facebook-insightlist/)
+- [InstagramComment](https://apis.io/schemas/facebook/facebook-instagramcomment/)
+- [InstagramCommentList](https://apis.io/schemas/facebook/facebook-instagramcommentlist/)
+- [InstagramInsight](https://apis.io/schemas/facebook/facebook-instagraminsight/)
+- [InstagramInsightList](https://apis.io/schemas/facebook/facebook-instagraminsightlist/)
+- [InstagramMedia](https://apis.io/schemas/facebook/facebook-instagrammedia/)
+- [InstagramUser](https://apis.io/schemas/facebook/facebook-instagramuser/)
+- [MediaList](https://apis.io/schemas/facebook/facebook-medialist/)
+- …and 37 more published on APIs.io
 
-### Facebook Marketing API
-Programmatically manage Facebook ad campaigns, ad sets, ad creatives, Custom Audiences, and advertising reports. Access performance insights and automate campaign optimization at scale.
+#### JSON Structure (6)
 
-**Human URL:** [https://developers.facebook.com/docs/marketing-apis](https://developers.facebook.com/docs/marketing-apis)
+Data models expressed in JSON Structure.
 
-#### Tags:
+- [Facebook Structure](https://apis.io/json-structure/facebook/facebook-structure/)
+- [Graph Api Post Structure](https://apis.io/json-structure/facebook/graph-api-post-structure/)
+- [Graph Api User Structure](https://apis.io/json-structure/facebook/graph-api-user-structure/)
+- [Instagram Api Instagram Media Structure](https://apis.io/json-structure/facebook/instagram-api-instagram-media-structure/)
+- [Marketing Api Campaign Structure](https://apis.io/json-structure/facebook/marketing-api-campaign-structure/)
+- [Threads Api Threads Media Structure](https://apis.io/json-structure/facebook/threads-api-threads-media-structure/)
 
- - Ad Campaigns, Advertising, Audiences, Insights, Marketing
+#### JSON-LD (3)
 
-#### Properties
+Linked-data contexts for the provider's vocabulary.
 
-- [Documentation](https://developers.facebook.com/docs/marketing-api)
-- [APIReference](https://developers.facebook.com/docs/marketing-api/reference)
-- [OpenAPI](openapi/facebook-marketing-api.yaml)
+- [Facebook Graph Api Context](https://apis.io/jsonld/facebook/facebook-graph-api-context/)
+- [Facebook Instagram Api Context](https://apis.io/jsonld/facebook/facebook-instagram-api-context/)
+- [Facebook Marketing Api Context](https://apis.io/jsonld/facebook/facebook-marketing-api-context/)
 
-### Instagram API
-Manage Instagram Business and Creator account content including publishing media, retrieving posts, managing comments, discovering mentions, and accessing account insights for analytics.
+#### Vocabulary (1)
 
-**Human URL:** [https://developers.facebook.com/docs/instagram-platform](https://developers.facebook.com/docs/instagram-platform)
+The provider's domain terms, defined.
 
-#### Tags:
+- [Facebook Vocabulary](https://apis.io/vocabularies/facebook/facebook-vocabulary/)
 
- - Content Management, Instagram, Media, Social Media
+#### Examples (17)
 
-#### Properties
+Example requests and responses.
 
-- [Documentation](https://developers.facebook.com/docs/instagram-platform)
-- [OpenAPI](openapi/facebook-instagram-api.yaml)
+- [Facebook Createcampaign Example](https://apis.io/examples/facebook/facebook-createcampaign-example/)
+- [Facebook Createinstagrammedia Example](https://apis.io/examples/facebook/facebook-createinstagrammedia-example/)
+- [Facebook Createpost Example](https://apis.io/examples/facebook/facebook-createpost-example/)
+- [Facebook Createthreadsmedia Example](https://apis.io/examples/facebook/facebook-createthreadsmedia-example/)
+- [Facebook Getadaccount Example](https://apis.io/examples/facebook/facebook-getadaccount-example/)
+- [Facebook Getcurrentuser Example](https://apis.io/examples/facebook/facebook-getcurrentuser-example/)
+- [Facebook Getinstagramuser Example](https://apis.io/examples/facebook/facebook-getinstagramuser-example/)
+- [Facebook Getthreadsuser Example](https://apis.io/examples/facebook/facebook-getthreadsuser-example/)
+- [Facebook Getuserfeed Example](https://apis.io/examples/facebook/facebook-getuserfeed-example/)
+- [Facebook Sendmessage Example](https://apis.io/examples/facebook/facebook-sendmessage-example/)
+- [Facebook Sendwhatsappmessage Example](https://apis.io/examples/facebook/facebook-sendwhatsappmessage-example/)
+- [Graph Api Post Example](https://apis.io/examples/facebook/graph-api-post-example/)
+- [Graph Api User Example](https://apis.io/examples/facebook/graph-api-user-example/)
+- [Instagram Api Instagram Media Example](https://apis.io/examples/facebook/instagram-api-instagram-media-example/)
+- [Marketing Api Campaign Example](https://apis.io/examples/facebook/marketing-api-campaign-example/)
+- [Threads Api Threads Media Example](https://apis.io/examples/facebook/threads-api-threads-media-example/)
+- [Whatsapp Api Whatsapp Phone Number Example](https://apis.io/examples/facebook/whatsapp-api-whatsapp-phone-number-example/)
 
-### Messenger Platform API
-Build messaging experiences on Facebook Messenger and Instagram Direct. Send and receive messages, create bot interactions, use templates and webviews, manage conversation routing, and integrate NLP capabilities.
+#### Collections (42)
 
-**Human URL:** [https://developers.facebook.com/docs/messenger-platform](https://developers.facebook.com/docs/messenger-platform)
+Postman and Open Collection request collections.
 
-#### Tags:
+- [Facebook Graph Ad Accounts API](https://apis.io/collections/facebook/open-facebook-ad-accounts-api/)
+- [Facebook Graph Ad Accounts Ad Sets API](https://apis.io/collections/facebook/open-facebook-ad-sets-api/)
+- [Facebook Graph Ad Accounts Ads API](https://apis.io/collections/facebook/open-facebook-ads-api/)
+- [Facebook Graph Ad Accounts Audiences API](https://apis.io/collections/facebook/open-facebook-audiences-api/)
+- [Facebook Graph Ad Accounts Authentication API](https://apis.io/collections/facebook/open-facebook-authentication-api/)
+- [Facebook Graph Ad Accounts Campaigns API](https://apis.io/collections/facebook/open-facebook-campaigns-api/)
+- [Facebook Graph Ad Accounts Comments API](https://apis.io/collections/facebook/open-facebook-comments-api/)
+- [Facebook Graph Ad Accounts Conversations API](https://apis.io/collections/facebook/open-facebook-conversations-api/)
+- [Facebook Graph Ad Accounts Insights API](https://apis.io/collections/facebook/open-facebook-insights-api/)
+- [Facebook Graph Ad Accounts Media API](https://apis.io/collections/facebook/open-facebook-media-api/)
+- [Facebook Graph Ad Accounts Messages API](https://apis.io/collections/facebook/open-facebook-messages-api/)
+- [Facebook Graph Ad Accounts Pages API](https://apis.io/collections/facebook/open-facebook-pages-api/)
+- [Facebook Graph Ad Accounts Phone Numbers API](https://apis.io/collections/facebook/open-facebook-phone-numbers-api/)
+- [Facebook Graph Ad Accounts Photos API](https://apis.io/collections/facebook/open-facebook-photos-api/)
+- [Facebook Graph Ad Accounts Posts API](https://apis.io/collections/facebook/open-facebook-posts-api/)
+- [Facebook Graph Ad Accounts Profile API](https://apis.io/collections/facebook/open-facebook-profile-api/)
+- [Facebook Graph Ad Accounts Publishing API](https://apis.io/collections/facebook/open-facebook-publishing-api/)
+- [Facebook Graph Ad Accounts Replies API](https://apis.io/collections/facebook/open-facebook-replies-api/)
+- [Facebook Graph Ad Accounts Tags API](https://apis.io/collections/facebook/open-facebook-tags-api/)
+- [Facebook Graph Ad Accounts Templates API](https://apis.io/collections/facebook/open-facebook-templates-api/)
+- [Facebook Graph Ad Accounts Users API](https://apis.io/collections/facebook/open-facebook-users-api/)
+- [Facebook Graph Ad Accounts API](https://apis.io/collections/facebook/postman-facebook-ad-accounts-api/)
+- [Facebook Graph Ad Accounts Ad Sets API](https://apis.io/collections/facebook/postman-facebook-ad-sets-api/)
+- [Facebook Graph Ad Accounts Ads API](https://apis.io/collections/facebook/postman-facebook-ads-api/)
+- [Facebook Graph Ad Accounts Audiences API](https://apis.io/collections/facebook/postman-facebook-audiences-api/)
+- …and 17 more published on APIs.io
 
- - Bots, Chat, Messaging, Messenger
+#### Governance rules (2)
 
-#### Properties
+Spectral rulesets for the provider's contracts.
 
-- [Documentation](https://developers.facebook.com/docs/messenger-platform)
-- [OpenAPI](openapi/facebook-messenger-api.yaml)
+- [Facebook — jsonschema rules](https://apis.io/rules/facebook/facebook-jsonschema-spectral-rules/)
+- [Facebook API Rules](https://apis.io/rules/facebook/facebook-spectral-rules/)
 
-### Threads API
-Publish and manage content on Threads, Meta's text-based social platform. Create posts and carousels, retrieve and moderate replies, access insights, and manage creator profiles at scale.
+#### Security (3)
 
-**Human URL:** [https://developers.facebook.com/docs/threads](https://developers.facebook.com/docs/threads)
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Tags:
+- [Facebook Authentication](https://apis.io/security/facebook/facebook-authentication/)
+- [Facebook Domain Security](https://apis.io/security/facebook/facebook-domain-security/)
+- [Facebook Vulnerability Disclosure](https://apis.io/security/facebook/facebook-vulnerability-disclosure/)
 
- - Content Publishing, Social Media, Threads
+#### Plans and pricing (1)
 
-#### Properties
+Published plans, tiers and prices.
 
-- [Documentation](https://developers.facebook.com/docs/threads)
-- [OpenAPI](openapi/facebook-threads-api.yaml)
+- [Facebook Plans Pricing](https://apis.io/plans/facebook/facebook-plans-pricing/)
 
-### WhatsApp Business API
-Send and receive messages through WhatsApp Business Platform. Support text, media, templates, interactive messages, and manage business profiles for customer communication at scale.
+#### Rate limits (1)
 
-**Human URL:** [https://developers.facebook.com/docs/whatsapp](https://developers.facebook.com/docs/whatsapp)
+Published request limits.
 
-#### Tags:
+- [Facebook Rate Limits](https://apis.io/rate-limits/facebook/facebook-rate-limits/)
 
- - Business Messaging, Customer Communication, WhatsApp
+#### FinOps (1)
 
-#### Properties
+What the API costs to run, by operation.
 
-- [Documentation](https://developers.facebook.com/docs/whatsapp)
-- [OpenAPI](openapi/facebook-whatsapp-api.yaml)
+- [Facebook Finops](https://apis.io/finops/facebook/facebook-finops/)
 
-## Common Properties
+## Where to find this API
 
-- [Portal](https://developers.facebook.com)
-- [GettingStarted](https://developers.facebook.com/docs/development/create-an-app)
-- [ChangeLog](https://developers.facebook.com/docs/graph-api/changelog)
-- [StatusPage](https://developers.facebook.com/status)
-- [TermsOfService](https://developers.facebook.com/terms)
-- [PrivacyPolicy](https://developers.facebook.com/policy)
-- [RateLimits](https://developers.facebook.com/docs/graph-api/overview/rate-limiting)
-- [GitHubOrganization](https://github.com/facebook)
-- [Blog](https://developers.facebook.com/blog)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://facebook.com)
+- [Getting started](https://developers.facebook.com/docs/development/create-an-app)
 - [Support](https://developers.facebook.com/support)
-- [FAQ](https://developers.facebook.com/docs/development/faq)
-- [Errors](https://developers.facebook.com/docs/graph-api/guides/error-handling)
+- [Changelog](https://developers.facebook.com/docs/graph-api/changelog)
+- [Blog](https://developers.facebook.com/blog)
+- [Terms of service](https://developers.facebook.com/terms)
+- [Privacy policy](https://developers.facebook.com/policy)
+- [GitHub](https://github.com/facebook)
+- [Status](https://developers.facebook.com/status)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Graph API | HTTP-based API for reading and writing to the Facebook social graph with nodes, edges, and fields. |
-| Webhooks | Real-time notifications when changes occur to data your app has access to. |
-| Batch Requests | Send multiple API calls in a single HTTP request for improved performance. |
-| Access Tokens | OAuth 2.0 access tokens for user, page, app, and client authentication flows. |
-| Facebook Login | Authentication system allowing users to log into apps with their Facebook credentials. |
-| Meta Pixel | Analytics tool for measuring ad effectiveness and tracking website visitor actions. |
-| Conversions API | Server-side event tracking for ad measurement without browser dependencies. |
+**Kin Score 41.1** — developing · rubric 0.25.0 · scored 2026-10-23
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 85.7 |
+| Contract quality | 21.9 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 58.3 |
+| Access clarity | 28.9 |
 
-| Name | Description |
-|------|-------------|
-| Social Media Management | Manage pages, publish content, and engage with audiences across Facebook and Instagram. |
-| Advertising Automation | Automate ad campaign creation, optimization, and reporting at scale. |
-| Customer Messaging | Build conversational experiences on Messenger and WhatsApp for customer support and engagement. |
-| Content Publishing | Publish and schedule content across Facebook, Instagram, and Threads platforms. |
-| Analytics and Insights | Access performance data and audience insights across Meta platforms. |
-| E-Commerce Integration | Integrate product catalogs and shopping experiences with Facebook and Instagram shops. |
+**Agent readiness 28.2** — agent-aware
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | distinct |
 
-| Name | Description |
-|------|-------------|
-| Shopify | Connect Shopify stores with Facebook and Instagram shops for social commerce. |
-| WordPress | Facebook social plugins and login integration for WordPress sites. |
-| Salesforce | Sync Facebook lead ads and audiences with Salesforce CRM. |
-| HubSpot | Connect Facebook advertising and messaging with HubSpot marketing automation. |
-| Zapier | Automate workflows between Facebook and thousands of other apps. |
+**Regulatory alignment 30.4** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/facebook/](https://apis.io/providers/facebook/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### OpenAPI
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [Facebook Graph API](openapi/facebook-graph-api.yaml)
-- [Facebook Marketing API](openapi/facebook-marketing-api.yaml)
-- [Facebook Instagram API](openapi/facebook-instagram-api.yaml)
-- [Facebook Messenger API](openapi/facebook-messenger-api.yaml)
-- [Facebook Threads API](openapi/facebook-threads-api.yaml)
-- [Facebook WhatsApp API](openapi/facebook-whatsapp-api.yaml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Facebook: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-- [User](json-schema/graph-api-user-schema.json)
-- [Post](json-schema/graph-api-post-schema.json)
-- [Page](json-schema/graph-api-page-schema.json)
-- [Campaign](json-schema/marketing-api-campaign-schema.json)
-- [Insight](json-schema/marketing-api-insight-schema.json)
-- [InstagramUser](json-schema/instagram-api-instagram-user-schema.json)
-- [InstagramMedia](json-schema/instagram-api-instagram-media-schema.json)
-- [WhatsAppPhoneNumber](json-schema/whatsapp-api-whatsapp-phone-number-schema.json)
-- [ThreadsMedia](json-schema/threads-api-threads-media-schema.json)
-
-### JSON Structure
-
-- [User](json-structure/graph-api-user-structure.json)
-- [Post](json-structure/graph-api-post-structure.json)
-- [Campaign](json-structure/marketing-api-campaign-structure.json)
-- [InstagramMedia](json-structure/instagram-api-instagram-media-structure.json)
-- [ThreadsMedia](json-structure/threads-api-threads-media-structure.json)
-
-### JSON-LD
-
-- [Graph API Context](json-ld/facebook-graph-api-context.jsonld)
-- [Marketing API Context](json-ld/facebook-marketing-api-context.jsonld)
-- [Instagram API Context](json-ld/facebook-instagram-api-context.jsonld)
-
-### Examples
-
-- [User](examples/graph-api-user-example.json)
-- [Post](examples/graph-api-post-example.json)
-- [Campaign](examples/marketing-api-campaign-example.json)
-- [InstagramMedia](examples/instagram-api-instagram-media-example.json)
-- [ThreadsMedia](examples/threads-api-threads-media-example.json)
-- [WhatsAppPhoneNumber](examples/whatsapp-api-whatsapp-phone-number-example.json)
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [Graph API](capabilities/shared/graph-api.yaml) -- 8 operations for social graph access
-- [Marketing API](capabilities/shared/marketing-api.yaml) -- 5 operations for campaign management
-- [Instagram API](capabilities/shared/instagram-api.yaml) -- 4 operations for content management
-- [Messenger API](capabilities/shared/messenger-api.yaml) -- 2 operations for messaging
-- [WhatsApp API](capabilities/shared/whatsapp-api.yaml) -- 3 operations for business messaging
-- [Threads API](capabilities/shared/threads-api.yaml) -- 4 operations for content publishing
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Social Media Management](capabilities/social-media-management.yaml) | Graph API + Instagram API + Threads API | 7 | Social Media Manager |
-| [Advertising and Marketing](capabilities/advertising-and-marketing.yaml) | Marketing API + Graph API + Instagram API | 5 | Marketing Manager |
-| [Messaging and Communication](capabilities/messaging-and-communication.yaml) | Messenger API + WhatsApp API | 5 | Customer Support |
-
-## Vocabulary
-
-- [Facebook Vocabulary](vocabulary/facebook-vocabulary.yaml) -- Unified taxonomy mapping 19 resources, 6 actions, 3 workflows, and 5 personas across operational (OpenAPI) and capability (Naftiko) dimensions
-
-## Rules
-
-- [Facebook Spectral Rules](rules/facebook-spectral-rules.yml) -- 28 rules across 10 categories enforcing Facebook API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/facebook/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
